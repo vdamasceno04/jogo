@@ -25,11 +25,13 @@ namespace Managers {
 		bool isWindowOpen() const;
 		void closeWindow();
 		void handleWindowResize();
+		void setWindowSize(Math::CoordU size);
+		Math::CoordU getWindowSize(Math::CoordU size);
 		sf::Vector2u getWindowSize() const;
 		void centerView(Math::CoordF pos);
 		sf::Texture* loadTexture(const char* path);
 		sf::Font* getFont();
-		void updateDeltaTime();
+		void updateTime();
 
 
 	};

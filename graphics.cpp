@@ -33,4 +33,59 @@ namespace Managers {
 	void Graphics::render(sf::RectangleShape* body) {
 		window->draw(*body);
 	}
+
+	void Graphics::render(sf::Text* text) {
+
+	}
+	void Graphics::display() {
+
+	}
+	void Graphics::clear() {
+
+	}
+	bool Graphics::isWindowOpen() const {
+
+	}
+	void Graphics::closeWindow() {
+
+	}
+	void Graphics::handleWindowResize() {
+
+	}
+	/*
+	void Graphics::setWindowSize(Math::CoordU size) {
+		window->setSize(sf::Vector2u(size.get_x(), size.get_y()));
+		view.setSize(size.get_x(), size.get_y());
+		window->setView(view);
+
+	}
+	sf::Vector2u Graphics::getWindowSize() const {
+		return Math::CoordU(window->getSize().x, window->getSize().y);
+
+	}*/
+	void Graphics::centerView(Math::CoordF pos) {
+
+	}
+	sf::Texture* Graphics::loadTexture(const char* path) {
+
+	}
+	sf::Font* Graphics::getFont() {
+
+	}
+	void Graphics::updateTime() {
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

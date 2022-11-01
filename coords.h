@@ -15,6 +15,9 @@ namespace Math {
 		Coord();
 		~Coord();
 
+		Coord<TL> get_x();
+		Coord<TL> get_y();
+
 		void operator=(Coord<TL> other);
 		void operator+=(Coord<TL> other);
 		void operator-=(Coord<TL> other);
@@ -38,10 +41,23 @@ namespace Math {
 	template <typename TL>
 	Coord<TL>::Coord(TL x, TL y) : x(x), y(y) {}
 
+	template <typename TL>
+	Coord<TL>::~Coord(){}
+	
 	template<typename TL>
 	Coord<TL>::Coord() {
 		this->x = 0;
 		this->y = 0;
+	}
+
+	template<typename TL>
+	Coord<TL>Coord<TL>::get_x() {
+		return x;
+	}
+
+	template<typename TL>
+	Coord<TL>Coord<TL>::get_y() {
+		return y;
 	}
 
 	template<typename TL>
