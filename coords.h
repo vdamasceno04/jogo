@@ -2,15 +2,21 @@
 
 #include<iostream>
 
+/*O SFML contém atributos e métodos para a manipulação 
+ matemática de vetores bidimensionais, mas para fins de
+ desacoplamento, o pacote Math foi criado, reduzindo a 
+ dependência entre o programa e a biblioteca gráfica.*/
+
 namespace Math {
 
 	template<typename TL>
 	class Coord {
 	private:
+
+	public:
 		TL x;
 		TL y;
 
-	public:
 		Coord(TL x, TL y);
 		Coord();
 		~Coord();
@@ -38,6 +44,9 @@ namespace Math {
 	template <typename TL>
 	Coord<TL>::Coord(TL x, TL y) : x(x), y(y) {}
 
+	template <typename TL>
+	Coord<TL>::~Coord(){}
+	
 	template<typename TL>
 	Coord<TL>::Coord() {
 		this->x = 0;
@@ -71,7 +80,7 @@ namespace Math {
 	template <typename TL>
 	void Coord<TL>::operator/=(double scalar) {
 		if (scalar == 0.0f) {
-			std::cout << "ERROR: Cannot divide by zero." << std::endl;
+			std::cout << "ERRO: Divisao por zero." << std::endl;
 			exit(1);
 		}
 		this->x /= scalar;
@@ -101,7 +110,7 @@ namespace Math {
 	template <typename TL>
 	Coord<TL> Coord<TL>::operator/(Coord<TL> other) {
 		if (other.x == 0.0f || other.y == 0.0f) {
-			std::cout << "ERROR: Cannot divide by zero." << std::endl;
+			std::cout << "ERRO: Divisao por zero." << std::endl;
 			exit(1);
 		}
 		return Coord<TL>(this->x / other.x, this->y / other.y);
@@ -110,7 +119,7 @@ namespace Math {
 	template <typename TL>
 	Coord<TL> Coord<TL>::operator/(double scalar) {
 		if (scalar == 0.0f) {
-			std::cout << "ERROR: Cannot divide by zero." << std::endl;
+			std::cout << "ERRO: Divisao por zero." << std::endl;
 			exit(1);
 		}
 

@@ -1,30 +1,24 @@
 #include "jogo.h"
 
-Jogo::Jogo() :
-    window(sf::VideoMode(400, 400), "Jogo")
+Jogo::Jogo()
 {
-    jogador1.setWindow(&window);
-    inimigo1.setWindow(&window);
     Executar();
 }
 
 Jogo::~Jogo() {}
 
 void Jogo::Executar()
-{
-    while (window.isOpen())
+{/*
+    while (pGG->isWindowOpen())
     {
         sf::Event event;
-        while (window.pollEvent(event))
+        while (pGG->getWindow()->pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
-                window.close();
+                pGG->closeWindow();
         }
 
-        jogador1.move();
-        window.clear();
-        jogador1.draw();
-        inimigo1.draw();
-        window.display();
-    }
+        pGG->clear();
+        pGG->display();
+    }*/
 }

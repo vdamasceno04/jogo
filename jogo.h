@@ -2,14 +2,14 @@
 #include <SFML/Graphics.hpp>
 #include "jogador.h"
 #include "inimigo.h"
+#include "graphics.h"
 
 class Jogo
 {
 private:
 	Jogador jogador1;
-	Inimigo inimigo1;
-	sf::RenderWindow window;
-	Managers::Graphics* pGraphicManager;
+	Inimigo inimigo1;;
+	Managers::Graphics* pGG;
 
 public:
 	Jogo();
