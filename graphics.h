@@ -6,16 +6,16 @@
 namespace Managers {
 	
 	class Graphics {
+	protected:
+		Graphics(); //padr�o de projeto singleton
 	private:
 		sf::RenderWindow* window;
 		sf::View view;
-		std::map<const char*, sf::Texture*> texturesMap;
+		std::map<const char*, sf::Texture*> mapaTextura;
 		sf::Font* font;
 		sf::Clock clock;
 		static float dt;
-		static Managers::Graphics* instance;
-		Graphics();
-
+		static Managers::Graphics* instance; //padr�o de projeto singleton
 	public:
 		~Graphics();
 		static Graphics* getInstance();
@@ -26,12 +26,11 @@ namespace Managers {
 		void clear();
 		bool isWindowOpen() const;
 		void closeWindow();
+		sf::Vector2u getWindowSize() const;
 		void setWindowSize(Math::CoordU size);
-		Math::CoordU getWindowSize(Math::CoordU size);
-		Math::CoordU getWindowSize() const;
 		void centerView(Math::CoordF pos);
 		sf::Texture* loadTexture(const char* path);
 		sf::Font* getFont();
-
+		void updateTime();
 	};
 }

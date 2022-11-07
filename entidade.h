@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "coords.h"
 
-namespace Entities {
+namespace Entidades {
 	enum ID {
 		empty = 0, player, platform
 	};

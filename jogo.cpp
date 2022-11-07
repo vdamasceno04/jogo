@@ -8,7 +8,7 @@ Jogo::Jogo()
 Jogo::~Jogo() {}
 
 void Jogo::Executar()
-{/*
+
     while (pGG->isWindowOpen())
     {
         sf::Event event;
@@ -18,6 +18,9 @@ void Jogo::Executar()
                 pGG->closeWindow();
         }
 
+        pGG->clear();
+        pGG->display();
+    }
         pGG->clear();
         pGG->display();
     }*/
