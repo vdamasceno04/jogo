@@ -20,9 +20,6 @@ namespace Managers {
 		return instance;
 	}
 
-	float Graphics::dt = 0;
-
-
 	Graphics::Graphics() :
 		window(new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Ibama++")),
 		view(sf::Vector2f(WIDTH / 2, HEIGHT / 2), sf::Vector2f(WIDTH, HEIGHT)),
