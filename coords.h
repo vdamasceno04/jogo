@@ -54,6 +54,9 @@ namespace Math {
 	}
 
 	template<typename TL>
+	Coord<TL>::~Coord() {}
+
+	template<typename TL>
 	void Coord<TL>::operator=(Coord<TL> other) {
 		this->x = other.x;
 		this->y = other.y;
