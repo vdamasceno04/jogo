@@ -1,7 +1,7 @@
 #pragma once
 #include"entidade.h"
 
-class Inimigo : public Entities::Entidade {
+class Inimigo : public Entidades::Entidade {
 private:
 public:
 	Inimigo();

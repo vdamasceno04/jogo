@@ -1,5 +1,5 @@
 #pragma once
-
+#include <iostream>
 #include"Elemento.h"
 
 template <class TL>  class Lista

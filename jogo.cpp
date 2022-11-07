@@ -1,4 +1,5 @@
 #include "jogo.h"
+#include<stdio.h>
 
 Jogo::Jogo()
 {
@@ -8,8 +9,8 @@ Jogo::Jogo()
 Jogo::~Jogo() {}
 
 void Jogo::Executar()
-
-    while (pGG->isWindowOpen())
+{
+ /*    while (pGG->isWindowOpen())
     {
         sf::Event event;
         while (pGG->getWindow()->pollEvent(event))
@@ -22,6 +23,6 @@ void Jogo::Executar()
         pGG->display();
     }
         pGG->clear();
-        pGG->display();
-    }*/
+        pGG->display();*/
+    
 }

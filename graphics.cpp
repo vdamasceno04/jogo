@@ -38,17 +38,17 @@ namespace Managers {
 		delete(window);
 	}
 
-// desenha na janela um corpo apontado pelo ponteiro
+	// desenha na janela um corpo apontado pelo ponteiro
 	void Graphics::render(sf::RectangleShape* body) {
 		window->draw(*body);
 	}
 
-// desenha na janela um texto apontado pelo ponteiro
+	// desenha na janela um texto apontado pelo ponteiro
 	void Graphics::render(sf::Text* text) {
 		window->draw(*text);
 	}
 
-// mostra tudo que foi desenhado na janela
+	// mostra tudo que foi desenhado na janela
 	void Graphics::display() {
 		if (isWindowOpen())
 			window->display();
@@ -61,40 +61,32 @@ namespace Managers {
 	}
 
 	// testa se a janela está aberta
-
-// limpa a janela
-	void Graphics::clear() {
-		if(isWindowOpen())
-			window->clear();
-	}
-
-// testa se a janela está aberta
 	bool Graphics::isWindowOpen() const {
 		if (window->isOpen())
 			return true;
 		return false;
 	}
 
-//	fecha a janela
+	//	fecha a janela
 	void Graphics::closeWindow() {
 		window->close();
 	}
 
 
-// define o tamamho da janela
+	// define o tamamho da janela
 	void Graphics::setWindowSize(Math::CoordU size) {
 		window->setSize(sf::Vector2u(size.x, size.y));
 		view.setSize(size.x, size.y);
 		window->setView(view);
 	}
 
-// retorna o tamanho da janela
-	Math::CoordU Graphics::getWindowSize() const {
-		return Math::CoordU(window->getSize().x, window->getSize().y);
+	// retorna o tamanho da janela
+	sf::Vector2u Graphics::getWindowSize() const {
+		return sf::Vector2u(window->getSize().x, window->getSize().y);
 	}
 
 
-// muda a visão do centro da janela
+	// muda a visão do centro da janela
 	void Graphics::centerView(Math::CoordF pos) {
 		view.setCenter(sf::Vector2f(pos.x, pos.y));
 		window->setView(view);
@@ -121,10 +113,8 @@ namespace Managers {
 		return tex;
 	}
 
+
 	// pega a fonte definida
-
-
-// pega a fonte definida
 	sf::Font* Graphics::getFont() {
 		return font;
 	}
@@ -139,3 +129,4 @@ namespace Managers {
 		dt = clock.getElapsedTime().asSeconds();
 		clock.restart();
 	}
+}
