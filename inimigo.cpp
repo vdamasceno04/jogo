@@ -1,4 +1,5 @@
-#include"C:\Users\genti\Documents\game\inimigo.h"
+#include "inimigo.h"
+
 
 Inimigo::Inimigo()
 {

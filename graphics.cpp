@@ -9,25 +9,22 @@
 #define FRAME_RATE 100
 
 namespace Managers {
+	float Graphics::dt = 0;
 	Graphics* Graphics::instance = NULL;
-<<<<<<< Updated upstream
-=======
 
-	//padr„o de projeto singleton
->>>>>>> Stashed changes
+	//padr√£o de projeto singleton
+
 	Graphics* Graphics::getInstance() {
 		if (instance == NULL)
 			instance = new Graphics();
 		return instance;
 	}
-<<<<<<< Updated upstream
-	float Graphics::dt = 0;
-	
-=======
 
->>>>>>> Stashed changes
+	float Graphics::dt = 0;
+
+
 	Graphics::Graphics() :
-		window(new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Ibama")),
+		window(new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Ibama++")),
 		view(sf::Vector2f(WIDTH / 2, HEIGHT / 2), sf::Vector2f(WIDTH, HEIGHT)),
 		mapaTextura(), clock() {
 		font = NULL;
@@ -41,22 +38,17 @@ namespace Managers {
 		delete(window);
 	}
 
-<<<<<<< Updated upstream
-	void Graphics::render(sf::RectangleShape* body) {
-		window->draw(*body);
-	}
-=======
-	// desenha na janela um corpo apontado pelo ponteiro
+// desenha na janela um corpo apontado pelo ponteiro
 	void Graphics::render(sf::RectangleShape* body) {
 		window->draw(*body);
 	}
 
-	// desenha na janela um texto apontado pelo ponteiro
+// desenha na janela um texto apontado pelo ponteiro
 	void Graphics::render(sf::Text* text) {
 		window->draw(*text);
 	}
 
-	// mostra tudo que foi desenhado na janela
+// mostra tudo que foi desenhado na janela
 	void Graphics::display() {
 		if (isWindowOpen())
 			window->display();
@@ -68,35 +60,46 @@ namespace Managers {
 			window->clear();
 	}
 
-	// testa se a janela est· aberta
+	// testa se a janela est√° aberta
+
+// limpa a janela
+	void Graphics::clear() {
+		if(isWindowOpen())
+			window->clear();
+	}
+
+// testa se a janela est√° aberta
 	bool Graphics::isWindowOpen() const {
 		if (window->isOpen())
 			return true;
 		return false;
 	}
 
-	//	fecha a janela
+//	fecha a janela
 	void Graphics::closeWindow() {
 		window->close();
 	}
 
-	// define o tamamho da janela
+
+// define o tamamho da janela
 	void Graphics::setWindowSize(Math::CoordU size) {
 		window->setSize(sf::Vector2u(size.x, size.y));
 		view.setSize(size.x, size.y);
 		window->setView(view);
 	}
 
-	// retorna o tamanho da janela
+// retorna o tamanho da janela
 	Math::CoordU Graphics::getWindowSize() const {
 		return Math::CoordU(window->getSize().x, window->getSize().y);
 	}
 
-	// muda a vis„o do centro da janela
+
+// muda a vis√£o do centro da janela
 	void Graphics::centerView(Math::CoordF pos) {
 		view.setCenter(sf::Vector2f(pos.x, pos.y));
 		window->setView(view);
 	}
+
 
 	// carrega a textura indicada
 	sf::Texture* Graphics::loadTexture(const char* path) {
@@ -113,11 +116,15 @@ namespace Managers {
 			exit(1);
 		}
 
+
 		mapaTextura.insert(std::pair<const char*, sf::Texture*>(path, tex));
 		return tex;
 	}
 
 	// pega a fonte definida
+
+
+// pega a fonte definida
 	sf::Font* Graphics::getFont() {
 		return font;
 	}
@@ -132,6 +139,3 @@ namespace Managers {
 		dt = clock.getElapsedTime().asSeconds();
 		clock.restart();
 	}
-
->>>>>>> Stashed changes
-}
