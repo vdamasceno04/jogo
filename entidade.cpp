@@ -1,5 +1,5 @@
 #include"entidade.h"
-using namespace Entities;
+using namespace Entidades;
 
 Entidade::Entidade(Math::CoordF pos, Math::CoordF s, ID i){
 	position = pos;
@@ -7,7 +7,7 @@ Entidade::Entidade(Math::CoordF pos, Math::CoordF s, ID i){
 	id = i;
 }
 
-Entities::Entidade::~Entidade() {}
+Entidade::~Entidade() {}
 
 void Entidade::setPosition(Math::CoordF pos) { position = pos; };
 void Entidade::setWindow(sf::RenderWindow* window) { this->window = window; }

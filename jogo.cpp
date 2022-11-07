@@ -12,7 +12,11 @@ Jogo::~Jogo() {}
 
 void Jogo::Executar()
 {
+<<<<<<< Updated upstream
     while (window.isOpen())
+=======
+    while (pGG->isWindowOpen())
+>>>>>>> Stashed changes
     {
         sf::Event event;
         while (window.pollEvent(event))
@@ -21,10 +25,15 @@ void Jogo::Executar()
                 window.close();
         }
 
+<<<<<<< Updated upstream
         jogador1.move();
         window.clear();
         jogador1.draw();
         inimigo1.draw();
         window.display();
+=======
+        pGG->clear();
+        pGG->display();
+>>>>>>> Stashed changes
     }
 }

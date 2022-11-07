@@ -1,7 +1,7 @@
 #pragma once
 #include"entidade.h"
 
-class Jogador : public Entities::Entidade{
+class Jogador : public Entidades::Entidade{
 private: 
 public:
 	Jogador();
