@@ -2,10 +2,10 @@
 
 #include<iostream>
 
-/*O SFML contém atributos e métodos para a manipulação 
- matemática de vetores bidimensionais, mas para fins de
+/*O SFML contÃ©m atributos e mÃ©todos para a manipulaÃ§Ã£o 
+ matemÃ¡tica de vetores bidimensionais, mas para fins de
  desacoplamento, o pacote Math foi criado, reduzindo a 
- dependência entre o programa e a biblioteca gráfica.*/
+ dependÃªncia entre o programa e a biblioteca grÃ¡fica.*/
 
 namespace Math {
 
@@ -52,9 +52,6 @@ namespace Math {
 		this->x = 0;
 		this->y = 0;
 	}
-
-	template<typename TL>
-	Coord<TL>::~Coord() {}
 
 	template<typename TL>
 	void Coord<TL>::operator=(Coord<TL> other) {
