@@ -10,5 +10,5 @@ public:
 	~ListaEntidades();
 	void addEntidade(Entidades::Entidade* entidade);
 	void removeEntidade(Entidades::Entidade* entidade);
-
+	int getLen();
 };
