@@ -13,7 +13,7 @@ namespace Entidades {
 		Math::CoordF velocidade;
 
 	public:
-		Entidade();
+		Entidade(Math::CoordF pos = Math::CoordF(0.f, 0.f), Math::CoordF tam = Math::CoordF(0.f, 0.f));
 		~Entidade();
 		void setPosition(Math::CoordF pos);
 		Math::CoordF getPosition() const;

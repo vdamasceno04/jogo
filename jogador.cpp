@@ -1,10 +1,9 @@
 #include"jogador.h"
 
-Jogador::Jogador():
-Entidade::Entidade()
+/*
+Jogador::Jogador(Math::CoordF position, Math::CoordF size):
+Personagem::Personagem(position, size)
 {
-	body.setFillColor(sf::Color::Blue);
-	body.setPosition(sf::Vector2f(200.f, 200.f));
 }
 
 Jogador::~Jogador() {}
@@ -28,3 +27,4 @@ void Jogador::move()
 	}
 
 }
+*/

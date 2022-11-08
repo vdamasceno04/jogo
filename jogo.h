@@ -1,7 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "jogador.h"
+#include "ListaEntidades.h"
 #include "inimigo.h"
+#include "jogador.h"
 #include"graphics.h"
 
 using namespace Managers;
@@ -9,14 +10,12 @@ using namespace Managers;
 class Jogo
 {
 private:
-	Jogador jogador1;
-	Inimigo inimigo1;
 	sf::RenderWindow window;
 	Managers::Graphics* pGG;
 
 public:
 	Jogo();
 	~Jogo();
-
+	void inicializar();
 	void executar();
 };

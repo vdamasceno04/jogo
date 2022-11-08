@@ -9,6 +9,8 @@ pGG(Graphics::getInstance())
 
 Jogo::~Jogo() {}
 
+void Jogo::inicializar() {}
+
 void Jogo::executar()
 {
     printf("a");

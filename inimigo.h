@@ -1,12 +1,12 @@
 #pragma once
-#include"entidade.h"
+#include"personagem.h"
 
-class Inimigo : public Entidades::Entidade {
+/*
+class Inimigo : public Personagem{
 private:
 public:
 	Inimigo();
 	~Inimigo();
 	void executar();
-
-
 };
+*/

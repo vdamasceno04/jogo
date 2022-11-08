@@ -1,11 +1,13 @@
 #pragma once
-#include"entidade.h"
+#include"personagem.h"
 
-class Jogador : public Entidades::Entidade{
+/*
+class Jogador : public Personagem{
 private: 
 public:
-	Jogador();
+	Jogador(Math::CoordF position = Math::CoordF(0.f, 0.f), Math::CoordF size = Math::CoordF(0.f, 0.f));
 	~Jogador();
 	void executar();
 	void move();
 };
+*/

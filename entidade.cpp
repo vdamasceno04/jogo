@@ -1,7 +1,9 @@
 #include"entidade.h"
 using namespace Entidades;
 
-Entidade::Entidade() {
+Entidade::Entidade(Math::CoordF pos, Math::CoordF tam) {
+	position = pos;
+	size = size;
 	window = NULL;
 }
 
