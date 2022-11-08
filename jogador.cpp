@@ -1,11 +1,16 @@
 #include"jogador.h"
 
-Jogador::Jogador()
+Jogador::Jogador():
+Entidade::Entidade()
 {
 	body.setFillColor(sf::Color::Blue);
+	body.setPosition(sf::Vector2f(200.f, 200.f));
 }
 
 Jogador::~Jogador() {}
+
+void Jogador::executar()
+{}
 
 void Jogador::move()
 {

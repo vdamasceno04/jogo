@@ -3,33 +3,27 @@
 #include "coords.h"
 
 namespace Entidades {
-	enum ID {
-		empty = 0, player, platform
-	};
 
 	class Entidade {
 	protected:
 		sf::RectangleShape body;
 		sf::RenderWindow* window;
-
-	private:
 		Math::CoordF position;
 		Math::CoordF size;
-		ID id;
+		Math::CoordF velocidade;
 
 	public:
-		Entidade(Math::CoordF pos = Math::CoordF(0.f, 0.f), Math::CoordF s = Math::CoordF(0.f, 0.f), ID i = empty);
+		Entidade();
 		~Entidade();
-
 		void setPosition(Math::CoordF pos);
 		Math::CoordF getPosition() const;
+		void setSize(Math::CoordF siz);
 		Math::CoordF getSize() const;
-		ID getId() const;
-//		virtual void render();
-//		virtual void update(float dt) = 0;
-//		virtual void initialize() = 0;
+		void setVelocidade(Math::CoordF vel);
+		Math::CoordF getVelocidade();
 		void setWindow(sf::RenderWindow* window);
+		sf::RectangleShape getBody();
 		void draw();
-
+		virtual void executar() = 0;
 	};
 }

@@ -6,5 +6,6 @@ private:
 public:
 	Jogador();
 	~Jogador();
+	void executar();
 	void move();
 };

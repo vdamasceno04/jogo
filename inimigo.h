@@ -6,6 +6,7 @@ private:
 public:
 	Inimigo();
 	~Inimigo();
+	void executar();
 
 
 };

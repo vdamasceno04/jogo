@@ -1,28 +1,15 @@
 #include "jogo.h"
 #include<stdio.h>
 
-Jogo::Jogo()
+Jogo::Jogo():
+pGG(Graphics::getInstance()) 
 {
-    Executar();
+    executar();
 }
 
 Jogo::~Jogo() {}
 
-void Jogo::Executar()
+void Jogo::executar()
 {
- /*    while (pGG->isWindowOpen())
-    {
-        sf::Event event;
-        while (pGG->getWindow()->pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                pGG->closeWindow();
-        }
-
-        pGG->clear();
-        pGG->display();
-    }
-        pGG->clear();
-        pGG->display();*/
-    
+    printf("a");
 }

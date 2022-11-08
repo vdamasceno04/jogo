@@ -12,11 +12,11 @@ private:
 	Jogador jogador1;
 	Inimigo inimigo1;
 	sf::RenderWindow window;
-	Managers::Graphics* pGraphicManager;
+	Managers::Graphics* pGG;
 
 public:
 	Jogo();
 	~Jogo();
 
-	void Executar();
+	void executar();
 };
