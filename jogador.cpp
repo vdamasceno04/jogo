@@ -1,8 +1,7 @@
 #include"jogador.h"
 
-/*
-Jogador::Jogador(Math::CoordF position, Math::CoordF size):
-Personagem::Personagem(position, size)
+Jogador::Jogador(Math::CoordF position, Math::CoordF size, int v, int d, float dC, float dA):
+Personagem::Personagem(position, size, v, d, dC, dA)
 {
 }
 
@@ -27,4 +26,3 @@ void Jogador::move()
 	}
 
 }
-*/

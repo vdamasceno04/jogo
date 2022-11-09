@@ -10,6 +10,7 @@ using namespace Managers;
 class Jogo
 {
 private:
+	Jogador j1;
 	sf::RenderWindow window;
 	Managers::Graphics* pGG;
 
