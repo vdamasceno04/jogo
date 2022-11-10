@@ -71,7 +71,7 @@ namespace Managers {
 
 
 	// define o tamamho da janela
-	void Graphics::setWindowSize(Math::CoordU size) {
+	void Graphics::setWindowSize(sf::Vector2u size) {
 		window->setSize(sf::Vector2u(size.x, size.y));
 		view.setSize(size.x, size.y);
 		window->setView(view);
@@ -84,7 +84,7 @@ namespace Managers {
 
 
 	// muda a visão do centro da janela
-	void Graphics::centerView(Math::CoordF pos) {
+	void Graphics::centerView(sf::Vector2f pos) {
 		view.setCenter(sf::Vector2f(pos.x, pos.y));
 		window->setView(view);
 	}

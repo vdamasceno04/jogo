@@ -15,7 +15,7 @@ protected:
 	bool olhaDireita;
 
 public:
-	Personagem(Math::CoordF pos, Math::CoordF tam, int v, int d, float dC, float dA);
+	Personagem(sf::Vector2f pos, sf::Vector2f tam, int v, int d, float dC, float dA);
 	~Personagem();
 	virtual void executar() = 0;
 	void setVida(int v);

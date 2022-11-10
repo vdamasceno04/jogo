@@ -27,8 +27,8 @@ namespace Managers {
 		bool isWindowOpen() const;
 		void closeWindow();
 		sf::Vector2u getWindowSize() const;
-		void setWindowSize(Math::CoordU size);
-		void centerView(Math::CoordF pos);
+		void setWindowSize(sf::Vector2u size);
+		void centerView(sf::Vector2f pos);
 		sf::Texture* loadTexture(const char* path);
 		sf::Font* getFont();
 		void updateTime();

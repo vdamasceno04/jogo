@@ -1,6 +1,6 @@
 #include "personagem.h"
 
-Personagem::Personagem(Math::CoordF pos, Math::CoordF tam, int v, int d, float dC, float dA):
+Personagem::Personagem(sf::Vector2f pos, sf::Vector2f tam, int v, int d, float dC, float dA):
 Entidade::Entidade(pos, tam) {
 	vida = v;
 	dano = d;

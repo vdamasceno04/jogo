@@ -1,7 +1,7 @@
 #include"entidade.h"
 using namespace Entidades;
 
-Entidade::Entidade(Math::CoordF pos, Math::CoordF tam) {
+Entidade::Entidade(sf::Vector2f pos, sf::Vector2f tam) {
 	position = pos;
 	size = size;
 	window = NULL;
@@ -9,17 +9,17 @@ Entidade::Entidade(Math::CoordF pos, Math::CoordF tam) {
 
 Entidade::~Entidade() {}
 
-void Entidade::setPosition(Math::CoordF pos) { position = pos; }
+void Entidade::setPosition(sf::Vector2f pos) { position = pos; }
 
-Math::CoordF Entidade::getPosition() const { return position; }
+sf::Vector2f Entidade::getPosition() const { return position; }
 
-void Entidade::setSize(Math::CoordF siz) {size = siz; }
+void Entidade::setSize(sf::Vector2f siz) {body.setSize(siz); }
 
-Math::CoordF Entidade::getSize() const { return size; }
+sf::Vector2f Entidade::getSize() const { return size; }
 
-void Entidade::setVelocidade(Math::CoordF vel) { velocidade = vel; }
+void Entidade::setVelocidade(sf::Vector2f vel) { velocidade = vel; }
 
-Math::CoordF Entidade::getVelocidade() { return velocidade; }
+sf::Vector2f Entidade::getVelocidade() { return velocidade; }
 
 void Entidade::setWindow(sf::RenderWindow* window) { this->window = window; }
 

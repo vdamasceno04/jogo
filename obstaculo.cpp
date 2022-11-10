@@ -1,7 +1,7 @@
 #include "obstaculo.h"
 using namespace Obstaculos;
 
-Obstaculo::Obstaculo(Math::CoordF pos, Math::CoordF tam, int d, float dC) :
+Obstaculo::Obstaculo(sf::Vector2f pos, sf::Vector2f tam, int d, float dC) :
 	Entidade::Entidade(pos, tam) {
 	danificar = false;
 	liquido = false;
