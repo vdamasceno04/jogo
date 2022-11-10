@@ -24,5 +24,3 @@ sf::Vector2f Entidade::getVelocidade() { return velocidade; }
 void Entidade::setWindow(sf::RenderWindow* window) { this->window = window; }
 
 sf::RectangleShape Entidade::getBody() { return body; }
-
-void Entidade::draw() { window->draw(body); }

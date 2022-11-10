@@ -25,7 +25,6 @@ namespace Entidades {
 		sf::Vector2f getVelocidade();
 		void setWindow(sf::RenderWindow* window);
 		sf::RectangleShape getBody();
-		void draw();
 		virtual void executar() = 0;
 	};
 }
