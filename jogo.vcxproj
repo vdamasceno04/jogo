@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ente.cpp" />
     <ClCompile Include="entidade.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="inimigo.cpp" />
@@ -152,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="coords.h" />
     <ClInclude Include="Elemento.h" />
+    <ClInclude Include="ente.h" />
     <ClInclude Include="entidade.h" />
     <ClInclude Include="espinho.h" />
     <ClInclude Include="graphics.h" />

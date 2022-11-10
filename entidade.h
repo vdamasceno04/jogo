@@ -1,10 +1,9 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include "coords.h"
+#include"ente.h"
 
-namespace Entidades {
+namespace Entidades{
 
-	class Entidade {
+	class Entidade: public Ente{
 	protected:
 		sf::Texture textura;
 		sf::Sprite sprite;
