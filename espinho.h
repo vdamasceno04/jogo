@@ -3,12 +3,8 @@
 
 class Espinho :public Obstaculos::Obstaculo {
 private:
-	sf::Sprite espinho;
-	string caminhoSprite;
-
 public:
-	Espinho(sf::Vector2f pos, sf::Vector2f tam, int d, float dC, string cS);
+	Espinho(sf::Vector2f pos = sf::Vector2f(500, 630), sf::Vector2f tam = sf::Vector2f(0, 0), int d = 0, float dC = 1, bool dan = true, bool l = false);
 	~Espinho();
-
-
+	void executar();
 };

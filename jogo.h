@@ -1,17 +1,22 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "ListaEntidades.h"
-#include "inimigo.h"
-#include "jogador.h"
-#include"graphics.h"
+#include "Fase.h"
 
 using namespace Managers;
 
 class Jogo
 {
 private:
-	Jogador j1;
+	Fase fase1;
 	Managers::Graphics* pGG;
+
+	Jogador j1;
+	Agua a1;
+	Plataforma p1;
+	Espinho e1;
+
+
+
 
 public:
 	Jogo();

@@ -2,15 +2,57 @@
 #include<stdio.h>
 
 Jogo::Jogo():
-pGG(Graphics::getInstance()) 
+pGG(Graphics::getInstance()), 
+fase1(pGG)
 {
     executar();
 }
 
 Jogo::~Jogo() {}
+#include "jogo.h"
+#include<stdio.h>
+/*/
+void Jogo::inicializar() {
+    
+    j1.setWindow(pGG->getWindow());
+    e1.setWindow(pGG->getWindow());
+    a1.setWindow(pGG->getWindow());
+    
+    fase1.setJanela();
+}
 
+void Jogo::executar()
+{
+    inicializar();
+   // fase1.executarLista();  PROBLEMA AQUI
+    
+    while (pGG->isWindowOpen())
+    {
+        sf::Event event;
+        while (pGG->getWindow()->pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                pGG->closeWindow();
+        }
+
+        pGG->clear();
+        j1.executar();
+        e1.executar();
+        a1.executar();
+        
+        pGG->display();
+    }
+}
+*/
+
+
+
+//FUNCIONANDO
 void Jogo::inicializar() {
     j1.setWindow(pGG->getWindow());
+    e1.setWindow(pGG->getWindow());
+    p1.setWindow(pGG->getWindow());
+    a1.setWindow(pGG->getWindow());
 }
 
 void Jogo::executar()
@@ -28,6 +70,9 @@ void Jogo::executar()
 
         pGG->clear();
         j1.executar();
+        a1.executar();
+        e1.executar();
+        p1.executar();
         pGG->display();
        }
 
