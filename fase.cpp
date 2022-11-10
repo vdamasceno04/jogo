@@ -1,16 +1,25 @@
 #include "Fase.h"
 
 Fase::Fase(Managers::Graphics* pG) :
-    lista()
+lista()
 {
     pGG = pG;
+    lista.addEntidade(&j1); //PROBLEMA AQUI
+  /*  lista.addEntidade(&a1);
+    lista.addEntidade(&e1);
+    lista.addEntidade(&p1);*/
 }
 
 Fase::~Fase() {}
 
-void Fase::setJanela() // Como se fosse o inicializar 
-{
+void Fase::executar(){
+    executarLista(); 
+}
+
+void Fase::setJanela()
+{                                           //Atribui janela para cada entidade
     Entidades::Entidade* pAux;
+
     for (int i = 0; i < lista.getLen(); i++) {
         pAux = lista.getItem(i);
         pAux->setWindow(pGG->getWindow());
@@ -19,29 +28,11 @@ void Fase::setJanela() // Como se fosse o inicializar
 
 void Fase::executarLista()
 {
-    while (pGG->isWindowOpen())
-    {
-        sf::Event event;
-        while (pGG->getWindow()->pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                pGG->closeWindow();
-        }
-
-        pGG->clear();
-
-        Entidades::Entidade* pAux;
-        for (int i = 0; i < lista.getLen(); i++) {
-            pAux = lista.getItem(i);
-            pAux->executar();
-        }
-
-        pGG->display();
-    }
-    
     Entidades::Entidade* pAux;
+
     for (int i = 0; i < lista.getLen(); i++) {
         pAux = lista.getItem(i);
-        pAux->executar();
+        printf("caiu");
+        pAux->executar(); 
     }
 }

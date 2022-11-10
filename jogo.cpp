@@ -11,21 +11,15 @@ fase1(pGG)
 Jogo::~Jogo() {}
 #include "jogo.h"
 #include<stdio.h>
-/*/
+
 void Jogo::inicializar() {
-    
-    j1.setWindow(pGG->getWindow());
-    e1.setWindow(pGG->getWindow());
-    a1.setWindow(pGG->getWindow());
-    
-    fase1.setJanela();
+        
+    fase1.setJanela(); //PROBLEMA AQUI
 }
 
 void Jogo::executar()
 {
     inicializar();
-   // fase1.executarLista();  PROBLEMA AQUI
-    
     while (pGG->isWindowOpen())
     {
         sf::Event event;
@@ -34,18 +28,14 @@ void Jogo::executar()
             if (event.type == sf::Event::Closed)
                 pGG->closeWindow();
         }
-
         pGG->clear();
-        j1.executar();
-        e1.executar();
-        a1.executar();
-        
+ //       printf("debug de pobre");
+//        fase1.executarLista(); // PROBLEMA AQUI
         pGG->display();
     }
 }
-*/
 
-
+/*
 
 //FUNCIONANDO
 void Jogo::inicializar() {
@@ -77,3 +67,4 @@ void Jogo::executar()
        }
 
 }
+*/

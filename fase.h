@@ -17,11 +17,15 @@ protected:
 	Managers::Graphics* pGG;
 	//Managers::Colision ? *pC;
 	ListaEntidades lista;
+	Jogador j1;
+	Agua a1;
+	Espinho e1;
+	Plataforma p1;
 
 public:
 	Fase(Managers::Graphics* pG);
 	~Fase();
 	void setJanela();
 	void executarLista();
-
+	void executar();
 };
