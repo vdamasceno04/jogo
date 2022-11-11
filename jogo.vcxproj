@@ -144,6 +144,7 @@
     <ClCompile Include="entidade.cpp" />
     <ClCompile Include="espinho.cpp" />
     <ClCompile Include="fase.cpp" />
+    <ClCompile Include="fundo.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="inimigo.cpp" />
     <ClCompile Include="jogador.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="entidade.h" />
     <ClInclude Include="espinho.h" />
     <ClInclude Include="fase.h" />
+    <ClInclude Include="fundo.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="inimigo.h" />
     <ClInclude Include="jogador.h" />
