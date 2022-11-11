@@ -52,6 +52,8 @@
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="fase.cpp">
+    <ClCompile Include="ente.cpp">
+
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -99,6 +101,7 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="fase.h">
+    <ClInclude Include="ente.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
