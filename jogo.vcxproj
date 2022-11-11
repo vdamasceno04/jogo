@@ -139,8 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="agua.cpp" />
     <ClCompile Include="ente.cpp" />
     <ClCompile Include="entidade.cpp" />
+    <ClCompile Include="espinho.cpp" />
+    <ClCompile Include="fase.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="inimigo.cpp" />
     <ClCompile Include="jogador.cpp" />
@@ -149,13 +152,16 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="obstaculo.cpp" />
     <ClCompile Include="personagem.cpp" />
+    <ClCompile Include="plataforma.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="agua.h" />
     <ClInclude Include="coords.h" />
     <ClInclude Include="Elemento.h" />
     <ClInclude Include="ente.h" />
     <ClInclude Include="entidade.h" />
     <ClInclude Include="espinho.h" />
+    <ClInclude Include="fase.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="inimigo.h" />
     <ClInclude Include="jogador.h" />
@@ -164,6 +170,7 @@
     <ClInclude Include="ListaEntidades.h" />
     <ClInclude Include="obstaculo.h" />
     <ClInclude Include="personagem.h" />
+    <ClInclude Include="plataforma.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

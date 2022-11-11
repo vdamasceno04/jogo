@@ -11,7 +11,7 @@ namespace Obstaculos {
 		float danoCooldown;
 
 	public:
-		Obstaculo(sf::Vector2f pos, sf::Vector2f tam, int d, float dC);
+		Obstaculo(sf::Vector2f pos, sf::Vector2f tam, int d, float dC, bool dan, bool l);
 		~Obstaculo();
 		bool  getDanificar() { return danificar; }
 		bool  getLiquido() { return liquido; }
@@ -21,5 +21,6 @@ namespace Obstaculos {
 		void setLiquido(bool l);
 		void setDano(int d);
 		void setDanoCooldown(float dC);
+		virtual void executar() = 0;
 	};
 }
