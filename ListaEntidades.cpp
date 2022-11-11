@@ -16,3 +16,24 @@ Entidades::Entidade* ListaEntidades::getItem(int i)
     pAux = objLE.getItem(i);
     return pAux;
 }
+
+void ListaEntidades::setJanela(Managers::Graphics* pGG)
+{                                           //Atribui janela para cada entidade
+    Entidades::Entidade* pAux;
+
+    for (int i = 0; i < objLE.getLen(); i++) {
+        pAux = objLE.getItem(i);
+        pAux->setWindow(pGG->getWindow());
+    }
+}
+
+
+void ListaEntidades::executarLista()
+{
+    Entidades::Entidade* pAux;
+
+    for (int i = 0; i < objLE.getLen(); i++) {
+        pAux = objLE.getItem(i);
+        pAux->executar();
+    }
+}
