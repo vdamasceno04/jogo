@@ -5,7 +5,7 @@ Personagem::Personagem(position, size, v, d, dC, dA)
 {
 	textura.loadFromFile("C:/Users/genti/Downloads/Legacy-Fantasy-VL.1 - High Forest - Update 1.9/Character/Idle/Idle.gif");
 	sprite.setTexture(textura);
-	body.setSize(sf::Vector2f(50, 50));
+	body.setSize(sf::Vector2f(80, 80));
 }
 
 Jogador::~Jogador() {}
@@ -14,20 +14,25 @@ void Jogador::executar()
 {
 	move();
 	window->draw(sprite);
+
 }
 
 void Jogador::move()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+		body.move(sf::Vector2f(0.1f, 0.f));
 		sprite.move(sf::Vector2f(0.1f, 0.f));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+		body.move(sf::Vector2f(-0.1f, 0.f));
 		sprite.move(sf::Vector2f(-0.1f, 0.f));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+		body.move(sf::Vector2f(0.f, -0.1f));
 		sprite.move(sf::Vector2f(0.f, -0.1f));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+		body.move(sf::Vector2f(0.f, 0.1f));
 		sprite.move(sf::Vector2f(0.f, 0.1f));
 	}
 

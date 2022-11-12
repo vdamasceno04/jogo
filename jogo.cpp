@@ -3,7 +3,7 @@
 
 Jogo::Jogo():
 pGG(Graphics::getInstance()), 
-fase1(pGG)
+fase1(Graphics::getInstance())
 {
     executar();
 }
@@ -13,8 +13,8 @@ Jogo::~Jogo() {}
 #include<stdio.h>
 
 void Jogo::inicializar() {
-        
-    fase1.setJanela(); //PROBLEMA AQUI
+    fase1.inicializar();
+    printf("a");
 }
 
 void Jogo::executar()
@@ -30,12 +30,37 @@ void Jogo::executar()
         }
         pGG->clear();
  //       printf("debug de pobre");
-//        fase1.executarLista(); // PROBLEMA AQUI
+        fase1.executar(); // PROBLEMA AQUI
+        printf("aba");
         pGG->display();
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
+
+
+
+
+
 
 //FUNCIONANDO
 void Jogo::inicializar() {

@@ -10,11 +10,6 @@ private:
 	Fase fase1;
 	Managers::Graphics* pGG;
 
-	Jogador j1;
-	Agua a1;
-	Plataforma p1;
-	Espinho e1;
-
 
 
 
