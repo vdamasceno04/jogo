@@ -2,7 +2,8 @@
 
 #include<cstring>
 #include<iostream>
-
+using std::cout;
+using std::endl;
 #define FONT_PATH "asset"
 #define WIDTH 1080
 #define HEIGHT 720
@@ -89,6 +90,9 @@ namespace Managers {
 		window->setView(view);
 	}
 
+	sf::Vector2f Graphics::getView() {
+		return view.getCenter();
+	}
 
 	// carrega a textura indicada
 	sf::Texture* Graphics::loadTexture(const char* path) {

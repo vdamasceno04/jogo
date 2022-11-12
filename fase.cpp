@@ -4,18 +4,27 @@ Fase::Fase(Managers::Graphics* pG) :
 lista()
 {
     pGG = pG;
-    lista.addEntidade(&f);
-    lista.addEntidade(&j1); 
 }
 
 Fase::~Fase() {}
 
+void Fase::criafundo()
+{
+    int i;
+    int pos = 0;
+    Fundo* pAux;
+    for (i = 0; i < 15; i++) {
+        pAux = new Fundo(sf::Vector2f(pos, 0), sf::Vector2f(0,0));
+        lista.addEntidade(pAux);
+        pos += WIDTH-2;
+    }
+}
 void Fase::criachao()
 {
     int i;
     int pos = 0;
     Plataforma* pAux;
-    for (i = 0; i < 15; i++) {
+    for (i = 0; i < 100; i++) {
         pAux = new Plataforma(sf::Vector2f(pos, HEIGHT * 6 / 7));
         lista.addEntidade(pAux);
         pos += 71;
@@ -44,14 +53,23 @@ void Fase::criaagua() {
     }
 
 }
+
+void Fase::atualizaView() {
+    if (j1.getBody().getPosition().x >= pGG->getView().x)
+        pGG->centerView(sf::Vector2f(j1.getBody().getPosition().x, HEIGHT/2));
+}
+
 void Fase::inicializar() {
+    criafundo();
+    lista.addEntidade(&j1);
     criaespinho();
     criachao();
     criaagua();
-
     lista.setJanela(pGG);
-    
 }
 void Fase::executar(){
+    atualizaView();
+//    cout << "j1posx" << j1.getBody().getPosition().x << endl;
+//    cout << "w pos" << pGG->getView().x << endl;
     lista.executarLista();
 }

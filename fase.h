@@ -18,17 +18,14 @@ protected:
 //	Managers::Colisao *pC;
 	ListaEntidades lista;
 	Jogador j1;
-	Agua a1;
-	Espinho e1;
-	Plataforma p1;
-	Fundo f;
-
 public:
 	Fase(Managers::Graphics* pG);
 	~Fase();
+	void criafundo();
 	void criachao();
 	void criaespinho();
 	void criaagua();
+	void atualizaView();
 	void inicializar();
 	void executar();
 };

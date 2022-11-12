@@ -14,7 +14,7 @@ namespace Entidades{
 		sf::Vector2f velocidade;
 
 	public:
-		Entidade(sf::Vector2f pos = sf::Vector2f(0, 0), sf::Vector2f tam = sf::Vector2f(0, 0));
+		Entidade(sf::Vector2f pos, sf::Vector2f tam);
 		~Entidade();
 		void setPosition(sf::Vector2f pos);
 		sf::Vector2f getPosition() const;

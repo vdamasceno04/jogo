@@ -28,6 +28,7 @@ namespace Managers {
 		void closeWindow();
 		sf::Vector2u getWindowSize() const;
 		void setWindowSize(sf::Vector2u size);
+		sf::Vector2f getView();
 		void centerView(sf::Vector2f pos);
 		sf::Texture* loadTexture(const char* path);
 		sf::Font* getFont();
