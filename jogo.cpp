@@ -29,9 +29,7 @@ void Jogo::executar()
                 pGG->closeWindow();
         }
         pGG->clear();
- //       printf("debug de pobre");
-        fase1.executar(); // PROBLEMA AQUI
-        printf("aba");
+        fase1.executar(); 
         pGG->display();
     }
 }

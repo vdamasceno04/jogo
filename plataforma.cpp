@@ -3,11 +3,11 @@
 Plataforma::Plataforma(sf::Vector2f pos, sf::Vector2f tam, int d, float dC, bool dan, bool l) :
 	Obstaculo(pos, tam, d, dC, dan, l)
 {
-	textura.loadFromFile("C:/Users/genti/Downloads/chao.png");
+	textura.loadFromFile("C:/Users/genti/Downloads/chao2.png");
 	sprite.setTexture(textura);
-	body.setSize(sf::Vector2f(50, 50));
-
 	sprite.move(position);
+	body.setScale(2, 2);
+	sprite.setScale(2, 2);
 }
 
 Plataforma::~Plataforma() {}

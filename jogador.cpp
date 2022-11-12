@@ -6,6 +6,8 @@ Personagem::Personagem(position, size, v, d, dC, dA)
 	textura.loadFromFile("C:/Users/genti/Downloads/Legacy-Fantasy-VL.1 - High Forest - Update 1.9/Character/Idle/Idle.gif");
 	sprite.setTexture(textura);
 	body.setSize(sf::Vector2f(80, 80));
+	body.setScale(2,2);
+	sprite.setScale(2, 2);
 }
 
 Jogador::~Jogador() {}

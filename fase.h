@@ -27,6 +27,8 @@ public:
 	Fase(Managers::Graphics* pG);
 	~Fase();
 	void criachao();
+	void criaespinho();
+	void criaagua();
 	void inicializar();
 	void executar();
 };
