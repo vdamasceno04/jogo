@@ -154,6 +154,7 @@
     <ClCompile Include="obstaculo.cpp" />
     <ClCompile Include="personagem.cpp" />
     <ClCompile Include="plataforma.cpp" />
+    <ClCompile Include="abelha.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="agua.h" />
@@ -173,6 +174,7 @@
     <ClInclude Include="obstaculo.h" />
     <ClInclude Include="personagem.h" />
     <ClInclude Include="plataforma.h" />
+    <ClInclude Include="abelhas.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
