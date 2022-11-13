@@ -16,6 +16,7 @@
     <ClCompile Include="personagem.cpp" />
     <ClCompile Include="plataforma.cpp" />
     <ClCompile Include="fundo.cpp" />
+	<ClCompile Include="abelha.cpp" /> 
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="agua.h" />
@@ -35,5 +36,6 @@
     <ClInclude Include="personagem.h" />
     <ClInclude Include="plataforma.h" />
     <ClInclude Include="fundo.h" />
+	<ClInclude Include="abelha.h" />
   </ItemGroup>
 </Project>

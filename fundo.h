@@ -1,7 +1,5 @@
 #pragma once
 #include "entidade.h"
-#define WIDTH 1080
-#define HEIGHT 720
 
 class Fundo: public Entidades::Entidade {
 private:

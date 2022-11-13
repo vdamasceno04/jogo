@@ -1,6 +1,7 @@
 #pragma once
 #include"ente.h"
-
+#define HEIGHT 720
+#define WIDTH 1080
 namespace Entidades{
 
 	class Entidade: public Ente{

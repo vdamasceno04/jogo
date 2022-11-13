@@ -54,6 +54,10 @@ void Fase::criaagua() {
 
 }
 
+void Fase::criaabelhas() {
+
+}
+
 void Fase::atualizaView() {
     if (j1.getBody().getPosition().x >= pGG->getView().x)
         pGG->centerView(sf::Vector2f(j1.getBody().getPosition().x, HEIGHT/2));
@@ -62,6 +66,7 @@ void Fase::atualizaView() {
 void Fase::inicializar() {
     criafundo();
     lista.addEntidade(&j1);
+    lista.addEntidade(&a1);
     criaespinho();
     criachao();
     criaagua();

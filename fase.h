@@ -8,6 +8,7 @@
 #include "Espinho.h"
 #include "Agua.h"
 #include "plataforma.h"
+#include "abelha.h"
 #include "fundo.h"
 #include <iostream>
 using namespace std;
@@ -18,6 +19,7 @@ protected:
 //	Managers::Colisao *pC;
 	ListaEntidades lista;
 	Jogador j1;
+	Abelha a1;
 public:
 	Fase(Managers::Graphics* pG);
 	~Fase();
@@ -25,6 +27,7 @@ public:
 	void criachao();
 	void criaespinho();
 	void criaagua();
+	void criaabelhas();
 	void atualizaView();
 	void inicializar();
 	void executar();

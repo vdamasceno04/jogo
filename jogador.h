@@ -1,8 +1,6 @@
 #pragma once
 #include"personagem.h"
 #include <string>
-#define WIDTH 1080
-#define HEIGHT 720
 
 class Jogador : public Personagem{
 private: 

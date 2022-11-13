@@ -1,6 +1,4 @@
 #include "Espinho.h"
-#define WIDTH 1080
-#define HEIGHT 720
 
 Espinho::Espinho(sf::Vector2f position, sf::Vector2f size, int d, float dC, bool dan, bool l) :
 	Obstaculos::Obstaculo(position, size, d, dC, dan, l)
