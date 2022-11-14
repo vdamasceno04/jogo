@@ -6,16 +6,17 @@ class Jogador;
 class Inimigo : public Personagem {
 protected:
 	float viewRange; //Se o jogador entrar nessa distancia o inimigo atira ou persegue o jogador
-	bool persegue;
-	Jogador* pJogador;
+	Jogador* pJ1;
+	Jogador* pJ2;
 public:
-	Inimigo(sf::Vector2f pos, sf::Vector2f tam, int v, int d, float dC, float dA, float vR, bool p, Jogador* pJ);
+	Inimigo(sf::Vector2f pos, sf::Vector2f tam, int v, int d, float dC, float dA, float vR, Jogador* p1, Jogador* p2);
 	~Inimigo();
 	virtual void executar() = 0;
 	void setViewRange(float vR);
-	void setpJogador(Jogador* p);
+//	void setpJogador(Jogador* p);
 	float distanciaJogador(Jogador* pJ);
 	float getViewRange();
-	void setPerseguir();
-	void perseguicao();
+	bool setPersegue(Jogador* pJ);
+	Jogador* setPerseguido(Jogador* pJ1, Jogador* pJ2);
+	void perseguicao(Jogador* pJ);
 };
