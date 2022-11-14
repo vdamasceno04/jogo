@@ -59,7 +59,8 @@ void Fase::criaabelhas() {
     int pos = 250;
     Abelha* pAux;
     for (i = 0; i < 1; i++) {
-        pAux = new Abelha(sf::Vector2f(pos, HEIGHT * 0.65), sf::Vector2f(22, 42), 6, 1, 30.0, 1.1, 0.2, 200.2, &j1, &e1);
+        pAux = new Abelha(sf::Vector2f(pos, HEIGHT * 0.65), sf::Vector2f(22, 42),
+            6, 1, 20.0, 0.2, 10.2, 200.2, &j1, &e1);
         lista.addEntidade(pAux);
         pos += 600;
     }

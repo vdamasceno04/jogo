@@ -18,5 +18,6 @@ void Abelha::executar(){
 	if (setPersegue(pJ1) || setPersegue(pJ2))
 		perseguicao(setPerseguido(pJ1, pJ2));
 	window->draw(sprite); 
-	cout << "vida abelha" << vida << endl;
+	ataca(pJ1);
+	ataca(pJ2);
 }

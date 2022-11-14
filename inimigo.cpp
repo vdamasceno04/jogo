@@ -12,6 +12,7 @@ Inimigo::Inimigo(sf::Vector2f pos, sf::Vector2f tam, int v, int d, float dC, flo
 	sprite.setTexture(textura);
 	body.setSize(sf::Vector2f(50, 50));
 	viewRange = vR;
+	clock.restart();
 }
 
 Inimigo::~Inimigo() {}
@@ -27,7 +28,7 @@ float Inimigo::getViewRange() {
 //void Inimigo::setpJogador(Jogador* p) { pJ = p; }
 
 bool Inimigo::setPersegue(Jogador* pJ) {
-	if (fabs(distanciaPersonagens(pJ)) <= getViewRange())
+	if (fabs(distanciaPersonagens(pJ)) <= getViewRange() && !pJ->morreu())
 		return true;
 	return false;
 }
@@ -51,4 +52,21 @@ void Inimigo::perseguicao(Jogador* pJ) {
 	position.x += velocidade.x;
 	body.setPosition(position);
 	sprite.setPosition(position);
+}
+
+void Inimigo::ataca(Jogador* pJ) {
+	atualizapodeAtacar();
+	if (acertouAtaque(pJ) && setPersegue(pJ)) {
+		if (podeAtacar) {
+			pJ->tomaDano(dano);
+			atacando = true;
+			clock.restart();
+			contaTempoAtaque(clock.getElapsedTime().asSeconds());
+			cout << "ATACANDO"; 
+		}
+		else
+			timerCooldown += clock.getElapsedTime().asSeconds();
+	}
+
+	cout << "vida: " << pJ->getVida() << endl;
 }

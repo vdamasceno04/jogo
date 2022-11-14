@@ -26,8 +26,10 @@ int Personagem::getVida() { return vida; }
 void Personagem::tomaDano(int ferimento) { vida -= ferimento;}
 
 bool Personagem::morreu() {
-	if (vida <= 0)
+	if (vida <= 0) {
+		cout << "morreu" << endl;
 		return true;
+	}
 	return false;
 }
 
@@ -44,6 +46,8 @@ bool Personagem::getOlharDireita() {
 
 void Personagem::contaTempoAtaque(const float dt) {
 	if (atacando) {
+		cout << "aAAAAAAAAAA";
+
 		timerCooldown = 0;
 		timerAtaque += dt;
 		if (timerAtaque >= duracaoAtaque)
@@ -52,6 +56,7 @@ void Personagem::contaTempoAtaque(const float dt) {
 	else {
 		timerAtaque += dt;
 		timerCooldown = 0;
+
 	}
 }
 
@@ -61,6 +66,8 @@ void Personagem::atualizapodeAtacar()
 {
 	if (duracaoCooldown <= timerCooldown)
 		podeAtacar = true;
+	else
+		podeAtacar = false;
 }
 
 bool Personagem::acertouAtaque(Personagem* p) {
@@ -69,7 +76,7 @@ bool Personagem::acertouAtaque(Personagem* p) {
 	return false;
 }
 
-void Personagem::ataca(Personagem* p) {
+/*void Personagem::ataca(Personagem* p) {
 	if(acertouAtaque(p))
 		p->tomaDano(dano);
-}
+}*/

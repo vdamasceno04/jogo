@@ -8,6 +8,7 @@ protected:
 	float viewRange; //Se o jogador entrar nessa distancia o inimigo atira ou persegue o jogador
 	Jogador* pJ1;
 	Jogador* pJ2;
+	sf::Clock clock;
 public:
 	Inimigo(sf::Vector2f pos, sf::Vector2f tam, int v, int d, float alc, float dC, float dA, float vR, Jogador* p1, Jogador* p2);
 	~Inimigo();
@@ -18,4 +19,5 @@ public:
 	bool setPersegue(Jogador* pJ);
 	Jogador* setPerseguido(Jogador* pJ1, Jogador* pJ2);
 	void perseguicao(Jogador* pJ);
+	void ataca(Jogador* pJ);
 };

@@ -27,7 +27,7 @@ public:
 	bool getOlharDireita();
 	void contaTempoAtaque(const float dt);
 	void atualizapodeAtacar();
-	void ataca(Personagem* p);
+//	void ataca(Personagem* p);
 	float distanciaPersonagens(Personagem* pP);
 	bool acertouAtaque(Personagem* p);
 };

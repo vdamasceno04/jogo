@@ -13,12 +13,13 @@ namespace Managers {
 		sf::View view;
 		std::map<const char*, sf::Texture*> mapaTextura;
 		sf::Font* font;
-		sf::Clock clock;
+		//sf::Clock clock;
 		static float dt;
 		static Managers::Graphics* instance; //padr�o de projeto singleton
 	public:
 		~Graphics();
 		static Graphics* getInstance();
+		sf::Clock clock;
 		void render(sf::RectangleShape* body);
 		void render(sf::Text* text);
 		sf::RenderWindow* getWindow();
