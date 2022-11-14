@@ -18,8 +18,8 @@ void Cacador::move() {
 		sprite.move(sf::Vector2f(0.f, 2.f));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-//		atacar();
-	}
+//		ataca();
+	}	
 	body.setPosition(sprite.getPosition());
 }
 void Cacador::executar() {

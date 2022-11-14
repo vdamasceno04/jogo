@@ -4,8 +4,8 @@
 using std::cout;
 using std::endl;
 
-Inimigo::Inimigo(sf::Vector2f pos, sf::Vector2f tam, int v, int d, float dC, float dA, float vR, Jogador* p1, Jogador* p2):
-	Personagem(pos, tam, v, d, dC, dA), pJ1(p1), pJ2(p2)
+Inimigo::Inimigo(sf::Vector2f pos, sf::Vector2f tam, int v, int d, float dC, float alc, float dA, float vR, Jogador* p1, Jogador* p2):
+	Personagem(pos, tam, v, d, alc, dC, dA), pJ1(p1), pJ2(p2)
 {
 	body.setPosition(pos);
 	textura.loadFromFile("C:/Users/genti/Downloads/Legacy-Fantasy-VL.1 - High Forest - Update 1.9/Mob/Snail/all.png");
@@ -24,12 +24,10 @@ float Inimigo::getViewRange() {
 	return viewRange;
 }
 
-float Inimigo::distanciaJogador(Jogador* pJ) { return body.getPosition().x - pJ->getBody().getPosition().x; }
-
 //void Inimigo::setpJogador(Jogador* p) { pJ = p; }
 
 bool Inimigo::setPersegue(Jogador* pJ) {
-	if (fabs(distanciaJogador(pJ)) <= getViewRange())
+	if (fabs(distanciaPersonagens(pJ)) <= getViewRange())
 		return true;
 	return false;
 }
@@ -40,7 +38,7 @@ Jogador* Inimigo::setPerseguido(Jogador* pJ1, Jogador* pJ2) {
 	else if (!setPersegue(pJ1) && setPersegue(pJ2))
 		return pJ2;
 	else
-		if (distanciaJogador(pJ1) >= distanciaJogador(pJ2))
+		if (distanciaPersonagens(pJ1) >= distanciaPersonagens(pJ2))
 			return pJ1;
 	return pJ2;
 }

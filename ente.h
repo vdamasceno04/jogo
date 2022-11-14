@@ -2,6 +2,9 @@
 #include <SFML/Graphics.hpp>
 #include "coords.h"
 #include "graphics.h"
+#include<iostream>
+using std::cout;
+using std::endl;
 
 class Ente {
 protected:

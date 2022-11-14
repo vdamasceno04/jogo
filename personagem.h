@@ -7,6 +7,7 @@ protected:
 	bool atacando;
 	bool atacou;
 	int dano;
+	float alcance;
 	bool podeAtacar;
 	float timerAtaque;
 	float duracaoCooldown;
@@ -15,7 +16,7 @@ protected:
 	bool olhaDireita;
 
 public:
-	Personagem(sf::Vector2f pos, sf::Vector2f tam, int v, int d, float dC, float dA);
+	Personagem(sf::Vector2f pos, sf::Vector2f tam, int v, int d, float alc, float dC, float dA);
 	~Personagem();
 	virtual void executar() = 0;
 	void setVida(int v);
@@ -26,4 +27,7 @@ public:
 	bool getOlharDireita();
 	void contaTempoAtaque(const float dt);
 	void atualizapodeAtacar();
+	void ataca(Personagem* p);
+	float distanciaPersonagens(Personagem* pP);
+	bool acertouAtaque(Personagem* p);
 };
