@@ -55,18 +55,28 @@ void Fase::criaagua() {
 }
 
 void Fase::criaabelhas() {
-
+    int i;
+    int pos = 250;
+    Abelha* pAux;
+    for (i = 0; i < 1; i++) {
+        pAux = new Abelha(sf::Vector2f(pos, HEIGHT * 0.65), sf::Vector2f(22, 42), 6, 1, 1.1, 0.2, 200.2, &j1, &e1);
+        lista.addEntidade(pAux);
+        pos += 600;
+    }
 }
 
 void Fase::atualizaView() {
     if (j1.getBody().getPosition().x >= pGG->getView().x)
         pGG->centerView(sf::Vector2f(j1.getBody().getPosition().x, HEIGHT/2));
+    if (e1.getBody().getPosition().x >= pGG->getView().x)
+        pGG->centerView(sf::Vector2f(e1.getBody().getPosition().x, HEIGHT / 2));
 }
 
 void Fase::inicializar() {
     criafundo();
     lista.addEntidade(&j1);
-    lista.addEntidade(&a1);
+    lista.addEntidade(&e1);
+    criaabelhas();
     criaespinho();
     criachao();
     criaagua();
@@ -74,7 +84,5 @@ void Fase::inicializar() {
 }
 void Fase::executar(){
     atualizaView();
-//    cout << "j1posx" << j1.getBody().getPosition().x << endl;
-//    cout << "w pos" << pGG->getView().x << endl;
     lista.executarLista();
 }

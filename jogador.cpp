@@ -17,30 +17,3 @@ Personagem::Personagem(pos, size, v, d, dC, dA)
 }
 
 Jogador::~Jogador() {}
-
-void Jogador::executar()
-{
-	move();
-	window->draw(sprite);
-}
-
-void Jogador::move()
-{
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-		body.move(sf::Vector2f(0.91f, 0.f));
-		sprite.move(sf::Vector2f(0.91f, 0.f));
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-		body.move(sf::Vector2f(-0.91f, 0.f));
-		sprite.move(sf::Vector2f(-0.91f, 0.f));
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-		body.move(sf::Vector2f(0.f, -0.91f));
-		sprite.move(sf::Vector2f(0.f, -0.91f));
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-		body.move(sf::Vector2f(0.f, 0.91f));
-		sprite.move(sf::Vector2f(0.f, 0.91f));
-	}
-
-}

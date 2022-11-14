@@ -2,8 +2,8 @@
 //#include "Ente.h"
 #include <SFML/Graphics.hpp>
 #include "ListaEntidades.h"
-#include "inimigo.h"
-#include "jogador.h"
+#include "cacador.h"
+#include "explorador.h"
 #include "graphics.h"
 #include "Espinho.h"
 #include "Agua.h"
@@ -18,8 +18,9 @@ protected:
 	Managers::Graphics* pGG;
 //	Managers::Colisao *pC;
 	ListaEntidades lista;
-	Jogador j1;
-	Abelha a1;
+	Cacador j1;
+	Explorador e1;
+
 public:
 	Fase(Managers::Graphics* pG);
 	~Fase();

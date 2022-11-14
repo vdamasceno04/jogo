@@ -59,3 +59,4 @@ void Personagem::atualizapodeAtacar()
 	if (duracaoCooldown <= timerCooldown)
 		podeAtacar = true;
 }
+

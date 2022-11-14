@@ -16,7 +16,9 @@
     <ClCompile Include="personagem.cpp" />
     <ClCompile Include="plataforma.cpp" />
     <ClCompile Include="fundo.cpp" />
-	<ClCompile Include="abelha.cpp" /> 
+    <ClCompile Include="abelha.cpp" />
+    <ClCompile Include="cacador.cpp" />
+    <ClCompile Include="explorador.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="agua.h" />
@@ -36,6 +38,8 @@
     <ClInclude Include="personagem.h" />
     <ClInclude Include="plataforma.h" />
     <ClInclude Include="fundo.h" />
-	<ClInclude Include="abelha.h" />
+    <ClInclude Include="abelhas.h" />
+    <ClInclude Include="cacador.h" />
+    <ClInclude Include="explorador.h" />
   </ItemGroup>
 </Project>

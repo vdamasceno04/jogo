@@ -140,9 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="agua.cpp" />
+    <ClCompile Include="cacador.cpp" />
     <ClCompile Include="ente.cpp" />
     <ClCompile Include="entidade.cpp" />
     <ClCompile Include="espinho.cpp" />
+    <ClCompile Include="explorador.cpp" />
     <ClCompile Include="fase.cpp" />
     <ClCompile Include="fundo.cpp" />
     <ClCompile Include="graphics.cpp" />
@@ -158,11 +160,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="agua.h" />
+    <ClInclude Include="cacador.h" />
     <ClInclude Include="coords.h" />
     <ClInclude Include="Elemento.h" />
     <ClInclude Include="ente.h" />
     <ClInclude Include="entidade.h" />
     <ClInclude Include="espinho.h" />
+    <ClInclude Include="explorador.h" />
     <ClInclude Include="fase.h" />
     <ClInclude Include="fundo.h" />
     <ClInclude Include="graphics.h" />
