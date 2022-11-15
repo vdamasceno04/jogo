@@ -24,6 +24,6 @@ void Cacador::move() {
 }
 void Cacador::executar() {
 	move();
-	morreu();
+	remover();
 	window->draw(sprite);
 }

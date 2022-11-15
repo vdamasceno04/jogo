@@ -30,4 +30,5 @@ public:
 //	void ataca(Personagem* p);
 	float distanciaPersonagens(Personagem* pP);
 	bool acertaAtaque(Personagem* p);
+	void remover();
 };

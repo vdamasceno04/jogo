@@ -34,6 +34,12 @@ void ListaEntidades::executarLista()
 
     for (int i = 0; i < objLE.getLen(); i++) {
         pAux = objLE.getItem(i);
+        if (pAux->getRemove()) {
+       //     pAux->~Entidade();
+            removeEntidade(pAux);
+        }
         pAux->executar();
     }
+    cout << "tam: " << getLen() << endl;
+
 }

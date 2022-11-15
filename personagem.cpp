@@ -76,6 +76,10 @@ bool Personagem::acertaAtaque(Personagem* p) {
 	return false;
 }
 
+void Personagem::remover() {
+	if (morreu())
+		remove = true;
+}
 /*void Personagem::ataca(Personagem* p) {
 	if(acertouAtaque(p))
 		p->tomaDano(dano);

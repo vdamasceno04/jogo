@@ -13,6 +13,7 @@ namespace Entidades{
 		sf::Vector2f position;
 		sf::Vector2f size;
 		sf::Vector2f velocidade;
+		bool remove;
 
 	public:
 		Entidade(sf::Vector2f pos, sf::Vector2f tam);
@@ -26,5 +27,6 @@ namespace Entidades{
 		void setWindow(sf::RenderWindow* window);
 		sf::RectangleShape getBody();
 		virtual void executar() = 0;
+		bool getRemove();
 	};
 }

@@ -24,5 +24,6 @@ void Explorador::move()
 }
 void Explorador::executar() {
 	move();
+	remover();
 	window->draw(sprite);
 }

@@ -5,9 +5,10 @@ Entidade::Entidade(sf::Vector2f pos, sf::Vector2f tam) {
 	position = pos;
 	size = size;
 	window = NULL;
+	remove = false;
 }
 
-Entidade::~Entidade() {}
+Entidade::~Entidade() { window = NULL; }
 
 void Entidade::setPosition(sf::Vector2f pos) { position = pos; }
 
@@ -24,3 +25,7 @@ sf::Vector2f Entidade::getVelocidade() { return velocidade; }
 void Entidade::setWindow(sf::RenderWindow* window) { this->window = window; }
 
 sf::RectangleShape Entidade::getBody() { return body; }
+
+bool Entidade::getRemove() { return remove; }
+
+
