@@ -39,7 +39,7 @@ Jogador* Inimigo::setPerseguido(Jogador* pJ1, Jogador* pJ2) {
 	else if (!getPersegue(pJ1) && getPersegue(pJ2))
 		return pJ2;
 	else
-		if (distanciaPersonagens(pJ1) >= distanciaPersonagens(pJ2))
+		if (distanciaPersonagens(pJ1) <= distanciaPersonagens(pJ2))
 			return pJ1;
 	return pJ2;
 }

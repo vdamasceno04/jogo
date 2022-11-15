@@ -15,9 +15,9 @@ Inimigo(pos,tam, v, d, alc, dC, dA, vR, p1, p2){
 Abelha::~Abelha(){}
 
 void Abelha::executar(){
-	if (getPersegue(pJ1) || getPersegue(pJ2))
+	if (getPersegue(pJ1) || getPersegue(pJ2)) {
 		perseguicao(setPerseguido(pJ1, pJ2));
+		ataca(setPerseguido(pJ1, pJ2));
+	}
 	window->draw(sprite); 
-	ataca(pJ1);
-	ataca(pJ2);
 }
