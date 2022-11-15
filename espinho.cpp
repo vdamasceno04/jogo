@@ -4,7 +4,7 @@ Espinho::Espinho(sf::Vector2f position, sf::Vector2f size, int d, float dC, bool
 	Obstaculos::Obstaculo(position, size, d, dC, dan, l)
 {
 	body.setSize(size);
-	textura.loadFromFile("C:/Users/genti/Downloads/espinho.png");
+	textura.loadFromFile("C:/Users/genti/Downloads/texturas/espinho.png");
 	sprite.setTexture(textura);
 	sprite.move(position);
 	body.setScale(2, 2);

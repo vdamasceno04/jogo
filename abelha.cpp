@@ -2,7 +2,7 @@
 
 Abelha::Abelha(sf::Vector2f pos, sf::Vector2f tam, int v, int d, float alc, float dC, float dA, float vR, Jogador* p1, Jogador* p2):
 Inimigo(pos,tam, v, d, alc, dC, dA, vR, p1, p2){
-	textura.loadFromFile("C:/Users/genti/Downloads/abelha2.png");
+	textura.loadFromFile("C:/Users/genti/Downloads/texturas/abelha2.png");
 	sprite.setTexture(textura);
 	body.setSize(size);
 	body.setScale(2, 2);

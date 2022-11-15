@@ -4,7 +4,7 @@ Agua::Agua(sf::Vector2f pos, sf::Vector2f tam, int d, float dC, bool dan, bool l
 	Obstaculo(pos, tam, d, dC, dan, l)
 {
 	body.setSize(size);
-	textura.loadFromFile("C:/Users/genti/Downloads/agua.png");
+	textura.loadFromFile("C:/Users/genti/Downloads/texturas/agua.png");
 	sprite.setTexture(textura);
 	sprite.move(position);
 	body.setScale(2, 4);
