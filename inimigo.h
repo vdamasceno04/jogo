@@ -16,7 +16,7 @@ public:
 	void setViewRange(float vR);
 //	void setpJogador(Jogador* p);
 	float getViewRange();
-	bool setPersegue(Jogador* pJ);
+	bool getPersegue(Jogador* pJ);
 	Jogador* setPerseguido(Jogador* pJ1, Jogador* pJ2);
 	void perseguicao(Jogador* pJ);
 	void ataca(Jogador* pJ);

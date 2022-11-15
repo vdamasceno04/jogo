@@ -27,16 +27,16 @@ float Inimigo::getViewRange() {
 
 //void Inimigo::setpJogador(Jogador* p) { pJ = p; }
 
-bool Inimigo::setPersegue(Jogador* pJ) {
+bool Inimigo::getPersegue(Jogador* pJ) {
 	if (fabs(distanciaPersonagens(pJ)) <= getViewRange() && !pJ->morreu())
 		return true;
 	return false;
 }
 
 Jogador* Inimigo::setPerseguido(Jogador* pJ1, Jogador* pJ2) {
-	if (setPersegue(pJ1) && !setPersegue(pJ2))
+	if (getPersegue(pJ1) && !getPersegue(pJ2))
 		return pJ1;
-	else if (!setPersegue(pJ1) && setPersegue(pJ2))
+	else if (!getPersegue(pJ1) && getPersegue(pJ2))
 		return pJ2;
 	else
 		if (distanciaPersonagens(pJ1) >= distanciaPersonagens(pJ2))
@@ -56,7 +56,7 @@ void Inimigo::perseguicao(Jogador* pJ) {
 
 void Inimigo::ataca(Jogador* pJ) {
 	atualizapodeAtacar();
-	if (acertouAtaque(pJ) && setPersegue(pJ)) {
+	if (acertaAtaque(pJ) && getPersegue(pJ)) {
 		if (podeAtacar) {
 			pJ->tomaDano(dano);
 			atacando = true;

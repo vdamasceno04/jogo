@@ -29,5 +29,5 @@ public:
 	void atualizapodeAtacar();
 //	void ataca(Personagem* p);
 	float distanciaPersonagens(Personagem* pP);
-	bool acertouAtaque(Personagem* p);
+	bool acertaAtaque(Personagem* p);
 };

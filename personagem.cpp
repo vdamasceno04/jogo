@@ -60,7 +60,7 @@ void Personagem::contaTempoAtaque(const float dt) {
 	}
 }
 
-float Personagem::distanciaPersonagens(Personagem* pP) { return body.getPosition().x - pP->getBody().getPosition().x; }
+float Personagem::distanciaPersonagens(Personagem* pP) { return fabs(body.getPosition().x - pP->getBody().getPosition().x); }
 
 void Personagem::atualizapodeAtacar()
 {
@@ -70,7 +70,7 @@ void Personagem::atualizapodeAtacar()
 		podeAtacar = false;
 }
 
-bool Personagem::acertouAtaque(Personagem* p) {
+bool Personagem::acertaAtaque(Personagem* p) {
 	if (distanciaPersonagens(p) <= alcance)
 		return true;
 	return false;

@@ -1,5 +1,4 @@
 #pragma once
-#include <SFML/Graphics.hpp>
 #include "coords.h"
 #include "graphics.h"
 #include<iostream>
