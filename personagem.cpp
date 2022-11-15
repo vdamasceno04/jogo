@@ -46,8 +46,6 @@ bool Personagem::getOlharDireita() {
 
 void Personagem::contaTempoAtaque(const float dt) {
 	if (atacando) {
-		cout << "aAAAAAAAAAA";
-
 		timerCooldown = 0;
 		timerAtaque += dt;
 		if (timerAtaque >= duracaoAtaque)

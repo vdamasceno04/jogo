@@ -62,11 +62,10 @@ void Inimigo::ataca(Jogador* pJ) {
 			atacando = true;
 			clock.restart();
 			contaTempoAtaque(clock.getElapsedTime().asSeconds());
-			cout << "ATACANDO"; 
 		}
 		else
 			timerCooldown += clock.getElapsedTime().asSeconds();
 	}
 
-	cout << "vida: " << pJ->getVida() << endl;
+//	cout << "vida: " << pJ->getVida() << endl;
 }
