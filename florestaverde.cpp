@@ -7,25 +7,12 @@ FlorestaVerde::FlorestaVerde(Managers::Graphics* pG) :
 
 FlorestaVerde::~FlorestaVerde(){}
 
-void FlorestaVerde::criafundo()
-{
-    int i;
-    int pos = 0;
-    Fundo* pAux;
-    for (i = 0; i < 15; i++) {
-        pAux = new Fundo(sf::Vector2f(pos, 0));
-        lista.addEntidade(pAux);
-        pAux->setpGG(pGG);
-        pos += WIDTH - 2;
-    }
-}
-
 void FlorestaVerde::criachao()
 {
     int i;
     int pos = 0;
     Plataforma* pAux;
-    for (i = 0; i < 100; i++) {
+    for (i = 0; i < 121; i++) {
         pAux = new Plataforma(sf::Vector2f(pos, HEIGHT * 6 / 7));
         lista.addEntidade(pAux);
         pAux->setpGG(pGG);

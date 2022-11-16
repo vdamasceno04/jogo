@@ -34,4 +34,5 @@ public:
 	void atualizaView();
 	//void inicializar();
 	virtual void executar() = 0;
+	void criafundo();
 };

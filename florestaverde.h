@@ -5,7 +5,6 @@ class FlorestaVerde : public Fase {
 public:
 	FlorestaVerde(Managers::Graphics* pG);
 	~FlorestaVerde();
-	void criafundo();
 	void criachao();
 	void criaespinho();
 	void criajavali();
