@@ -149,6 +149,7 @@
     <ClCompile Include="fundo.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="inimigo.cpp" />
+    <ClCompile Include="javali.cpp" />
     <ClCompile Include="jogador.cpp" />
     <ClCompile Include="jogo.cpp" />
     <ClCompile Include="ListaEntidades.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="fundo.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="inimigo.h" />
+    <ClInclude Include="javali.h" />
     <ClInclude Include="jogador.h" />
     <ClInclude Include="jogo.h" />
     <ClInclude Include="Lista.h" />

@@ -10,6 +10,7 @@
 #include "plataforma.h"
 #include "abelha.h"
 #include "fundo.h"
+#include "javali.h"
 #include <iostream>
 using namespace std;
 
@@ -27,6 +28,7 @@ public:
 	void criafundo();
 	void criachao();
 	void criaespinho();
+	void criajavali();
 	void criaagua();
 	void criaabelhas();
 	void atualizaView();

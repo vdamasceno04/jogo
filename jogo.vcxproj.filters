@@ -19,6 +19,7 @@
     <ClCompile Include="abelha.cpp" />
     <ClCompile Include="cacador.cpp" />
     <ClCompile Include="explorador.cpp" />
+    <ClCompile Include="javali.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="agua.h" />
@@ -41,5 +42,6 @@
     <ClInclude Include="abelhas.h" />
     <ClInclude Include="cacador.h" />
     <ClInclude Include="explorador.h" />
+    <ClInclude Include="javali.h" />
   </ItemGroup>
 </Project>

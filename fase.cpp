@@ -58,6 +58,17 @@ void Fase::criaagua() {
 
 }
 
+void Fase::criajavali() {
+    int i;
+    int pos = 2000;
+    Javali* pAux;
+    for (i = 0; i < 1; i++) {
+        pAux = new Javali(sf::Vector2f(pos, HEIGHT * 0.65), &j1, &e1);
+        lista.addEntidade(pAux);
+        pAux->setpGG(pGG);
+        pos += 600;
+    }
+}
 void Fase::criaabelhas() {
     int i;
     int pos = 250;
@@ -85,6 +96,7 @@ void Fase::inicializar() {
     e1.setpGG(pGG);
     criaabelhas();
     criaespinho();
+    criajavali();
     criachao();
     criaagua();
     lista.setJanela(pGG);
