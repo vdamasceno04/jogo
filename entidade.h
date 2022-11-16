@@ -15,7 +15,7 @@ namespace Entidades{
 		bool remove;
 
 	public:
-		Entidade(sf::Vector2f pos);
+		Entidade(sf::Vector2f pos, ID i);
 		~Entidade();
 		void setPosition(sf::Vector2f pos);
 		sf::Vector2f getPosition() const;

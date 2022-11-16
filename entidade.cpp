@@ -1,7 +1,7 @@
 #include"entidade.h"
 using namespace Entidades;
 
-Entidade::Entidade(sf::Vector2f pos){
+Entidade::Entidade(sf::Vector2f pos, ID i): Ente(i) {
 	setPosition(pos);
 	window = NULL;
 	remove = false;

@@ -1,9 +1,9 @@
 #include"jogador.h"
 
-Jogador::Jogador(sf::Vector2f pos):
-Personagem::Personagem(pos)
+Jogador::Jogador(sf::Vector2f pos, ID i):
+Personagem::Personagem(pos, i)
 {
-	vida = 10;
+	setVida(15);
 	body.setSize(size);
 	body.setScale(2,2);
 	sprite.setScale(2, 2);

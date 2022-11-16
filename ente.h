@@ -5,12 +5,28 @@
 using std::cout;
 using std::endl;
 
+enum ID {
+	vazio = -1,
+	cacador = 1,
+	explorador = 2,
+	plataforma = 3,
+	agua = 4,
+	espinho = 5,
+	abelha = 6,
+	javali = 7,
+	caracol = 8,
+	gosma = 9,
+	fundo = 10
+};
+
+
+
 class Ente {
 protected:
-	int id;
+	ID id;
 	Managers::Graphics* pGG;
 public:
-	Ente();
+	Ente(ID i);
 	void setpGG(Managers::Graphics* p);
 	~Ente();
 	virtual void executar() = 0;

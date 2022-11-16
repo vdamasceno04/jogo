@@ -50,7 +50,7 @@ void Fase::criaagua() {
     int pos = 200;
     Agua* pAux;
     for (i = 0; i < 15; i++) {
-        pAux = new Agua(sf::Vector2f(pos, HEIGHT*0.845));
+        pAux = new Agua(sf::Vector2f(pos, HEIGHT*0.843));
         lista.addEntidade(pAux);
         pAux->setpGG(pGG);
         pos += 300;

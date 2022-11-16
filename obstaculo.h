@@ -11,7 +11,7 @@ namespace Obstaculos {
 		float danoCooldown;
 
 	public:
-		Obstaculo(sf::Vector2f pos);
+		Obstaculo(sf::Vector2f pos, ID i);
 		~Obstaculo();
 		bool  getDanificar() { return danificar; }
 		bool  getLiquido() { return liquido; }

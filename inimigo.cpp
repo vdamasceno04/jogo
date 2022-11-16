@@ -4,15 +4,13 @@
 using std::cout;
 using std::endl;
 
-Inimigo::Inimigo(sf::Vector2f pos, Jogador* p1, Jogador* p2):
-	Personagem(pos)
+Inimigo::Inimigo(sf::Vector2f pos, Jogador* p1, Jogador* p2, ID i):
+	Personagem(pos, i)
 {
 	podeAtacar = true;
 	pJ1 = p1;
 	pJ2 = p2;
 	setPosition(pos);
-	textura.loadFromFile("C:/Users/genti/Downloads/Legacy-Fantasy-VL.1 - High Forest - Update 1.9/Mob/Snail/all.png");
-	sprite.setTexture(textura);
 	body.setSize(sf::Vector2f(50, 50));
 	timerCooldown = 0;
 }
@@ -45,6 +43,7 @@ Jogador* Inimigo::setPerseguido(Jogador* pJ1, Jogador* pJ2) {
 			return pJ1;
 	return pJ2;
 }
+
 void Inimigo::perseguicao(Jogador* pJ) {
 	if (pJ->getBody().getPosition().x < body.getPosition().x)
 		velocidade.x = fabs(velocidade.x) * -1;

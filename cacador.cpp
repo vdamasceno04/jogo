@@ -1,8 +1,8 @@
 #include "cacador.h"
 
-Cacador::Cacador(sf::Vector2f pos):
-	Jogador(pos){
-	
+Cacador::Cacador(sf::Vector2f pos, ID i):
+	Jogador(pos, i){
+	id = i;
 	setSprite("C:/Users/genti/Downloads/Legacy-Fantasy-VL.1 - High Forest - Update 1.9/Character/Idle/Idle.gif");
 }
 Cacador::~Cacador() {}

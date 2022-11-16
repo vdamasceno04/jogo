@@ -1,7 +1,8 @@
 #include "explorador.h"
 
-Explorador::Explorador(sf::Vector2f pos) :Jogador(pos)
+Explorador::Explorador(sf::Vector2f pos, ID i) :Jogador(pos, i)
 {
+	id = i;
 	setSprite("C:/Users/genti/Downloads/Legacy-Fantasy-VL.1 - High Forest - Update 1.9/Character/Idle/Idle.gif");
 }
 

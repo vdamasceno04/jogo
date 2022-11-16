@@ -6,20 +6,17 @@ protected:
 	int vida;
 	sf::Vector2f velocidade;
 	bool atacando;
-	bool atacou;
 	int dano;
 	float alcance;
 	bool podeAtacar;
-	float timerAtaque;
 	float duracaoCooldown;
 	float timerCooldown;
 	void setVelocidade(sf::Vector2f vel);
 	sf::Vector2f getVelocidade();
-	float duracaoAtaque;
 	bool olhaDireita;
 
 public:
-	Personagem(sf::Vector2f pos);
+	Personagem(sf::Vector2f pos, ID i);
 	~Personagem();
 	virtual void executar() = 0;
 	void setVida(int v);

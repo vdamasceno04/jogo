@@ -4,7 +4,7 @@
 class Fundo: public Entidades::Entidade {
 private:
 public:
-	Fundo(sf::Vector2f pos);
+	Fundo(sf::Vector2f pos, ID i = ID::fundo);
 	~Fundo();
 	void executar();
 };

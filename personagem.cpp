@@ -1,12 +1,12 @@
 #include "personagem.h"
 
-Personagem::Personagem(sf::Vector2f pos):
-Entidade::Entidade(pos) {
+Personagem::Personagem(sf::Vector2f pos, ID i):
+Entidade::Entidade(pos, i) {
 	atacando = false;
-	atacou = false;
 	podeAtacar = true;
 	olhaDireita = true;
-	timerAtaque = 0;
+	alcance = 0;
+	duracaoCooldown = 0;
 	timerCooldown = 0;
 	setPosition(pos);
 }
@@ -42,9 +42,9 @@ bool Personagem::getOlharDireita() {
 }
 
 void Personagem::contaTempoAtaque(const float dt) {
-	if (atacou) {
+	if (atacando) {
 		timerCooldown = 0;
-		atacou = false;
+		atacando = false;
 	}
 	else 
 		timerCooldown += dt;

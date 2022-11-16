@@ -1,8 +1,8 @@
 #pragma once
 #include "ente.h"
 
-Ente::Ente() {
-	id = -1;
+Ente::Ente(ID i) {
+	this->id = vazio;
 	pGG = NULL;
 }
 
