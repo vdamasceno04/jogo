@@ -33,7 +33,7 @@ bool Inimigo::getPersegue(Jogador* pJ) {
 	return false;
 }
 
-Jogador* Inimigo::setPerseguido(Jogador* pJ1, Jogador* pJ2) {
+Jogador* Inimigo::definePerseguido(Jogador* pJ1, Jogador* pJ2) {
 	if (getPersegue(pJ1) && !getPersegue(pJ2))
 		return pJ1;
 	else if (!getPersegue(pJ1) && getPersegue(pJ2))
@@ -73,8 +73,8 @@ void Inimigo::ataca(Jogador* pJ) {
 
 void Inimigo::hostilizar() {
 	if (getPersegue(pJ1) || getPersegue(pJ2)) {
-		perseguicao(setPerseguido(pJ1, pJ2));
-		ataca(setPerseguido(pJ1, pJ2));
+		perseguicao(definePerseguido(pJ1, pJ2));
+		ataca(definePerseguido(pJ1, pJ2));
 	}
 	cout << "vida1 = " << pJ1->getVida() << endl;
 	cout << "vida2 = " << pJ2->getVida() << endl;

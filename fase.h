@@ -15,23 +15,23 @@
 using namespace std;
 
 class Fase {
-protected:
+public:
+
 	Managers::Graphics* pGG;
 //	Managers::Colisao *pC;
 	ListaEntidades lista;
 	Cacador j1;
 	Explorador e1;
 
-public:
 	Fase(Managers::Graphics* pG);
 	~Fase();
-	void criafundo();
+/*	void criafundo();
 	void criachao();
 	void criaespinho();
 	void criajavali();
 	void criaagua();
-	void criaabelhas();
+	void criaabelhas();*/
 	void atualizaView();
-	void inicializar();
-	void executar();
+	//void inicializar();
+	virtual void executar() = 0;
 };

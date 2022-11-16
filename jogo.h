@@ -1,13 +1,13 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Fase.h"
+#include "florestaverde.h"
 
 using namespace Managers;
 
 class Jogo
 {
 private:
-	Fase fase1;
+	FlorestaVerde fase1;
 	Managers::Graphics* pGG;
 
 public:

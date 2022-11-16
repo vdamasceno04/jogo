@@ -146,6 +146,7 @@
     <ClCompile Include="espinho.cpp" />
     <ClCompile Include="explorador.cpp" />
     <ClCompile Include="fase.cpp" />
+    <ClCompile Include="florestaverde.cpp" />
     <ClCompile Include="fundo.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="inimigo.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="espinho.h" />
     <ClInclude Include="explorador.h" />
     <ClInclude Include="fase.h" />
+    <ClInclude Include="florestaverde.h" />
     <ClInclude Include="fundo.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="inimigo.h" />
