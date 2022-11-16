@@ -28,6 +28,7 @@ protected:
 public:
 	Ente(ID i);
 	void setpGG(Managers::Graphics* p);
+	ID getId();
 	~Ente();
 	virtual void executar() = 0;
 };

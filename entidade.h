@@ -9,22 +9,23 @@ namespace Entidades{
 		sf::Texture textura;
 		sf::Sprite sprite;
 		sf::RectangleShape body;
-		sf::RenderWindow* window;
-		sf::Vector2f position;
-		sf::Vector2f size;
+		sf::RenderWindow* janela;
+		sf::Vector2f posicao;
+		sf::Vector2f tamanho;
 		bool remove;
 
 	public:
 		Entidade(sf::Vector2f pos, ID i);
 		~Entidade();
-		void setPosition(sf::Vector2f pos);
-		sf::Vector2f getPosition() const;
-		void setSize(sf::Vector2f siz);
-		sf::Vector2f getSize() const;
+		void setPosicao(sf::Vector2f pos);
+		sf::Vector2f getPosicao() const;
+		void setTamanho(sf::Vector2f tam);
+		sf::Vector2f getTamanho() const;
 		void setVelocidade(sf::Vector2f vel);
 		sf::Vector2f getVelocidade();
-		void setWindow(sf::RenderWindow* window);
+		void setJanela(sf::RenderWindow* janela);
 		sf::RectangleShape getBody();
+		void setEscala(sf::Vector2f escala);
 		void setSprite(const char* local);
 		void renderizar();
 		virtual void executar() = 0;

@@ -25,14 +25,7 @@ public:
 
 	Fase(Managers::Graphics* pG);
 	~Fase();
-/*	void criafundo();
-	void criachao();
-	void criaespinho();
-	void criajavali();
-	void criaagua();
-	void criaabelhas();*/
 	void atualizaView();
-	//void inicializar();
-	virtual void executar() = 0;
 	void criafundo();
+	virtual void executar() = 0;
 };

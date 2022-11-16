@@ -1,4 +1,6 @@
 #include"florestaverde.h"
+#include<time.h>
+#include<stdlib.h>
 
 FlorestaVerde::FlorestaVerde(Managers::Graphics* pG) :
 	Fase(pG) {
@@ -22,48 +24,74 @@ void FlorestaVerde::criachao()
 
 void FlorestaVerde::criaespinho() {
     int i;
-    int pos = 400;
+    int sorteia;
+    int pos = 800;
     Espinho* pAux;
-    for (i = 0; i < 15; i++) {
-        pAux = new Espinho(sf::Vector2f(pos, HEIGHT * 0.835));
-        lista.addEntidade(pAux);
-        pAux->setpGG(pGG);
-        pos += 300;
+    srand(time(NULL));
+    for (i = 0; i < 20; i++) {
+        sorteia = rand() % 2;
+        if (sorteia == 0) {
+            pAux = new Espinho(sf::Vector2f(pos, HEIGHT * 0.835));
+            lista.addEntidade(pAux);
+            pAux->setpGG(pGG);
+        }
+        pos += 500;
     }
 }
 
 void FlorestaVerde::criaagua() {
     int i;
-    int pos = 200;
+    int sorteia;
+    int pos = 500;
     Agua* pAux;
-    for (i = 0; i < 15; i++) {
-        pAux = new Agua(sf::Vector2f(pos, HEIGHT * 0.843));
-        lista.addEntidade(pAux);
-        pAux->setpGG(pGG);
-        pos += 300;
+    srand(time(NULL));
+    for (i = 0; i < 25; i++) {
+        sorteia = rand() % 2;
+        if (sorteia == 0) {
+            pAux = new Agua(sf::Vector2f(pos, HEIGHT * 0.843));
+            lista.addEntidade(pAux);
+            pAux->setpGG(pGG);
+        }
+        pos += 500;
     }
 
 }
 
 void FlorestaVerde::criajavali() {
     int i;
-    int pos = 2000;
+    int pos = WIDTH * 8 - WIDTH / 3;
+    int vida;
+    int dano;
+    int visao;
     Javali* pAux;
+    srand(time(NULL));
     for (i = 0; i < 1; i++) {
-        pAux = new Javali(sf::Vector2f(pos, HEIGHT * 0.65), &j1, &e1);
+        vida = (rand() % 8) + 10;
+        dano = (rand() % 3) + 4;
+        visao = (rand() % 100) + 600;
+        pAux = new Javali(sf::Vector2f(pos, HEIGHT * 0.69), &j1, &e1, vida, dano, visao);
+        cout << vida << endl;
         lista.addEntidade(pAux);
         pAux->setpGG(pGG);
-        pos += 600;
     }
 }
+
 void FlorestaVerde::criaabelhas() {
     int i;
+    int vida;
+    int dano;
     int pos = 250;
+    int sorteia;
     Abelha* pAux;
-    for (i = 0; i < 1; i++) {
-        pAux = new Abelha(sf::Vector2f(pos, HEIGHT * 0.65), &j1, &e1);
-        lista.addEntidade(pAux);
-        pAux->setpGG(pGG);
+    for (i = 0; i < 10; i++) {
+        vida = (rand() % 3) + 2;
+        dano = (rand() % 2) + 1;
+        sorteia = rand() % 2;
+        if (sorteia == 0) {
+            pAux = new Abelha(sf::Vector2f(pos, HEIGHT * 0.65), &j1, &e1, vida, dano);
+            lista.addEntidade(pAux);
+            pAux->setpGG(pGG);
+        }
         pos += 600;
     }
 }

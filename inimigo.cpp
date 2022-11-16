@@ -4,31 +4,30 @@
 using std::cout;
 using std::endl;
 
-Inimigo::Inimigo(sf::Vector2f pos, Jogador* p1, Jogador* p2, ID i):
+Inimigo::Inimigo(sf::Vector2f pos, Jogador* p1, Jogador* p2, int vida, int dano, ID i):
 	Personagem(pos, i)
 {
 	podeAtacar = true;
 	pJ1 = p1;
 	pJ2 = p2;
-	setPosition(pos);
-	body.setSize(sf::Vector2f(50, 50));
 	timerCooldown = 0;
+	visao = 0;
 }
 
 Inimigo::~Inimigo() {}
 
-void Inimigo::setViewRange(float vR) {
-	viewRange = vR;
+void Inimigo::setVisao(float v) {
+	visao = v;
 }
 
-float Inimigo::getViewRange() {
-	return viewRange;
+float Inimigo::getVisao() {
+	return visao;
 }
 
 //void Inimigo::setpJogador(Jogador* p) { pJ = p; }
 
 bool Inimigo::getPersegue(Jogador* pJ) {
-	if (fabs(distanciaPersonagens(pJ)) <= getViewRange() && !pJ->morreu())
+	if (fabs(distanciaPersonagens(pJ)) <= getVisao() && !pJ->morreu())
 		return true;
 	return false;
 }
@@ -49,25 +48,21 @@ void Inimigo::perseguicao(Jogador* pJ) {
 		velocidade.x = fabs(velocidade.x) * -1;
 	else
 		velocidade.x = fabs(velocidade.x);
-	position.x += velocidade.x;
-	setPosition(position);
-	sprite.setPosition(position);
+	posicao.x += velocidade.x;
+	setPosicao(posicao);
+	sprite.setPosition(posicao);
+}
+
+void Inimigo::atacado(Jogador* pJ) {
+	if (pJ->getAtacando() && distanciaPersonagens(pJ) < pJ->getAlcance()) {
+		tomaDano(pJ->getDano());
+	}
 }
 
 void Inimigo::ataca(Jogador* pJ) {
 	atualizapodeAtacar();
 	if (acertaAtaque(pJ) && getPersegue(pJ)) {
-		if (podeAtacar) {
-			pJ->tomaDano(dano);
-			podeAtacar = false;
-			timerCooldown = 0;
-			pGG->getClock().restart();
-			timerCooldown += pGG->getClock().getElapsedTime().asSeconds();
-		}
-		else {
-			pGG->getClock().restart();
-			timerCooldown += pGG->getClock().getElapsedTime().asSeconds();
-		}
+		golpear(pJ);
 	}
 }
 
@@ -76,6 +71,6 @@ void Inimigo::hostilizar() {
 		perseguicao(definePerseguido(pJ1, pJ2));
 		ataca(definePerseguido(pJ1, pJ2));
 	}
-	cout << "vida1 = " << pJ1->getVida() << endl;
-	cout << "vida2 = " << pJ2->getVida() << endl;
+	atacado(pJ1);
+	atacado(pJ2);
 }

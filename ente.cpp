@@ -10,3 +10,4 @@ Ente::~Ente() { pGG = NULL; }
 
 void Ente::setpGG(Managers::Graphics* p) { pGG = p; }
 
+ID Ente::getId() { return id; }

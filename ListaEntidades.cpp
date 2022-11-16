@@ -23,7 +23,7 @@ void ListaEntidades::setJanela(Managers::Graphics* pGG)
 
     for (int i = 0; i < objLE.getLen(); i++) {
         pAux = objLE.getItem(i);
-        pAux->setWindow(pGG->getWindow());
+        pAux->setJanela(pGG->getWindow());
     }
 }
 
@@ -40,6 +40,4 @@ void ListaEntidades::executarLista()
         }
         pAux->executar();
     }
-    cout << "tam: " << getLen() << endl;
-
 }

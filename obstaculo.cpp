@@ -5,25 +5,35 @@ Obstaculo::Obstaculo(sf::Vector2f pos, ID i) :
 	Entidade::Entidade(pos, i)
 {
 	danificar = false;
-	liquido = false;
+	lentidao = 0.0;
 	dano = 0;
-	danoCooldown = 0;
+	timerCooldown = 0;
+	duracaoCooldown = 0;
 }
 
 Obstaculo::~Obstaculo() {}
 
-void Obstaculo::setDanificar(bool d) {
-	danificar = d;
+float Obstaculo::getLentidao() { return lentidao; }
+
+int Obstaculo::getDano() { return dano; }
+
+bool Obstaculo::getDanificar() { return danificar; }
+
+float Obstaculo::getCooldown() { return duracaoCooldown; }
+
+void Obstaculo::contaTempoCooldown(const float dt) {
+	if (danificar) {
+		timerCooldown = 0;
+		danificar = false;
+	}
+	else
+		timerCooldown += dt;
 }
 
-void Obstaculo::setDano(int d) {
-	dano = d;
-}
-
-void Obstaculo::setDanoCooldown(float dC) {
-	danoCooldown = dC;
-}
-
-void Obstaculo::setLiquido(bool l) {
-	liquido = l;
+void Obstaculo::atualizaDanificar()
+{
+	if (duracaoCooldown <= timerCooldown)
+		danificar = true;
+	else
+		danificar = false;
 }

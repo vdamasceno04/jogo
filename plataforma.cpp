@@ -5,10 +5,9 @@ Plataforma::Plataforma(sf::Vector2f pos, ID i) :
 { 
 	id = i;
 	setSprite("C:/Users/genti/Downloads/texturas/chao2.png");
-	setPosition(pos);;
+	setPosicao(pos);
 	body.setSize(sf::Vector2f(67, 69));
-	body.setScale(2, 2);
-	sprite.setScale(2, 2);
+	setEscala(sf::Vector2f(2, 2));
 }
 
 Plataforma::~Plataforma() {}

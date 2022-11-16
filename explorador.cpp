@@ -8,7 +8,7 @@ Explorador::Explorador(sf::Vector2f pos, ID i) :Jogador(pos, i)
 
 Explorador::~Explorador(){}
 
-void Explorador::move()
+void Explorador::controlar()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
 		sprite.move(sf::Vector2f(2.f, 0.f));
@@ -19,13 +19,17 @@ void Explorador::move()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 		sprite.move(sf::Vector2f(0.f, -2.f));
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
 		sprite.move(sf::Vector2f(0.f, 2.f));
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)) {
+		ataca();
 	}
 	body.setPosition(sprite.getPosition());
 }
+
 void Explorador::executar() {
-	move();
+	controlar();
 	remover();
 	renderizar();
 }

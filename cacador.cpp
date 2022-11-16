@@ -6,7 +6,8 @@ Cacador::Cacador(sf::Vector2f pos, ID i):
 	setSprite("C:/Users/genti/Downloads/Legacy-Fantasy-VL.1 - High Forest - Update 1.9/Character/Idle/Idle.gif");
 }
 Cacador::~Cacador() {}
-void Cacador::move() {
+
+void Cacador::controlar() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 		sprite.move(sf::Vector2f(2.f, 0.f));
 	}
@@ -20,13 +21,13 @@ void Cacador::move() {
 		sprite.move(sf::Vector2f(0.f, 2.f));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-//		ataca();
+		ataca();
 	}	
 	body.setPosition(sprite.getPosition());
 
 }
 void Cacador::executar() {
-	move();
+	controlar();
 	remover();
 	renderizar();
 }

@@ -2,26 +2,30 @@
 using namespace Entidades;
 
 Entidade::Entidade(sf::Vector2f pos, ID i): Ente(i) {
-	setPosition(pos);
-	window = NULL;
+	janela = NULL;
 	remove = false;
 }
 
-Entidade::~Entidade() { window = NULL; }
+Entidade::~Entidade() { janela = NULL; }
 
-void Entidade::setPosition(sf::Vector2f pos) { 
-	position = pos;
-	body.setPosition(position);
-	sprite.setPosition(position);
+void Entidade::setPosicao(sf::Vector2f pos) { 
+	posicao = pos;
+	body.setPosition(posicao);
+	sprite.setPosition(posicao);
 }
 
-sf::Vector2f Entidade::getPosition() const { return position; }
+sf::Vector2f Entidade::getPosicao() const { return posicao; }
 
-void Entidade::setSize(sf::Vector2f siz) {body.setSize(siz); }
+void Entidade::setTamanho(sf::Vector2f tam) {body.setSize(tam); }
 
-sf::Vector2f Entidade::getSize() const { return size; }
+sf::Vector2f Entidade::getTamanho() const { return tamanho; }
 
-void Entidade::setWindow(sf::RenderWindow* window) { this->window = window; }
+void Entidade::setEscala(sf::Vector2f scale) {
+	body.setScale(scale);
+	sprite.setScale(scale);
+}
+
+void Entidade::setJanela(sf::RenderWindow* j) { this->janela = j; }
 
 sf::RectangleShape Entidade::getBody() { return body; }
 

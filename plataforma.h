@@ -8,6 +8,3 @@ public:
 	~Plataforma();
 	void executar();
 };
-
-
-//Chão

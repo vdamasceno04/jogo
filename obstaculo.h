@@ -1,26 +1,27 @@
 #pragma once
 #include "entidade.h"
 
+class Personagem;
+
 namespace Obstaculos {
 
 	class Obstaculo : public Entidades::Entidade {
 	protected:
 		bool danificar;
-		bool liquido;
+		float lentidao;
 		int dano;
-		float danoCooldown;
+		float duracaoCooldown;
+		float timerCooldown;
 
 	public:
 		Obstaculo(sf::Vector2f pos, ID i);
 		~Obstaculo();
-		bool  getDanificar() { return danificar; }
-		bool  getLiquido() { return liquido; }
-		int   getDano() { return dano; }
-		float getDanoCooldown() { return danoCooldown; }
-		void setDanificar(bool d);
-		void setLiquido(bool l);
-		void setDano(int d);
-		void setDanoCooldown(float dC);
+		bool  getDanificar();
+		int   getDano();
+		float getCooldown();
+		void contaTempoCooldown(const float dt);
+		void atualizaDanificar();
+		float getLentidao();
 		virtual void executar() = 0;
 	};
 }

@@ -8,7 +8,7 @@ Entidade::Entidade(pos, i) {
 	alcance = 0;
 	duracaoCooldown = 0;
 	timerCooldown = 0;
-	setPosition(pos);
+	setPosicao(pos);
 }
 
 Personagem::~Personagem(){}
@@ -66,7 +66,27 @@ bool Personagem::acertaAtaque(Personagem* p) {
 	return false;
 }
 
+bool Personagem::getAtacando() { return atacando; }
+
+int Personagem::getDano() { return dano; }
+
 void Personagem::remover() {
 	if (morreu())
 		remove = true;
+}
+
+float Personagem::getAlcance() { return alcance; }
+
+void Personagem::golpear(Personagem* p) {
+	if (podeAtacar) {
+		p->tomaDano(dano);
+		podeAtacar = false;
+		timerCooldown = 0;
+		pGG->getClock().restart();
+		timerCooldown += pGG->getClock().getElapsedTime().asSeconds();
+	}
+	else {
+		pGG->getClock().restart();
+		timerCooldown += pGG->getClock().getElapsedTime().asSeconds();
+	}
 }
