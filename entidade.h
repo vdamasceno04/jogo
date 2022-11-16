@@ -12,11 +12,10 @@ namespace Entidades{
 		sf::RenderWindow* window;
 		sf::Vector2f position;
 		sf::Vector2f size;
-		sf::Vector2f velocidade;
 		bool remove;
 
 	public:
-		Entidade(sf::Vector2f pos, sf::Vector2f tam);
+		Entidade(sf::Vector2f pos);
 		~Entidade();
 		void setPosition(sf::Vector2f pos);
 		sf::Vector2f getPosition() const;
@@ -26,6 +25,8 @@ namespace Entidades{
 		sf::Vector2f getVelocidade();
 		void setWindow(sf::RenderWindow* window);
 		sf::RectangleShape getBody();
+		void setSprite(const char* local);
+		void renderizar();
 		virtual void executar() = 0;
 		bool getRemove();
 	};

@@ -1,12 +1,11 @@
 #include "Agua.h"
 
-Agua::Agua(sf::Vector2f pos, sf::Vector2f tam, int d, float dC, bool dan, bool l) :
-	Obstaculo(pos, tam, d, dC, dan, l)
+Agua::Agua(sf::Vector2f pos) :
+	Obstaculo(pos)
 {
-	body.setSize(size);
-	textura.loadFromFile("C:/Users/genti/Downloads/texturas/agua.png");
-	sprite.setTexture(textura);
-	sprite.move(position);
+	body.setSize(sf::Vector2f(63, 37));
+	setSprite("C:/Users/genti/Downloads/texturas/agua.png");
+	setPosition(pos);
 	body.setScale(2, 4);
 	sprite.setScale(2, 4);
 }
@@ -14,5 +13,5 @@ Agua::Agua(sf::Vector2f pos, sf::Vector2f tam, int d, float dC, bool dan, bool l
 Agua::~Agua() {}
 
 void Agua::executar() {
-	window->draw(sprite);
+	renderizar();
 }

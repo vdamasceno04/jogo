@@ -32,13 +32,15 @@ namespace Managers {
 		std::map<const char*, sf::Texture*>::iterator it;
 		for (it = mapaTextura.begin(); it != mapaTextura.end(); ++it)
 			delete(it->second);
-
 		delete(window);
 	}
 
+	sf::Clock Graphics::getClock() {
+		return clock;
+	}
 	// desenha na janela um corpo apontado pelo ponteiro
-	void Graphics::render(sf::RectangleShape* body) {
-		window->draw(*body);
+	void Graphics::render(sf::Sprite* sprite) {
+		window->draw(*sprite);
 	}
 
 	// desenha na janela um texto apontado pelo ponteiro
@@ -97,13 +99,14 @@ namespace Managers {
 	// carrega a textura indicada
 	sf::Texture* Graphics::loadTexture(const char* path) {
 		std::map<const char*, sf::Texture*>::iterator it = mapaTextura.begin();
+		cout << "caiu";
+
 		while (it != mapaTextura.end()) {
 			if (!strcmp(it->first, path)) // checa se a textura ja foi carregada
 				return it->second;
 			it++;
 		}
 		sf::Texture* tex = new sf::Texture();
-
 		if (!tex->loadFromFile(path)) {
 			std::cout << "Erro ao carregar arquivo " << path << std::endl;
 			exit(1);

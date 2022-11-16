@@ -10,9 +10,6 @@ private:
 	Fase fase1;
 	Managers::Graphics* pGG;
 
-
-
-
 public:
 	Jogo();
 	~Jogo();

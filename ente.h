@@ -11,6 +11,7 @@ protected:
 	Managers::Graphics* pGG;
 public:
 	Ente();
+	void setpGG(Managers::Graphics* p);
 	~Ente();
 	virtual void executar() = 0;
 };

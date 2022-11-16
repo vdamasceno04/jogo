@@ -8,3 +8,5 @@ Ente::Ente() {
 
 Ente::~Ente() { pGG = NULL; }
 
+void Ente::setpGG(Managers::Graphics* p) { pGG = p; }
+

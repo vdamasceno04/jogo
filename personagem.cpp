@@ -1,20 +1,14 @@
 #include "personagem.h"
 
-Personagem::Personagem(sf::Vector2f pos, sf::Vector2f tam, int v, int d, float alc, float dC, float dA):
-Entidade::Entidade(pos, tam) {
-	vida = v;
-	dano = d;
-	alcance = alc;
+Personagem::Personagem(sf::Vector2f pos):
+Entidade::Entidade(pos) {
 	atacando = false;
 	atacou = false;
+	podeAtacar = true;
+	olhaDireita = true;
 	timerAtaque = 0;
 	timerCooldown = 0;
-	podeAtacar = true;
-	duracaoCooldown = dC;
-	duracaoAtaque = dA;
-	olhaDireita = true;
 	setPosition(pos);
-	setSize(tam);
 }
 
 Personagem::~Personagem(){}
@@ -23,11 +17,14 @@ void Personagem::setVida(int v) { vida = v; }
 
 int Personagem::getVida() { return vida; }
 
+void Personagem::setVelocidade(sf::Vector2f vel) { velocidade = vel; }
+
+sf::Vector2f Personagem::getVelocidade() { return velocidade; }
+
 void Personagem::tomaDano(int ferimento) { vida -= ferimento;}
 
 bool Personagem::morreu() {
 	if (vida <= 0) {
-		cout << "morreu" << endl;
 		return true;
 	}
 	return false;
@@ -45,24 +42,19 @@ bool Personagem::getOlharDireita() {
 }
 
 void Personagem::contaTempoAtaque(const float dt) {
-	if (atacando) {
+	if (atacou) {
 		timerCooldown = 0;
-		timerAtaque += dt;
-		if (timerAtaque >= duracaoAtaque)
-			atacando = false;
+		atacou = false;
 	}
-	else {
-		timerAtaque += dt;
-		timerCooldown = 0;
-
-	}
+	else 
+		timerCooldown += dt;
 }
 
 float Personagem::distanciaPersonagens(Personagem* pP) { return fabs(body.getPosition().x - pP->getBody().getPosition().x); }
 
 void Personagem::atualizapodeAtacar()
 {
-	if (duracaoCooldown <= timerCooldown)
+	if (duracaoCooldown <= timerCooldown )
 		podeAtacar = true;
 	else
 		podeAtacar = false;
@@ -78,7 +70,3 @@ void Personagem::remover() {
 	if (morreu())
 		remove = true;
 }
-/*void Personagem::ataca(Personagem* p) {
-	if(acertouAtaque(p))
-		p->tomaDano(dano);
-}*/

@@ -1,7 +1,9 @@
 #include "cacador.h"
 
-Cacador::Cacador():Jogador()
-{
+Cacador::Cacador(sf::Vector2f pos):
+	Jogador(pos){
+	
+	setSprite("C:/Users/genti/Downloads/Legacy-Fantasy-VL.1 - High Forest - Update 1.9/Character/Idle/Idle.gif");
 }
 Cacador::~Cacador() {}
 void Cacador::move() {
@@ -21,9 +23,10 @@ void Cacador::move() {
 //		ataca();
 	}	
 	body.setPosition(sprite.getPosition());
+
 }
 void Cacador::executar() {
 	move();
 	remover();
-	window->draw(sprite);
+	renderizar();
 }

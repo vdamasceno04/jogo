@@ -1,7 +1,8 @@
 #include "explorador.h"
 
-Explorador::Explorador() :Jogador()
+Explorador::Explorador(sf::Vector2f pos) :Jogador(pos)
 {
+	setSprite("C:/Users/genti/Downloads/Legacy-Fantasy-VL.1 - High Forest - Update 1.9/Character/Idle/Idle.gif");
 }
 
 Explorador::~Explorador(){}
@@ -25,5 +26,5 @@ void Explorador::move()
 void Explorador::executar() {
 	move();
 	remover();
-	window->draw(sprite);
+	renderizar();
 }

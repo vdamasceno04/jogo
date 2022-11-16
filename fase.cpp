@@ -1,7 +1,7 @@
 #include "Fase.h"
 
 Fase::Fase(Managers::Graphics* pG) :
-lista()
+lista(), j1(), e1()
 {
     pGG = pG;
 }
@@ -14,8 +14,9 @@ void Fase::criafundo()
     int pos = 0;
     Fundo* pAux;
     for (i = 0; i < 15; i++) {
-        pAux = new Fundo(sf::Vector2f(pos, 0), sf::Vector2f(0,0));
+        pAux = new Fundo(sf::Vector2f(pos, 0));
         lista.addEntidade(pAux);
+        pAux->setpGG(pGG);
         pos += WIDTH-2;
     }
 }
@@ -27,6 +28,7 @@ void Fase::criachao()
     for (i = 0; i < 100; i++) {
         pAux = new Plataforma(sf::Vector2f(pos, HEIGHT * 6 / 7));
         lista.addEntidade(pAux);
+        pAux->setpGG(pGG);
         pos += 71;
     }
 }
@@ -38,6 +40,7 @@ void Fase::criaespinho() {
     for (i = 0; i < 15; i++) {
         pAux = new Espinho(sf::Vector2f(pos, HEIGHT * 0.835));
         lista.addEntidade(pAux);
+        pAux->setpGG(pGG);
         pos += 300;
     }
 }
@@ -49,6 +52,7 @@ void Fase::criaagua() {
     for (i = 0; i < 15; i++) {
         pAux = new Agua(sf::Vector2f(pos, HEIGHT*0.845));
         lista.addEntidade(pAux);
+        pAux->setpGG(pGG);
         pos += 300;
     }
 
@@ -59,9 +63,9 @@ void Fase::criaabelhas() {
     int pos = 250;
     Abelha* pAux;
     for (i = 0; i < 1; i++) {
-        pAux = new Abelha(sf::Vector2f(pos, HEIGHT * 0.65), sf::Vector2f(22, 42),
-            6, 1, 20.0, 0.2, 10.2, 200.2, &j1, &e1);
+        pAux = new Abelha(sf::Vector2f(pos, HEIGHT * 0.65), &j1, &e1);
         lista.addEntidade(pAux);
+        pAux->setpGG(pGG);
         pos += 600;
     }
 }
@@ -76,7 +80,9 @@ void Fase::atualizaView() {
 void Fase::inicializar() {
     criafundo();
     lista.addEntidade(&j1);
+    j1.setpGG(pGG);
     lista.addEntidade(&e1);
+    e1.setpGG(pGG);
     criaabelhas();
     criaespinho();
     criachao();
