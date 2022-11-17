@@ -42,9 +42,10 @@ void GerenciadorColisoes::Colidir()
                 && pAux1->getId() != fundo)
             {
                 //printf("Entrou\n");
-                pAux2->colidir(pAux1, plataforma);
+                pAux2->colidir(pAux1, pAux2->getId());
             }
-
+           // if(pAux2->getSprite().getPosition().y + 120.0 > pAux1->getSprite().getPosition().y
+          //      && pAux1->getId() == espinho)
 
         }
     }

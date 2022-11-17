@@ -8,5 +8,6 @@ private:
 public:
 	Espinho(sf::Vector2f pos, ID i = ID::espinho);
 	~Espinho();
+	void ferir();
 	void executar();
 };

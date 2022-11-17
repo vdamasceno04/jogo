@@ -99,8 +99,7 @@ namespace Managers {
 	// carrega a textura indicada
 	sf::Texture* Graphics::loadTexture(const char* path) {
 		std::map<const char*, sf::Texture*>::iterator it = mapaTextura.begin();
-		cout << "caiu";
-
+		
 		while (it != mapaTextura.end()) {
 			if (!strcmp(it->first, path)) // checa se a textura ja foi carregada
 				return it->second;

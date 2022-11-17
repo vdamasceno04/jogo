@@ -70,7 +70,6 @@ void FlorestaVerde::criajavali() {
         dano = (rand() % 3) + 4;
         visao = (rand() % 100) + 600;
         pAux = new Javali(sf::Vector2f(pos, HEIGHT * 0.69), &j1, &e1, vida, dano, visao);
-        cout << vida << endl;
         listaMov.addEntidade(pAux);
         pAux->setpGG(pGG);
     }
@@ -88,7 +87,7 @@ void FlorestaVerde::criaabelhas() {
         dano = (rand() % 2) + 1;
         sorteia = rand() % 2;
         if (sorteia == 0) {
-            pAux = new Abelha(sf::Vector2f(pos, HEIGHT * 0.65), &j1, &e1, vida, dano);
+            pAux = new Abelha(sf::Vector2f(pos, HEIGHT * 0.69), &j1, &e1, vida, dano);
             listaMov.addEntidade(pAux);
             pAux->setpGG(pGG);
         }

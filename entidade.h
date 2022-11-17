@@ -18,7 +18,8 @@ namespace Entidades {
 		sf::Vector2f esqBaixo;
 		sf::Vector2f dirCima;
 		sf::Vector2f dirBaixo;
-
+		bool colidiu;
+		Entidade* colidido;
 	public:
 		Entidade(sf::Vector2f pos, ID i);
 		~Entidade();
@@ -33,7 +34,10 @@ namespace Entidades {
 		void renderizar();
 		virtual void executar() = 0;
 		bool getRemove();
-
+		void setColidiu(bool c);
+		bool getColidiu();
+		void setColidido(Entidade* e);
+		Entidade* getColidido();
 		sf::Sprite getSprite();
 
 		void atualizaPontos();

@@ -11,16 +11,16 @@ Explorador::~Explorador() {}
 void Explorador::controlar()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-		sprite.move(sf::Vector2f(2.f, 0.f));
+		sprite.move(sf::Vector2f(1.f, 0.f));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-		sprite.move(sf::Vector2f(-2.f, 0.f));
+		sprite.move(sf::Vector2f(-1.f, 0.f));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-		sprite.move(sf::Vector2f(0.f, -2.f));
+		sprite.move(sf::Vector2f(0.f, -1.f));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-		sprite.move(sf::Vector2f(0.f, 2.f));
+		sprite.move(sf::Vector2f(0.f, 1.f));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)) {
 		ataca();
