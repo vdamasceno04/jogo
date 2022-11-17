@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="agua.cpp" />
     <ClCompile Include="cacador.cpp" />
+    <ClCompile Include="colisao.cpp" />
     <ClCompile Include="ente.cpp" />
     <ClCompile Include="entidade.cpp" />
     <ClCompile Include="espinho.cpp" />
@@ -163,6 +164,7 @@
   <ItemGroup>
     <ClInclude Include="agua.h" />
     <ClInclude Include="cacador.h" />
+    <ClInclude Include="colisao.h" />
     <ClInclude Include="coords.h" />
     <ClInclude Include="Elemento.h" />
     <ClInclude Include="ente.h" />

@@ -9,6 +9,7 @@ class Jogo
 private:
 	FlorestaVerde fase1;
 	Managers::Graphics* pGG;
+	GerenciadorColisoes* pGC;
 
 public:
 	Jogo();

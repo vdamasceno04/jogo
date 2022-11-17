@@ -2,9 +2,9 @@
 #include"ente.h"
 #define HEIGHT 720
 #define WIDTH 1080
-namespace Entidades{
+namespace Entidades {
 
-	class Entidade: public Ente{
+	class Entidade : public Ente {
 	protected:
 		sf::Texture textura;
 		sf::Sprite sprite;
@@ -13,6 +13,11 @@ namespace Entidades{
 		sf::Vector2f posicao;
 		sf::Vector2f tamanho;
 		bool remove;
+		//Talvez não precise disso
+		sf::Vector2f esqCima;
+		sf::Vector2f esqBaixo;
+		sf::Vector2f dirCima;
+		sf::Vector2f dirBaixo;
 
 	public:
 		Entidade(sf::Vector2f pos, ID i);
@@ -21,8 +26,6 @@ namespace Entidades{
 		sf::Vector2f getPosicao() const;
 		void setTamanho(sf::Vector2f tam);
 		sf::Vector2f getTamanho() const;
-		void setVelocidade(sf::Vector2f vel);
-		sf::Vector2f getVelocidade();
 		void setJanela(sf::RenderWindow* janela);
 		sf::RectangleShape getBody();
 		void setEscala(sf::Vector2f escala);
@@ -30,5 +33,21 @@ namespace Entidades{
 		void renderizar();
 		virtual void executar() = 0;
 		bool getRemove();
+
+		sf::Sprite getSprite();
+
+		void atualizaPontos();
+
+		//void setVelocidade(sf::Vector2f vel);
+		//sf::Vector2f getVelocidade();
+
+		//Del soon
+		float getLadoCima();
+		float getLadoEsquerdo();
+		float getLadoDireito();
+		float getLadoBaixo();
+
+		virtual void colidir(Entidade* pEnt, ID id) = 0;
+
 	};
 }

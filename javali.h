@@ -6,4 +6,5 @@ public:
 	Javali(sf::Vector2f pos, Jogador* p1, Jogador* p2, int vida, int dano, int visao, ID i = ID::javali);
 	~Javali();
 	void executar();
+	void colidir(Entidade* pEnt, ID id);
 };

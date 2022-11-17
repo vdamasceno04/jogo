@@ -2,7 +2,7 @@
 
 Plataforma::Plataforma(sf::Vector2f pos, ID i) :
 	Obstaculo(pos, i)
-{ 
+{
 	id = i;
 	setSprite("C:/Users/genti/Downloads/texturas/chao2.png");
 	setPosicao(pos);

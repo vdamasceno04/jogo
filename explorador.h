@@ -7,4 +7,5 @@ public:
 	~Explorador();
 	void controlar();
 	void executar();
+	void colidir(Entidade* pEnt, ID id);
 };

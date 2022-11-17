@@ -3,11 +3,11 @@
 #include<stdlib.h>
 
 FlorestaVerde::FlorestaVerde(Managers::Graphics* pG) :
-	Fase(pG) {
-	pGG = pG;
+    Fase(pG) {
+    pGG = pG;
 }
 
-FlorestaVerde::~FlorestaVerde(){}
+FlorestaVerde::~FlorestaVerde() {}
 
 void FlorestaVerde::criachao()
 {
@@ -16,7 +16,7 @@ void FlorestaVerde::criachao()
     Plataforma* pAux;
     for (i = 0; i < 121; i++) {
         pAux = new Plataforma(sf::Vector2f(pos, HEIGHT * 6 / 7));
-        lista.addEntidade(pAux);
+        listaEst.addEntidade(pAux);
         pAux->setpGG(pGG);
         pos += 71;
     }
@@ -32,7 +32,7 @@ void FlorestaVerde::criaespinho() {
         sorteia = rand() % 2;
         if (sorteia == 0) {
             pAux = new Espinho(sf::Vector2f(pos, HEIGHT * 0.835));
-            lista.addEntidade(pAux);
+            listaEst.addEntidade(pAux);
             pAux->setpGG(pGG);
         }
         pos += 500;
@@ -49,7 +49,7 @@ void FlorestaVerde::criaagua() {
         sorteia = rand() % 2;
         if (sorteia == 0) {
             pAux = new Agua(sf::Vector2f(pos, HEIGHT * 0.843));
-            lista.addEntidade(pAux);
+            listaEst.addEntidade(pAux);
             pAux->setpGG(pGG);
         }
         pos += 500;
@@ -71,7 +71,7 @@ void FlorestaVerde::criajavali() {
         visao = (rand() % 100) + 600;
         pAux = new Javali(sf::Vector2f(pos, HEIGHT * 0.69), &j1, &e1, vida, dano, visao);
         cout << vida << endl;
-        lista.addEntidade(pAux);
+        listaMov.addEntidade(pAux);
         pAux->setpGG(pGG);
     }
 }
@@ -89,7 +89,7 @@ void FlorestaVerde::criaabelhas() {
         sorteia = rand() % 2;
         if (sorteia == 0) {
             pAux = new Abelha(sf::Vector2f(pos, HEIGHT * 0.65), &j1, &e1, vida, dano);
-            lista.addEntidade(pAux);
+            listaMov.addEntidade(pAux);
             pAux->setpGG(pGG);
         }
         pos += 600;
@@ -98,19 +98,25 @@ void FlorestaVerde::criaabelhas() {
 
 void FlorestaVerde::inicializar() {
     criafundo();
-    lista.addEntidade(&j1);
+    listaMov.addEntidade(&j1);
     j1.setpGG(pGG);
-    lista.addEntidade(&e1);
+    listaMov.addEntidade(&e1);
     e1.setpGG(pGG);
     criaabelhas();
     criaespinho();
     criajavali();
     criachao();
     criaagua();
-    lista.setJanela(pGG);
+    listaEst.setJanela(pGG);
+    listaMov.setJanela(pGG);
 }
 
 void FlorestaVerde::executar() {
     atualizaView();
-    lista.executarLista();
+    listaEst.executarLista();
+    listaMov.executarLista();
+}
+
+void FlorestaVerde::colidir() {
+    pGC->Colidir();
 }

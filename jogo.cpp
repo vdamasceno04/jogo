@@ -1,9 +1,9 @@
 #include "jogo.h"
 #include<stdio.h>
 
-Jogo::Jogo():
-pGG(Graphics::getInstance()), 
-fase1(Graphics::getInstance())
+Jogo::Jogo() :
+    pGG(Graphics::getInstance()),
+    fase1(Graphics::getInstance())
 {
     executar();
 }
@@ -28,7 +28,9 @@ void Jogo::executar()
                 pGG->closeWindow();
         }
         pGG->clear();
-        fase1.executar(); 
+        fase1.executar();
+        fase1.colidir();
+
         pGG->display();
     }
 }

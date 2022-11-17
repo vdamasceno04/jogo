@@ -23,5 +23,6 @@ namespace Obstaculos {
 		void atualizaDanificar();
 		float getLentidao();
 		virtual void executar() = 0;
+		virtual void colidir(Entidade* pEnt, ID id) { }
 	};
 }

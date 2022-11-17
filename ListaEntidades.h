@@ -1,7 +1,8 @@
+#pragma once
 #include "Lista.h"
 #include "entidade.h"
 
-class ListaEntidades{
+class ListaEntidades {
 private:
 	Lista<Entidades::Entidade> objLE;
 

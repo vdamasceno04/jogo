@@ -12,5 +12,5 @@ public:
 	void criaabelhas();
 	void inicializar();
 	void executar();
-
+	void colidir();
 };

@@ -4,8 +4,8 @@
 
 class ListaEntidades;
 
-class Jogador : public Personagem{
-private: 
+class Jogador : public Personagem {
+private:
 
 public:
 	Jogador(sf::Vector2f pos, ID i);
@@ -13,4 +13,6 @@ public:
 	virtual void executar() = 0;
 	virtual void controlar() = 0;
 	void ataca();
+
+	virtual void colidir(Entidade* pEnt, ID id) { }
 };

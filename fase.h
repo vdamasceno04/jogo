@@ -2,6 +2,7 @@
 //#include "Ente.h"
 #include <SFML/Graphics.hpp>
 #include "ListaEntidades.h"
+#include "colisao.h"
 #include "cacador.h"
 #include "explorador.h"
 #include "graphics.h"
@@ -18,8 +19,9 @@ class Fase {
 public:
 
 	Managers::Graphics* pGG;
-//	Managers::Colisao *pC;
-	ListaEntidades lista;
+	GerenciadorColisoes* pGC;
+	ListaEntidades listaEst;
+	ListaEntidades listaMov;
 	Cacador j1;
 	Explorador e1;
 
@@ -28,4 +30,5 @@ public:
 	void atualizaView();
 	void criafundo();
 	virtual void executar() = 0;
+	virtual void colidir() = 0;
 };

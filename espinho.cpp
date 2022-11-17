@@ -17,3 +17,4 @@ Espinho::~Espinho() {}
 void Espinho::executar() {
 	renderizar();
 }
+
