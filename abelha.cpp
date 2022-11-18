@@ -22,6 +22,7 @@ void Abelha::inicializa(int m) {
 	dano = mel - 1;
 	visao = (mel * 100);
 }
+
 void Abelha::executar() {
 	hostilizar();
 	remover();

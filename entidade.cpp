@@ -66,13 +66,14 @@ void Entidade::atualizaPontos() {
 
 }
 
-void Entidade::setColidido(Entidade* e) { colidido = e; }
+/*void Entidade::setColidido(Entidade* e) { colidido = e; }
 
 Entidade* Entidade::getColidido() { return colidido; }
 
 void Entidade::setColidiu(bool c) { colidiu = c; }
 
 bool Entidade::getColidiu() { return colidiu; }
+*/
 
 sf::Sprite Entidade::getSprite() {
 	return sprite;

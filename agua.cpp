@@ -1,4 +1,5 @@
 #include "Agua.h"
+#include "personagem.h"
 
 Agua::Agua(sf::Vector2f pos) :
 	Obstaculo(pos)
@@ -12,6 +13,13 @@ Agua::Agua(sf::Vector2f pos) :
 }
 
 Agua::~Agua() {}
+
+float Agua::getLentidao() { return lentidao; }
+
+void Agua::efeito(Personagem* p) {
+	//IF COLIDINDO
+	p->setVelocidade(sf::Vector2f(getVelocidade().x * lentidao, getVelocidade().y * lentidao));
+}
 
 void Agua::executar() {
 	renderizar();

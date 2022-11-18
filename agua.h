@@ -3,8 +3,12 @@
 
 class Agua : public Obstaculos::Obstaculo {
 private:
+	float lentidao;
+
 public:
 	Agua(sf::Vector2f pos);
 	~Agua();
+	float getLentidao();
+	void efeito(Personagem* p);
 	void executar();
 };

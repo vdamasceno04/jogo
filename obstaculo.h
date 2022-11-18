@@ -7,21 +7,14 @@ namespace Obstaculos {
 
 	class Obstaculo : public Entidades::Entidade {
 	protected:
-		bool danificar;
-		float lentidao;
-		int dano;
-		float duracaoCooldown;
-		float timerCooldown;
+
+		
 
 	public:
 		Obstaculo(sf::Vector2f pos);
 		~Obstaculo();
-		bool  getDanificar();
-		int   getDano();
-		float getCooldown();
-		void contaTempoCooldown(const float dt);
-		void atualizaDanificar();
-		float getLentidao();
+
+		virtual void efeito(Personagem* p){}
 		virtual void executar() = 0;
 		virtual void colidir(Entidade* pEnt, ID id) { }
 	};
