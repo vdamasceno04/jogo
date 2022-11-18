@@ -23,7 +23,7 @@ void Entidade::setPosicao(sf::Vector2f pos) {
 	atualizaPontos();
 }
 
-sf::Vector2f Entidade::getPosicao() const { return posicao; }
+sf::Vector2f Entidade::getPosicao() const { return body.getPosition(); }
 
 void Entidade::setTamanho(sf::Vector2f tam) { body.setSize(tam); }
 
@@ -39,6 +39,8 @@ void Entidade::setJanela(sf::RenderWindow* j) { this->janela = j; }
 sf::RectangleShape Entidade::getBody() { return body; }
 
 bool Entidade::getRemove() { return remove; }
+
+int Entidade::getDano() { return dano; }
 
 void Entidade::renderizar() { pGG->render(&sprite); }
 

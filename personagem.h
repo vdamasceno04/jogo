@@ -5,7 +5,6 @@ class Personagem : public Entidades::Entidade {
 protected:
 	int vida;
 	bool atacando;
-	int dano;
 	float alcance;
 	bool podeAtacar;
 	float duracaoCooldown;
@@ -19,7 +18,6 @@ public:
 	void setVida(int v);
 	int getVida();
 	bool getAtacando();
-	int getDano();
 	void tomaDano(int ferimento);
 	bool morreu();
 	void setOlhar(bool direita);

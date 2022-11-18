@@ -14,6 +14,8 @@ namespace Entidades {
 		sf::Vector2f tamanho;
 		sf::Vector2f velocidade;
 		bool remove;
+		int dano;
+
 		//Talvez não precise disso
 		sf::Vector2f esqCima;
 		sf::Vector2f esqBaixo;
@@ -34,6 +36,8 @@ namespace Entidades {
 		void setSprite(const char* local);
 		void renderizar();
 		virtual void executar() = 0;
+		int getDano();
+
 		bool getRemove();
 		void setColidiu(bool c);
 		bool getColidiu();

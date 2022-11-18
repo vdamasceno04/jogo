@@ -64,7 +64,6 @@ bool Personagem::acertaAtaque(Personagem* p) {
 
 bool Personagem::getAtacando() { return atacando; }
 
-int Personagem::getDano() { return dano; }
 
 void Personagem::remover() {
 	if (morreu())
