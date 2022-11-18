@@ -3,9 +3,12 @@
 
 Ente::Ente() {
 	this->id = vazio;
-	pGG = NULL;
 }
 
-Ente::~Ente() { pGG = NULL; }
+Ente::~Ente() {}
+
+Managers::Graphics* Ente::pGG = NULL;
+
+void Ente::setpGG(Managers::Graphics* p) { pGG = p; }
 
 ID Ente::getId() { return id; }

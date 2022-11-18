@@ -17,7 +17,7 @@ void Fase::criafundo()
     for (i = 0; i < 8; i++) {
         pAux = new Fundo(sf::Vector2f(pos, 0));
         listaEst.addEntidade(pAux);
-        pAux->setpGG(pGG);
+  //      pAux->setpGG(pGG);
         pos += WIDTH - 2;
     }
 }

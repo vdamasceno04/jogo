@@ -24,10 +24,10 @@ enum ID {
 class Ente {
 protected:
 	ID id;
-	Managers::Graphics* pGG;
+	static Managers::Graphics* pGG;
 public:
 	Ente();
-	void setpGG(Managers::Graphics* p) {pGG = p;}
+	static void setpGG(Managers::Graphics* p);
 	ID getId();
 	~Ente();
 	virtual void executar() = 0;

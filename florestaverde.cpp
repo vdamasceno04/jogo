@@ -17,7 +17,6 @@ void FlorestaVerde::criachao()
     for (i = 0; i < 121; i++) {
         pAux = new Plataforma(sf::Vector2f(pos, HEIGHT * 6 / 7));
         listaEst.addEntidade(pAux);
-        pAux->setpGG(pGG);
         pos += 71;
     }
 }
@@ -33,7 +32,6 @@ void FlorestaVerde::criaespinho() {
         if (sorteia == 0) {
             pAux = new Espinho(sf::Vector2f(pos, HEIGHT * 0.835));
             listaEst.addEntidade(pAux);
-            pAux->setpGG(pGG);
         }
         pos += 500;
     }
@@ -50,7 +48,6 @@ void FlorestaVerde::criaagua() {
         if (sorteia == 0) {
             pAux = new Agua(sf::Vector2f(pos, HEIGHT * 0.843));
             listaEst.addEntidade(pAux);
-            pAux->setpGG(pGG);
         }
         pos += 500;
     }
@@ -71,7 +68,6 @@ void FlorestaVerde::criajavali() {
         visao = (rand() % 100) + 600;
         pAux = new Javali(sf::Vector2f(pos, HEIGHT * 0.69), &j1, &e1, vida, dano, visao);
         listaMov.addEntidade(pAux);
-        pAux->setpGG(pGG);
     }
 }
 
@@ -89,7 +85,6 @@ void FlorestaVerde::criaabelhas() {
         if (sorteia == 0) {
             pAux = new Abelha(sf::Vector2f(pos, HEIGHT * 0.69), &j1, &e1, vida, dano);
             listaMov.addEntidade(pAux);
-            pAux->setpGG(pGG);
         }
         pos += 600;
     }
@@ -98,9 +93,7 @@ void FlorestaVerde::criaabelhas() {
 void FlorestaVerde::inicializar() {
     criafundo();
     listaMov.addEntidade(&j1);
-    j1.setpGG(pGG);
     listaMov.addEntidade(&e1);
-    e1.setpGG(pGG);
     criaabelhas();
     criaespinho();
     criajavali();

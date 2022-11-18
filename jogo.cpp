@@ -5,6 +5,7 @@ Jogo::Jogo() :
     pGG(Graphics::getInstance()),
     fase1(Graphics::getInstance())
 {
+    Ente::setpGG(Graphics::getInstance());
     executar();
 }
 
