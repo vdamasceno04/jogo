@@ -1,8 +1,9 @@
 #include "Espinho.h"
 
-Espinho::Espinho(sf::Vector2f pos, ID i) :
-	Obstaculos::Obstaculo(pos, i)
+Espinho::Espinho(sf::Vector2f pos) :
+	Obstaculos::Obstaculo(pos)
 {
+	id = espinho;
 	dano = 1;
 	danificar = true;
 	duracaoCooldown = 100;

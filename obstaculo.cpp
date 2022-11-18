@@ -1,8 +1,8 @@
 #include "Obstaculo.h"
 using namespace Obstaculos;
 
-Obstaculo::Obstaculo(sf::Vector2f pos, ID i) :
-	Entidade::Entidade(pos, i)
+Obstaculo::Obstaculo(sf::Vector2f pos) :
+	Entidade::Entidade(pos)
 {
 	danificar = false;
 	lentidao = 0.0;

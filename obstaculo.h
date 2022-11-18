@@ -14,7 +14,7 @@ namespace Obstaculos {
 		float timerCooldown;
 
 	public:
-		Obstaculo(sf::Vector2f pos, ID i);
+		Obstaculo(sf::Vector2f pos);
 		~Obstaculo();
 		bool  getDanificar();
 		int   getDano();

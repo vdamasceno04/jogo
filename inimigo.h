@@ -10,7 +10,7 @@ protected:
 	Jogador* pJ2;
 
 public:
-	Inimigo(sf::Vector2f pos, Jogador* p1, Jogador* p2, int vida, int dano, ID i);
+	Inimigo(sf::Vector2f pos, Jogador* p1, Jogador* p2, int vida, int dano);
 	~Inimigo();
 	virtual void executar() = 0;
 	void setVisao(float visao);

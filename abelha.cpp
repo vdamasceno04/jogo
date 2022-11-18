@@ -1,8 +1,8 @@
 #include "abelha.h"
 
-Abelha::Abelha(sf::Vector2f pos, Jogador* p1, Jogador* p2, int v, int d, ID i) :
-	Inimigo(pos, p1, p2, v, d, id) {
-	id = i;
+Abelha::Abelha(sf::Vector2f pos, Jogador* p1, Jogador* p2, int v, int d) :
+	Inimigo(pos, p1, p2, v, d) {
+	id = abelha;
 	vida = v;
 	dano = d;
 	setSprite("C:/Users/genti/Downloads/texturas/abelha2.png");

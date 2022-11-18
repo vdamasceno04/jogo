@@ -8,7 +8,9 @@ Jogo::Jogo() :
     executar();
 }
 
-Jogo::~Jogo() {}
+Jogo::~Jogo() {
+    pGG->apagarInstance();
+}
 #include "jogo.h"
 #include<stdio.h>
 

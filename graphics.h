@@ -19,6 +19,7 @@ namespace Managers {
 	public:
 		~Graphics();
 		static Graphics* getInstance();
+		void apagarInstance();
 		sf::Clock getClock();
 		void render(sf::Sprite* sprite);
 		void render(sf::Text* text);

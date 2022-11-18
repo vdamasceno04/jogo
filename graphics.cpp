@@ -21,6 +21,10 @@ namespace Managers {
 		return instance;
 	}
 
+	void Graphics::apagarInstance() {
+		if (instance != NULL)
+			instance = NULL;
+	}
 	Graphics::Graphics() :
 		window(new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Ibama++")),
 		view(sf::Vector2f(WIDTH / 2, HEIGHT / 2), sf::Vector2f(WIDTH, HEIGHT)),
@@ -33,6 +37,7 @@ namespace Managers {
 		for (it = mapaTextura.begin(); it != mapaTextura.end(); ++it)
 			delete(it->second);
 		delete(window);
+		apagarInstance();
 	}
 
 	sf::Clock Graphics::getClock() {

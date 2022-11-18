@@ -4,7 +4,7 @@
 class Plataforma : public Obstaculos::Obstaculo {
 private:
 public:
-	Plataforma(sf::Vector2f pos, ID i = ID::plataforma);
+	Plataforma(sf::Vector2f pos);
 	~Plataforma();
 	void executar();
 };

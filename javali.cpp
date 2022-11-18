@@ -1,8 +1,8 @@
 #include"javali.h"
 
-Javali::Javali(sf::Vector2f pos, Jogador* p1, Jogador* p2, int v, int d, int vs, ID i) :
-	Inimigo(pos, p1, p2, v, d, i) {
-	id = i;
+Javali::Javali(sf::Vector2f pos, Jogador* p1, Jogador* p2, int v, int d, int vs) :
+	Inimigo(pos, p1, p2, v, d) {
+	id = javali;
 	vida = v;
 	dano = d;
 	visao = vs;

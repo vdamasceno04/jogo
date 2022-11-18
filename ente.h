@@ -26,8 +26,8 @@ protected:
 	ID id;
 	Managers::Graphics* pGG;
 public:
-	Ente(ID i);
-	void setpGG(Managers::Graphics* p);
+	Ente();
+	void setpGG(Managers::Graphics* p) {pGG = p;}
 	ID getId();
 	~Ente();
 	virtual void executar() = 0;
