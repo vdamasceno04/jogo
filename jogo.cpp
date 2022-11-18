@@ -10,7 +10,7 @@ Jogo::Jogo() :
 }
 
 Jogo::~Jogo() {
-    pGG->apagarInstance();
+    Managers::Graphics::apagarInstance();
 }
 #include "jogo.h"
 #include<stdio.h>
