@@ -12,6 +12,7 @@ namespace Entidades {
 		sf::RenderWindow* janela;
 		sf::Vector2f posicao;
 		sf::Vector2f tamanho;
+		sf::Vector2f velocidade;
 		bool remove;
 		//Talvez não precise disso
 		sf::Vector2f esqCima;
@@ -21,7 +22,7 @@ namespace Entidades {
 		bool colidiu;
 		Entidade* colidido;
 	public:
-		Entidade(sf::Vector2f pos, ID i);
+		Entidade(sf::Vector2f pos);
 		~Entidade();
 		void setPosicao(sf::Vector2f pos);
 		sf::Vector2f getPosicao() const;
@@ -42,8 +43,8 @@ namespace Entidades {
 
 		void atualizaPontos();
 
-		//void setVelocidade(sf::Vector2f vel);
-		//sf::Vector2f getVelocidade();
+		void setVelocidade(sf::Vector2f vel);
+		sf::Vector2f getVelocidade();
 
 		//Del soon
 		float getLadoCima();

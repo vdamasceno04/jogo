@@ -1,8 +1,8 @@
 #include"jogador.h"
 #include"ListaEntidades.h"
 
-Jogador::Jogador(sf::Vector2f pos, ID i) :
-	Personagem::Personagem(pos, i)
+Jogador::Jogador(sf::Vector2f pos) :
+	Personagem::Personagem(pos)
 {
 	podeAtacar = true;
 	setVida(20);

@@ -4,19 +4,16 @@
 class Personagem : public Entidades::Entidade {
 protected:
 	int vida;
-	sf::Vector2f velocidade;
 	bool atacando;
 	int dano;
 	float alcance;
 	bool podeAtacar;
 	float duracaoCooldown;
 	float timerCooldown;
-	void setVelocidade(sf::Vector2f vel);
-	sf::Vector2f getVelocidade();
 	bool olhaDireita;
 
 public:
-	Personagem(sf::Vector2f pos, ID i);
+	Personagem(sf::Vector2f pos);
 	~Personagem();
 	virtual void executar() = 0;
 	void setVida(int v);

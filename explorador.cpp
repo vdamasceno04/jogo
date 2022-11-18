@@ -1,8 +1,8 @@
 #include "explorador.h"
 
-Explorador::Explorador(sf::Vector2f pos, ID i) :Jogador(pos, i)
+Explorador::Explorador(sf::Vector2f pos) :Jogador(pos)
 {
-	id = i;
+	id = explorador;
 	setSprite("C:/Users/genti/Downloads/texturas/Idle.gif");
 }
 
@@ -11,17 +11,17 @@ Explorador::~Explorador() {}
 void Explorador::controlar()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-		sprite.move(sf::Vector2f(1.f, 0.f));
+		setPosicao(sf::Vector2f(getPosicao().x + VMAXX, getPosicao().y));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-		sprite.move(sf::Vector2f(-1.f, 0.f));
+		setPosicao(sf::Vector2f(getPosicao().x - VMAXX, getPosicao().y));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-		sprite.move(sf::Vector2f(0.f, -1.f));
+		setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y - VMAXY));
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-		sprite.move(sf::Vector2f(0.f, 1.f));
-	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+		setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y + VMAXY));
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)) {
 		ataca();
 	}

@@ -1,7 +1,7 @@
 #include"entidade.h"
 using namespace Entidades;
 
-Entidade::Entidade(sf::Vector2f pos, ID i) : Ente(i) {
+Entidade::Entidade(sf::Vector2f pos): Ente() {
 	janela = NULL;
 	remove = false;
 	colidiu = false;
@@ -41,6 +41,14 @@ sf::RectangleShape Entidade::getBody() { return body; }
 bool Entidade::getRemove() { return remove; }
 
 void Entidade::renderizar() { pGG->render(&sprite); }
+
+void Entidade::setVelocidade(sf::Vector2f vel) {
+	velocidade = vel;
+}
+
+sf::Vector2f Entidade::getVelocidade() {
+	return velocidade;
+}
 
 void Entidade::setSprite(const char* local) {
 	textura.loadFromFile(local);

@@ -1,25 +1,25 @@
 #include "cacador.h"
 
-Cacador::Cacador(sf::Vector2f pos, ID i) :
-	Jogador(pos, i) {
-	id = i;
+Cacador::Cacador(sf::Vector2f pos) :
+	Jogador(pos) {
+	id = cacador;
 	setSprite("C:/Users/genti/Downloads/texturas/Idle.gif");
 }
 Cacador::~Cacador() {}
 
 void Cacador::controlar() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-		sprite.move(sf::Vector2f(1.f, 0.f));
+		setPosicao(sf::Vector2f(getPosicao().x + VMAXX, getPosicao().y));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-		sprite.move(sf::Vector2f(-1.f, 0.f));
+		setPosicao(sf::Vector2f(getPosicao().x - VMAXX, getPosicao().y));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-		sprite.move(sf::Vector2f(0.f, -1.f));
+		setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y - VMAXY));
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-		sprite.move(sf::Vector2f(0.f, 1.f));
-	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) 
+		setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y + VMAXY));
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
 		ataca();
 	}

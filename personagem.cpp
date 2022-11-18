@@ -1,7 +1,7 @@
 #include "personagem.h"
 
-Personagem::Personagem(sf::Vector2f pos, ID i):
-Entidade::Entidade(pos, i) {
+Personagem::Personagem(sf::Vector2f pos):
+Entidade::Entidade(pos) {
 	atacando = false;
 	podeAtacar = true;
 	olhaDireita = true;
@@ -16,10 +16,6 @@ Personagem::~Personagem(){}
 void Personagem::setVida(int v) { vida = v; }
 
 int Personagem::getVida() { return vida; }
-
-void Personagem::setVelocidade(sf::Vector2f vel) { velocidade = vel; }
-
-sf::Vector2f Personagem::getVelocidade() { return velocidade; }
 
 void Personagem::tomaDano(int ferimento) { vida -= ferimento;}
 
