@@ -59,13 +59,6 @@ void Inimigo::atacado(Jogador* pJ) {
 	}
 }
 
-void Inimigo::ataca(Jogador* pJ) {
-	atualizapodeAtacar();
-	if (acertaAtaque(pJ) && getPersegue(pJ)) {
-		golpear(pJ);
-	}
-}
-
 void Inimigo::hostilizar() {
 	if (getPersegue(pJ1) || getPersegue(pJ2)) {
 		perseguicao(definePerseguido(pJ1, pJ2));

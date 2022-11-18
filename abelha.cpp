@@ -1,4 +1,5 @@
 #include "abelha.h"
+#include "jogador.h"
 
 Abelha::Abelha(sf::Vector2f pos, Jogador* p1, Jogador* p2, int m) :
 	Inimigo(pos, p1, p2) {
@@ -21,6 +22,13 @@ void Abelha::inicializa(int m) {
 	vida = mel;
 	dano = mel - 1;
 	visao = (mel * 100);
+}
+
+void Abelha::ataca(Jogador* pJ) {
+	atualizapodeAtacar();
+	if (acertaAtaque(pJ) && getPersegue(pJ)) {
+		golpear(pJ);
+	}
 }
 
 void Abelha::executar() {

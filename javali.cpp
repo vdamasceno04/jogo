@@ -1,4 +1,5 @@
 #include"javali.h"
+#include"jogador.h"
 
 #define VMAXX 0.35
 #define VMAXY 0
@@ -28,6 +29,13 @@ void Javali::executar() {
 	hostilizar();
 	remover();
 	renderizar();
+}
+
+void Javali::ataca(Jogador* pJ) {
+	atualizapodeAtacar();
+	if (acertaAtaque(pJ) && getPersegue(pJ)) {
+		golpear(pJ);
+	}
 }
 
 void Javali::colidir(Entidade* pEnt, ID id) {

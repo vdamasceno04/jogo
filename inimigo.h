@@ -19,6 +19,6 @@ public:
 	Jogador* definePerseguido(Jogador* pJ1, Jogador* pJ2);
 	void perseguicao(Jogador* pJ);
 	void atacado(Jogador* pJ);
-	void ataca(Jogador* pJ);
+	virtual void ataca(Jogador* pJ) {};
 	void hostilizar();
 };

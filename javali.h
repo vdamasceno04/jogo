@@ -8,5 +8,6 @@ public:
 	~Javali();
 	void inicializa(int idade);
 	void executar();
+	void ataca(Jogador* pJ);
 	void colidir(Entidade* pEnt, ID id);
 };
