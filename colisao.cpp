@@ -32,13 +32,12 @@ void GerenciadorColisoes::Colidir()
     //Colisão entre Etidades Moveis e Estaticas
     for (i = 0; i < listaEntidadesEstaticas->getLen(); i++)
     {
-
         for (j = 0; j < listaEntidadesMoveis->getLen(); j++)
         {
             pAux1 = listaEntidadesEstaticas->getItem(i);
             pAux2 = listaEntidadesMoveis->getItem(j);
 
-            if (pAux2->getSprite().getPosition().y + 120.0 > pAux1->getSprite().getPosition().y
+            if (pAux2->getPosicao().y + 120.0 > pAux1->getPosicao().y
                 && pAux1->getId() != fundo)
             {
                 //printf("Entrou\n");
