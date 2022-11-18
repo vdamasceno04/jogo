@@ -27,9 +27,9 @@ void FlorestaVerde::criaespinho() {
     int pos = 800;
     Espinho* pAux;
     srand(time(NULL));
-    for (i = 0; i < 20; i++) {
-        sorteia = rand() % 2;
-        if (sorteia == 0) {
+    for (i = 0; i < 10; i++) {
+        sorteia = 0;// rand() % 2;
+        if (sorteia == 0 || i%3 == 0) {
             pAux = new Espinho(sf::Vector2f(pos, HEIGHT * 0.835));
             listaEst.addEntidade(pAux);
         }
@@ -43,7 +43,7 @@ void FlorestaVerde::criaagua() {
     int pos = 500;
     Agua* pAux;
     srand(time(NULL));
-    for (i = 0; i < 25; i++) {
+    for (i = 0; i < 10; i++) {
         sorteia = rand() % 2;
         if (sorteia == 0) {
             pAux = new Agua(sf::Vector2f(pos, HEIGHT * 0.843));
@@ -56,37 +56,36 @@ void FlorestaVerde::criaagua() {
 
 void FlorestaVerde::criajavali() {
     int i;
-    int pos = WIDTH * 8 - WIDTH / 3;
-    int vida;
-    int dano;
-    int visao;
+    int pos = WIDTH * 6 - WIDTH / 3;
+    int idade;
+    int sorteia;
     Javali* pAux;
     srand(time(NULL));
-    for (i = 0; i < 1; i++) {
-        vida = (rand() % 8) + 10;
-        dano = (rand() % 3) + 4;
-        visao = (rand() % 100) + 600;
-        pAux = new Javali(sf::Vector2f(pos, HEIGHT * 0.69), &j1, &e1, vida, dano, visao);
-        listaMov.addEntidade(pAux);
+    for (i = 0; i < 6; i++) {
+        sorteia = rand() % 2;
+        if (sorteia == 0 || i % 2 == 0) {
+            idade = (rand() % 8) + 2;
+            pAux = new Javali(sf::Vector2f(pos, HEIGHT * 0.69), &j1, &e1, idade);
+            listaMov.addEntidade(pAux);
+        }
+        pos += 220;
     }
 }
 
 void FlorestaVerde::criaabelhas() {
     int i;
-    int vida;
-    int dano;
+    int mel;
     int pos = 250;
     int sorteia;
     Abelha* pAux;
-    for (i = 0; i < 10; i++) {
-        vida = (rand() % 3) + 2;
-        dano = (rand() % 2) + 1;
+    for (i = 0; i < 16; i++) {
         sorteia = rand() % 2;
-        if (sorteia == 0) {
-            pAux = new Abelha(sf::Vector2f(pos, HEIGHT * 0.69), &j1, &e1, vida, dano);
+        if (sorteia == 0 || i%3 == 0) {
+            mel = rand() % 3 + 2;
+            pAux = new Abelha(sf::Vector2f(pos, HEIGHT * 0.69), &j1, &e1, mel);
             listaMov.addEntidade(pAux);
         }
-        pos += 600;
+        pos += 400;
     }
 }
 

@@ -4,7 +4,7 @@
 using std::cout;
 using std::endl;
 
-Inimigo::Inimigo(sf::Vector2f pos, Jogador* p1, Jogador* p2, int vida, int dano):
+Inimigo::Inimigo(sf::Vector2f pos, Jogador* p1, Jogador* p2):
 	Personagem(pos)
 {
 	podeAtacar = true;

@@ -1,22 +1,29 @@
 #include"javali.h"
 
-Javali::Javali(sf::Vector2f pos, Jogador* p1, Jogador* p2, int v, int d, int vs) :
-	Inimigo(pos, p1, p2, v, d) {
+#define VMAXX 0.35
+#define VMAXY 0
+
+Javali::Javali(sf::Vector2f pos, Jogador* p1, Jogador* p2, int i) :
+	Inimigo(pos, p1, p2) {
 	id = javali;
-	vida = v;
-	dano = d;
-	visao = vs;
 	setSprite("C:/Users/genti/Downloads/texturas/javalimarrom.png");
 	body.setSize(sf::Vector2f(47, 32));
 	setEscala(sf::Vector2f(4, 4));
 	setPosicao(pos);
-	velocidade = (sf::Vector2f(0.35, 0.35));
+	velocidade = (sf::Vector2f(VMAXX, VMAXY));
 	alcance = 20;
 	duracaoCooldown = 150.5;
+	idade = i;
+	inicializa(idade);
 }
 
 Javali::~Javali() {}
 
+void Javali::inicializa(int i) {
+	vida = idade + 15;
+	dano = idade - 1;
+	visao = (idade * 10) + 500;
+}
 void Javali::executar() {
 	hostilizar();
 	remover();
