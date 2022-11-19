@@ -5,7 +5,7 @@ Espinho::Espinho(sf::Vector2f pos) :
 	Obstaculos::Obstaculo(pos)
 {
 	id = espinho;
-	dano = 1;
+	dano = 10;
 	danificar = true;
 	duracaoCooldown = 100;
 	setSprite("C:/Users/genti/Downloads/texturas/espinho.png");

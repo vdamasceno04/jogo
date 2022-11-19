@@ -16,6 +16,6 @@ namespace Obstaculos {
 
 		virtual void efeito(Personagem* p){}
 		virtual void executar() = 0;
-		virtual void colidir(Entidade* pEnt, ID id) { }
+		virtual void colidir(Entidade* pEnt, float intersec_x, float intersec_y) {} // fazer virtual pura dps
 	};
 }

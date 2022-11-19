@@ -43,6 +43,8 @@ void Javali::colidir(Entidade* p, float intersec_x, float intersec_y)
 {
 	if (p->getId() == 1 || p->getId() == 2 || p->getId() == 3 || p->getId() == 6 || p->getId() == 7)
 		resolverColisao(p, intersec_x, intersec_y);
+	else if (p->getId() == 5) 
+		resolverColisao(p, intersec_x, intersec_y);
 	/*	else if (ent2->getId() == 4) {
 			vida -= ent2->getDamage();
 			if (vida<= 0) {
