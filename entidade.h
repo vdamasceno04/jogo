@@ -14,9 +14,8 @@ namespace Entidades {
 		sf::Vector2f tamanho;
 		sf::Vector2f velocidade;
 		bool remove;
+		int vida;
 		int dano;
-		bool colidiu;
-		Entidade* colidido;
 	public:
 		Entidade(sf::Vector2f pos);
 		~Entidade();
@@ -33,14 +32,11 @@ namespace Entidades {
 		int getDano();
 		void resolverColisao(Entidade* pEnt, float intersec_x, float intersec_y);
 		bool getRemove();
-		void setColidiu(bool c);
-		bool getColidiu();
-		void setColidido(Entidade* e);
-		Entidade* getColidido();
 		sf::Sprite getSprite();
-
+		virtual void efeito(Entidade* p) {};
 		void setVelocidade(sf::Vector2f vel);
 		sf::Vector2f getVelocidade();
+		void tomaDano(int ferimento);
 
 		virtual void colidir(Entidade* pEnt, float intersec_x, float intersec_y) {};
 

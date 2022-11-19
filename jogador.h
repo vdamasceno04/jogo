@@ -3,7 +3,8 @@
 #include <string>
 
 #define VMAXX 1.0
-#define VMAXY 0.5
+#define VMAXY 0.3
+
 class ListaEntidades;
 
 class Jogador : public Personagem {

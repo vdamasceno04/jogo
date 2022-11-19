@@ -4,9 +4,8 @@ using namespace Entidades;
 Entidade::Entidade(sf::Vector2f pos): Ente() {
 	janela = NULL;
 	remove = false;
-	colidiu = false;
 	posicao = pos;
-
+	dano = 0;
 }
 
 Entidade::~Entidade() { janela = NULL; }
@@ -29,6 +28,8 @@ void Entidade::setEscala(sf::Vector2f scale) {
 }
 
 void Entidade::setJanela(sf::RenderWindow* j) { this->janela = j; }
+
+void Entidade::tomaDano(int ferimento) { vida -= ferimento; }
 
 sf::RectangleShape Entidade::getBody() { return body; }
 
@@ -71,14 +72,6 @@ void Entidade::resolverColisao(Entidade* pEnt, float ix, float iy)
 		setVelocidade(sf::Vector2f(getVelocidade().x, 0));
 	}
 }
-/*void Entidade::setColidido(Entidade* e) { colidido = e; }
-
-Entidade* Entidade::getColidido() { return colidido; }
-
-void Entidade::setColidiu(bool c) { colidiu = c; }
-
-bool Entidade::getColidiu() { return colidiu; }
-*/
 
 sf::Sprite Entidade::getSprite() {
 	return sprite;

@@ -10,16 +10,16 @@ Cacador::~Cacador() {}
 
 void Cacador::controlar() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-		setPosicao(sf::Vector2f(getPosicao().x + VMAXX, getPosicao().y));
+		setPosicao(sf::Vector2f(getPosicao().x + getVelocidade().x, getPosicao().y));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-		setPosicao(sf::Vector2f(getPosicao().x - VMAXX, getPosicao().y));
+		setPosicao(sf::Vector2f(getPosicao().x - getVelocidade().x, getPosicao().y));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-		setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y - VMAXY));
+		setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y - getVelocidade().y));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) 
-		setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y + VMAXY));
+		setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y + getVelocidade().y));
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
 		ataca();

@@ -3,7 +3,6 @@
 
 class Personagem : public Entidades::Entidade {
 protected:
-	int vida;
 	bool atacando;
 	float alcance;
 	bool podeAtacar;
@@ -18,7 +17,6 @@ public:
 	void setVida(int v);
 	int getVida();
 	bool getAtacando();
-	void tomaDano(int ferimento);
 	bool morreu();
 	void setOlhar(bool direita);
 	bool getOlharDireita();

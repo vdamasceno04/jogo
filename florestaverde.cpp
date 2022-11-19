@@ -46,7 +46,7 @@ void FlorestaVerde::criaagua() {
     for (i = 0; i < 10; i++) {
         sorteia = rand() % 2;
         if (sorteia == 0) {
-            pAux = new Agua(sf::Vector2f(pos, HEIGHT * 0.843));
+            pAux = new Agua(sf::Vector2f(pos, HEIGHT * 0.856));
             listaEst.addEntidade(pAux);
         }
         pos += 500;

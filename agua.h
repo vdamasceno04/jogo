@@ -9,6 +9,6 @@ public:
 	Agua(sf::Vector2f pos);
 	~Agua();
 	float getLentidao();
-	void efeito(Personagem* p);
+	void efeito(Entidade* p);
 	void executar();
 };

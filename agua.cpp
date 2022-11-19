@@ -6,19 +6,19 @@ Agua::Agua(sf::Vector2f pos) :
 {
 	id = agua;
 	lentidao = 0.3;
-	body.setSize(sf::Vector2f(63, 37));
+	body.setSize(sf::Vector2f(100, 37));
 	setSprite("C:/Users/genti/Downloads/texturas/agua.png");
+	sprite.setTextureRect(sf::IntRect(0,5,60,60 ));
 	setPosicao(pos);
-	setEscala(sf::Vector2f(2, 4));
+	setEscala(sf::Vector2f(3, 4));
 }
 
 Agua::~Agua() {}
 
 float Agua::getLentidao() { return lentidao; }
 
-void Agua::efeito(Personagem* p) {
-	//IF COLIDINDO
-	p->setVelocidade(sf::Vector2f(getVelocidade().x * lentidao, getVelocidade().y * lentidao));
+void Agua::efeito(Entidade* p) {
+	p->setVelocidade(getVelocidade() * lentidao);
 }
 
 void Agua::executar() {

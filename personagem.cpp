@@ -17,7 +17,6 @@ void Personagem::setVida(int v) { vida = v; }
 
 int Personagem::getVida() { return vida; }
 
-void Personagem::tomaDano(int ferimento) { vida -= ferimento;}
 
 bool Personagem::morreu() {
 	if (vida <= 0) {

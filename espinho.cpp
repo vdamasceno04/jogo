@@ -5,7 +5,7 @@ Espinho::Espinho(sf::Vector2f pos) :
 	Obstaculos::Obstaculo(pos)
 {
 	id = espinho;
-	dano = 10;
+	dano = 1;
 	danificar = true;
 	duracaoCooldown = 100;
 	setSprite("C:/Users/genti/Downloads/texturas/espinho.png");
@@ -16,11 +16,25 @@ Espinho::Espinho(sf::Vector2f pos) :
 
 Espinho::~Espinho() {}
 
-int Espinho::getDano() { return dano; }
-
 bool Espinho::getDanificar() { return danificar; }
 
 float Espinho::getCooldown() { return duracaoCooldown; }
+
+void Espinho::efeito(Entidade* pEnt) {
+	if (danificar) {
+		danificar = false;
+		pEnt->tomaDano(dano);
+		timerCooldown = 0;
+		pGG->getClock().restart();
+		timerCooldown += pGG->getClock().getElapsedTime().asSeconds();
+
+	}
+	else {
+		pGG->getClock().restart();
+		timerCooldown += pGG->getClock().getElapsedTime().asSeconds();
+	}
+	atualizaDanificar();
+}
 
 void Espinho::contaTempoCooldown(const float dt) {
 	if (danificar) {
@@ -39,22 +53,6 @@ void Espinho::atualizaDanificar()
 		danificar = false;
 }
 
-void Espinho::efeito(Personagem* p){
-	{
-		if (danificar) {
-			p->tomaDano(dano);
-			danificar = false;
-			timerCooldown = 0;
-			pGG->getClock().restart();
-			timerCooldown += pGG->getClock().getElapsedTime().asSeconds();
-		}
-		else {
-			pGG->getClock().restart();
-			timerCooldown += pGG->getClock().getElapsedTime().asSeconds();
-		}
-		atualizaDanificar();
-	}
-}
 
 void Espinho::executar() {
 	renderizar();
