@@ -8,7 +8,8 @@ Javali::Javali(sf::Vector2f pos, Jogador* p1, Jogador* p2, int i) :
 	Inimigo(pos, p1, p2) {
 	id = javali;
 	setSprite("C:/Users/genti/Downloads/texturas/javalimarrom.png");
-	body.setSize(sf::Vector2f(47, 32));
+	sprite.setTextureRect(sf::IntRect(4, 4, 39, 30));
+	body.setSize(sf::Vector2f(120, 100));
 	setEscala(sf::Vector2f(4, 4));
 	setPosicao(pos);
 	velocidade = (sf::Vector2f(VMAXX, VMAXY));
@@ -38,41 +39,14 @@ void Javali::ataca(Jogador* pJ) {
 	}
 }
 
-void Javali::colidir(Entidade* pEnt, ID id) {
-	sf::Vector2f posEnt2 = pEnt->getPosicao();
-	int lado = 0;
-	if (pEnt->getId() == plataforma)
-	{
-		//Colisão por Cima
-		if (lado == 0)
-		{
-			setPosicao(sf::Vector2f(sprite.getPosition().x, posEnt2.y - 120.0f));
-			getBody().setPosition(sf::Vector2f(sprite.getPosition().x, posEnt2.y - 120.0f));
-			sprite.setPosition(sf::Vector2f(sprite.getPosition().x, posEnt2.y - 120.0f));
-		}
-		/*
-		//Colisão por Baixo
-		else if (lado == 1)
-		{
-			setPosition(sf::Vector2f(getPosition().x, posEnt2.y));
-			getBody().setPosition(sf::Vector2f(getPosition().x, posEnt2.y));
-			sprite.setPosition(sf::Vector2f(getPosition().x, posEnt2.y));
-		}
-		//Colisão pela Direita
-		else if (lado == 2)
-		{
-			setPosition(sf::Vector2f(pEnt2->getLadoEsquerdo(), getPosition().y));
-			getBody().setPosition(sf::Vector2f(pEnt2->getLadoEsquerdo(), getPosition().y));
-			sprite.setPosition(sf::Vector2f(pEnt2->getLadoEsquerdo(), getPosition().y));
-		}
-		//Colisão pela Esquerda
-		else if (lado == 3)
-		{
-			setPosition(sf::Vector2f(pEnt2->getLadoDireito(), getPosition().y));
-			getBody().setPosition(sf::Vector2f(pEnt2->getLadoDireito(), getPosition().y));
-			sprite.setPosition(sf::Vector2f(pEnt2->getLadoDireito(), getPosition().y));
-		}
+void Javali::colidir(Entidade* p, float intersec_x, float intersec_y)
+{
+	if (p->getId() == 1 || p->getId() == 2 || p->getId() == 3 || p->getId() == 6 || p->getId() == 7)
+		resolverColisao(p, intersec_x, intersec_y);
+	/*	else if (ent2->getId() == 4) {
+			vida -= ent2->getDamage();
+			if (vida<= 0) {
+				morreu();
+			}
 		*/
-	}
-
 }

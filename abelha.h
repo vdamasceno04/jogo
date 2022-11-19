@@ -9,5 +9,5 @@ public:
 	void inicializa(int mel);
 	void ataca(Jogador* pJ);
 	void executar();
-	void colidir(Entidade* pEnt, ID id);
+	void colidir(Entidade* pEnt, float insersec_x, float intersec_y);
 };

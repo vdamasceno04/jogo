@@ -15,6 +15,5 @@ public:
 	virtual void executar() = 0;
 	virtual void controlar() = 0;
 	void ataca();
-
-	virtual void colidir(Entidade* pEnt, ID id) { }
+	void colidir(Entidade* pEnt, float insersec_x, float intersec_y);
 };

@@ -63,6 +63,7 @@ void Inimigo::hostilizar() {
 	if (getPersegue(pJ1) || getPersegue(pJ2)) {
 		perseguicao(definePerseguido(pJ1, pJ2));
 		ataca(definePerseguido(pJ1, pJ2));
+		cout << "perseguindo";
 	}
 	atacado(pJ1);
 	atacado(pJ2);
