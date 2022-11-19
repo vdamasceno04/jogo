@@ -16,7 +16,8 @@ public:
 	static GerenciadorColisoes* getInstancia(ListaEntidades* lEM, ListaEntidades* lEE);
 	~GerenciadorColisoes();
 
-	void Colidir();
+	void ColidirEstaticoMovel();
+	void ColidirMovelMovel();
 	void setListaEntidades(ListaEntidades* lEM, ListaEntidades* lEE);
 	//void clear();
 

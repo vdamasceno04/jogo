@@ -28,7 +28,7 @@ void FlorestaVerde::criaespinho() {
     Espinho* pAux;
     srand(time(NULL));
     for (i = 0; i < 10; i++) {
-        sorteia = 0;// rand() % 2;
+        sorteia = rand() % 2;
         if (sorteia == 0 || i%3 == 0) {
             pAux = new Espinho(sf::Vector2f(pos, HEIGHT * 0.835));
             listaEst.addEntidade(pAux);
@@ -65,7 +65,7 @@ void FlorestaVerde::criajavali() {
         sorteia = rand() % 2;
         if (sorteia == 0 || i % 2 == 0) {
             idade = (rand() % 8) + 2;
-            pAux = new Javali(sf::Vector2f(pos, HEIGHT * 0.69), &j1, &e1, idade);
+            pAux = new Javali(sf::Vector2f(pos, HEIGHT * 0.64), &j1, &e1, idade);
             listaMov.addEntidade(pAux);
         }
         pos += 220;
@@ -78,7 +78,7 @@ void FlorestaVerde::criaabelhas() {
     int pos = 250;
     int sorteia;
     Abelha* pAux;
-    for (i = 0; i < 16; i++) {
+    for (i = 0; i < 13; i++) {
         sorteia = rand() % 2;
         if (sorteia == 0 || i%3 == 0) {
             mel = rand() % 3 + 2;
@@ -109,5 +109,6 @@ void FlorestaVerde::executar() {
 }
 
 void FlorestaVerde::colidir() {
-    pGC->Colidir();
+    pGC->ColidirEstaticoMovel();
+    pGC->ColidirMovelMovel();
 }

@@ -7,10 +7,6 @@ Entidade::Entidade(sf::Vector2f pos): Ente() {
 	colidiu = false;
 	posicao = pos;
 
-	esqCima = pos;
-	esqBaixo = sf::Vector2f(pos.x, pos.y + getTamanho().y);
-	dirCima = sf::Vector2f(pos.x + getTamanho().x, pos.y);
-	dirBaixo = sf::Vector2f(pos.x + getTamanho().x, pos.y + getTamanho().y);
 }
 
 Entidade::~Entidade() { janela = NULL; }
@@ -19,15 +15,13 @@ void Entidade::setPosicao(sf::Vector2f pos) {
 	posicao = pos;
 	body.setPosition(posicao);
 	sprite.setPosition(posicao);
-
-	atualizaPontos();
 }
 
 sf::Vector2f Entidade::getPosicao() const { return body.getPosition(); }
 
 void Entidade::setTamanho(sf::Vector2f tam) { body.setSize(tam); }
 
-sf::Vector2f Entidade::getTamanho() const { return tamanho; }
+sf::Vector2f Entidade::getTamanho() const { return body.getSize(); }
 
 void Entidade::setEscala(sf::Vector2f scale) {
 	body.setScale(scale);
@@ -57,17 +51,26 @@ void Entidade::setSprite(const char* local) {
 	sprite.setTexture(textura);
 }
 
-void Entidade::atualizaPontos() {
-	sf::Vector2f pos = posicao;
 
-	esqCima = pos;
-	esqBaixo = sf::Vector2f(pos.x, pos.y + getTamanho().y);
-	dirCima = sf::Vector2f(pos.x + getTamanho().x, pos.y);
-	dirBaixo = sf::Vector2f(pos.x + getTamanho().x, pos.y + getTamanho().y);
-
-
+void Entidade::resolverColisao(Entidade* pEnt, float ix, float iy)
+{
+	if (ix < iy)
+	{
+		if (getPosicao().x > pEnt->getPosicao().x)
+			setPosicao(sf::Vector2f(getPosicao().x + ix, getPosicao().y));
+		else
+			setPosicao(sf::Vector2f(getPosicao().x - ix, getPosicao().y));
+		setVelocidade(sf::Vector2f(0, getVelocidade().y));
+	}
+	else
+	{
+		if (getPosicao().y > pEnt->getPosicao().y)
+			setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y + iy));
+		else
+			setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y - iy));
+		setVelocidade(sf::Vector2f(getVelocidade().x, 0));
+	}
 }
-
 /*void Entidade::setColidido(Entidade* e) { colidido = e; }
 
 Entidade* Entidade::getColidido() { return colidido; }
@@ -80,10 +83,4 @@ bool Entidade::getColidiu() { return colidiu; }
 sf::Sprite Entidade::getSprite() {
 	return sprite;
 }
-
-//Del Soon
-float Entidade::getLadoCima() { return posicao.y; }
-float Entidade::getLadoEsquerdo() { return posicao.x; }
-float Entidade::getLadoDireito() { return posicao.x + tamanho.x; }
-float Entidade::getLadoBaixo() { return posicao.y + tamanho.y; }
 
