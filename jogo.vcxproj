@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="agua.cpp" />
     <ClCompile Include="cacador.cpp" />
+    <ClCompile Include="caracol.cpp" />
     <ClCompile Include="colisao.cpp" />
     <ClCompile Include="ente.cpp" />
     <ClCompile Include="entidade.cpp" />
@@ -148,6 +149,7 @@
     <ClCompile Include="explorador.cpp" />
     <ClCompile Include="fase.cpp" />
     <ClCompile Include="florestaverde.cpp" />
+    <ClCompile Include="florestavermelha.cpp" />
     <ClCompile Include="fundo.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="inimigo.cpp" />
@@ -164,6 +166,7 @@
   <ItemGroup>
     <ClInclude Include="agua.h" />
     <ClInclude Include="cacador.h" />
+    <ClInclude Include="caracol.h" />
     <ClInclude Include="colisao.h" />
     <ClInclude Include="coords.h" />
     <ClInclude Include="Elemento.h" />
@@ -173,6 +176,7 @@
     <ClInclude Include="explorador.h" />
     <ClInclude Include="fase.h" />
     <ClInclude Include="florestaverde.h" />
+    <ClInclude Include="florestavermelha.h" />
     <ClInclude Include="fundo.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="inimigo.h" />

@@ -12,6 +12,7 @@
 #include "abelha.h"
 #include "fundo.h"
 #include "javali.h"
+#include "caracol.h"
 #include <iostream>
 using namespace std;
 

@@ -22,6 +22,8 @@
     <ClCompile Include="javali.cpp" />
     <ClCompile Include="florestaverde.cpp" />
     <ClCompile Include="colisao.cpp" />
+    <ClCompile Include="florestavermelha.cpp" />
+    <ClCompile Include="caracol.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="agua.h" />
@@ -47,5 +49,7 @@
     <ClInclude Include="javali.h" />
     <ClInclude Include="florestaverde.h" />
     <ClInclude Include="colisao.h" />
+    <ClInclude Include="florestavermelha.h" />
+    <ClInclude Include="caracol.h" />
   </ItemGroup>
 </Project>
