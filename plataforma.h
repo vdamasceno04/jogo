@@ -8,5 +8,5 @@ public:
 	Plataforma(sf::Vector2f pos, bool verm);
 	~Plataforma();
 	void executar();
-	void efeito(Entidade* p){}
+	virtual void efeito(Entidade* p) {};
 };

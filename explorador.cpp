@@ -12,17 +12,15 @@ Explorador::~Explorador() {}
 void Explorador::controlar()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-		setPosicao(sf::Vector2f(getPosicao().x + getVelocidade().x, getPosicao().y));
+		setPosicao(sf::Vector2f(getPosicao().x + VMAXX, getPosicao().y));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-		setPosicao(sf::Vector2f(getPosicao().x - getVelocidade().x, getPosicao().y));
+		setPosicao(sf::Vector2f(getPosicao().x - VMAXX, getPosicao().y));
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-		setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y - getVelocidade().y));
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && podePular) {
+		velocidade.y = -VMAXY;
+		podePular = false;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-		setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y + getVelocidade().y));
-
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)) {
 		ataca();
 	}
@@ -32,5 +30,6 @@ void Explorador::controlar()
 void Explorador::executar() {
 	controlar();
 	remover();
+	atualizar();
 	renderizar();
 }

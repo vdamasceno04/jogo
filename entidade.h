@@ -2,6 +2,8 @@
 #include"ente.h"
 #define HEIGHT 720
 #define WIDTH 1080
+#define GRAVIDADE 0.9
+#define ATRITO 12
 namespace Entidades {
 
 	class Entidade : public Ente {
@@ -37,7 +39,7 @@ namespace Entidades {
 		void setVelocidade(sf::Vector2f vel);
 		sf::Vector2f getVelocidade();
 		void tomaDano(int ferimento);
-
+		void atualizar();
 		virtual void colidir(Entidade* pEnt, float intersec_x, float intersec_y) {};
 
 	};

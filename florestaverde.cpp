@@ -15,7 +15,7 @@ void FlorestaVerde::criachao()
     int pos = 0;
     Plataforma* pAux;
     for (i = 0; i < 121; i++) {
-        pAux = new Plataforma(sf::Vector2f(pos, HEIGHT * 6 / 7));
+        pAux = new Plataforma(sf::Vector2f(pos, HEIGHT * 6 / 7), false);
         listaEst.addEntidade(pAux);
         pos += 71;
     }

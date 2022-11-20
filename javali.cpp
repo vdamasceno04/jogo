@@ -9,7 +9,7 @@ Javali::Javali(sf::Vector2f pos, Jogador* p1, Jogador* p2, int i) :
 	id = javali;
 	setSprite("C:/Users/genti/Downloads/texturas/javalimarrom.png");
 	sprite.setTextureRect(sf::IntRect(4, 4, 39, 30));
-	body.setSize(sf::Vector2f(120, 100));
+	body.setSize(sf::Vector2f(120, 110));
 	setEscala(sf::Vector2f(4, 4));
 	setPosicao(pos);
 	velocidade = (sf::Vector2f(VMAXX, VMAXY));
@@ -29,6 +29,7 @@ void Javali::inicializa(int i) {
 void Javali::executar() {
 	hostilizar();
 	remover();
+	atualizar();
 	renderizar();
 }
 
@@ -45,10 +46,4 @@ void Javali::colidir(Entidade* p, float intersec_x, float intersec_y)
 		resolverColisao(p, intersec_x, intersec_y);
 	else if (p->getId() == 5) 
 		resolverColisao(p, intersec_x, intersec_y);
-	/*	else if (ent2->getId() == 4) {
-			vida -= ent2->getDamage();
-			if (vida<= 0) {
-				morreu();
-			}
-		*/
 }

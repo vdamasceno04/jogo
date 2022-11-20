@@ -5,7 +5,7 @@ Agua::Agua(sf::Vector2f pos) :
 	Obstaculo(pos)
 {
 	id = agua;
-	lentidao = 0.3;
+	lentidao = 0.8;
 	body.setSize(sf::Vector2f(100, 37));
 	setSprite("C:/Users/genti/Downloads/texturas/agua.png");
 	sprite.setTextureRect(sf::IntRect(0,5,60,60 ));

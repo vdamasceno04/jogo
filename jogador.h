@@ -3,13 +3,14 @@
 #include <string>
 
 #define VMAXX 1.0
-#define VMAXY 0.3
+#define VMAXY 15.0	
 
 class ListaEntidades;
 
 class Jogador : public Personagem {
-private:
-
+protected:
+	bool pulando;
+	bool podePular;
 public:
 	Jogador(sf::Vector2f pos);
 	~Jogador();
