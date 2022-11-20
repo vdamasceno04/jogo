@@ -10,5 +10,6 @@ public:
 	void inicializa(int mel);
 	void ataca(Jogador* pJ);
 	void executar();
+	void cuspir(Jogador* pJ);
 	void colidir(Entidade* pEnt, float insersec_x, float intersec_y);
 };
