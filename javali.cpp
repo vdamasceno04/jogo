@@ -37,7 +37,6 @@ void Javali::ataca(Jogador* pJ) {
 	atualizapodeAtacar();
 	if (acertaAtaque(pJ) && getPersegue(pJ)) {
 		golpear(pJ);
-		cout << "ataco";
 	}
 }
 

@@ -79,8 +79,8 @@ sf::Sprite Entidade::getSprite() {
 
 void Entidade::atualizar() {
 	float dt = 0.1;
-
-	setPosicao(sf::Vector2f(getPosicao().x + getVelocidade().x * dt, getPosicao().y + (getVelocidade().y * dt) + GRAVIDADE * dt * dt / 2));
+	if(getPosicao().y + getTamanho().y < HEIGHT)
+		setPosicao(sf::Vector2f(getPosicao().x + getVelocidade().x * dt, getPosicao().y + (getVelocidade().y * dt) + GRAVIDADE * dt * dt / 2));
 
 	setVelocidade(sf::Vector2f(getVelocidade().x, getVelocidade().y + GRAVIDADE * dt));
 }

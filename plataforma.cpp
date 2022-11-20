@@ -10,7 +10,7 @@ Plataforma::Plataforma(sf::Vector2f pos, bool verm) :
 	else
 		setSprite("C:/Users/genti/Downloads/texturas/chaoverde.png");
 	setPosicao(pos);
-	body.setSize(sf::Vector2f(67, 69));
+	body.setSize(sf::Vector2f(67, 133));
 	setEscala(sf::Vector2f(2, 2));
 }
 
@@ -18,4 +18,5 @@ Plataforma::~Plataforma() {}
 
 void Plataforma::executar() {
 	renderizar();
+	atualizar();
 }
