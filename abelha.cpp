@@ -10,18 +10,25 @@ Abelha::Abelha(sf::Vector2f pos, Jogador* p1, Jogador* p2, int m) :
 	body.setSize(sf::Vector2f(40, 76));
 	setEscala(sf::Vector2f(2, 2));
 	setPosicao(pos);
-	velocidade = (sf::Vector2f(0.5, 0.5));
-	alcance = 10;
-	duracaoCooldown = 100.5;
+	alcance = 60;
+	duracaoCooldown = 400.5;
 	mel = m;
 	inicializa(mel);
+	vmax.x = 5.0;
+	velocidade.y = 0;
 }
 
 Abelha::~Abelha() {}
 
+void Abelha::voar(){
+	float dt = 0.1;
+	setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y + (getVelocidade().y * dt) + GRAVIDADE * dt * dt / 2));
+	setVelocidade(sf::Vector2f(getVelocidade().x, getVelocidade().y - GRAVIDADE * dt));
+}
+
 void Abelha::inicializa(int m) {
 	vida = mel;
-	dano = 0;// mel - 1;
+	dano = mel - 1;
 	visao = (mel * 100);
 }
 
@@ -35,6 +42,8 @@ void Abelha::ataca(Jogador* pJ) {
 void Abelha::executar() {
 	hostilizar();
 	remover();
+	voar();
+	atualizar();
 	renderizar();
 }
 

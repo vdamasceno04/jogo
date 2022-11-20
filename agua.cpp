@@ -5,7 +5,7 @@ Agua::Agua(sf::Vector2f pos) :
 	Obstaculo(pos)
 {
 	id = agua;
-	lentidao = 0.8;
+	lentidao = 0.2;
 	body.setSize(sf::Vector2f(100, 37));
 	setSprite("C:/Users/genti/Downloads/texturas/agua.png");
 	sprite.setTextureRect(sf::IntRect(0,5,60,60 ));
@@ -18,7 +18,7 @@ Agua::~Agua() {}
 float Agua::getLentidao() { return lentidao; }
 
 void Agua::efeito(Entidade* p) {
-	p->setVelocidade(getVelocidade() * lentidao);
+	p->setVelocidade(sf::Vector2f(p->getVelocidade().x * lentidao, p->getVelocidade().y));
 }
 
 void Agua::executar() {

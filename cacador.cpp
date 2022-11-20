@@ -9,14 +9,17 @@ Cacador::Cacador(sf::Vector2f pos) :
 Cacador::~Cacador() {}
 
 void Cacador::controlar() {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-		setPosicao(sf::Vector2f(getPosicao().x + VMAXX, getPosicao().y));
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && (getVelocidade().x == vmax.x || getVelocidade().x == 0)) {
+		setVelocidade(sf::Vector2f(vmax.x, getVelocidade().y));
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-		setPosicao(sf::Vector2f(getPosicao().x - VMAXX, getPosicao().y));
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && (getVelocidade().x == - vmax.x || getVelocidade().x == 0)){
+		setVelocidade(sf::Vector2f(-vmax.y, getVelocidade().y));
 	}
+	else
+		setVelocidade(sf::Vector2f(0, getVelocidade().y));
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && podePular) {
-		velocidade.y = -VMAXY;
+		velocidade.y = -vmax.y;
 		podePular = false;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {

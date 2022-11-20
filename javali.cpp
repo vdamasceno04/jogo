@@ -12,8 +12,8 @@ Javali::Javali(sf::Vector2f pos, Jogador* p1, Jogador* p2, int i) :
 	body.setSize(sf::Vector2f(120, 110));
 	setEscala(sf::Vector2f(4, 4));
 	setPosicao(pos);
-	velocidade = (sf::Vector2f(VMAXX, VMAXY));
-	alcance = 20;
+	vmax = (sf::Vector2f(3.5, 0));
+	alcance = 70;
 	duracaoCooldown = 150.5;
 	idade = i;
 	inicializa(idade);
@@ -37,6 +37,7 @@ void Javali::ataca(Jogador* pJ) {
 	atualizapodeAtacar();
 	if (acertaAtaque(pJ) && getPersegue(pJ)) {
 		golpear(pJ);
+		cout << "ataco";
 	}
 }
 

@@ -2,9 +2,6 @@
 #include"inimigo.h"
 #include <string>
 
-#define VMAXX 1.0
-#define VMAXY 15.0	
-
 class ListaEntidades;
 
 class Jogador : public Personagem {

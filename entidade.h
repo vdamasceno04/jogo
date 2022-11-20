@@ -2,8 +2,8 @@
 #include"ente.h"
 #define HEIGHT 720
 #define WIDTH 1080
-#define GRAVIDADE 0.9
-#define ATRITO 12
+#define GRAVIDADE 2.9
+
 namespace Entidades {
 
 	class Entidade : public Ente {
@@ -15,6 +15,7 @@ namespace Entidades {
 		sf::Vector2f posicao;
 		sf::Vector2f tamanho;
 		sf::Vector2f velocidade;
+		sf::Vector2f vmax;
 		bool remove;
 		int vida;
 		int dano;

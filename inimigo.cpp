@@ -45,10 +45,9 @@ Jogador* Inimigo::definePerseguido(Jogador* pJ1, Jogador* pJ2) {
 
 void Inimigo::perseguicao(Jogador* pJ) {
 	if (pJ->getBody().getPosition().x < body.getPosition().x)
-		velocidade.x = fabs(velocidade.x) * -1;
+		velocidade.x = -vmax.x;
 	else
-		velocidade.x = fabs(velocidade.x);
-	posicao.x += velocidade.x;
+		velocidade.x = vmax.x;
 	setPosicao(posicao);
 	sprite.setPosition(posicao);
 }

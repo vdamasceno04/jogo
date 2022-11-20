@@ -11,14 +11,17 @@ Explorador::~Explorador() {}
 
 void Explorador::controlar()
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-		setPosicao(sf::Vector2f(getPosicao().x + VMAXX, getPosicao().y));
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && (getVelocidade().x == vmax.x|| getVelocidade().x == 0)) {
+		setVelocidade(sf::Vector2f(vmax.x, getVelocidade().y));
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-		setPosicao(sf::Vector2f(getPosicao().x - VMAXX, getPosicao().y));
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && (getVelocidade().x == -vmax.x|| getVelocidade().x == 0)) {
+		setVelocidade(sf::Vector2f(-vmax.x, getVelocidade().y));
 	}
+	else
+		setVelocidade(sf::Vector2f(0, getVelocidade().y));
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && podePular) {
-		velocidade.y = -VMAXY;
+		velocidade.y = -vmax.y;
 		podePular = false;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)) {

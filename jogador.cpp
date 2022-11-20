@@ -13,6 +13,7 @@ Jogador::Jogador(sf::Vector2f pos) :
 	duracaoCooldown = 30;
 	dano = 3;
 	alcance = 60;
+	vmax= sf::Vector2f(15.0, 20.0);
 }
 
 Jogador::~Jogador() {}
