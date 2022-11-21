@@ -4,7 +4,8 @@
 Jogo::Jogo() :
     pGG(Graphics::getInstance()),
 //    fase1(Graphics::getInstance())//,
-    fase2(Graphics::getInstance())
+  //  fase2(Graphics::getInstance())
+    menuPrincipal(pGG)
 {
     Ente::setpGG(Graphics::getInstance());
     executar();
@@ -18,7 +19,8 @@ Jogo::~Jogo() {
 
 void Jogo::inicializar() {
  //     fase1.inicializar();
-    fase2.inicializar();
+    //fase2.inicializar();
+    menuPrincipal.setValores();
 }
 
 void Jogo::executar()
@@ -33,8 +35,9 @@ void Jogo::executar()
                 pGG->closeWindow();
         }
         pGG->clear();
-        fase2.executar();
-        fase2.colidir();
+        
+        menuPrincipal.loop(); 
+        //menuPrincipal.desenhar(); Não Funciona com o gerenciador gráfico:(
 
         pGG->display();
     }
