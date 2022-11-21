@@ -3,7 +3,7 @@
 
 Jogo::Jogo() :
     pGG(Graphics::getInstance()),
-//    fase1(Graphics::getInstance())//,
+ //   fase1(Graphics::getInstance())//,
     fase2(Graphics::getInstance())
 {
     Ente::setpGG(Graphics::getInstance());
@@ -17,8 +17,8 @@ Jogo::~Jogo() {
 #include<stdio.h>
 
 void Jogo::inicializar() {
- //     fase1.inicializar();
-    fase2.inicializar();
+  //   fase1.inicializar();
+     fase2.inicializar();
 }
 
 void Jogo::executar()

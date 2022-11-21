@@ -12,6 +12,7 @@
 #include "fundo.h"
 #include "javali.h"
 #include "caracol.h"
+#include "gosma.h"
 #include <iostream>
 using namespace std;
 

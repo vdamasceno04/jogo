@@ -1,7 +1,5 @@
 #include"jogador.h"
 
-class ListaEntidades;
-
 class Cacador : public Jogador {
 private:
 

@@ -35,6 +35,7 @@ namespace Entidades {
 		int getDano();
 		void resolverColisao(Entidade* pEnt, float intersec_x, float intersec_y);
 		bool getRemove();
+		void setRemove(bool rem);
 		sf::Sprite getSprite();
 		virtual void efeito(Entidade* p) {};
 		void setVelocidade(sf::Vector2f vel);

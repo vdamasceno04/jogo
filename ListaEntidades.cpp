@@ -2,11 +2,14 @@
 
 ListaEntidades::ListaEntidades():objLE(){}
 
-ListaEntidades::~ListaEntidades(){}
+ListaEntidades::~ListaEntidades(){
+}
 
 void ListaEntidades::addEntidade(Entidades::Entidade* entidade) { objLE.push(entidade); }
 
-void ListaEntidades::removeEntidade(Entidades::Entidade* entidade) { objLE.pop(entidade);}
+void ListaEntidades::removeEntidade(Entidades::Entidade* entidade) {
+    objLE.pop(entidade);
+}
 
 int ListaEntidades::getLen() { return objLE.getLen(); }
 
@@ -35,8 +38,9 @@ void ListaEntidades::executarLista()
     for (int i = 0; i < objLE.getLen(); i++) {
         pAux = objLE.getItem(i);
         if (pAux->getRemove()) {
-       //     pAux->~Entidade();
+
             removeEntidade(pAux);
+            //DESTRUIR
         }
         pAux->executar();
     }

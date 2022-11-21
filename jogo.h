@@ -9,7 +9,7 @@ class Jogo
 {
 private:
 //	FlorestaVerde fase1;
-	FlorestaVermelha fase2;
+		FlorestaVermelha fase2;
 	Managers::Graphics* pGG;
 	GerenciadorColisoes* pGC;
 

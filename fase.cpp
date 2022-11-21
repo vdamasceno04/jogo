@@ -7,7 +7,13 @@ Fase::Fase(Managers::Graphics* pG) :
     pGC = GerenciadorColisoes::getInstancia(&listaMov, &listaEst);
 }
 
-Fase::~Fase() {}
+Fase::~Fase() {
+  /*  int i;
+    for(i=0; i<listaEst.getLen(); i++)
+        delete listaEst.getItem(i);
+    for (i = 0; i < listaMov.getLen(); i++)
+        delete listaMov.getItem(i);*/
+}
 
 void Fase::criafundo()
 {

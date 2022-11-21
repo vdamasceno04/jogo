@@ -35,6 +35,7 @@ sf::RectangleShape Entidade::getBody() { return body; }
 
 bool Entidade::getRemove() { return remove; }
 
+void Entidade::setRemove(bool rem) { remove = rem; }
 int Entidade::getDano() { return dano; }
 
 void Entidade::renderizar() { pGG->render(&sprite); }

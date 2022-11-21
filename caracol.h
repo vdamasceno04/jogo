@@ -7,11 +7,12 @@ private:
 	int veneno;
 	Gosma* gosma;
 public:
-	Caracol(sf::Vector2f pos, Jogador* p1, Jogador* p2, int ven);
+	Caracol(sf::Vector2f pos, Jogador* p1, Jogador* p2, int ven, Gosma* pGosma);
 	~Caracol();
 	void inicializa(int mel);
 	void executar();
 	void mirar();
 	void cuspir();
+	void removerGosma();
 	void colidir(Entidade* pEnt, float insersec_x, float intersec_y);
 };
