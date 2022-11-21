@@ -4,41 +4,42 @@
 Caracol::Caracol(sf::Vector2f pos, Jogador* p1, Jogador* p2, int ven) :
 	Inimigo(pos, p1, p2) {
 	id = caracol;
-
+	gosma = NULL;
 	setSprite("C:/Users/genti/Downloads/texturas/caracol.png");
 	body.setSize(sf::Vector2f(100, 89));
 	setEscala(sf::Vector2f(4, 4));
 	setPosicao(pos);
-	alcance = 60;
-	duracaoCooldown = 400.5;
+	alcance = 400;
+	duracaoCooldown = 0.5;
 	veneno = ven;
 	inicializa(veneno);
 	vmax.x = 0;
 	velocidade.y = 0;
 }
 
-Caracol::~Caracol() {}
+Caracol::~Caracol() { gosma = NULL; }
 
 void Caracol::inicializa(int veneno) {
 	vida = veneno;
-	dano = veneno - 1;
 	visao = (veneno* 100);
 }
 
-void Caracol::ataca(Jogador* pJ) {
-	atualizapodeAtacar();
-	if (acertaAtaque(pJ) && getPersegue(pJ)) {
-		cuspir(pJ);
-	}
-}
+/*
+void Caracol::cuspir() {
+	if (gosma == NULL && (getPersegue(pJ1) || getPersegue(pJ2)))
+		gosma = new Gosma(getPosicao(), veneno, false);
+	
+}*/
 
-void Caracol::cuspir(Jogador* pJ) {
-
-}
 void Caracol::executar() {
-	hostilizar();
 	remover();
 	atualizar();
+	atacado(pJ1);
+	atacado(pJ2);
+	/*cuspir();
+	if (gosma != NULL) {
+		gosma->executar();
+	}*/
 	renderizar();
 }
 

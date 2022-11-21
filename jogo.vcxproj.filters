@@ -24,6 +24,7 @@
     <ClCompile Include="colisao.cpp" />
     <ClCompile Include="florestavermelha.cpp" />
     <ClCompile Include="caracol.cpp" />
+    <ClCompile Include="gosma.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="agua.h" />
@@ -51,5 +52,6 @@
     <ClInclude Include="colisao.h" />
     <ClInclude Include="florestavermelha.h" />
     <ClInclude Include="caracol.h" />
+    <ClInclude Include="gosma.h" />
   </ItemGroup>
 </Project>

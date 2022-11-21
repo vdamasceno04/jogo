@@ -24,8 +24,6 @@ float Inimigo::getVisao() {
 	return visao;
 }
 
-//void Inimigo::setpJogador(Jogador* p) { pJ = p; }
-
 bool Inimigo::getPersegue(Jogador* pJ) {
 	if (fabs(distanciaPersonagens(pJ)) <= getVisao() && !pJ->morreu())
 		return true;

@@ -1,5 +1,4 @@
 #pragma once
-//#include "Ente.h"
 #include <SFML/Graphics.hpp>
 #include "ListaEntidades.h"
 #include "colisao.h"

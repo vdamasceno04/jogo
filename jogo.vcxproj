@@ -151,6 +151,7 @@
     <ClCompile Include="florestaverde.cpp" />
     <ClCompile Include="florestavermelha.cpp" />
     <ClCompile Include="fundo.cpp" />
+    <ClCompile Include="gosma.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="inimigo.cpp" />
     <ClCompile Include="javali.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="florestaverde.h" />
     <ClInclude Include="florestavermelha.h" />
     <ClInclude Include="fundo.h" />
+    <ClInclude Include="gosma.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="inimigo.h" />
     <ClInclude Include="javali.h" />
