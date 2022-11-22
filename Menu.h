@@ -1,38 +1,51 @@
 #pragma once
-#include "graphics.h"
-#include <SFML/Graphics.hpp>
+#include "ente.h"
+#include <SFML\Graphics.hpp>
 #include <iostream>
 using namespace std;
 
-class Menu
-{
+class Menu : public Ente{
 private:
 	int pos;
-	//bool pressionado;
+	int tela;
 	bool selecionado;
+	bool pressionado;
 
-	sf::RectangleShape* click;
-	sf::Font* fonte;
-	sf::Texture* imgMenu;
-	sf::Sprite fundoMenu;
-	sf::Vector2f posMouse;
-	sf::Vector2f coordMouse;
+	bool principal;
+	bool escolha;
+	bool placar;
 
+	sf::Font fonte;
+
+	//Menu Principal
+	sf::Texture textura;
+	sf::Sprite sprite;
 	vector <const char*> opcao;
 	vector <sf::Vector2f> coordenadas;
 	vector <sf::Text> textos;
 	vector <size_t> tamanhos;
 
-public:
-	Managers::Graphics* pGG;
-	Menu(Managers::Graphics* pG);
-	~Menu();
+	//Menu de Escolhas
+	sf::Texture texturaEscolha;
+	sf::Sprite spriteEscolha;
+	vector <const char*> opcaoEscolha;
+	vector <sf::Vector2f> coordEscolha;
+	vector <sf::Text> textosEscolha;
+	vector <size_t> tamEscolha;
 
-	//void executar();
-	void loop();
-	void desenhar();
+public:
+	Menu();
+	~Menu();
 	void setValores();
 
-	int menuEscolher();
-};
+	void executar();
 
+	void loopPrincipal();
+	void desenharPrincipal();
+	int loopEscolha();
+	void desenharEscolha();
+	void loopPlacar();
+	void desenharPlacar();
+
+	int getTela();
+};

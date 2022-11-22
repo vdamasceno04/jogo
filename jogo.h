@@ -9,8 +9,10 @@ using namespace Managers;
 class Jogo
 {
 private:
-//	FlorestaVerde fase1;
-	//FlorestaVermelha fase2;
+	bool flagFase;
+	int tela;
+	FlorestaVerde fase1;
+	FlorestaVermelha fase2;
 	Menu menuPrincipal;
 	Managers::Graphics* pGG;
 	GerenciadorColisoes* pGC;
