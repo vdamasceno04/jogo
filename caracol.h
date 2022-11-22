@@ -6,11 +6,13 @@ class Caracol : public Inimigo {
 private:
 	int veneno;
 	Gosma* gosma;
+	bool cuspir;
 public:
 	Caracol(sf::Vector2f pos, Jogador* p1, Jogador* p2, int ven, Gosma* pGosma);
 	~Caracol();
 	void inicializa(int mel);
 	void executar();
+	bool getCuspir();
 	void atacar(Jogador* pJ);
 	void removerGosma();
 	void colidir(Entidade* pEnt, float insersec_x, float intersec_y);

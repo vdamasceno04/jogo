@@ -19,6 +19,7 @@ Gosma::~Gosma() {}
 
 void Gosma::inicializar() {
 	setVelocidade(sf::Vector2f(-vmax.x, vmax.y));
+
 }
 
 void Gosma::setCaracol(Caracol* pCar) {
@@ -44,6 +45,8 @@ void Gosma::efeito(Entidade* p) {
 }
 
 void Gosma::executar() {
-	atualizar();
+	if (pCaracol->getCuspir()) {
+		atualizar();
+	}
 	renderizar();
 }

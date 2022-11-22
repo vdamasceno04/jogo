@@ -14,6 +14,7 @@ Caracol::Caracol(sf::Vector2f pos, Jogador* p1, Jogador* p2, int ven, Gosma* pGo
 	veneno = ven;
 	inicializa(veneno);
 	vmax.x = 0;
+	cuspir = false;
 	velocidade.y = 0;
 	pGosma->setCaracol(this);
 }
@@ -25,18 +26,21 @@ void Caracol::inicializa(int veneno) {
 	visao = (veneno* 100);
 }
 
+bool Caracol::getCuspir() { return cuspir;  }
 
 void Caracol::atacar(Jogador* pJ){
-	atualizapodeAtacar();
-	if (acertaAtaque(pJ) && getPersegue(pJ)) {
-		gosma->executar();
+	if(fabs(pJ1->getPosicao().x - getPosicao().x) < visao){
+		cuspir = true;	
 	}
+	else
+		cuspir = false;
 }
 
 void Caracol::removerGosma() {
 	if (remove == true && gosma->getPosicao().x - 40 != getPosicao().x)
 		gosma->setRemove(true);
 }
+
 void Caracol::executar() {
 	remover();
 	removerGosma();
@@ -45,6 +49,7 @@ void Caracol::executar() {
 	atacado(pJ2);
 	atacar(pJ1);
 	atacar(pJ2);
+
 	renderizar();
 }
 
