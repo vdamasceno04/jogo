@@ -11,8 +11,7 @@ public:
 	~Caracol();
 	void inicializa(int mel);
 	void executar();
-	void mirar();
-	void cuspir();
+	void atacar(Jogador* pJ);
 	void removerGosma();
 	void colidir(Entidade* pEnt, float insersec_x, float intersec_y);
 };

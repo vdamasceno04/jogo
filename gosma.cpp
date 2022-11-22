@@ -3,15 +3,14 @@
 
 Gosma::Gosma(sf::Vector2f pos, int ven) : Entidades::Entidade(pos) {
 	id = gosma;
-	setPosicao(sf::Vector2f(pos.x +50, pos.y+85));
+	setPosicao(sf::Vector2f(pos.x +40, pos.y+30));
 	setEscala(sf::Vector2f(2, 2));
 	body.setSize(sf::Vector2f(4, 8));
 	veneno = ven;
-	dano = veneno * 2;
+	dano = 0;//veneno -1;
 	vmax.x = 25;
 	vmax.y = -19.8;
 	setSprite("C:/Users/genti/Downloads/texturas/gosma.png");
-	sprite.rotate(180);
 	inicializar();
 	remove = false;
 }
@@ -29,12 +28,12 @@ void Gosma::setCaracol(Caracol* pCar) {
 void Gosma::colidir(Entidade* p, float intersec_x, float intersec_y) {
 	if (p->getId() == 3 || p->getId() == 6 || p->getId() == 5 || p->getId() == 4 || p->getId() == 7) {
 		resolverColisao(p, intersec_x, intersec_y);
-		setPosicao(sf::Vector2f(pCaracol->getPosicao().x + 50, pCaracol->getPosicao().y + 85));
+		setPosicao(sf::Vector2f(pCaracol->getPosicao().x + 40, pCaracol->getPosicao().y + 30));
 		inicializar();
 	}
 	else if (p->getId() == 1 || p->getId() == 2) {
 		resolverColisao(p, intersec_x, intersec_y);
-		setPosicao(sf::Vector2f(pCaracol->getPosicao().x + 50, pCaracol->getPosicao().y + 85));
+		setPosicao(sf::Vector2f(pCaracol->getPosicao().x + 40, pCaracol->getPosicao().y + 30));
 		inicializar();
 		efeito(p);
 	}

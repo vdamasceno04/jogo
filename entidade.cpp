@@ -53,7 +53,6 @@ void Entidade::setSprite(const char* local) {
 	sprite.setTexture(textura);
 }
 
-
 void Entidade::resolverColisao(Entidade* pEnt, float ix, float iy)
 {
 	if (ix < iy)

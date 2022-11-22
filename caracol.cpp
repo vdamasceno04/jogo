@@ -26,20 +26,25 @@ void Caracol::inicializa(int veneno) {
 }
 
 
-void Caracol::cuspir() {
-	gosma->executar();
+void Caracol::atacar(Jogador* pJ){
+	atualizapodeAtacar();
+	if (acertaAtaque(pJ) && getPersegue(pJ)) {
+		gosma->executar();
+	}
 }
 
 void Caracol::removerGosma() {
-	if (remove == true)
+	if (remove == true && gosma->getPosicao().x - 40 != getPosicao().x)
 		gosma->setRemove(true);
 }
 void Caracol::executar() {
 	remover();
+	removerGosma();
 	atualizar();
 	atacado(pJ1);
 	atacado(pJ2);
-	cuspir();
+	atacar(pJ1);
+	atacar(pJ2);
 	renderizar();
 }
 
