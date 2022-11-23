@@ -19,29 +19,40 @@ namespace Entidades {
 		bool remove;
 		int vida;
 		int dano;
+
 	public:
 		Entidade(sf::Vector2f pos);
 		~Entidade();
+
 		void setPosicao(sf::Vector2f pos);
 		sf::Vector2f getPosicao() const;
-		void setTamanho(sf::Vector2f tam);
-		sf::Vector2f getTamanho() const;
-		void setJanela(sf::RenderWindow* janela);
-		sf::RectangleShape getBody();
-		void setEscala(sf::Vector2f escala);
-		void setSprite(const char* local);
-		void renderizar();
-		virtual void executar() = 0;
-		int getDano();
-		void resolverColisao(Entidade* pEnt, float intersec_x, float intersec_y);
-		bool getRemove();
-		void setRemove(bool rem);
-		virtual void efeito(Entidade* p) {};
+
 		void setVelocidade(sf::Vector2f vel);
 		sf::Vector2f getVelocidade();
-		void tomaDano(int ferimento);
+
+		void setTamanho(sf::Vector2f tam);
+		sf::Vector2f getTamanho() const;
+		void setEscala(sf::Vector2f escala);
+
+		void setJanela(sf::RenderWindow* janela);
+
+		sf::RectangleShape getBody();
+		void setSprite(const char* local);
+
+		void renderizar();
 		void atualizar();
+
+		void tomaDano(int ferimento);
+		int getDano();
+
+		bool getRemove();
+		void setRemove(bool rem);
+
+		void resolverColisao(Entidade* pEnt, float intersec_x, float intersec_y);
+		
 		virtual void colidir(Entidade* pEnt, float intersec_x, float intersec_y) {};
+		virtual void efeito(Entidade* p) {};
+		virtual void executar() = 0;
 
 	};
 }
