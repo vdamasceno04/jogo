@@ -62,7 +62,7 @@ void FlorestaVermelha::criacaracol() {
     int sorteia;
     Caracol* pCaracol;
     Gosma* pGosma;
-    for (i = 0; i < 13; i++) {
+    for (i = 0; i < 7; i++) {
         sorteia = rand() % 2;
         if (sorteia == 0 || i % 3 == 0) {
             veneno = rand() % 3 + 2;
