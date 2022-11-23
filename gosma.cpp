@@ -19,7 +19,6 @@ Gosma::~Gosma() {}
 
 void Gosma::inicializar() {
 	setVelocidade(sf::Vector2f(-vmax.x, vmax.y));
-
 }
 
 void Gosma::setCaracol(Caracol* pCar) {
@@ -41,7 +40,6 @@ void Gosma::colidir(Entidade* p, float intersec_x, float intersec_y) {
 		
 	}
 	if (pCaracol->getRemove()  && p->getId() != 10) {
-		cout << "remove: " << pCaracol->getRemove() << endl;
 		setRemove(true);
 	}
 }
@@ -51,7 +49,7 @@ void Gosma::efeito(Entidade* p) {
 }
 
 void Gosma::executar() {
-	if (pCaracol->getCuspir()) {
+	if (pCaracol->getCuspir() || (this->getPosicao().x - 40 != pCaracol->getPosicao().x)) {
 		atualizar();
 	}
 	renderizar();
