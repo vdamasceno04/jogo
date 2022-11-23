@@ -1,7 +1,7 @@
 #include "Menu.h"
 
 #define HEIGHT 720
-#define WIDTH 1280
+#define WIDTH 1080
 
 Menu::Menu():
 	Ente()
@@ -28,8 +28,8 @@ void Menu::setValores()
 	principal = true;
 
 	//Iniciar Menu Principal
-	fonte.loadFromFile("C:/Users/Usuario/Desktop/OmegaCringe/Assets/MainFont.ttf");
-	textura.loadFromFile("C:/Users/Usuario/Desktop/OmegaCringe/Assets/Ibama.png");
+	fonte.loadFromFile("Assets/MainFont.ttf");
+	textura.loadFromFile("Assets/Ibama.png");
 	sprite.setTexture(textura);
 	opcao = { "Jogar", "Leaderboard", "Sair" };
 	coordenadas = { {153.f,280.f}, {102.f,410.f}, {166.f,532.f} };
@@ -48,7 +48,7 @@ void Menu::setValores()
 	textos[0].setOutlineThickness(4);
 
 	//Iniciar Menu de Escolhas
-	texturaEscolha.loadFromFile("C:/Users/Usuario/Desktop/OmegaCringe/Assets/Escolha.png");
+	texturaEscolha.loadFromFile("Assets/Escolha.png");
 	spriteEscolha.setTexture(texturaEscolha);
 	opcaoEscolha = { "Fase 1 - um jogador", "Fase 1 - dois jogadores", "Fase 2 - um jogador", "Fase 2 - dois jogadores" };
 	coordEscolha = { {509.f,90.f}, {482.f,240.f}, {509.f,390.f}, {482.f,540.f} };
