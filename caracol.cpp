@@ -28,22 +28,23 @@ void Caracol::inicializa(int veneno) {
 
 bool Caracol::getCuspir() { return cuspir;  }
 
-void Caracol::atacar(Jogador* pJ){
-	if(fabs(pJ1->getPosicao().x - getPosicao().x) < visao){
+void Caracol::atacar(Jogador* pJ){ // por algum motivo esse ponteiro nao funciona
+	if(fabs(pJ1->getPosicao().x - getPosicao().x) < visao 
+		|| fabs(pJ2->getPosicao().x - getPosicao().x) < visao){
 		cuspir = true;	
 	}
 	else
 		cuspir = false;
 }
 
-void Caracol::removerGosma() {
-	if (remove == true && gosma->getPosicao().x - 40 != getPosicao().x)
-		gosma->setRemove(true);
+void Caracol::removerGosma() {/*
+	if (remove == true && gosma->getPosicao().x - 40 == getPosicao().x)
+		gosma->setRemove(true);*/
 }
 
 void Caracol::executar() {
 	remover();
-	removerGosma();
+//	removerGosma();
 	atualizar();
 	atacado(pJ1);
 	atacado(pJ2);

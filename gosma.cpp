@@ -31,12 +31,18 @@ void Gosma::colidir(Entidade* p, float intersec_x, float intersec_y) {
 		resolverColisao(p, intersec_x, intersec_y);
 		setPosicao(sf::Vector2f(pCaracol->getPosicao().x + 40, pCaracol->getPosicao().y + 30));
 		inicializar();
+		
 	}
 	else if (p->getId() == 1 || p->getId() == 2) {
 		resolverColisao(p, intersec_x, intersec_y);
 		setPosicao(sf::Vector2f(pCaracol->getPosicao().x + 40, pCaracol->getPosicao().y + 30));
 		inicializar();
 		efeito(p);
+		
+	}
+	if (pCaracol->getRemove()  && p->getId() != 10) {
+		cout << "remove: " << pCaracol->getRemove() << endl;
+		setRemove(true);
 	}
 }
 
