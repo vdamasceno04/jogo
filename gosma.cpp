@@ -10,6 +10,7 @@ Gosma::Gosma(sf::Vector2f pos, int ven) : Entidades::Entidade(pos) {
 	dano = 0;//veneno -1;
 	vmax.x = 25;
 	vmax.y = -19.8;
+	setVelocidade(sf::Vector2f(-vmax.x, vmax.y));
 	setSprite("C:/Users/genti/Downloads/texturas/gosma.png");
 	inicializar();
 	remove = false;
