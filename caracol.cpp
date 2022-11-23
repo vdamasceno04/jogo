@@ -37,14 +37,9 @@ void Caracol::atacar(Jogador* pJ){ // por algum motivo esse ponteiro nao funcion
 		cuspir = false;
 }
 
-void Caracol::removerGosma() {/*
-	if (remove == true && gosma->getPosicao().x - 40 == getPosicao().x)
-		gosma->setRemove(true);*/
-}
 
 void Caracol::executar() {
 	remover();
-//	removerGosma();
 	atualizar();
 	atacado(pJ1);
 	atacado(pJ2);

@@ -14,6 +14,5 @@ public:
 	void executar();
 	bool getCuspir();
 	void atacar(Jogador* pJ);
-	void removerGosma();
 	void colidir(Entidade* pEnt, float insersec_x, float intersec_y);
 };
