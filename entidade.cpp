@@ -73,9 +73,6 @@ void Entidade::resolverColisao(Entidade* pEnt, float ix, float iy)
 	}
 }
 
-sf::Sprite Entidade::getSprite() {
-	return sprite;
-}
 
 void Entidade::atualizar() {
 	float dt = 0.1;

@@ -13,5 +13,5 @@ public:
 	void inicializar();
 	void executar();
 	void colidir(Entidade* pEnt, float intersec_x, float intersec_y);
-	virtual void efeito(Entidade* p);
+	void efeito(Entidade* p);
 };

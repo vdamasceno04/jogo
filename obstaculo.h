@@ -8,7 +8,7 @@ namespace Obstaculos {
 	class Obstaculo : public Entidades::Entidade {
 	protected:
 
-		
+		bool causaEfeito;
 
 	public:
 		Obstaculo(sf::Vector2f pos);
