@@ -28,7 +28,7 @@ void Caracol::inicializa(int veneno) {
 
 bool Caracol::getCuspir() { return cuspir;  }
 
-void Caracol::atacar(Jogador* pJ){ // por algum motivo esse ponteiro nao funciona
+void Caracol::ataca(Jogador* pJ){ // por algum motivo esse ponteiro nao funciona
 	if(fabs(pJ1->getPosicao().x - getPosicao().x) < visao 
 		|| fabs(pJ2->getPosicao().x - getPosicao().x) < visao){
 		cuspir = true;	
@@ -43,8 +43,8 @@ void Caracol::executar() {
 	atualizar();
 	atacado(pJ1);
 	atacado(pJ2);
-	atacar(pJ1);
-	atacar(pJ2);
+	ataca(pJ1);
+	ataca(pJ2);
 
 	renderizar();
 }
