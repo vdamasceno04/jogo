@@ -5,7 +5,7 @@
 using std::cout;
 using std::endl;
 #define FONT_PATH "asset"
-#define WIDTH 1080
+#define WIDTH 1280
 #define HEIGHT 720
 #define FRAME_RATE 100
 
