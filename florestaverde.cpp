@@ -7,7 +7,9 @@ FlorestaVerde::FlorestaVerde(Managers::Graphics* pG) :
     pGG = pG;
 }
 
-FlorestaVerde::~FlorestaVerde() {}
+FlorestaVerde::~FlorestaVerde() {
+
+}
 
 void FlorestaVerde::criachao()
 {

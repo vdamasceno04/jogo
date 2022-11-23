@@ -58,17 +58,21 @@ void FlorestaVermelha::criajavali() {
 void FlorestaVermelha::criacaracol() {
     int i;
     int veneno;
-    int pos = 250;
+    int pos = 600;
     int sorteia;
-    Caracol* pAux;
+    Caracol* pCaracol;
+    Gosma* pGosma;
     for (i = 0; i < 13; i++) {
         sorteia = rand() % 2;
         if (sorteia == 0 || i % 3 == 0) {
             veneno = rand() % 3 + 2;
-            pAux = new Caracol(sf::Vector2f(pos, HEIGHT * 0.60), &j1, &e1, veneno);
-            listaMov.addEntidade(pAux);
+            pGosma = new Gosma(sf::Vector2f(sf::Vector2f(pos + 40, (HEIGHT * 0.74) + 30)), veneno);
+            pCaracol = new Caracol(sf::Vector2f(pos, HEIGHT * 0.74), &j1, &e1, veneno, pGosma);
+            listaMov.addEntidade(pGosma);
+            listaMov.addEntidade(pCaracol);
+
         }
-        pos += 400;
+        pos += 500;
     }
 }
 

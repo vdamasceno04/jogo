@@ -10,6 +10,7 @@ Entidade::Entidade(sf::Vector2f pos): Ente() {
 
 Entidade::~Entidade() { janela = NULL; }
 
+
 void Entidade::setPosicao(sf::Vector2f pos) {
 	posicao = pos;
 	body.setPosition(posicao);
@@ -17,6 +18,16 @@ void Entidade::setPosicao(sf::Vector2f pos) {
 }
 
 sf::Vector2f Entidade::getPosicao() const { return body.getPosition(); }
+
+
+void Entidade::setVelocidade(sf::Vector2f vel) {
+	velocidade = vel;
+}
+
+sf::Vector2f Entidade::getVelocidade() {
+	return velocidade;
+}
+
 
 void Entidade::setTamanho(sf::Vector2f tam) { body.setSize(tam); }
 
@@ -27,30 +38,34 @@ void Entidade::setEscala(sf::Vector2f scale) {
 	sprite.setScale(scale);
 }
 
+
 void Entidade::setJanela(sf::RenderWindow* j) { this->janela = j; }
 
-void Entidade::tomaDano(int ferimento) { vida -= ferimento; }
-
 sf::RectangleShape Entidade::getBody() { return body; }
-
-bool Entidade::getRemove() { return remove; }
-
-int Entidade::getDano() { return dano; }
-
-void Entidade::renderizar() { pGG->render(&sprite); }
-
-void Entidade::setVelocidade(sf::Vector2f vel) {
-	velocidade = vel;
-}
-
-sf::Vector2f Entidade::getVelocidade() {
-	return velocidade;
-}
 
 void Entidade::setSprite(const char* local) {
 	textura.loadFromFile(local);
 	sprite.setTexture(textura);
 }
+
+
+void Entidade::renderizar() { pGG->render(&sprite); }
+
+void Entidade::atualizar() {
+	float dt = 0.1;
+	if (getPosicao().y + getTamanho().y < HEIGHT)
+		setPosicao(sf::Vector2f(getPosicao().x + getVelocidade().x * dt, getPosicao().y + (getVelocidade().y * dt) + GRAVIDADE * dt * dt / 2));
+
+	setVelocidade(sf::Vector2f(getVelocidade().x, getVelocidade().y + GRAVIDADE * dt));
+}
+
+
+void Entidade::tomaDano(int ferimento) { vida -= ferimento; }
+
+bool Entidade::getRemove() { return remove; }
+
+void Entidade::setRemove(bool rem) { remove = rem; }
+int Entidade::getDano() { return dano; }
 
 
 void Entidade::resolverColisao(Entidade* pEnt, float ix, float iy)
@@ -73,14 +88,3 @@ void Entidade::resolverColisao(Entidade* pEnt, float ix, float iy)
 	}
 }
 
-sf::Sprite Entidade::getSprite() {
-	return sprite;
-}
-
-void Entidade::atualizar() {
-	float dt = 0.1;
-	if(getPosicao().y + getTamanho().y < HEIGHT)
-		setPosicao(sf::Vector2f(getPosicao().x + getVelocidade().x * dt, getPosicao().y + (getVelocidade().y * dt) + GRAVIDADE * dt * dt / 2));
-
-	setVelocidade(sf::Vector2f(getVelocidade().x, getVelocidade().y + GRAVIDADE * dt));
-}
