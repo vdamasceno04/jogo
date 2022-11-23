@@ -8,7 +8,6 @@ public:
 	void criachao();
 	void criaespinho();
 	void criajavali();
-	void criaagua();
 	void criacaracol();
 	void inicializar();
 	void executar();
