@@ -11,7 +11,7 @@ Gosma::Gosma(sf::Vector2f pos, int ven) : Entidades::Entidade(pos) {
 	vmax.x = 25;
 	vmax.y = -19.8;
 	setVelocidade(sf::Vector2f(-vmax.x, vmax.y));
-	setSprite("C:/Users/genti/Downloads/texturas/gosma.png");
+	setSprite("Assets/gosma.png");
 	inicializar();
 	remove = false;
 }

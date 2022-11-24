@@ -5,7 +5,7 @@ Caracol::Caracol(sf::Vector2f pos, Jogador* p1, Jogador* p2, int ven, Gosma* pGo
 	Inimigo(pos, p1, p2) {
 	id = caracol;
 	gosma = pGosma;
-	setSprite("C:/Users/genti/Downloads/texturas/caracol.png");
+	setSprite("Assets/caracol.png");
 	body.setSize(sf::Vector2f(100, 89));
 	setEscala(sf::Vector2f(4, 4));
 	setPosicao(pos);

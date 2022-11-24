@@ -7,7 +7,7 @@ Agua::Agua(sf::Vector2f pos) :
 	id = agua;
 	lentidao = 0.2;
 	body.setSize(sf::Vector2f(100, 137));
-	setSprite("C:/Users/genti/Downloads/texturas/agua.png");
+	setSprite("Assets/agua.png");
 	sprite.setTextureRect(sf::IntRect(0,5,60,60 ));
 	setPosicao(pos);
 	setEscala(sf::Vector2f(3, 4));

@@ -8,7 +8,7 @@ Espinho::Espinho(sf::Vector2f pos) :
 	dano = 1;
 	danificar = true;
 	duracaoCooldown = 100;
-	setSprite("C:/Users/genti/Downloads/texturas/espinho.png");
+	setSprite("Assets/espinho.png");
 	body.setSize(sf::Vector2f(67, 137));
 	setPosicao(pos);
 	setEscala(sf::Vector2f(2, 2));

@@ -3,7 +3,7 @@
 Cacador::Cacador(sf::Vector2f pos) :
 	Jogador(pos) {
 	id = cacador;
-	setSprite("C:/Users/genti/Downloads/texturas/Idle.gif");
+	setSprite("Assets/Idle.gif");
 	sprite.setTextureRect(sf::IntRect(11, 11, 47, 59));
 }
 Cacador::~Cacador() {}

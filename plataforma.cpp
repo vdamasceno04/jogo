@@ -6,9 +6,9 @@ Plataforma::Plataforma(sf::Vector2f pos, bool verm) :
 	vermelho = verm;
 	id = plataforma;
 	if(vermelho)
-		setSprite("C:/Users/genti/Downloads/texturas/chaovermelho.png");
+		setSprite("Assets/chaovermelho.png");
 	else
-		setSprite("C:/Users/genti/Downloads/texturas/chaoverde.png");
+		setSprite("Assets/chaoverde.png");
 	setPosicao(pos);
 	body.setSize(sf::Vector2f(67, 133));
 	setEscala(sf::Vector2f(2, 2));
