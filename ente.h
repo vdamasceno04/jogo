@@ -16,7 +16,8 @@ enum ID {
 	javali = 7,
 	caracol = 8,
 	gosma = 9,
-	fundo = 10
+	fundo = 10,
+	pedra = 11
 };
 
 

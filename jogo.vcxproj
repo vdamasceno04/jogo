@@ -161,6 +161,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="obstaculo.cpp" />
+    <ClCompile Include="pedra.cpp" />
     <ClCompile Include="personagem.cpp" />
     <ClCompile Include="plataforma.cpp" />
     <ClCompile Include="abelha.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="ListaEntidades.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="obstaculo.h" />
+    <ClInclude Include="pedra.h" />
     <ClInclude Include="personagem.h" />
     <ClInclude Include="plataforma.h" />
     <ClInclude Include="abelhas.h" />

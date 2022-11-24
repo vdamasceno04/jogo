@@ -1,6 +1,6 @@
 #include "jogo.h"
 #include<stdio.h>
-/*
+
 Jogo::Jogo() :
     pGG(Graphics::getInstance()),
     fase1(Graphics::getInstance()),
@@ -16,8 +16,6 @@ Jogo::Jogo() :
 Jogo::~Jogo() {
     Managers::Graphics::apagarInstance();
 }
-#include "jogo.h"
-#include<stdio.h>
 
 void Jogo::inicializar() {
     menuPrincipal.setValores();
@@ -50,6 +48,7 @@ void Jogo::executar()
         {
             pGG->clear();
             if (flagFase) {
+                fase1.set2jogadores(false);
                 fase1.inicializar();
                 flagFase = false;
             }
@@ -57,11 +56,13 @@ void Jogo::executar()
             fase1.colidir();
             pGG->display();
         }
+
         //Fase 1 (dois jogadores)
         else if (tela == 2)
         {
             pGG->clear();
             if (flagFase) {
+                fase1.set2jogadores(true);
                 fase1.inicializar();
                 flagFase = false;
             }
@@ -74,6 +75,7 @@ void Jogo::executar()
         {
             pGG->clear();
             if (flagFase) {
+                fase2.set2jogadores(false);
                 fase2.inicializar();
                 flagFase = false;
             }
@@ -86,6 +88,7 @@ void Jogo::executar()
         {
             pGG->clear();
             if (flagFase) {
+                fase2.set2jogadores(true);
                 fase2.inicializar();
                 flagFase = false;
             }
@@ -96,7 +99,7 @@ void Jogo::executar()
 
     }
 }
-*/
+/*
 Jogo::Jogo() :
     pGG(Graphics::getInstance()),
  //   fase1(Graphics::getInstance()),
@@ -134,4 +137,4 @@ void Jogo::executar()
 
         pGG->display();
     }
-}
+}*/

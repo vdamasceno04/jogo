@@ -1,7 +1,7 @@
 #include "Fase.h"
 
 Fase::Fase(Managers::Graphics* pG) :
-    listaEst(), j1(), e1(), listaMov()
+    listaEst(), j1(),  listaMov()
 {
     pGG = pG;
     pGC = GerenciadorColisoes::getInstancia(&listaMov, &listaEst);

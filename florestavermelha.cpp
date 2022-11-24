@@ -79,7 +79,8 @@ void FlorestaVermelha::criacaracol() {
 void FlorestaVermelha::inicializar() {
     criafundo();
     listaMov.addEntidade(&j1);
-    listaMov.addEntidade(&e1);
+    if (get2jogadores())
+        listaMov.addEntidade(&e1);
     criacaracol();
     criaespinho();
     criajavali();

@@ -14,11 +14,16 @@
 #include "caracol.h"
 #include "gosma.h"
 #include <iostream>
+
+
+#include"pedra.h"
+
 using namespace std;
 
 class Fase {
+private: 
+	bool doisJogadores;
 public:
-
 	Managers::Graphics* pGG;
 	GerenciadorColisoes* pGC;
 	ListaEntidades listaEst;
@@ -26,6 +31,8 @@ public:
 	Cacador j1;
 	Explorador e1;
 
+	void set2jogadores(bool jog) { doisJogadores = jog; }
+	bool get2jogadores() { return doisJogadores; }
 	Fase(Managers::Graphics* pG);
 	~Fase();
 	void atualizaView();

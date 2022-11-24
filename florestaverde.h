@@ -13,4 +13,6 @@ public:
 	void inicializar();
 	void executar();
 	void colidir();
+
+	void criapedra();
 };

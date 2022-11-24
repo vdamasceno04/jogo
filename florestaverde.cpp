@@ -11,6 +11,18 @@ FlorestaVerde::~FlorestaVerde() {
 
 }
 
+void FlorestaVerde::criapedra()
+{
+    int i;
+    int pos = 70;
+    Pedra* pAux;
+    for (i = 0; i < 1; i++) {
+        pAux = new Pedra(sf::Vector2f(pos, HEIGHT * 5 / 7));
+        listaEst.addEntidade(pAux);
+        pos += 71;
+    }
+}
+
 void FlorestaVerde::criachao()
 {
     int i;
@@ -94,12 +106,14 @@ void FlorestaVerde::criaabelhas() {
 void FlorestaVerde::inicializar() {
     criafundo();
     listaMov.addEntidade(&j1);
-    listaMov.addEntidade(&e1);
+    if(get2jogadores())
+        listaMov.addEntidade(&e1);
     criaabelhas();
     criaespinho();
     criajavali();
     criachao();
     criaagua();
+    criapedra();
     listaEst.setJanela(pGG);
     listaMov.setJanela(pGG);
 }
