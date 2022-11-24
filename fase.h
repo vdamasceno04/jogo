@@ -37,6 +37,9 @@ public:
 	~Fase();
 	void atualizaView();
 	void criafundo();
+	void criaespinho();
+	void criajavali();
+	void criachao(bool vermelho);
 	virtual void executar() = 0;
 	virtual void colidir() = 0;
 };

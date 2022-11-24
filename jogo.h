@@ -11,7 +11,7 @@ class Jogo
 private:
 	bool flagFase;
 	int tela;
-	FlorestaVerde fase1;
+//	FlorestaVerde fase1;
 	FlorestaVermelha fase2;
 	Menu menuPrincipal;
 	Managers::Graphics* pGG;

@@ -1,6 +1,6 @@
 #include "jogo.h"
 #include<stdio.h>
-
+/*
 Jogo::Jogo() :
     pGG(Graphics::getInstance()),
     fase1(Graphics::getInstance()),
@@ -99,7 +99,7 @@ void Jogo::executar()
 
     }
 }
-/*
+*/
 Jogo::Jogo() :
     pGG(Graphics::getInstance()),
  //   fase1(Graphics::getInstance()),
@@ -137,4 +137,4 @@ void Jogo::executar()
 
         pGG->display();
     }
-}*/
+}

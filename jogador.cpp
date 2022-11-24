@@ -31,7 +31,7 @@ void Jogador::colidir(Entidade* p, float intersec_x, float intersec_y)
 	else if (p->getId() == 5 || p->getId() == 4) {
 		resolverColisao(p, intersec_x, intersec_y);
 		p->efeito(this);
-
+		podePular = true;
 	}
 }
 

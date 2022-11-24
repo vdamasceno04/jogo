@@ -9,49 +9,20 @@ FlorestaVermelha::FlorestaVermelha(Managers::Graphics* pG) :
 
 FlorestaVermelha::~FlorestaVermelha() {}
 
-void FlorestaVermelha::criachao()
+void FlorestaVermelha::criapedra()
 {
     int i;
-    int pos = 0;
-    Plataforma* pAux;
-    for (i = 0; i < 121; i++) {
-        pAux = new Plataforma(sf::Vector2f(pos, HEIGHT * 6 / 7), true);
-        listaEst.addEntidade(pAux);
-        pos += 71;
-    }
-}
-
-void FlorestaVermelha::criaespinho() {
-    int i;
     int sorteia;
-    int pos = 800;
-    Espinho* pAux;
+    int pos = 900;
+    Pedra* pAux;
     srand(time(NULL));
     for (i = 0; i < 10; i++) {
         sorteia = rand() % 2;
-        if (sorteia == 0 || i % 3 == 0) {
-            pAux = new Espinho(sf::Vector2f(pos, HEIGHT * 0.835));
+        if (sorteia == 0 || i%2 == 0) {
+            pAux = new Pedra(sf::Vector2f(pos, HEIGHT * 0.7));
             listaEst.addEntidade(pAux);
         }
         pos += 500;
-    }
-}
-
-void FlorestaVermelha::criajavali() {
-    int i;
-    int pos = WIDTH * 6 - WIDTH / 3;
-    int idade;
-    int sorteia;
-    Javali* pAux;
-    srand(time(NULL));
-    for (i = 0; i < 6; i++) {
-        sorteia = rand() % 2;
-        if (sorteia == 0 || i % 2 == 0) {
-            idade = (rand() % 8) + 3;
-            pAux = new Javali(sf::Vector2f(pos, HEIGHT * 0.64), &j1, &e1, idade);
-            listaMov.addEntidade(pAux);
-        }
-        pos += 220;
     }
 }
 
@@ -62,8 +33,8 @@ void FlorestaVermelha::criacaracol() {
     int sorteia;
     Caracol* pCaracol;
     Gosma* pGosma;
-    for (i = 0; i < 7; i++) {
-        sorteia = rand() % 2;
+    for (i = 0; i < 9; i++) {
+        sorteia = rand() % 3;
         if (sorteia == 0 || i % 3 == 0) {
             veneno = rand() % 3 + 2;
             pGosma = new Gosma(sf::Vector2f(sf::Vector2f(pos + 40, (HEIGHT * 0.74) + 30)), veneno);
@@ -84,7 +55,8 @@ void FlorestaVermelha::inicializar() {
     criacaracol();
     criaespinho();
     criajavali();
-    criachao();
+    criachao(true);
+    criapedra();
     listaEst.setJanela(pGG);
     listaMov.setJanela(pGG);
 }
