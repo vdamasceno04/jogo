@@ -48,7 +48,7 @@ void FlorestaVermelha::criacaracol() {
 }
 
 void FlorestaVermelha::inicializar() {
-    criafundo();
+    criafundo(false);
     listaMov.addEntidade(&j1);
     if (get2jogadores())
         listaMov.addEntidade(&e1);

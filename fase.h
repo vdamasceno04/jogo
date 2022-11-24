@@ -36,7 +36,7 @@ public:
 	Fase(Managers::Graphics* pG);
 	~Fase();
 	void atualizaView();
-	void criafundo();
+	void criafundo(bool dia);
 	void criaespinho();
 	void criajavali();
 	void criachao(bool vermelho);

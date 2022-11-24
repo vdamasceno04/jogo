@@ -1,9 +1,13 @@
 #include "fundo.h"
 
-Fundo::Fundo(sf::Vector2f pos) : Entidade(pos)
+Fundo::Fundo(sf::Vector2f pos, bool d) : Entidade(pos)
 {
+	dia = d;
 	id = fundo;
-	setSprite("C:/Users/genti/Downloads/Legacy-Fantasy-VL.1 - High Forest - Update 1.9/Background/Background.png");
+	if(dia)
+		setSprite("C:/Users/genti/Downloads/texturas/fundodia.png");
+	else
+		setSprite("C:/Users/genti/Downloads/texturas/fundonoite.png");
 	body.setSize(sf::Vector2f(WIDTH, HEIGHT));;
 	setEscala(sf::Vector2f(3.21, 3.75));
 	setPosicao(pos);

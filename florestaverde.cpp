@@ -46,7 +46,7 @@ void FlorestaVerde::criaabelhas() {
 }
 
 void FlorestaVerde::inicializar() {
-    criafundo();
+    criafundo(true);
     listaMov.addEntidade(&j1);
     if(get2jogadores())
         listaMov.addEntidade(&e1);

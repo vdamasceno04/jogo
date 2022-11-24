@@ -15,13 +15,13 @@ Fase::~Fase() {
         delete listaMov.getItem(i);*/
 }
 
-void Fase::criafundo()
+void Fase::criafundo(bool dia)
 {
     int i;
     int pos = 0;
     Fundo* pAux;
     for (i = 0; i < 8; i++) {
-        pAux = new Fundo(sf::Vector2f(pos, 0));
+        pAux = new Fundo(sf::Vector2f(pos, 0), dia);
         listaEst.addEntidade(pAux);
         pos += WIDTH - 2;
     }
