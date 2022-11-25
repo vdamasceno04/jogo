@@ -6,8 +6,8 @@ Caracol::Caracol(sf::Vector2f pos, Jogador* p1, Jogador* p2, int ven, Gosma* pGo
 	id = caracol;
 	gosma = pGosma;
 	setSprite("Assets/caracol.png");
-	body.setSize(sf::Vector2f(100, 89));
-	setEscala(sf::Vector2f(4, 4));
+	body.setSize(sf::Vector2f(125, 120));
+	setEscala(sf::Vector2f(5, 5));
 	setPosicao(pos);
 	alcance = 400;
 	duracaoCooldown = 0.5;
