@@ -6,7 +6,7 @@ public:
 	FlorestaVermelha(Managers::Graphics* pG);
 	~FlorestaVermelha();
 	void criacaracol();
-	void criapedra();
+	void criaespinho();
 	void inicializar();
 	void executar();
 	void colidir();

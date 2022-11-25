@@ -38,7 +38,7 @@ public:
 	~Fase();
 	void atualizaView();
 	void criafundo(bool dia);
-	void criaespinho();
+	void criapedra();
 	void criajavali();
 	void criachao(bool vermelho);
 	virtual void executar() = 0;

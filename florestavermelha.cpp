@@ -9,17 +9,16 @@ FlorestaVermelha::FlorestaVermelha(Managers::Graphics* pG) :
 
 FlorestaVermelha::~FlorestaVermelha() {}
 
-void FlorestaVermelha::criapedra()
-{
+void FlorestaVermelha::criaespinho() {
     int i;
     int sorteia;
-    int pos = 900;
-    Pedra* pAux;
+    int pos = 800;
+    Espinho* pAux;
     srand(time(NULL));
     for (i = 0; i < 10; i++) {
         sorteia = rand() % 2;
-        if (sorteia == 0 || i%2 == 0) {
-            pAux = new Pedra(sf::Vector2f(pos, HEIGHT * 0.7));
+        if (sorteia == 0 || i % 3 == 0) {
+            pAux = new Espinho(sf::Vector2f(pos, HEIGHT * 0.835));
             listaEst.addEntidade(pAux);
         }
         pos += 500;

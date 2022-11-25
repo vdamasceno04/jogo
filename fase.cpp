@@ -27,16 +27,17 @@ void Fase::criafundo(bool dia)
     }
 }
 
-void Fase::criaespinho() {
+void Fase::criapedra()
+{
     int i;
     int sorteia;
-    int pos = 800;
-    Espinho* pAux;
+    int pos = 900;
+    Pedra* pAux;
     srand(time(NULL));
     for (i = 0; i < 10; i++) {
         sorteia = rand() % 2;
-        if (sorteia == 0 || i % 3 == 0) {
-            pAux = new Espinho(sf::Vector2f(pos, HEIGHT * 0.835));
+        if (sorteia == 0 || i % 2 == 0) {
+            pAux = new Pedra(sf::Vector2f(pos, HEIGHT * 0.7));
             listaEst.addEntidade(pAux);
         }
         pos += 500;

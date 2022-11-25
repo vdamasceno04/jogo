@@ -112,7 +112,7 @@ void Jogo::executar()
 
 Jogo::Jogo() :
     pGG(Graphics::getInstance()),
- //   fase1(Graphics::getInstance()),
+ //   fase1(Graphics::getInstance())//,
     fase2(Graphics::getInstance())
 {
     Ente::setpGG(Graphics::getInstance());
@@ -152,7 +152,7 @@ void Jogo::executar()
     string nome;
     cout << "pontuacao = " << Ente::getPontuacao() << endl << "insira seu nome" << endl;
     cin >> nome;
-/*    string filename("output.txt");
+    string filename("output.txt");
     fstream output_fstream;
 
     output_fstream.open(filename, std::ios_base::out);
@@ -161,7 +161,7 @@ void Jogo::executar()
     }
     else {
         output_fstream << nome << endl << Ente::getPontuacao() <<endl;
-    }*/
+    }
 
     std::ifstream readFile;
 
@@ -185,7 +185,7 @@ void Jogo::executar()
         readFile.close();
     }
 
-    /* ================================= ESCRITA ================================= */
+    // ESCRITA 
     if (Ente::getPontuacao() != 0 )//&& input.getString().length() > 1)
         mapaRanking.insert(std::pair<int, std::string>(Ente::getPontuacao(), nome));
 
