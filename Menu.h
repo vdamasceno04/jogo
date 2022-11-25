@@ -5,15 +5,11 @@
 using namespace std;
 
 class Menu : public Ente{
-private:
+protected:
 	int pos;
-	int tela;
 	bool selecionado;
 	bool pressionado;
-
-	bool principal;
-	bool escolha;
-	bool placar;
+	bool ativo;
 
 	sf::Font fonte;
 
@@ -25,27 +21,16 @@ private:
 	vector <sf::Text> textos;
 	vector <size_t> tamanhos;
 
-	//Menu de Escolhas
-	sf::Texture texturaEscolha;
-	sf::Sprite spriteEscolha;
-	vector <const char*> opcaoEscolha;
-	vector <sf::Vector2f> coordEscolha;
-	vector <sf::Text> textosEscolha;
-	vector <size_t> tamEscolha;
-
 public:
 	Menu();
 	~Menu();
 	void setValores();
 
-	void executar();
+	int getAtivo();
+	void setAtivo(bool at);
 
-	void loopPrincipal();
-	void desenharPrincipal();
-	int loopEscolha();
-	void desenharEscolha();
-	void loopPlacar();
-	void desenharPlacar();
+	virtual void executar() = 0;
+	virtual void loop() = 0;
+	virtual void desenhar() = 0;
 
-	int getTela();
 };

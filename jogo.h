@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "florestaverde.h"
 #include "florestavermelha.h"
-#include "Menu.h"
+#include "MenuPrincipal.h"
 
 using namespace Managers;
 
@@ -10,10 +10,10 @@ class Jogo
 {
 private:
 	bool flagFase;
-	int tela;
-//	FlorestaVerde fase1;
+	//int tela;
+	FlorestaVerde fase1;
 	FlorestaVermelha fase2;
-	Menu menuPrincipal;
+	MenuPrincipal menuPrincipal;
 	Managers::Graphics* pGG;
 	GerenciadorColisoes* pGC;
 
