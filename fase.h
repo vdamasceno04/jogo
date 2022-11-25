@@ -31,6 +31,7 @@ public:
 	Cacador j1;
 	Explorador e1;
 
+	bool fimFase();
 	void set2jogadores(bool jog) { doisJogadores = jog; }
 	bool get2jogadores() { return doisJogadores; }
 	Fase(Managers::Graphics* pG);

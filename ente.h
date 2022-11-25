@@ -26,10 +26,15 @@ class Ente {
 protected:
 	ID id;
 	static Managers::Graphics* pGG;
+private:
+	static int pontuacao;
 public:
 	Ente();
 	static void setpGG(Managers::Graphics* p);
 	ID getId();
+	static void setPontos(int pontos);
+	static int getPontuacao();
+	int getPontos(ID id);
 	~Ente();
 	virtual void executar() = 0;
 };

@@ -6,6 +6,7 @@ class Jogador;
 class Inimigo : public Personagem {
 protected:
 	float visao; //Se o jogador entrar nessa distancia o inimigo atira ou persegue o jogador
+	int pontos;
 	Jogador* pJ1;
 	Jogador* pJ2;
 
@@ -15,6 +16,8 @@ public:
 	virtual void executar() = 0;
 	void setVisao(float visao);
 	float getVisao();
+	void setPontos(int p);
+	int getPontos();
 	bool getPersegue(Jogador* pJ);
 	Jogador* definePerseguido(Jogador* pJ1, Jogador* pJ2);
 	void perseguicao(Jogador* pJ);

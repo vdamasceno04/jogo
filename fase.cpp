@@ -61,6 +61,38 @@ void Fase::criajavali() {
     }
 }
 
+bool Fase::fimFase() {
+    bool fim = false;
+    bool jogadorvivo = false;
+    bool javalivivo = false;
+    int i;
+    ID id;
+    for (i = 0; i < listaMov.getLen(); i++)
+    {
+        id = listaMov.getItem(i)->getId();
+        if (id == 1 || id == 2)
+            jogadorvivo = true;
+        else if (id == 7)
+            javalivivo = true;
+    }
+    if (!jogadorvivo) {
+        fim = true;
+        Ente::setPontos(-Ente::getPontuacao());
+    }
+    if (!javalivivo) {
+        fim = true;
+        Ente::setPontos(4000);
+        if (doisJogadores) 
+            Ente::setPontos(j1.getVida() * 1000);
+        Ente::setPontos(e1.getVida() * 1000);
+
+       
+        
+        
+    }
+    return fim;
+}
+
 void Fase::criachao(bool vermelho)
 {
     int i;

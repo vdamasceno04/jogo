@@ -37,8 +37,9 @@ void ListaEntidades::executarLista()
 
     for (int i = 0; i < objLE.getLen(); i++) {
         pAux = objLE.getItem(i);
-        if (pAux->getRemove()) {
 
+        if (pAux->getRemove()) {
+            Ente::setPontos(pAux->getPontos(pAux->getId()));
             removeEntidade(pAux);
             //DESTRUIR
         }
