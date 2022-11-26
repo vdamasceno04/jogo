@@ -17,10 +17,10 @@ void MenuLeaderboard::setValores()
 {
 	//Abrir Arquivo e Colocar no vetor de Text
 
-    textura.loadFromFile("C:/Users/Usuario/Desktop/OmegaCringe/Assets/Escolha.png");
+    textura.loadFromFile("Assets/Escolha.png");
     sprite.setTexture(textura);
 
-	caminho = ("./saves/Leaderboard.txt");
+	caminho = ("Assets/ranking.txt");
 	std::ifstream arquivo;
 	arquivo.open(caminho, std::ios::binary | std::ios::in);
 

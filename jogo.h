@@ -14,8 +14,8 @@ private:
 	bool flagFase;
 	int tela;
   
-	FlorestaVerde fase1;
-	FlorestaVermelha fase2;
+	Fases::FlorestaVerde fase1;
+	Fases::FlorestaVermelha fase2;
 
 	MenuPrincipal menuPrincipal;
 	MenuInterno menuJogo;

@@ -23,7 +23,7 @@ void MenuEscolha::setValores()
 	ativo = false;
 	escolha = 0;
 
-	textura.loadFromFile("C:/Users/Usuario/Desktop/OmegaCringe/Assets/Escolha.png");
+	textura.loadFromFile("Assets/Escolha.png");
 	sprite.setTexture(textura);
 	opcao = { "Fase 1 - um jogador", "Fase 1 - dois jogadores", "Fase 2 - um jogador", "Fase 2 - dois jogadores" };
 	coordenadas = { {509.f,90.f}, {482.f,240.f}, {509.f,390.f}, {482.f,540.f} };

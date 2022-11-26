@@ -17,7 +17,7 @@ void MenuInterno::setValores()
 	ativo = sair = false;
 	parar = true;
 
-	textura.loadFromFile("C:/Users/Usuario/Desktop/OmegaCringe/Assets/Escolha.png");
+	textura.loadFromFile("Assets/Escolha.png");
 	sprite.setTexture(textura);
 	opcao = { "Continuar", "Salvar", "Carregar", "Sair" };
 	coordenadas = { {509.f,90.f}, {482.f,240.f}, {509.f,390.f}, {482.f,540.f} };

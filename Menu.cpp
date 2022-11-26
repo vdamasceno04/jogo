@@ -21,7 +21,7 @@ void Menu::setValores()
 {
 	pos = 0;
 	selecionado = pressionado = false;
-	fonte.loadFromFile("C:/Users/Usuario/Desktop/OmegaCringe/Assets/MainFont.ttf");
+	fonte.loadFromFile("Assets/MainFont.ttf");
 }
 
 int Menu::getAtivo() { return ativo; }

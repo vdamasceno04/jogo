@@ -27,7 +27,7 @@ void MenuPrincipal::setValores()
 {
 	ativo = true;
 
-	textura.loadFromFile("C:/Users/Usuario/Desktop/OmegaCringe/Assets/Ibama.png");
+	textura.loadFromFile("Assets/Ibama.png");
 	sprite.setTexture(textura);
 	opcao = { "Jogar", "Leaderboard", "Sair" };
 	coordenadas = { {153.f,280.f}, {102.f,410.f}, {166.f,532.f} };

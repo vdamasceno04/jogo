@@ -27,7 +27,7 @@ Jogo::~Jogo() {
 void Jogo::inicializar() {
     menuPrincipal.setValores();
 }
-
+/*
 void Jogo::executar()
 {
     inicializar();
@@ -105,7 +105,7 @@ void Jogo::executar()
         }
 
     }
-}
+}*/
 /*
 
 #define CAMINHO "ranking.txt"

@@ -2,6 +2,7 @@
 #include "ente.h"
 #include <SFML\Graphics.hpp>
 #include <iostream>
+#include<fstream>
 using namespace std;
 
 class Menu : public Ente {
