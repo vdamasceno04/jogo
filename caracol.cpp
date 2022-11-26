@@ -6,8 +6,8 @@ Caracol::Caracol(sf::Vector2f pos, Jogador* p1, Jogador* p2, int ven, Gosma* pGo
 	id = caracol;
 	gosma = pGosma;
 	setSprite("Assets/caracol.png");
-	body.setSize(sf::Vector2f(100, 89));
-	setEscala(sf::Vector2f(4, 4));
+	body.setSize(sf::Vector2f(125, 120));
+	setEscala(sf::Vector2f(5, 5));
 	setPosicao(pos);
 	alcance = 400;
 	duracaoCooldown = 0.5;
@@ -49,16 +49,3 @@ void Caracol::executar() {
 	renderizar();
 }
 
-void Caracol::colidir(Entidade* p, float intersec_x, float intersec_y)
-{
-	if (p->getId() == 1 || p->getId() == 2 || p->getId() == 3 || p->getId() == 6
-		|| p->getId() == 7 || p->getId() == 8 || p->getId() == 11)
-
-		resolverColisao(p, intersec_x, intersec_y);
-
-	else if (p->getId() == 5 || p->getId() == 4) {
-		resolverColisao(p, intersec_x, intersec_y);
-		p->efeito(this);
-	}
-
-}

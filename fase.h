@@ -20,27 +20,30 @@
 
 using namespace std;
 
-class Fase {
-private: 
-	bool doisJogadores;
-public:
-	Managers::Graphics* pGG;
-	GerenciadorColisoes* pGC;
-	ListaEntidades listaEst;
-	ListaEntidades listaMov;
-	Cacador j1;
-	Explorador e1;
+namespace Fases {
+	class Fase {
+	private:
+		bool doisJogadores;
+	public:
+		Managers::Graphics* pGG;
+		Managers::GerenciadorColisoes* pGC;
+		static Listas::ListaEntidades listaEst;
+		static Listas::ListaEntidades listaMov;
+		Cacador j1;
+		Explorador e1;
 
-	bool fimFase();
-	void set2jogadores(bool jog) { doisJogadores = jog; }
-	bool get2jogadores() { return doisJogadores; }
-	Fase(Managers::Graphics* pG);
-	~Fase();
-	void atualizaView();
-	void criafundo(bool dia);
-	void criaespinho();
-	void criajavali();
-	void criachao(bool vermelho);
-	virtual void executar() = 0;
-	virtual void colidir() = 0;
-};
+		bool fimFase();
+		void set2jogadores(bool jog) { doisJogadores = jog; }
+		bool get2jogadores() { return doisJogadores; }
+
+		Fase(Managers::Graphics* pgg, Managers::GerenciadorColisoes* pgc);
+		~Fase();
+		void atualizaView();
+		void criafundo(bool dia);
+		void criapedra();
+		void criajavali();
+		void criachao(bool vermelho);
+		virtual void executar() = 0;
+		virtual void colidir() = 0;
+	};
+}

@@ -1,13 +1,17 @@
+#pragma once
 #include"fase.h"
 
-class FlorestaVermelha : public Fase {
+namespace Fases {
 
-public:
-	FlorestaVermelha(Managers::Graphics* pG);
-	~FlorestaVermelha();
-	void criacaracol();
-	void criapedra();
-	void inicializar();
-	void executar();
-	void colidir();
-};
+	class FlorestaVermelha : public Fase {
+
+	public:
+		FlorestaVermelha(Managers::Graphics* pG, Managers::GerenciadorColisoes* pC);
+		~FlorestaVermelha();
+		void criacaracol();
+		void criaespinho();
+		void inicializar();
+		void executar();
+		void colidir();
+	};
+}

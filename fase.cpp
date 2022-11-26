@@ -1,13 +1,16 @@
 #include "Fase.h"
 
-Fase::Fase(Managers::Graphics* pG) :
-    listaEst(), j1(),  listaMov()
+Fases::Fase::Fase(Managers::Graphics* pG, Managers::GerenciadorColisoes* pC) :
+   j1(), pGC(Managers::GerenciadorColisoes::getInstancia(&listaMov, &listaEst))
 {
     pGG = pG;
-    pGC = GerenciadorColisoes::getInstancia(&listaMov, &listaEst);
+    pGC = pC;
 }
 
-Fase::~Fase() {
+Listas::ListaEntidades Fases::Fase::listaEst;
+Listas::ListaEntidades Fases::Fase::listaMov;
+
+Fases::Fase::~Fase() {
   /*  int i;
     for(i=0; i<listaEst.getLen(); i++)
         delete listaEst.getItem(i);
@@ -15,7 +18,7 @@ Fase::~Fase() {
         delete listaMov.getItem(i);*/
 }
 
-void Fase::criafundo(bool dia)
+void Fases::Fase::criafundo(bool dia)
 {
     int i;
     int pos = 0;
@@ -27,23 +30,24 @@ void Fase::criafundo(bool dia)
     }
 }
 
-void Fase::criaespinho() {
+void Fases::Fase::criapedra()
+{
     int i;
     int sorteia;
-    int pos = 800;
-    Espinho* pAux;
+    int pos = 900;
+    Pedra* pAux;
     srand(time(NULL));
     for (i = 0; i < 10; i++) {
         sorteia = rand() % 2;
-        if (sorteia == 0 || i % 3 == 0) {
-            pAux = new Espinho(sf::Vector2f(pos, HEIGHT * 0.835));
+        if (sorteia == 0 || i % 2 == 0) {
+            pAux = new Pedra(sf::Vector2f(pos, HEIGHT * 0.7));
             listaEst.addEntidade(pAux);
         }
         pos += 500;
     }
 }
 
-void Fase::criajavali() {
+void Fases::Fase::criajavali() {
     int i;
     int pos = WIDTH * 6 - WIDTH / 3;
     int idade;
@@ -61,7 +65,7 @@ void Fase::criajavali() {
     }
 }
 
-bool Fase::fimFase() {
+bool Fases::Fase::fimFase() {
     bool fim = false;
     bool jogadorvivo = false;
     bool javalivivo = false;
@@ -93,7 +97,7 @@ bool Fase::fimFase() {
     return fim;
 }
 
-void Fase::criachao(bool vermelho)
+void Fases::Fase::criachao(bool vermelho)
 {
     int i;
     int pos = 0;
@@ -105,7 +109,7 @@ void Fase::criachao(bool vermelho)
     }
 }
 
-void Fase::atualizaView() {
+void Fases::Fase::atualizaView() {
     if (j1.getBody().getPosition().x >= pGG->getView().x)
         pGG->centerView(sf::Vector2f(j1.getBody().getPosition().x, HEIGHT / 2));
     if (e1.getBody().getPosition().x >= pGG->getView().x)

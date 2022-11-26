@@ -6,12 +6,12 @@ using std::ofstream;
 using std::string;
 using std::cerr;
 using std::fstream;
+using namespace Fases;
 
-/*
 Jogo::Jogo() :
-    pGG(Graphics::getInstance()),
-    fase1(Graphics::getInstance()),
-    fase2(Graphics::getInstance()),
+    pGG(Graphics::getInstance()), pGC(GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
+    fase1(Graphics::getInstance(), GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
+    fase2(Graphics::getInstance(), GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
     menuPrincipal()
 {
     Ente::setpGG(Graphics::getInstance());
@@ -106,7 +106,7 @@ void Jogo::executar()
 
     }
 }
-*/
+/*
 
 #define CAMINHO "ranking.txt"
 
@@ -115,6 +115,7 @@ Jogo::Jogo() :
     fase1(Graphics::getInstance()),
     fase2(Graphics::getInstance()),
     menuPrincipal()
+
 {
     Ente::setpGG(Graphics::getInstance());
     executar();
@@ -129,7 +130,6 @@ void Jogo::inicializar() {
     //fase2.inicializar();
     menuPrincipal.setValores();
 
-}
 
 /*
 void Jogo::executar()
@@ -144,10 +144,10 @@ void Jogo::executar()
                 pGG->closeWindow();
         }
         pGG->clear();
-        if (fase2.fimFase())
+        if (fase1.fimFase())
             pGG->closeWindow();
-        fase2.executar();
-        fase2.colidir();
+        fase1.executar();
+        fase1.colidir();
 
         pGG->display();
 
@@ -156,7 +156,7 @@ void Jogo::executar()
     string nome;
     cout << "pontuacao = " << Ente::getPontuacao() << endl << "insira seu nome" << endl;
     cin >> nome;
-/*    string filename("output.txt");
+    string filename("output.txt");
     fstream output_fstream;
 
     output_fstream.open(filename, std::ios_base::out);
@@ -190,6 +190,7 @@ void Jogo::executar()
     }
 
     /* ================================= ESCRITA ================================= 
+
     if (Ente::getPontuacao() != 0 )//&& input.getString().length() > 1)
         mapaRanking.insert(std::pair<int, std::string>(Ente::getPontuacao(), nome));
 
@@ -270,7 +271,7 @@ void Jogo::executar() {
                 }
                 if (fase1.fimFase()) {
                     menuPrincipal.setAtivo(true);
-                    //Resetar tela para posição 0 e 0
+                    //Resetar tela para posiï¿½ï¿½o 0 e 0
                 }
                 fase1.executar();
                 fase1.colidir();
@@ -287,7 +288,7 @@ void Jogo::executar() {
                 }
                 if (fase2.fimFase()) {
                     menuPrincipal.setAtivo(true);
-                    //Resetar tela para posição 0 e 0
+                    //Resetar tela para posiï¿½ï¿½o 0 e 0
                 }
                 fase2.executar();
                 fase2.colidir();
@@ -303,7 +304,7 @@ void Jogo::executar() {
                 }
                 if (fase2.fimFase()) {
                     menuPrincipal.setAtivo(true);
-                    //Resetar tela para posição 0 e 0
+                    //Resetar tela para posiï¿½ï¿½o 0 e 0
                 }
                 fase2.executar();
                 fase2.colidir();

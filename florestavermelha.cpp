@@ -2,31 +2,31 @@
 #include<time.h>
 #include<stdlib.h>
 
-FlorestaVermelha::FlorestaVermelha(Managers::Graphics* pG) :
-    Fase(pG) {
+Fases::FlorestaVermelha::FlorestaVermelha(Managers::Graphics* pG, Managers::GerenciadorColisoes* pC) :
+    Fase(pG, pC) {
     pGG = pG;
+    pGC = pC;
 }
 
-FlorestaVermelha::~FlorestaVermelha() {}
+Fases::FlorestaVermelha::~FlorestaVermelha() {}
 
-void FlorestaVermelha::criapedra()
-{
+void Fases::FlorestaVermelha::criaespinho() {
     int i;
     int sorteia;
-    int pos = 900;
-    Pedra* pAux;
+    int pos = 800;
+    Espinho* pAux;
     srand(time(NULL));
     for (i = 0; i < 10; i++) {
         sorteia = rand() % 2;
-        if (sorteia == 0 || i%2 == 0) {
-            pAux = new Pedra(sf::Vector2f(pos, HEIGHT * 0.7));
+        if (sorteia == 0 || i % 3 == 0) {
+            pAux = new Espinho(sf::Vector2f(pos, HEIGHT * 0.835));
             listaEst.addEntidade(pAux);
         }
         pos += 500;
     }
 }
 
-void FlorestaVermelha::criacaracol() {
+void Fases::FlorestaVermelha::criacaracol() {
     int i;
     int veneno;
     int pos = 600;
@@ -47,7 +47,7 @@ void FlorestaVermelha::criacaracol() {
     }
 }
 
-void FlorestaVermelha::inicializar() {
+void Fases::FlorestaVermelha::inicializar() {
     criafundo(false);
     listaMov.addEntidade(&j1);
     if (get2jogadores())
@@ -61,13 +61,13 @@ void FlorestaVermelha::inicializar() {
     listaMov.setJanela(pGG);
 }
 
-void FlorestaVermelha::executar() {
+void Fases::FlorestaVermelha::executar() {
     atualizaView();
     listaEst.executarLista();
     listaMov.executarLista();
 }
 
-void FlorestaVermelha::colidir() {
+void Fases::FlorestaVermelha::colidir() {
     pGC->ColidirEstaticoMovel();
     pGC->ColidirMovelMovel();
 }

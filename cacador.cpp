@@ -18,9 +18,9 @@ void Cacador::controlar() {
 	else
 		setVelocidade(sf::Vector2f(0, getVelocidade().y));
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && podePular) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && getColidindo()) {
 		velocidade.y = -vmax.y;
-		podePular = false;
+		setColidindo(false);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
 		ataca();

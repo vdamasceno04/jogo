@@ -12,6 +12,5 @@ public:
 	void setCaracol(Caracol* pCar);
 	void inicializar();
 	void executar();
-	void colidir(Entidade* pEnt, float intersec_x, float intersec_y);
 	void efeito(Entidade* p);
 };

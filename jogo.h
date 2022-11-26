@@ -5,6 +5,7 @@
 #include "MenuPrincipal.h"
 #include "MenuInterno.h"
 
+
 using namespace Managers;
 
 class Jogo
@@ -12,12 +13,13 @@ class Jogo
 private:
 	bool flagFase;
 	int tela;
+  
 	FlorestaVerde fase1;
 	FlorestaVermelha fase2;
 
 	MenuPrincipal menuPrincipal;
 	MenuInterno menuJogo;
-
+  
 	Managers::Graphics* pGG;
 	GerenciadorColisoes* pGC;
 

@@ -10,5 +10,4 @@ public:
 	void ataca(Jogador* pJ);
 	void voar();
 	void executar();
-	void colidir(Entidade* pEnt, float insersec_x, float intersec_y);
 };

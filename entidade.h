@@ -19,7 +19,7 @@ namespace Entidades {
 		bool remove;
 		int vida;
 		int dano;
-
+		bool colidindo;
 	public:
 		Entidade(sf::Vector2f pos);
 		~Entidade();
@@ -48,9 +48,9 @@ namespace Entidades {
 		bool getRemove();
 		void setRemove(bool rem);
 
-		void resolverColisao(Entidade* pEnt, float intersec_x, float intersec_y);
+		void setColidindo(bool chao);
+		bool getColidindo();
 		
-		virtual void colidir(Entidade* pEnt, float intersec_x, float intersec_y) {};
 		virtual void efeito(Entidade* p) {};
 		virtual void executar() = 0;
 

@@ -6,8 +6,8 @@ Pedra::Pedra(sf::Vector2f pos) :
 	id = pedra;
 	setSprite("Assets/pedra.png");
 	setPosicao(pos);
-	body.setSize(sf::Vector2f(160, 180));
-	setEscala(sf::Vector2f(4, 2));
+	body.setSize(sf::Vector2f(80, 140));
+	setEscala(sf::Vector2f(2, 1));
 }
 
 Pedra::~Pedra() {}

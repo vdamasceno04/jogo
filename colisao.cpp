@@ -1,31 +1,31 @@
 #include "colisao.h"
 
-GerenciadorColisoes* GerenciadorColisoes::instancia = NULL;
+Managers::GerenciadorColisoes* Managers::GerenciadorColisoes::instancia = NULL;
 
-GerenciadorColisoes::GerenciadorColisoes(ListaEntidades* lEM, ListaEntidades* lEE)
+Managers::GerenciadorColisoes::GerenciadorColisoes(Listas::ListaEntidades* lEM, Listas::ListaEntidades* lEE)
 {
     listaEntidadesMoveis = lEM;
     listaEntidadesEstaticas = lEE;
 }
 
-GerenciadorColisoes* GerenciadorColisoes::getInstancia(ListaEntidades* lEM, ListaEntidades* lEE)
+Managers::GerenciadorColisoes* Managers::GerenciadorColisoes::getInstancia(Listas::ListaEntidades* lEM, Listas::ListaEntidades* lEE)
 {
     if (instancia == 0) {
-        instancia = new GerenciadorColisoes(lEM, lEE);
+        instancia = new Managers::GerenciadorColisoes(lEM, lEE);
     }
     return instancia;
 }
 
-GerenciadorColisoes::~GerenciadorColisoes()
+Managers::GerenciadorColisoes::~GerenciadorColisoes()
 {
     listaEntidadesMoveis = nullptr;
     listaEntidadesEstaticas = nullptr;
 }
 
-void GerenciadorColisoes::ColidirEstaticoMovel()
+void Managers::GerenciadorColisoes::ColidirEstaticoMovel()
 {
-    Entidades::Entidade* pAux1;
-    Entidades::Entidade* pAux2;
+    Entidade* pAux1;
+    Entidade* pAux2;
     float intersec_x, intersec_y, dcentros_x, dcentros_y, dx, dy;
     int i, j;
 
@@ -58,16 +58,16 @@ void GerenciadorColisoes::ColidirEstaticoMovel()
             }
 
             if (intersec_x > 0.0 && intersec_y > 0.0) {
-                pAux2->colidir(pAux1, intersec_x, intersec_y);
+                colidir(pAux2, pAux1, intersec_x, intersec_y);
             }
         }
     }
 }
 
-void GerenciadorColisoes::ColidirMovelMovel(){
+void Managers::GerenciadorColisoes::ColidirMovelMovel(){
     //Colisão entre Entidades Moveis
-    Entidades::Entidade* pAux1;
-    Entidades::Entidade* pAux2;
+    Entidade* pAux1;
+    Entidade* pAux2;
     float intersec_x, intersec_y, dcentros_x, dcentros_y, dx, dy;
     int i, j;
 
@@ -99,8 +99,8 @@ void GerenciadorColisoes::ColidirMovelMovel(){
             }
 
             if (intersec_x> 0.0 && intersec_y > 0.0) {
-                pAux2->colidir(pAux1, intersec_x, intersec_y);
-                pAux1->colidir(pAux2, intersec_x, intersec_y);
+                colidir(pAux1, pAux2, intersec_x, intersec_y);
+                colidir(pAux2, pAux1, intersec_x, intersec_y);
             }
 
         }
@@ -127,8 +127,94 @@ void GerenciadorColisoes::clear()
 }
 */
 
-void GerenciadorColisoes::setListaEntidades(ListaEntidades* lEM, ListaEntidades* lEE)
+void Managers::GerenciadorColisoes::setListaEntidades(Listas::ListaEntidades* lEM, Listas::ListaEntidades* lEE)
 {
     this->listaEntidadesMoveis = lEM;
     this->listaEntidadesEstaticas = lEE;
+}
+
+
+void Managers::GerenciadorColisoes::colidir(Entidade* p1, Entidade* p2, float intersec_x, float intersec_y)
+{
+    if (p1->getId() == 1 || p1->getId() == 2) {
+        if (p2->getId() == 1 || p2->getId() == 2 || p2->getId() == 6
+            || p2->getId() == 7 || p2->getId() == 8)
+            resolverColisao(p1, p2, intersec_x, intersec_y);
+
+        else if (p2->getId() == 3 || p2->getId() == 11) {
+            resolverColisao(p1, p2, intersec_x, intersec_y);
+            p1->setColidindo(true);
+        }
+        else if (p2->getId() == 5 || p2->getId() == 4) {
+            resolverColisao(p1, p2, intersec_x, intersec_y);
+            p2->efeito(p1);
+            p1->setColidindo(true);
+        }
+        else if (p2->getId() == 9) {
+            resolverColisao(p1, p2, intersec_x, intersec_y);
+            p2->efeito(p1);
+        }
+    }
+
+
+    else if (p1->getId() == 6) {
+        if (p2->getId() == 1 || p2->getId() == 2 || p2->getId() == 3 || p2->getId() == 6
+            || p2->getId() == 7 || p2->getId() == 8 || p2->getId() == 9)
+
+            resolverColisao(p1, p2, intersec_x, intersec_y);
+
+        else if (p2->getId() == 5 || p2->getId() == 4) {
+
+            resolverColisao(p1, p2, intersec_x, intersec_y);
+            p2->efeito(p1);
+        }
+    }
+    else if (p1->getId() == 7) {
+        if (p2->getId() == 1 || p2->getId() == 2 || p2->getId() == 3 || p2->getId() == 6
+            || p2->getId() == 7 || p2->getId() == 8 || p2->getId() == 9)
+
+            resolverColisao(p1, p2, intersec_x, intersec_y);
+
+        else if (p2->getId() == 5 || p2->getId() == 4) {
+            resolverColisao(p1, p2, intersec_x, intersec_y);
+            p2->efeito(p1);
+        }
+    }
+    else if (p1->getId() == 8) {
+        if (p2->getId() == 1 || p2->getId() == 2 || p2->getId() == 3 || p2->getId() == 6
+            || p2->getId() == 7 || p2->getId() == 8 || p2->getId() == 11)
+
+            resolverColisao(p1, p2, intersec_x, intersec_y);
+
+        else if (p2->getId() == 5 || p2->getId() == 4) {
+            resolverColisao(p1, p2, intersec_x, intersec_y);
+            p2->efeito(p1);
+        }
+    }
+    else if (p1->getId() == 9) {
+        if (p2->getId() == 3 || p2->getId() == 6 || p2->getId() == 5 || p2->getId() == 4 || p2->getId() == 7) {
+            resolverColisao(p1, p2, intersec_x, intersec_y);
+            p1->setColidindo(true);
+        }
+    }
+}
+
+void Managers::GerenciadorColisoes::resolverColisao(Entidade* p1, Entidade* p2, float ix, float iy)
+{
+    if (ix < iy)
+    {
+        if (p1->getPosicao().x > p2->getPosicao().x)
+            p1->setPosicao(sf::Vector2f(p1->getPosicao().x + ix, p1->getPosicao().y));
+        else
+            p1->setPosicao(sf::Vector2f(p1->getPosicao().x - ix, p1->getPosicao().y));
+        p1->setVelocidade(sf::Vector2f(0, p1->getVelocidade().y));
+    }
+    else
+    {
+        if (p1->getPosicao().y > p2->getPosicao().y)
+            p1->setPosicao(sf::Vector2f(p1->getPosicao().x, p1->getPosicao().y + iy));
+        else
+            p1->setPosicao(sf::Vector2f(p1->getPosicao().x, p1->getPosicao().y - iy));
+        p1->setVelocidade(sf::Vector2f(p1->getVelocidade().x, 0));
+    }
 }
