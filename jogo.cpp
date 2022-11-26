@@ -112,8 +112,9 @@ void Jogo::executar()
 
 Jogo::Jogo() :
     pGG(Graphics::getInstance()),
- //   fase1(Graphics::getInstance()),
-    fase2(Graphics::getInstance())
+    fase1(Graphics::getInstance()),
+    fase2(Graphics::getInstance()),
+    menuPrincipal()
 {
     Ente::setpGG(Graphics::getInstance());
     executar();
@@ -125,9 +126,12 @@ Jogo::~Jogo() {
 
 void Jogo::inicializar() {
 //    fase1.inicializar();
-    fase2.inicializar();
+    //fase2.inicializar();
+    menuPrincipal.setValores();
+
 }
 
+/*
 void Jogo::executar()
 {
     inicializar();
@@ -161,7 +165,7 @@ void Jogo::executar()
     }
     else {
         output_fstream << nome << endl << Ente::getPontuacao() <<endl;
-    }*/
+    }
 
     std::ifstream readFile;
 
@@ -185,7 +189,7 @@ void Jogo::executar()
         readFile.close();
     }
 
-    /* ================================= ESCRITA ================================= */
+    /* ================================= ESCRITA ================================= 
     if (Ente::getPontuacao() != 0 )//&& input.getString().length() > 1)
         mapaRanking.insert(std::pair<int, std::string>(Ente::getPontuacao(), nome));
 
@@ -208,4 +212,119 @@ void Jogo::executar()
 
     writeFile.close();
 
+}
+*/
+
+void Jogo::executar() {
+    inicializar();
+    sf::Event event;
+    while (pGG->isWindowOpen())
+    {
+        while (pGG->getWindow()->pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                pGG->closeWindow();
+
+            //Executar Menus
+            if (menuPrincipal.getAtivo() || menuPrincipal.getEscolhaAtivo() || menuPrincipal.getLeaderboardAtivo())
+            {
+                pGG->centerView(sf::Vector2f(640.f, 360.f));
+                pGG->clear();
+                menuPrincipal.executar();
+                if (!flagFase)
+                    flagFase = true;
+
+                pGG->display();
+            }
+        }
+
+        //Executar Fase
+        if (!menuPrincipal.getAtivo() && !menuPrincipal.getEscolhaAtivo() && !menuPrincipal.getLeaderboardAtivo())
+        {
+            int auxE = menuPrincipal.getEscolheu();
+            pGG->clear();
+            //Fase 1 com um jogador
+            if (auxE == 1)
+            {
+                if (flagFase) {
+                    printf("entrou em 1\n");
+                    fase1.inicializar();
+                    fase1.set2jogadores(false);
+                    flagFase = false;
+                }
+                if (fase1.fimFase()) {
+                    menuPrincipal.setAtivo(true);
+                    
+                }
+                fase1.executar();
+                fase1.colidir();
+            }
+            //Fase 1 com dois jogadores
+            else if (auxE == 2)
+            {
+                if (flagFase) {
+                    printf("entrou em 2\n");
+                    fase1.inicializar();
+                    fase1.set2jogadores(true);
+                    flagFase = false;
+                }
+                if (fase1.fimFase()) {
+                    menuPrincipal.setAtivo(true);
+                    //Resetar tela para posição 0 e 0
+                }
+                fase1.executar();
+                fase1.colidir();
+            }
+
+            //Fase 2 com um jogador
+            else if (auxE == 3)
+            {                
+                if (flagFase) {
+                    printf("entrou em 3\n");
+                    fase2.inicializar();
+                    fase2.set2jogadores(false);
+                    flagFase = false;
+                }
+                if (fase2.fimFase()) {
+                    menuPrincipal.setAtivo(true);
+                    //Resetar tela para posição 0 e 0
+                }
+                fase2.executar();
+                fase2.colidir();
+            }
+            //Fase 2 com dois jogadores
+            else if (auxE == 3)
+            {                
+                if (flagFase) {
+                    printf("entrou em 4\n");
+                    fase2.inicializar();
+                    fase2.set2jogadores(true);
+                    flagFase = false;
+                }
+                if (fase2.fimFase()) {
+                    menuPrincipal.setAtivo(true);
+                    //Resetar tela para posição 0 e 0
+                }
+                fase2.executar();
+                fase2.colidir();
+            }
+            else
+                menuPrincipal.setAtivo(true);
+
+            pGG->display();
+
+            //Abrir Menu Interno
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+                while (!menuJogo.getParar()) {
+                    pGG->clear();
+                    menuJogo.executar();
+                    pGG->display();
+                }
+                if (menuJogo.getSair())
+                    menuPrincipal.setAtivo(true);
+            }
+
+        }
+
+    }
 }
