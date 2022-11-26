@@ -67,24 +67,8 @@ bool Entidade::getRemove() { return remove; }
 void Entidade::setRemove(bool rem) { remove = rem; }
 int Entidade::getDano() { return dano; }
 
+void Entidade::setColidindo(bool chao) { colidindo = chao; }
 
-void Entidade::resolverColisao(Entidade* pEnt, float ix, float iy)
-{
-	if (ix < iy)
-	{
-		if (getPosicao().x > pEnt->getPosicao().x)
-			setPosicao(sf::Vector2f(getPosicao().x + ix, getPosicao().y));
-		else
-			setPosicao(sf::Vector2f(getPosicao().x - ix, getPosicao().y));
-		setVelocidade(sf::Vector2f(0, getVelocidade().y));
-	}
-	else
-	{
-		if (getPosicao().y > pEnt->getPosicao().y)
-			setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y + iy));
-		else
-			setPosicao(sf::Vector2f(getPosicao().x, getPosicao().y - iy));
-		setVelocidade(sf::Vector2f(getVelocidade().x, 0));
-	}
-}
+bool Entidade::getColidindo() { return colidindo; }
+
 

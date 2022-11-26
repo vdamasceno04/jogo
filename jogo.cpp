@@ -112,8 +112,8 @@ void Jogo::executar()
 
 Jogo::Jogo() :
     pGG(Graphics::getInstance()),
- //   fase1(Graphics::getInstance())//,
-    fase2(Graphics::getInstance())
+    fase1(Graphics::getInstance())//,
+//    fase2(Graphics::getInstance())
 {
     Ente::setpGG(Graphics::getInstance());
     executar();
@@ -124,8 +124,8 @@ Jogo::~Jogo() {
 }
 
 void Jogo::inicializar() {
-//    fase1.inicializar();
-    fase2.inicializar();
+    fase1.inicializar();
+//    fase2.inicializar();
 }
 
 void Jogo::executar()
@@ -140,10 +140,10 @@ void Jogo::executar()
                 pGG->closeWindow();
         }
         pGG->clear();
-        if (fase2.fimFase())
+        if (fase1.fimFase())
             pGG->closeWindow();
-        fase2.executar();
-        fase2.colidir();
+        fase1.executar();
+        fase1.colidir();
 
         pGG->display();
 

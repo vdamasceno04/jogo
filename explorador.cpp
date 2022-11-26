@@ -20,9 +20,9 @@ void Explorador::controlar()
 	else
 		setVelocidade(sf::Vector2f(0, getVelocidade().y));
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && podePular) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && getColidindo()) {
 		velocidade.y = -vmax.y;
-		podePular = false;
+		setColidindo(false);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::RControl)) {
 		ataca();
