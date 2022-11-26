@@ -6,7 +6,7 @@ using std::ofstream;
 using std::string;
 using std::cerr;
 using std::fstream;
-
+using namespace Fases;
 
 Jogo::Jogo() :
     pGG(Graphics::getInstance()), pGC(GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),

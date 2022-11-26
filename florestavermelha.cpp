@@ -2,15 +2,15 @@
 #include<time.h>
 #include<stdlib.h>
 
-FlorestaVermelha::FlorestaVermelha(Managers::Graphics* pG, GerenciadorColisoes* pC) :
+Fases::FlorestaVermelha::FlorestaVermelha(Managers::Graphics* pG, Managers::GerenciadorColisoes* pC) :
     Fase(pG, pC) {
     pGG = pG;
     pGC = pC;
 }
 
-FlorestaVermelha::~FlorestaVermelha() {}
+Fases::FlorestaVermelha::~FlorestaVermelha() {}
 
-void FlorestaVermelha::criaespinho() {
+void Fases::FlorestaVermelha::criaespinho() {
     int i;
     int sorteia;
     int pos = 800;
@@ -26,7 +26,7 @@ void FlorestaVermelha::criaespinho() {
     }
 }
 
-void FlorestaVermelha::criacaracol() {
+void Fases::FlorestaVermelha::criacaracol() {
     int i;
     int veneno;
     int pos = 600;
@@ -47,7 +47,7 @@ void FlorestaVermelha::criacaracol() {
     }
 }
 
-void FlorestaVermelha::inicializar() {
+void Fases::FlorestaVermelha::inicializar() {
     criafundo(false);
     listaMov.addEntidade(&j1);
     if (get2jogadores())
@@ -61,13 +61,13 @@ void FlorestaVermelha::inicializar() {
     listaMov.setJanela(pGG);
 }
 
-void FlorestaVermelha::executar() {
+void Fases::FlorestaVermelha::executar() {
     atualizaView();
     listaEst.executarLista();
     listaMov.executarLista();
 }
 
-void FlorestaVermelha::colidir() {
+void Fases::FlorestaVermelha::colidir() {
     pGC->ColidirEstaticoMovel();
     pGC->ColidirMovelMovel();
 }

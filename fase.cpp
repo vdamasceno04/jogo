@@ -1,16 +1,16 @@
 #include "Fase.h"
 
-Fase::Fase(Managers::Graphics* pG, GerenciadorColisoes* pC) : 
-   j1(), pGC(GerenciadorColisoes::getInstancia(&listaMov, &listaEst))
+Fases::Fase::Fase(Managers::Graphics* pG, Managers::GerenciadorColisoes* pC) :
+   j1(), pGC(Managers::GerenciadorColisoes::getInstancia(&listaMov, &listaEst))
 {
     pGG = pG;
     pGC = pC;
 }
 
-ListaEntidades Fase::listaEst;
-ListaEntidades Fase::listaMov;
+Listas::ListaEntidades Fases::Fase::listaEst;
+Listas::ListaEntidades Fases::Fase::listaMov;
 
-Fase::~Fase() {
+Fases::Fase::~Fase() {
   /*  int i;
     for(i=0; i<listaEst.getLen(); i++)
         delete listaEst.getItem(i);
@@ -18,7 +18,7 @@ Fase::~Fase() {
         delete listaMov.getItem(i);*/
 }
 
-void Fase::criafundo(bool dia)
+void Fases::Fase::criafundo(bool dia)
 {
     int i;
     int pos = 0;
@@ -30,7 +30,7 @@ void Fase::criafundo(bool dia)
     }
 }
 
-void Fase::criapedra()
+void Fases::Fase::criapedra()
 {
     int i;
     int sorteia;
@@ -47,7 +47,7 @@ void Fase::criapedra()
     }
 }
 
-void Fase::criajavali() {
+void Fases::Fase::criajavali() {
     int i;
     int pos = WIDTH * 6 - WIDTH / 3;
     int idade;
@@ -65,7 +65,7 @@ void Fase::criajavali() {
     }
 }
 
-bool Fase::fimFase() {
+bool Fases::Fase::fimFase() {
     bool fim = false;
     bool jogadorvivo = false;
     bool javalivivo = false;
@@ -97,7 +97,7 @@ bool Fase::fimFase() {
     return fim;
 }
 
-void Fase::criachao(bool vermelho)
+void Fases::Fase::criachao(bool vermelho)
 {
     int i;
     int pos = 0;
@@ -109,7 +109,7 @@ void Fase::criachao(bool vermelho)
     }
 }
 
-void Fase::atualizaView() {
+void Fases::Fase::atualizaView() {
     if (j1.getBody().getPosition().x >= pGG->getView().x)
         pGG->centerView(sf::Vector2f(j1.getBody().getPosition().x, HEIGHT / 2));
     if (e1.getBody().getPosition().x >= pGG->getView().x)

@@ -2,26 +2,28 @@
 #include "ListaEntidades.h"
 using namespace Entidades;
 
-class GerenciadorColisoes
-{
-protected:
-	GerenciadorColisoes(ListaEntidades* lEM, ListaEntidades* lEE);
+namespace Managers {
+	class GerenciadorColisoes
+	{
+	protected:
+		GerenciadorColisoes(Listas::ListaEntidades* lEM, Listas::ListaEntidades* lEE);
 
-private:
-	ListaEntidades* listaEntidadesMoveis;
-	ListaEntidades* listaEntidadesEstaticas;
+	private:
+		Listas::ListaEntidades* listaEntidadesMoveis;
+		Listas::ListaEntidades* listaEntidadesEstaticas;
 
-	static GerenciadorColisoes* instancia; //Singleton
+		static GerenciadorColisoes* instancia; //Singleton
 
-public:
-	static GerenciadorColisoes* getInstancia(ListaEntidades* lEM, ListaEntidades* lEE);
-	~GerenciadorColisoes();
+	public:
+		static GerenciadorColisoes* getInstancia(Listas::ListaEntidades* lEM, Listas::ListaEntidades* lEE);
+		~GerenciadorColisoes();
 
-	void ColidirEstaticoMovel();
-	void ColidirMovelMovel();
-	void setListaEntidades(ListaEntidades* lEM, ListaEntidades* lEE);
-	void colidir(Entidade* p1, Entidade* p2, float intersec_x, float intersec_y);
-	void resolverColisao(Entidade* p1, Entidade* p2, float intersec_x, float intersec_y);
-	//void clear();
+		void ColidirEstaticoMovel();
+		void ColidirMovelMovel();
+		void setListaEntidades(Listas::ListaEntidades* lEM, Listas::ListaEntidades* lEE);
+		void colidir(Entidade* p1, Entidade* p2, float intersec_x, float intersec_y);
+		void resolverColisao(Entidade* p1, Entidade* p2, float intersec_x, float intersec_y);
+		//void clear();
 
-};
+	};
+}

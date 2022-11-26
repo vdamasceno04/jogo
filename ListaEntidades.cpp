@@ -1,4 +1,5 @@
 #include "ListaEntidades.h"
+using namespace Listas;
 
 ListaEntidades::ListaEntidades():objLE(){}
 
