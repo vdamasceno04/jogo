@@ -8,11 +8,12 @@ Fase::Fase(Managers::Graphics* pG) :
 }
 
 Fase::~Fase() {
-  /*  int i;
+    int i;
     for(i=0; i<listaEst.getLen(); i++)
         delete listaEst.getItem(i);
     for (i = 0; i < listaMov.getLen(); i++)
-        delete listaMov.getItem(i);*/
+        delete listaMov.getItem(i);
+    cout << "deletou";
 }
 
 void Fase::criafundo(bool dia)
