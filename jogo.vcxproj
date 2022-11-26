@@ -172,7 +172,6 @@
     <ClInclude Include="caracol.h" />
     <ClInclude Include="colisao.h" />
     <ClInclude Include="coords.h" />
-    <ClInclude Include="Elemento.h" />
     <ClInclude Include="ente.h" />
     <ClInclude Include="entidade.h" />
     <ClInclude Include="espinho.h" />

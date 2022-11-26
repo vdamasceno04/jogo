@@ -31,7 +31,6 @@
   <ItemGroup>
     <ClInclude Include="agua.h" />
     <ClInclude Include="coords.h" />
-    <ClInclude Include="Elemento.h" />
     <ClInclude Include="ente.h" />
     <ClInclude Include="entidade.h" />
     <ClInclude Include="espinho.h" />
