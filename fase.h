@@ -26,15 +26,16 @@ private:
 public:
 	Managers::Graphics* pGG;
 	GerenciadorColisoes* pGC;
-	ListaEntidades listaEst;
-	ListaEntidades listaMov;
+	static ListaEntidades listaEst;
+	static ListaEntidades listaMov;
 	Cacador j1;
 	Explorador e1;
 
 	bool fimFase();
 	void set2jogadores(bool jog) { doisJogadores = jog; }
 	bool get2jogadores() { return doisJogadores; }
-	Fase(Managers::Graphics* pG);
+
+	Fase(Managers::Graphics* pgg, GerenciadorColisoes* pgc);
 	~Fase();
 	void atualizaView();
 	void criafundo(bool dia);

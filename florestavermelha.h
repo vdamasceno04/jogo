@@ -1,9 +1,10 @@
+#pragma once
 #include"fase.h"
 
 class FlorestaVermelha : public Fase {
 
 public:
-	FlorestaVermelha(Managers::Graphics* pG);
+	FlorestaVermelha(Managers::Graphics* pG, GerenciadorColisoes* pC);
 	~FlorestaVermelha();
 	void criacaracol();
 	void criaespinho();

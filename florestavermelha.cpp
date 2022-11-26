@@ -2,9 +2,10 @@
 #include<time.h>
 #include<stdlib.h>
 
-FlorestaVermelha::FlorestaVermelha(Managers::Graphics* pG) :
-    Fase(pG) {
+FlorestaVermelha::FlorestaVermelha(Managers::Graphics* pG, GerenciadorColisoes* pC) :
+    Fase(pG, pC) {
     pGG = pG;
+    pGC = pC;
 }
 
 FlorestaVermelha::~FlorestaVermelha() {}

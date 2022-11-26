@@ -7,11 +7,11 @@ using std::string;
 using std::cerr;
 using std::fstream;
 
-/*
+
 Jogo::Jogo() :
-    pGG(Graphics::getInstance()),
-    fase1(Graphics::getInstance()),
-    fase2(Graphics::getInstance()),
+    pGG(Graphics::getInstance()), pGC(GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
+    fase1(Graphics::getInstance(), GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
+    fase2(Graphics::getInstance(), GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
     menuPrincipal()
 {
     Ente::setpGG(Graphics::getInstance());
@@ -106,7 +106,7 @@ void Jogo::executar()
 
     }
 }
-*/
+/*
 
 #define CAMINHO "ranking.txt"
 
@@ -208,4 +208,4 @@ void Jogo::executar()
 
     writeFile.close();
 
-}
+}*/

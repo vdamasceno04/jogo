@@ -1,19 +1,21 @@
 #include "Fase.h"
 
-Fase::Fase(Managers::Graphics* pG) :
-    listaEst(), j1(),  listaMov()
+Fase::Fase(Managers::Graphics* pG, GerenciadorColisoes* pC) : 
+   j1(), pGC(GerenciadorColisoes::getInstancia(&listaMov, &listaEst))
 {
     pGG = pG;
-    pGC = GerenciadorColisoes::getInstancia(&listaMov, &listaEst);
+    pGC = pC;
 }
 
+ListaEntidades Fase::listaEst;
+ListaEntidades Fase::listaMov;
+
 Fase::~Fase() {
-    int i;
+  /*  int i;
     for(i=0; i<listaEst.getLen(); i++)
         delete listaEst.getItem(i);
     for (i = 0; i < listaMov.getLen(); i++)
-        delete listaMov.getItem(i);
-    cout << "deletou";
+        delete listaMov.getItem(i);*/
 }
 
 void Fase::criafundo(bool dia)
