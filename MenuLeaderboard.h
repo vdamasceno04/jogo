@@ -6,6 +6,7 @@
 class MenuLeaderboard : public Menu
 {
 private:
+	string caminho;
 
 public:
 	MenuLeaderboard();
