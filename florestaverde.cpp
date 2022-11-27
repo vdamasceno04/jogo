@@ -6,6 +6,9 @@ Fases::FlorestaVerde::FlorestaVerde(Managers::Graphics* pG, Managers::Gerenciado
     Fase(pG, pC) {
     pGG = pG;
     pGC = pC;
+    id = fase1;
+    cout << "caiu";
+    inicializar();
 }
 
 Fases::FlorestaVerde::~FlorestaVerde() {
@@ -46,8 +49,6 @@ void Fases::FlorestaVerde::criaabelhas() {
 }
 
 void Fases::FlorestaVerde::inicializar() {
-    cout << "tamMov: " << listaMov.getLen() << endl;
-    cout << "tamEst: " << listaEst.getLen() << endl;
     criafundo(true);
     listaMov.addEntidade(&j1);
     if(get2jogadores())
@@ -59,12 +60,15 @@ void Fases::FlorestaVerde::inicializar() {
     criaagua();
     listaEst.setJanela(pGG);
     listaMov.setJanela(pGG);
+    cout << "tamMov: " << listaMov.getLen() << endl;
+    cout << "tamEst: " << listaEst.getLen() << endl;
 }
 
 void Fases::FlorestaVerde::executar() {
     atualizaView();
     listaEst.executarLista();
     listaMov.executarLista();
+    colidir();
 }
 
 void Fases::FlorestaVerde::colidir() {

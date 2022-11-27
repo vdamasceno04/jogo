@@ -6,6 +6,7 @@ Fases::FlorestaVermelha::FlorestaVermelha(Managers::Graphics* pG, Managers::Gere
     Fase(pG, pC) {
     pGG = pG;
     pGC = pC;
+    id = fase2;
 }
 
 Fases::FlorestaVermelha::~FlorestaVermelha() {}

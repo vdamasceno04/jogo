@@ -19,7 +19,6 @@ public:
 	~MenuPrincipal();
 
 	void setValores();
-
 	bool getEscolhaAtivo();
 	bool getLeaderboardAtivo();
 	int getEscolhaJogador();

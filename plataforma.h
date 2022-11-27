@@ -1,4 +1,4 @@
-#pragma once
+ #pragma once
 #include "Obstaculo.h"
 
 class Plataforma : public Obstaculos::Obstaculo {

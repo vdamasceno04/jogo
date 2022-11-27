@@ -1,22 +1,26 @@
 #include<stack>
 #include"graphics.h"
-#include"construtorestado.h"
+#include"MenuLeaderboard.h"
+#include"MenuEscolha.h"
+#include"MenuPrincipal.h"
+#include"florestaverde.h"
+#include"florestavermelha.h"
 
 class GerenciadorEstado {
 protected:
     GerenciadorEstado();
 
 private:
-    std::stack<Estado*> pilhaEstados;
-    ConstrutorEstado construtorEstado;
-
+    std::stack<Ente*> pilhaEstados;
+    
     //padrão de projeto singleton
     static GerenciadorEstado* pGerenciadorEstado;
 public:
     ~GerenciadorEstado();
     static GerenciadorEstado* getGerenciadorEstado();
     void executar();
-    void addEstado(const ID ID);
+    Ente* criaestado(const ID id);
+    void addEstado(const ID id);
     void removerEstado();
-    Estado* getEstadoAtual();
+    Ente* getEstadoAtual();
 };

@@ -18,10 +18,13 @@ enum ID {
 	gosma = 9,
 	fundo = 10,
 	pedra = 11,
-	jogarfase1 = 12,
-	jogarfase2 = 13,
+	fase1 = 12,
+	fase2 = 13,
 	jogar = 14,
-	menuprincipal = 15
+	menuprincipal = 15,
+	leaderboard = 16,
+	menuescolha = 17,
+
 };
 
 

@@ -32,10 +32,6 @@
     <ClCompile Include="MenuLeaderboard.cpp" />
     <ClCompile Include="MenuPrincipal.cpp" />
     <ClCompile Include="gerenciadorestados.cpp" />
-    <ClCompile Include="estado.cpp" />
-    <ClCompile Include="estadojogar.cpp" />
-    <ClCompile Include="construtorfase.cpp" />
-    <ClCompile Include="construtorestado.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="agua.h" />
@@ -70,9 +66,5 @@
     <ClInclude Include="MenuLeaderboard.h" />
     <ClInclude Include="MenuPrincipal.h" />
     <ClInclude Include="gerenciadorestados.h" />
-    <ClInclude Include="estado.h" />
-    <ClInclude Include="estadojogar.h" />
-    <ClInclude Include="construtorestado.h" />
-    <ClInclude Include="construtorfase.h" />
   </ItemGroup>
 </Project>
