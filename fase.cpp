@@ -97,6 +97,13 @@ bool Fases::Fase::fimFase() {
     return fim;
 }
 
+void Fases::Fase::finaliza() {
+    listaEst.limpaLista();
+    listaMov.limpaLista();
+    j1.resetar();
+    e1.resetar();
+}
+
 void Fases::Fase::criachao(bool vermelho)
 {
     int i;

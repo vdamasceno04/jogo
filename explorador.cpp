@@ -9,6 +9,10 @@ Explorador::Explorador(sf::Vector2f pos) :Jogador(pos)
 
 Explorador::~Explorador() {}
 
+void Explorador::resetar() {
+	setVida(20);
+	setPosicao(sf::Vector2f(0, HEIGHT * 0.635));
+}
 void Explorador::controlar()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && (getVelocidade().x == vmax.x|| getVelocidade().x == 0)) {

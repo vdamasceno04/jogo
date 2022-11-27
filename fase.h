@@ -43,6 +43,7 @@ namespace Fases {
 		void criapedra();
 		void criajavali();
 		void criachao(bool vermelho);
+		void finaliza();
 		virtual void executar() = 0;
 		virtual void colidir() = 0;
 	};

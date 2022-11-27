@@ -8,6 +8,11 @@ Cacador::Cacador(sf::Vector2f pos) :
 }
 Cacador::~Cacador() {}
 
+void Cacador::resetar() {
+	setVida(20);
+	setPosicao(sf::Vector2f(300, HEIGHT * 0.635));
+}
+
 void Cacador::controlar() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && (getVelocidade().x == vmax.x || getVelocidade().x == 0)) {
 		setVelocidade(sf::Vector2f(vmax.x, getVelocidade().y));

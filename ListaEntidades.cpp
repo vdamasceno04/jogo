@@ -1,10 +1,15 @@
 #include "ListaEntidades.h"
 using namespace Listas;
 
-ListaEntidades::ListaEntidades():objLE(){}
 
-ListaEntidades::~ListaEntidades(){
+ListaEntidades::ListaEntidades():objLE(){
+    /*for (int i = 0; i < objLE.getLen(); i++) {
+
+        this->removeEntidade(objLE.getItem(i));
+    }*/
 }
+
+ListaEntidades::~ListaEntidades(){}
 
 void ListaEntidades::addEntidade(Entidades::Entidade* entidade) { objLE.push(entidade); }
 
@@ -31,6 +36,13 @@ void ListaEntidades::setJanela(Managers::Graphics* pGG)
     }
 }
 
+void ListaEntidades::limpaLista() {
+    for (int i = 0; i < objLE.getLen(); i++) {
+        removeEntidade(objLE.getItem(i));
+        cout << "limpa";
+    }
+    cout << "limpo" << endl << endl;
+}
 
 void ListaEntidades::executarLista()
 {

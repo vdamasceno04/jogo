@@ -9,7 +9,6 @@ Fases::FlorestaVerde::FlorestaVerde(Managers::Graphics* pG, Managers::Gerenciado
 }
 
 Fases::FlorestaVerde::~FlorestaVerde() {
-
 }
 
 void Fases::FlorestaVerde::criaagua() {
@@ -47,6 +46,8 @@ void Fases::FlorestaVerde::criaabelhas() {
 }
 
 void Fases::FlorestaVerde::inicializar() {
+    cout << "tamMov: " << listaMov.getLen() << endl;
+    cout << "tamEst: " << listaEst.getLen() << endl;
     criafundo(true);
     listaMov.addEntidade(&j1);
     if(get2jogadores())

@@ -16,5 +16,6 @@ namespace Listas {
 		Entidades::Entidade* getItem(int i);
 		void setJanela(Managers::Graphics* pGG);
 		void executarLista();
+		void limpaLista();
 	};
 }
