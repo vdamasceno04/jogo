@@ -37,11 +37,19 @@
         else if (id == 17)
             return static_cast<Ente*>(new MenuEscolha);
         else if (id == 12) {
-            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVerde(Managers::Graphics::getInstance(), Managers::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
+            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVerde(false, Managers::Graphics::getInstance(), Managers::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
             return static_cast<Ente*>(fase);
         }
         else if (id == 13) {
-            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVermelha(Managers::Graphics::getInstance(), Managers::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
+            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVermelha(false, Managers::Graphics::getInstance(), Managers::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
+            return static_cast<Ente*>(fase);
+        }
+        else if (id == 22) {
+            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVerde(true, Managers::Graphics::getInstance(), Managers::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
+            return static_cast<Ente*>(fase);
+        }
+        else if (id == 23) {
+            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVermelha(true, Managers::Graphics::getInstance(), Managers::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
             return static_cast<Ente*>(fase);
         }
     }
@@ -77,7 +85,73 @@
         //executa o estado que está no topo da minha pilha
         if (!pilhaEstados.empty()) {
             pilhaEstados.top()->executar();
+
+            if (pilhaEstados.top()->getId() == 15) { //menu principal
+
+                if (pilhaEstados.top()->getEstado() == 0)
+                    pilhaEstados.top()->executar();
+
+                else if (pilhaEstados.top()->getEstado() == -1)
+                    removerEstado();
+
+                else if (pilhaEstados.top()->getEstado() == 1) {
+                    pilhaEstados.top()->setEstado(-2);
+                    addEstado(menuescolha);
+                }
+
+                else if (pilhaEstados.top()->getEstado() == 2) {
+                    pilhaEstados.top()->setEstado(-2);
+                    addEstado(leaderboard);
+                }
+            }
+
+            else if (pilhaEstados.top()->getId() == 16) { //leaderboard
+
+                if (pilhaEstados.top()->getEstado() == 0)
+                    pilhaEstados.top()->executar();
+
+                else if (pilhaEstados.top()->getEstado() == -1) {
+                    pilhaEstados.top()->setEstado(-2);
+                    removerEstado();
+                    pilhaEstados.top()->setEstado(0);
+                }
+            }
+
+            else if (pilhaEstados.top()->getId() == 17) { //menuescolha
+
+                if (pilhaEstados.top()->getEstado() == 0)
+                    pilhaEstados.top()->executar();
+
+                else if (pilhaEstados.top()->getEstado() == -1) {
+                    pilhaEstados.top()->setEstado(-2);
+                    removerEstado();
+                    pilhaEstados.top()->setEstado(0);
+                }
+
+                else if (pilhaEstados.top()->getEstado() == 1) {
+                    pilhaEstados.top()->setEstado(-2);
+                    addEstado(fase1);
+                }
+
+                else if (pilhaEstados.top()->getEstado() == 2) {
+                    pilhaEstados.top()->setEstado(-2);
+                    addEstado(fase12jog);
+                }
+
+                else if (pilhaEstados.top()->getEstado() == 3) {
+                    pilhaEstados.top()->setEstado(-2);
+                    addEstado(fase2);
+                }
+
+                else if (pilhaEstados.top()->getEstado() == 4) {
+                    pilhaEstados.top()->setEstado(-2);
+                    addEstado(fase22jog);
+                }
+            }
+
+            
         }
+        cout << "topo = " << pilhaEstados.top()->getId() << endl;
     }
 
    

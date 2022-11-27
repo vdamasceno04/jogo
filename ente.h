@@ -24,7 +24,8 @@ enum ID {
 	menuprincipal = 15,
 	leaderboard = 16,
 	menuescolha = 17,
-
+	fase12jog = 22,
+	fase22jog = 23
 };
 
 
@@ -33,6 +34,7 @@ class Ente {
 protected:
 	ID id;
 	static Managers::Graphics* pGG;
+	int estado;
 private:
 	static int pontuacao;
 public:
@@ -42,6 +44,8 @@ public:
 	static void setPontos(int pontos);
 	static int getPontuacao();
 	int getPontos(ID id);
+	int getEstado() {return estado;}
+	void setEstado(int est) {estado = est;}
 	~Ente();
 	virtual void executar() = 0;
 };

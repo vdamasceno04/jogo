@@ -2,10 +2,11 @@
 #include<time.h>
 #include<stdlib.h>
 
-Fases::FlorestaVermelha::FlorestaVermelha(Managers::Graphics* pG, Managers::GerenciadorColisoes* pC) :
-    Fase(pG, pC) {
+Fases::FlorestaVermelha::FlorestaVermelha(bool doisJoga, Managers::Graphics* pG, Managers::GerenciadorColisoes* pC) :
+    Fase(doisJoga, pG, pC) {
     pGG = pG;
     pGC = pC;
+    doisJogadores = doisJoga;
     id = fase2;
 }
 
@@ -51,7 +52,7 @@ void Fases::FlorestaVermelha::criacaracol() {
 void Fases::FlorestaVermelha::inicializar() {
     criafundo(false);
     listaMov.addEntidade(&j1);
-    if (get2jogadores())
+    if (doisJogadores)
         listaMov.addEntidade(&e1);
     criacaracol();
     criaespinho();

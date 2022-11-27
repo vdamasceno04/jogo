@@ -2,12 +2,13 @@
 #include<time.h>
 #include<stdlib.h>
 
-Fases::FlorestaVerde::FlorestaVerde(Managers::Graphics* pG, Managers::GerenciadorColisoes* pC) :
-    Fase(pG, pC) {
+Fases::FlorestaVerde::FlorestaVerde(bool doisJoga, Managers::Graphics* pG, Managers::GerenciadorColisoes* pC) :
+    Fase(doisJoga, pG, pC) {
     pGG = pG;
     pGC = pC;
     id = fase1;
     cout << "caiu";
+    doisJogadores = doisJoga;
     inicializar();
 }
 
@@ -51,7 +52,7 @@ void Fases::FlorestaVerde::criaabelhas() {
 void Fases::FlorestaVerde::inicializar() {
     criafundo(true);
     listaMov.addEntidade(&j1);
-    if(get2jogadores())
+    if(doisJogadores)
         listaMov.addEntidade(&e1);
     criaabelhas();
     criapedra();

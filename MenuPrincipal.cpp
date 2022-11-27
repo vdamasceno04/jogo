@@ -8,6 +8,7 @@ MenuPrincipal::MenuPrincipal() :
 {
 	id = menuprincipal;
 	setValores();
+	estado = 0;
 }
 
 MenuPrincipal::~MenuPrincipal()
@@ -27,7 +28,7 @@ int MenuPrincipal::getEscolhaJogador() { return menuEscolha.getJogador(); }
 
 void MenuPrincipal::setValores()
 {
-	ativo = true;
+	ativo = true; //NAO UTILIZADO 
 
 	textura.loadFromFile("Assets/Ibama.png");
 	sprite.setTexture(textura);
@@ -85,15 +86,16 @@ void MenuPrincipal::loop()
 		if (pos == 0)
 		{
 			ativo = false;
-			menuEscolha.setAtivo(true);
+			estado = 1; // opcao para menu de escolha
 		}
 		else if (pos == 1)
 		{
 			ativo = false;
-			menuLeaderboard.setAtivo(true);
+			estado = 2; // opcao para leaderboard
 		}
 		else if (pos == 2)
 		{
+			estado = -1; // estado fim
 			pGG->closeWindow();
 		}
 	}
@@ -109,21 +111,7 @@ void MenuPrincipal::desenhar()
 
 void MenuPrincipal::executar()
 {
-	if (ativo)
-	{
-		loop();
-		desenhar();
-	}
-	else if (menuEscolha.getAtivo())
-	{
-		menuEscolha.executar();
-		if (!menuEscolha.getAtivo() && menuEscolha.getEscolha() == 0)
-			ativo = true;
-	}
-	else if (menuLeaderboard.getAtivo()) 
-	{
-		menuLeaderboard.executar();
-		if (!menuLeaderboard.getAtivo())
-			ativo = true;
-	}
+	loop();
+	desenhar();
+	
 }

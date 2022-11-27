@@ -1,6 +1,6 @@
 #include "Fase.h"
 
-Fases::Fase::Fase(Managers::Graphics* pG, Managers::GerenciadorColisoes* pC) :
+Fases::Fase::Fase(bool doisjogadores, Managers::Graphics* pG, Managers::GerenciadorColisoes* pC) :
    j1(), pGC(Managers::GerenciadorColisoes::getInstancia(&listaMov, &listaEst))
 {
     pGG = pG;

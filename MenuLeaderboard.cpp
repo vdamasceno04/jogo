@@ -6,6 +6,8 @@ MenuLeaderboard::MenuLeaderboard():
 	Menu()
 {
     setValores();
+	id = leaderboard;
+	estado = 0;
 }
 
 MenuLeaderboard::~MenuLeaderboard()
@@ -75,8 +77,10 @@ void MenuLeaderboard::desenhar()
 void MenuLeaderboard::loop()
 {
 	selecionado = false;
-	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) && !selecionado)
+	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) && !selecionado) {
 		ativo = false;
+		estado = -1;
+	}
 }
 
 void MenuLeaderboard::executar()

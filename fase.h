@@ -33,10 +33,11 @@ namespace Fases {
 		Explorador e1;
 
 		bool fimFase();
+
 		void set2jogadores(bool jog) { doisJogadores = jog; }
 		bool get2jogadores() { return doisJogadores; }
 
-		Fase(Managers::Graphics* pgg, Managers::GerenciadorColisoes* pgc);
+		Fase(bool doisjogadores, Managers::Graphics* pgg, Managers::GerenciadorColisoes* pgc);
 		~Fase();
 		void atualizaView();
 		void criafundo(bool dia);

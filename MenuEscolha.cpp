@@ -4,6 +4,8 @@ MenuEscolha::MenuEscolha() :
 	Menu()
 {
 	setValores();
+	id = menuescolha;
+	estado = 0;
 }
 
 MenuEscolha::~MenuEscolha()
@@ -88,24 +90,28 @@ void MenuEscolha::loop()
 			fase = 1;
 			escolha = 1;
 			ativo = false;
+			estado = 1;
 			break;
 		case(1):
 			jogadores = 2;
 			fase = 1;
 			escolha = 2;
 			ativo = false;
+			estado = 2;
 			break;
 		case(2):
 			jogadores = 1;
 			fase = 2;
 			escolha = 3;
 			ativo = false;
+			estado = 3;
 			break;
 		case(3):
 			jogadores = 2;
 			fase = 2;
 			escolha = 4;
 			ativo = false;
+			estado = 4;
 			break;
 		}
 	}

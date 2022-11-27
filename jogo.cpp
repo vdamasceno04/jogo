@@ -11,17 +11,12 @@ using namespace Fases;
 Jogo::Jogo() :
     pGG(Graphics::getInstance()), pGC(GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
     pGE(GerenciadorEstado::getGerenciadorEstado()) //singleton tudo isso aqui
-  //  fase1(Graphics::getInstance(), GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
-   // fase2(Graphics::getInstance(), GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst))
-  
-   // menuPrincipal()
 {
     Ente::setpGG(Graphics::getInstance());
     tela = 0;
     flagFase = true;
 
-  //  pGE->addEstado(fase1);
-    pGE->addEstado(fase1);
+    pGE->addEstado(menuprincipal);
     executar();
 }
 
@@ -42,8 +37,7 @@ void Jogo::executar() {
         {
             if (event.type == sf::Event::Closed)
                 pGG->closeWindow();
-            pGE->executar();
-            pGG->display();
+
 
             //Executar Menus
           /*  if (menuPrincipal.getAtivo() || menuPrincipal.getEscolhaAtivo() || menuPrincipal.getLeaderboardAtivo())
@@ -149,8 +143,10 @@ void Jogo::executar() {
             }*/
 
         }
-       
+        pGE->executar();
+        pGG->display();
     }
+
     string nome;
     cout << "pontuacao = " << Ente::getPontuacao() << endl << "insira seu nome" << endl;
     cin >> nome;
