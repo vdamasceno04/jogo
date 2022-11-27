@@ -249,8 +249,9 @@ void Jogo::executar() {
             {
                 if (flagFase) {
                     printf("entrou em 1\n");
-                    fase1.inicializar();
                     fase1.set2jogadores(false);
+
+                    fase1.inicializar();
                     flagFase = false;
                 }
                 if (fase1.fimFase()) {
@@ -265,8 +266,9 @@ void Jogo::executar() {
             {
                 if (flagFase) {
                     printf("entrou em 2\n");
-                    fase1.inicializar();
                     fase1.set2jogadores(true);
+
+                    fase1.inicializar();
                     flagFase = false;
                 }
                 if (fase1.fimFase()) {
@@ -282,8 +284,9 @@ void Jogo::executar() {
             {                
                 if (flagFase) {
                     printf("entrou em 3\n");
-                    fase2.inicializar();
                     fase2.set2jogadores(false);
+
+                    fase2.inicializar();
                     flagFase = false;
                 }
                 if (fase2.fimFase()) {
@@ -298,8 +301,9 @@ void Jogo::executar() {
             {                
                 if (flagFase) {
                     printf("entrou em 4\n");
-                    fase2.inicializar();
                     fase2.set2jogadores(true);
+
+                    fase2.inicializar();
                     flagFase = false;
                 }
                 if (fase2.fimFase()) {

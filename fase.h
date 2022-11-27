@@ -22,7 +22,7 @@ using namespace std;
 
 namespace Fases {
 	class Fase {
-	private:
+	protected:
 		bool doisJogadores;
 	public:
 		Managers::Graphics* pGG;
