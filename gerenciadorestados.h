@@ -3,13 +3,15 @@
 #include"construtorestado.h"
 
 class GerenciadorEstado {
+protected:
+    GerenciadorEstado();
+
 private:
     std::stack<Estado*> pilhaEstados;
     ConstrutorEstado construtorEstado;
 
     //padrão de projeto singleton
     static GerenciadorEstado* pGerenciadorEstado;
-    GerenciadorEstado();
 public:
     ~GerenciadorEstado();
     static GerenciadorEstado* getGerenciadorEstado();

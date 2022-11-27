@@ -10,10 +10,6 @@ EstadoJogar::~EstadoJogar() {
 
 }
 
-/*Jogador* EstadoJogar::getJogador() {
-    return fase->getJogador();
-}*/
-
 void EstadoJogar::executar() {
     fase->executar();
 }

@@ -19,7 +19,8 @@ enum ID {
 	fundo = 10,
 	pedra = 11,
 	jogarfase1 = 12,
-	jogarfase2 = 13
+	jogarfase2 = 13,
+	jogar = 14
 };
 
 

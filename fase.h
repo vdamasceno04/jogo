@@ -21,7 +21,7 @@
 using namespace std;
 
 namespace Fases {
-	class Fase {
+	class Fase : public Ente {
 	protected:
 		bool doisJogadores;
 	public:

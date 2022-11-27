@@ -10,8 +10,10 @@ using namespace Fases;
 #define CAMINHO "ranking.txt"
 Jogo::Jogo() :
     pGG(Graphics::getInstance()), pGC(GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
+    pGE(GerenciadorEstado::getGerenciadorEstado()), //singleton tudo isso aqui
     fase1(Graphics::getInstance(), GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
     fase2(Graphics::getInstance(), GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
+  
     menuPrincipal()
 {
     Ente::setpGG(Graphics::getInstance());
@@ -218,6 +220,7 @@ void Jogo::executar()
 
 void Jogo::executar() {
     inicializar();
+    pGE->addEstado(jogarfase1);
     sf::Event event;
     while (pGG->isWindowOpen())
     {

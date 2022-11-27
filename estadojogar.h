@@ -22,6 +22,5 @@ public:
     EstadoJogar(const ID ID, Fases::Fase* fase);
     ~EstadoJogar();
     void executar();
-  //  Jogador* getJogador();
 };
 

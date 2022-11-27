@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include"gerenciadorestados.h"
 #include "florestaverde.h"
 #include "florestavermelha.h"
 #include "MenuPrincipal.h"
@@ -13,7 +14,7 @@ class Jogo
 private:
 	bool flagFase;
 	int tela;
-  
+	ID i;
 	Fases::FlorestaVerde fase1;
 	Fases::FlorestaVermelha fase2;
 
@@ -22,6 +23,7 @@ private:
   
 	Managers::Graphics* pGG;
 	GerenciadorColisoes* pGC;
+	GerenciadorEstado* pGE;
 
 public:
 	Jogo();
