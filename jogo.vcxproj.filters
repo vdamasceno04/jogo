@@ -27,6 +27,15 @@
     <ClCompile Include="gosma.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="pedra.cpp" />
+    <ClCompile Include="MenuEscolha.cpp" />
+    <ClCompile Include="MenuInterno.cpp" />
+    <ClCompile Include="MenuLeaderboard.cpp" />
+    <ClCompile Include="MenuPrincipal.cpp" />
+    <ClCompile Include="gerenciadorestados.cpp" />
+    <ClCompile Include="estado.cpp" />
+    <ClCompile Include="estadojogar.cpp" />
+    <ClCompile Include="construtorfase.cpp" />
+    <ClCompile Include="construtorestado.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="agua.h" />
@@ -56,5 +65,14 @@
     <ClInclude Include="gosma.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="pedra.h" />
+    <ClInclude Include="MenuEscolha.h" />
+    <ClInclude Include="MenuInterno.h" />
+    <ClInclude Include="MenuLeaderboard.h" />
+    <ClInclude Include="MenuPrincipal.h" />
+    <ClInclude Include="gerenciadorestados.h" />
+    <ClInclude Include="estado.h" />
+    <ClInclude Include="estadojogar.h" />
+    <ClInclude Include="construtorestado.h" />
+    <ClInclude Include="construtorfase.h" />
   </ItemGroup>
 </Project>

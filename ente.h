@@ -17,7 +17,9 @@ enum ID {
 	caracol = 8,
 	gosma = 9,
 	fundo = 10,
-	pedra = 11
+	pedra = 11,
+	jogarfase1 = 12,
+	jogarfase2 = 13
 };
 
 
