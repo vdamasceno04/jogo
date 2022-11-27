@@ -7,7 +7,6 @@ Fases::FlorestaVerde::FlorestaVerde(bool doisJoga, Managers::Graphics* pG, Manag
     pGG = pG;
     pGC = pC;
     id = fase1;
-    cout << "caiu";
     doisJogadores = doisJoga;
     inicializar();
 }

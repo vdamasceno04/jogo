@@ -81,6 +81,12 @@ void MenuEscolha::loop()
 		}
 	}
 
+	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) && !selecionado) {
+		ativo = false;
+		estado = -1;
+	}
+
+
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::E)) && !selecionado)
 	{
 		switch (pos)
@@ -116,11 +122,6 @@ void MenuEscolha::loop()
 		}
 	}
 
-	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) && !selecionado)
-	{
-		ativo = false;
-		pos = 0;
-	}
 }
 
 void MenuEscolha::executar()

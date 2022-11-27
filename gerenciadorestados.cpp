@@ -36,6 +36,7 @@
             return static_cast<Ente*>(new MenuLeaderboard);
         else if (id == 17)
             return static_cast<Ente*>(new MenuEscolha);
+
         else if (id == 12) {
             Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVerde(false, Managers::Graphics::getInstance(), Managers::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
             return static_cast<Ente*>(fase);
@@ -85,7 +86,7 @@
         //executa o estado que está no topo da minha pilha
         if (!pilhaEstados.empty()) {
             pilhaEstados.top()->executar();
-
+            
             if (pilhaEstados.top()->getId() == 15) { //menu principal
 
                 if (pilhaEstados.top()->getEstado() == 0)

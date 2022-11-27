@@ -15,11 +15,7 @@ private:
 	bool flagFase;
 	int tela;
 	ID i;
-//	Fases::FlorestaVerde fase1;
-//	Fases::FlorestaVermelha fase2;
 
-//	MenuPrincipal menuPrincipal;
-	MenuInterno menuJogo;
   
 	Managers::Graphics* pGG;
 	GerenciadorColisoes* pGC;

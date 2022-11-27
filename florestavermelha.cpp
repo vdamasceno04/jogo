@@ -5,9 +5,10 @@
 Fases::FlorestaVermelha::FlorestaVermelha(bool doisJoga, Managers::Graphics* pG, Managers::GerenciadorColisoes* pC) :
     Fase(doisJoga, pG, pC) {
     pGG = pG;
-    pGC = pC;
+    pGC = pC ;
     doisJogadores = doisJoga;
     id = fase2;
+    inicializar();
 }
 
 Fases::FlorestaVermelha::~FlorestaVermelha() {}
