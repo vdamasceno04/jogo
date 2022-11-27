@@ -26,7 +26,6 @@ void MenuLeaderboard::setValores()
 
 
 	if (!arquivo) { // Se não abrir - criar
-		cout << "n abre";
 		std::ofstream writeFile(caminho, std::ios::out | std::ios::trunc);
 		writeFile.close();
 	}
@@ -35,7 +34,6 @@ void MenuLeaderboard::setValores()
 	std::string textString;
 	std::string pointsString;
 
-    printf("%s\n", textString.c_str());
 	
     textos.resize(11);
 	for (int i = 1; i < textos.size(); ++i)
@@ -44,8 +42,6 @@ void MenuLeaderboard::setValores()
         std::getline(arquivo, name);
 
         textString = " *  " + name + " ";
-		printf("%s\n", name.c_str());
-		cout << textString << endl;
         textos[i].setFont(fonte);
         textos[i].setString(textString + " - " + pointsString);
         textos[i].setCharacterSize(30);
