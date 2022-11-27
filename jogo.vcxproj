@@ -162,7 +162,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="MenuEscolha.cpp" />
-    <ClCompile Include="MenuInterno.cpp" />
     <ClCompile Include="MenuLeaderboard.cpp" />
     <ClCompile Include="MenuPrincipal.cpp" />
     <ClCompile Include="obstaculo.cpp" />
@@ -196,7 +195,6 @@
     <ClInclude Include="ListaEntidades.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuEscolha.h" />
-    <ClInclude Include="MenuInterno.h" />
     <ClInclude Include="MenuLeaderboard.h" />
     <ClInclude Include="MenuPrincipal.h" />
     <ClInclude Include="obstaculo.h" />

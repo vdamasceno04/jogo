@@ -68,6 +68,8 @@ void Fases::FlorestaVermelha::executar() {
     atualizaView();
     listaEst.executarLista();
     listaMov.executarLista();
+    colidir();
+    fimFase();
 }
 
 void Fases::FlorestaVermelha::colidir() {

@@ -32,7 +32,7 @@ namespace Fases {
 		Cacador j1;
 		Explorador e1;
 
-		bool fimFase();
+		void fimFase();
 
 		void set2jogadores(bool jog) { doisJogadores = jog; }
 		bool get2jogadores() { return doisJogadores; }

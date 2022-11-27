@@ -6,6 +6,7 @@ using std::ofstream;
 using std::string;
 using std::cerr;
 using std::fstream;
+
 using namespace Fases;
 #define CAMINHO "ranking.txt"
 Jogo::Jogo() :
@@ -24,12 +25,8 @@ Jogo::~Jogo() {
     Managers::Graphics::apagarInstance();
 }
 
-void Jogo::inicializar() {
-  //  menuPrincipal.setValores();
-}
-
 void Jogo::executar() {
-    inicializar();
+    
     sf::Event event;
     while (pGG->isWindowOpen())
     {
@@ -37,116 +34,15 @@ void Jogo::executar() {
         {
             if (event.type == sf::Event::Closed)
                 pGG->closeWindow();
-
-
-            //Executar Menus
-          /*  if (menuPrincipal.getAtivo() || menuPrincipal.getEscolhaAtivo() || menuPrincipal.getLeaderboardAtivo())
-            {
-                pGG->centerView(sf::Vector2f(640.f, 360.f));
-                pGG->clear();
-                menuPrincipal.executar();
-                if (!flagFase)
-                    flagFase = true;
-
-                pGG->display();
-            }
         }
-
-        //Executar Fase
-        if (!menuPrincipal.getAtivo() && !menuPrincipal.getEscolhaAtivo() && !menuPrincipal.getLeaderboardAtivo())
-        {
-            int auxE = menuPrincipal.getEscolheu();
-            pGG->clear();
-            //Fase 1 com um jogador
-            if (auxE == 1)
-            {
-                if (flagFase) {
-                    printf("entrou em 1\n");
-                    fase1.set2jogadores(false);
-
-                    fase1.inicializar();
-                    flagFase = false;
-                }
-                if (fase1.fimFase()) {
-                    menuPrincipal.setAtivo(true);
-                    
-                }
-                fase1.executar();
-                fase1.colidir();
-            }
-            //Fase 1 com dois jogadores
-            else if (auxE == 2)
-            {
-                if (flagFase) {
-                    printf("entrou em 2\n");
-                    fase1.set2jogadores(true);
-
-                    fase1.inicializar();
-                    flagFase = false;
-                }
-                if (fase1.fimFase()) {
-                    menuPrincipal.setAtivo(true);
-                    //Resetar tela para posi��o 0 e 0
-                }
-                fase1.executar();
-                fase1.colidir();
-            }
-
-            //Fase 2 com um jogador
-            else if (auxE == 3)
-            {                
-                if (flagFase) {
-                    printf("entrou em 3\n");
-                    fase2.set2jogadores(false);
-
-                    fase2.inicializar();
-                    flagFase = false;
-                }
-                if (fase2.fimFase()) {
-                    menuPrincipal.setAtivo(true);
-                    //Resetar tela para posi��o 0 e 0
-                }
-                fase2.executar();
-                fase2.colidir();
-            }
-            //Fase 2 com dois jogadores
-            else if (auxE == 3)
-            {                
-                if (flagFase) {
-                    printf("entrou em 4\n");
-                    fase2.set2jogadores(true);
-
-                    fase2.inicializar();
-                    flagFase = false;
-                }
-                if (fase2.fimFase()) {
-                    menuPrincipal.setAtivo(true);
-                    //Resetar tela para posi��o 0 e 0
-                }
-                fase2.executar();
-                fase2.colidir();
-            }
-            else
-                menuPrincipal.setAtivo(true);
-
-            pGG->display();
-
-            //Abrir Menu Interno
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-                while (!menuJogo.getParar()) {
-                    pGG->clear();
-                    menuJogo.executar();
-                    pGG->display();
-                }
-                if (menuJogo.getSair())
-                    menuPrincipal.setAtivo(true);
-            }*/
-
-        }
-        pGE->executar();
+        pGG->clear();
+        if (pGE->tamanhoPilha() != 0)
+            pGE->executar();
+        else
+            pGG->closeWindow();
         pGG->display();
     }
-
+    //system("clear||cls");
     string nome;
     cout << "pontuacao = " << Ente::getPontuacao() << endl << "insira seu nome" << endl;
     cin >> nome;

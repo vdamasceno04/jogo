@@ -11,7 +11,6 @@ namespace Managers {
 	private:
 		sf::RenderWindow* window;
 		sf::View view;
-		std::map<const char*, sf::Texture*> mapaTextura;
 		sf::Font* font;
 		sf::Clock clock;
 		static float dt;
@@ -32,7 +31,6 @@ namespace Managers {
 		void setWindowSize(sf::Vector2u size);
 		sf::Vector2f getView();
 		void centerView(sf::Vector2f pos);
-		sf::Texture* loadTexture(const char* path);
 		sf::Font* getFont();
 		void updateTime();
 	};

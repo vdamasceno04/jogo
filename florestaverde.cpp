@@ -48,6 +48,11 @@ void Fases::FlorestaVerde::criaabelhas() {
     }
 }
 
+void Fases::FlorestaVerde::colidir() {
+    pGC->ColidirEstaticoMovel();
+    pGC->ColidirMovelMovel();
+}
+
 void Fases::FlorestaVerde::inicializar() {
     criafundo(true);
     listaMov.addEntidade(&j1);
@@ -60,8 +65,6 @@ void Fases::FlorestaVerde::inicializar() {
     criaagua();
     listaEst.setJanela(pGG);
     listaMov.setJanela(pGG);
-    cout << "tamMov: " << listaMov.getLen() << endl;
-    cout << "tamEst: " << listaEst.getLen() << endl;
 }
 
 void Fases::FlorestaVerde::executar() {
@@ -69,9 +72,6 @@ void Fases::FlorestaVerde::executar() {
     listaEst.executarLista();
     listaMov.executarLista();
     colidir();
+    fimFase();
 }
 
-void Fases::FlorestaVerde::colidir() {
-    pGC->ColidirEstaticoMovel();
-    pGC->ColidirMovelMovel();
-}

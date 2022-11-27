@@ -23,4 +23,5 @@ public:
     void addEstado(const ID id);
     void removerEstado();
     Ente* getEstadoAtual();
+    int tamanhoPilha();
 };

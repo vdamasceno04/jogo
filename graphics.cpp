@@ -28,14 +28,11 @@ namespace Managers {
 	Graphics::Graphics() :
 		window(new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Ibama++")),
 		view(sf::Vector2f(WIDTH / 2, HEIGHT / 2), sf::Vector2f(WIDTH, HEIGHT)),
-		mapaTextura(), clock() {
+		clock() {
 		font = NULL;
 	}
 
 	Graphics::~Graphics() {
-		std::map<const char*, sf::Texture*>::iterator it;
-		for (it = mapaTextura.begin(); it != mapaTextura.end(); ++it)
-			delete(it->second);
 		delete(window);
 		apagarInstance();
 	}
@@ -100,27 +97,6 @@ namespace Managers {
 	sf::Vector2f Graphics::getView() {
 		return view.getCenter();
 	}
-
-	// carrega a textura indicada
-	sf::Texture* Graphics::loadTexture(const char* path) {
-		std::map<const char*, sf::Texture*>::iterator it = mapaTextura.begin();
-		
-		while (it != mapaTextura.end()) {
-			if (!strcmp(it->first, path)) // checa se a textura ja foi carregada
-				return it->second;
-			it++;
-		}
-		sf::Texture* tex = new sf::Texture();
-		if (!tex->loadFromFile(path)) {
-			std::cout << "Erro ao carregar arquivo " << path << std::endl;
-			exit(1);
-		}
-
-
-		mapaTextura.insert(std::pair<const char*, sf::Texture*>(path, tex));
-		return tex;
-	}
-
 
 	// pega a fonte definida
 	sf::Font* Graphics::getFont() {

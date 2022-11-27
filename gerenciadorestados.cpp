@@ -71,7 +71,7 @@
             pilhaEstados.pop();
         }
         
-        if (pilhaEstados.empty()) {
+        else if (pilhaEstados.empty()) {
             Managers::Graphics* pGrafico = pGrafico->getInstance();
             pGrafico->closeWindow();
         }
@@ -81,6 +81,9 @@
         return pilhaEstados.top();
     }
 
+    int GerenciadorEstado::tamanhoPilha() {
+        return pilhaEstados.size();
+    }
 
     void GerenciadorEstado::executar() {
         //executa o estado que está no topo da minha pilha
@@ -92,9 +95,9 @@
                 if (pilhaEstados.top()->getEstado() == 0)
                     pilhaEstados.top()->executar();
 
-                else if (pilhaEstados.top()->getEstado() == -1)
+                else if (pilhaEstados.top()->getEstado() == -1) 
                     removerEstado();
-
+                
                 else if (pilhaEstados.top()->getEstado() == 1) {
                     pilhaEstados.top()->setEstado(-2);
                     addEstado(menuescolha);
@@ -150,8 +153,18 @@
                 }
             }
 
-            
+            else if (pilhaEstados.top()->getId() == 12 || pilhaEstados.top()->getId() == 13 || pilhaEstados.top()->getId() == 22 || pilhaEstados.top()->getId() == 23) {
+                if (pilhaEstados.top()->getEstado() == 0)
+                    pilhaEstados.top()->executar();
+
+                else if (pilhaEstados.top()->getEstado() == -1) {
+                    pilhaEstados.top()->setEstado(-2);
+                    removerEstado();
+                    pilhaEstados.top()->setEstado(0);
+                }
+            }
         }
+
         cout << "topo = " << pilhaEstados.top()->getId() << endl;
     }
 

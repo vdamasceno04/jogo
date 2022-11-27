@@ -5,6 +5,7 @@ Fases::Fase::Fase(bool doisjogadores, Managers::Graphics* pG, Managers::Gerencia
 {
     pGG = pG;
     pGC = pC;
+    estado =0;
 }
 
 Listas::ListaEntidades Fases::Fase::listaEst;
@@ -65,7 +66,7 @@ void Fases::Fase::criajavali() {
     }
 }
 
-bool Fases::Fase::fimFase() {
+void Fases::Fase::fimFase() {
     bool fim = false;
     bool jogadorvivo = false;
     bool javalivivo = false;
@@ -90,11 +91,9 @@ bool Fases::Fase::fimFase() {
             Ente::setPontos(j1.getVida() * 1000);
         Ente::setPontos(e1.getVida() * 1000);
 
-       
-        
-        
     }
-    return fim;
+    if(fim)
+        estado = -1;
 }
 
 void Fases::Fase::finaliza() {
