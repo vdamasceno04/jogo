@@ -1,10 +1,12 @@
 #include "MenuPrincipal.h"
 
-MenuPrincipal::MenuPrincipal():
+MenuPrincipal::MenuPrincipal() :
 	Menu(),
 	menuEscolha(),
 	menuLeaderboard()
+	
 {
+	id = menuprincipal;
 	setValores();
 }
 

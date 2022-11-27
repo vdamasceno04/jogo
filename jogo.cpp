@@ -19,6 +19,9 @@ Jogo::Jogo() :
     Ente::setpGG(Graphics::getInstance());
     tela = 0;
     flagFase = true;
+
+
+    pGE->addEstado(menuprincipal);
     executar();
 }
 

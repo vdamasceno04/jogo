@@ -20,7 +20,8 @@ enum ID {
 	pedra = 11,
 	jogarfase1 = 12,
 	jogarfase2 = 13,
-	jogar = 14
+	jogar = 14,
+	menuprincipal = 15
 };
 
 

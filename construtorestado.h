@@ -3,6 +3,7 @@
 #include "estadojogar.h"
 
 #include "construtorfase.h"
+#include "MenuPrincipal.h"
 
 
 class ConstrutorEstado {
@@ -12,10 +13,8 @@ public:
     Estado* criarEstado(const ID ID);
 private:
     Estado* criarEstadoJogar(const ID ID);
-    //Estado::Estado* criarMenuPrinciapal();
-    //Estado::Estado* criarMenuPausar();
-    //Estado::Estado* criarMenuSalvar();
-    //Estado::Estado* criarMenuOpcao();
-    //Estado::Estado* criarColocao();
+    Estado* criarEstadoMenuprincipal(const ID ID);
+    //Estado::Estado* criarMenuEscolher();
+    //Estado::Estado* criarLeaderboard();
 };
 

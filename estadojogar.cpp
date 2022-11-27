@@ -1,15 +1,27 @@
-#include "estadojogar.h"
+#include "..\..\include\Estado\EstadoJogar.hpp"
 
-EstadoJogar::EstadoJogar(const ID ID, Fases::Fase* fase) :
-    Estado(ID), fase(fase)
-{
+namespace Jungle {
 
-}
+    namespace Estado {
 
-EstadoJogar::~EstadoJogar() {
+        EstadoJogar::EstadoJogar(const IDs::IDs ID, Fase::Fase* fase):
+            Estado(ID), fase(fase)
+        {
 
-}
+        }
 
-void EstadoJogar::executar() {
-    fase->executar();
+        EstadoJogar::~EstadoJogar(){
+
+        }
+
+        Entidade::Personagem::Jogador::Jogador* EstadoJogar::getJogador(){
+            return fase->getJogador();
+        }
+
+         void EstadoJogar::executar(){
+            fase->executar();
+        }
+
+    }
+
 }
