@@ -1,8 +1,9 @@
 #include"javali.h"
 #include"jogador.h"
 
-#define VMAXX 0.35
-#define VMAXY 0
+#define VMAXX 3.5
+#define ALCANCE 70
+#define COOLDOWN 150.5
 
 Javali::Javali(sf::Vector2f pos, Jogador* p1, Jogador* p2, int i) :
 	Inimigo(pos, p1, p2) {
@@ -12,9 +13,9 @@ Javali::Javali(sf::Vector2f pos, Jogador* p1, Jogador* p2, int i) :
 	body.setSize(sf::Vector2f(120, 110));
 	setEscala(sf::Vector2f(4, 4));
 	setPosicao(pos);
-	vmax = (sf::Vector2f(3.5, 0));
-	alcance = 70;
-	duracaoCooldown = 150.5;
+	vmax = (sf::Vector2f(VMAXX, 0));
+	alcance = ALCANCE;
+	duracaoCooldown = COOLDOWN;
 	idade = i;
 	inicializa(idade);
 }

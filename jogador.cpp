@@ -1,17 +1,21 @@
 #include"jogador.h"
 #include"ListaEntidades.h"
 
+#define COOLDOWN 30
+#define DANO 3
+#define ALCANCE 100
+#define VIDA 20
 Jogador::Jogador(sf::Vector2f pos) :
 	Personagem::Personagem(pos)
 {
 	podeAtacar = true;
-	setVida(20);
+	setVida(VIDA);
 	body.setSize(sf::Vector2f(45, 100));
 	setEscala(sf::Vector2f(2, 2));
 	setPosicao(pos);
-	duracaoCooldown = 30;
-	dano = 3;
-	alcance = 100;
+	duracaoCooldown = COOLDOWN;
+	dano = DANO;
+	alcance = ALCANCE;
 	vmax= sf::Vector2f(15.0, 25.0);
 }
 

@@ -1,15 +1,16 @@
 #include "cacador.h"
 
+#define VIDA 20
 Cacador::Cacador(sf::Vector2f pos) :
 	Jogador(pos) {
 	id = cacador;
-	setSprite("Assets/Idle.gif");
+	setSprite("Assets/Cacador.gif");
 	sprite.setTextureRect(sf::IntRect(11, 11, 47, 59));
 }
 Cacador::~Cacador() {}
 
 void Cacador::resetar() {
-	setVida(20);
+	setVida(VIDA);
 	setPosicao(sf::Vector2f(300, HEIGHT * 0.635));
 }
 

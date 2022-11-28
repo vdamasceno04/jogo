@@ -1,10 +1,7 @@
 #include "MenuPrincipal.h"
 
 MenuPrincipal::MenuPrincipal() :
-	Menu(),
-	menuEscolha(),
-	menuLeaderboard()
-	
+	Menu()	
 {
 	id = menuprincipal;
 	setValores();
@@ -16,19 +13,8 @@ MenuPrincipal::~MenuPrincipal()
 
 }
 
-bool MenuPrincipal::getEscolhaAtivo() { return menuEscolha.getAtivo(); }
-
-bool MenuPrincipal::getLeaderboardAtivo() { return menuLeaderboard.getAtivo(); }
-
-int MenuPrincipal::getEscolheu() { return menuEscolha.getEscolha(); }
-
-int MenuPrincipal::getEscolhaFase() { return menuEscolha.getFase(); }
-
-int MenuPrincipal::getEscolhaJogador() { return menuEscolha.getJogador(); }
-
 void MenuPrincipal::setValores()
 {
-	ativo = true; //NAO UTILIZADO 
 
 	textura.loadFromFile("Assets/Ibama.png");
 	sprite.setTexture(textura);
@@ -85,12 +71,10 @@ void MenuPrincipal::loop()
 
 		if (pos == 0)
 		{
-			ativo = false;
 			estado = 1; // opcao para menu de escolha
 		}
 		else if (pos == 1)
 		{
-			ativo = false;
 			estado = 2; // opcao para leaderboard
 		}
 		else if (pos == 2)

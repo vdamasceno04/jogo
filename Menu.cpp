@@ -24,6 +24,4 @@ void Menu::setValores()
 	fonte.loadFromFile("Assets/MainFont.ttf");
 }
 
-int Menu::getAtivo() { return ativo; }
 
-void Menu::setAtivo(bool at) { ativo = at; }

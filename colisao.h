@@ -23,7 +23,6 @@ namespace Managers {
 		void setListaEntidades(Listas::ListaEntidades* lEM, Listas::ListaEntidades* lEE);
 		void colidir(Entidade* p1, Entidade* p2, float intersec_x, float intersec_y);
 		void resolverColisao(Entidade* p1, Entidade* p2, float intersec_x, float intersec_y);
-		//void clear();
 
 	};
 }

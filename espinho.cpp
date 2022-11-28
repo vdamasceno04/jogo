@@ -1,13 +1,14 @@
 #include "Espinho.h"
 #include "personagem.h"
 
+#define COOLDOWN 100
 Espinho::Espinho(sf::Vector2f pos) :
 	Obstaculos::Obstaculo(pos)
 {
 	id = espinho;
 	dano = 1;
 	danificar = true;
-	duracaoCooldown = 100;
+	duracaoCooldown = COOLDOWN;
 	setSprite("Assets/espinho.png");
 	body.setSize(sf::Vector2f(67, 137));
 	setPosicao(pos);

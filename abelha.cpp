@@ -1,6 +1,11 @@
 #include "abelha.h"
 #include "jogador.h"
 
+
+#define VMAXX 5.0
+#define ALCANCE 60
+#define COOLDOWN 400.5
+
 Abelha::Abelha(sf::Vector2f pos, Jogador* p1, Jogador* p2, int m) :
 	Inimigo(pos, p1, p2) {
 	id = abelha;
@@ -10,11 +15,11 @@ Abelha::Abelha(sf::Vector2f pos, Jogador* p1, Jogador* p2, int m) :
 	body.setSize(sf::Vector2f(40, 76));
 	setEscala(sf::Vector2f(2, 2));
 	setPosicao(pos);
-	alcance = 60;
-	duracaoCooldown = 400.5;
+	alcance = ALCANCE;
+	duracaoCooldown = COOLDOWN;
 	mel = m;
 	inicializa(mel);
-	vmax.x = 5.0;
+	vmax.x = VMAXX;
 	velocidade.y = 0;
 }
 

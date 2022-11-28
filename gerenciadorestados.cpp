@@ -165,7 +165,6 @@
             }
         }
 
-        cout << "topo = " << pilhaEstados.top()->getId() << endl;
     }
 
    

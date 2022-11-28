@@ -4,6 +4,7 @@ using namespace Entidades;
 Entidade::Entidade(sf::Vector2f pos): Ente() {
 	janela = NULL;
 	remove = false;
+	colidindo = false;
 	posicao = pos;
 	dano = 0;
 }

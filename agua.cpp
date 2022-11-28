@@ -1,11 +1,14 @@
 #include "Agua.h"
 #include "personagem.h"
 
+
+#define LENTIDAO 0.2
+
 Agua::Agua(sf::Vector2f pos) :
 	Obstaculo(pos)
 {
 	id = agua;
-	lentidao = 0.2;
+	lentidao = LENTIDAO;
 	body.setSize(sf::Vector2f(100, 137));
 	setSprite("Assets/agua.png");
 	sprite.setTextureRect(sf::IntRect(0,5,60,60 ));

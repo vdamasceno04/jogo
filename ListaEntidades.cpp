@@ -3,10 +3,8 @@ using namespace Listas;
 
 
 ListaEntidades::ListaEntidades():objLE(){
-    /*for (int i = 0; i < objLE.getLen(); i++) {
-
-        this->removeEntidade(objLE.getItem(i));
-    }*/
+    //for (int i = 0; i < objLE.getLen(); i++) 
+      //  this->removeEntidade(objLE.getItem(i));
 }
 
 ListaEntidades::~ListaEntidades(){}
@@ -37,11 +35,11 @@ void ListaEntidades::setJanela(Managers::Graphics* pGG)
 }
 
 void ListaEntidades::limpaLista() {
-    for (int i = 0; i < objLE.getLen(); i++) {
-        removeEntidade(objLE.getItem(i));
-        cout << "limpa";
+
+    while (objLE.getLen() != 0) {
+        removeEntidade(objLE.getItem(objLE.getLen()));
     }
-    cout << "limpo" << endl << endl;
+
 }
 
 void ListaEntidades::executarLista()

@@ -1,6 +1,9 @@
 #include "caracol.h"
 #include "jogador.h"
 
+#define ALCANCE 400
+#define VMAXX 0
+
 Caracol::Caracol(sf::Vector2f pos, Jogador* p1, Jogador* p2, int ven, Gosma* pGosma) :
 	Inimigo(pos, p1, p2) {
 	id = caracol;
@@ -9,11 +12,10 @@ Caracol::Caracol(sf::Vector2f pos, Jogador* p1, Jogador* p2, int ven, Gosma* pGo
 	body.setSize(sf::Vector2f(125, 120));
 	setEscala(sf::Vector2f(5, 5));
 	setPosicao(pos);
-	alcance = 400;
-	duracaoCooldown = 0.5;
+	alcance = ALCANCE;
 	veneno = ven;
 	inicializa(veneno);
-	vmax.x = 0;
+	vmax.x = VMAXX;
 	cuspir = false;
 	velocidade.y = 0;
 	pGosma->setCaracol(this);

@@ -12,7 +12,6 @@ protected:
 	int pos;
 	bool selecionado;
 	bool pressionado;
-	bool ativo;
 
 	sf::Font fonte;
 
@@ -28,9 +27,6 @@ public:
 	Menu();
 	~Menu();
 	void setValores();
-
-	int getAtivo();
-	void setAtivo(bool at);
 
 	virtual void executar() = 0;
 	virtual void loop() = 0;

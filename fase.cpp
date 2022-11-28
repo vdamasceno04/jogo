@@ -5,7 +5,7 @@ Fases::Fase::Fase(bool doisjogadores, Managers::Graphics* pG, Managers::Gerencia
 {
     pGG = pG;
     pGC = pC;
-    estado =0;
+    estado = 0;
 }
 
 Listas::ListaEntidades Fases::Fase::listaEst;
@@ -92,13 +92,14 @@ void Fases::Fase::fimFase() {
         Ente::setPontos(e1.getVida() * 1000);
 
     }
-    if(fim)
+    if (fim) {
         estado = -1;
+        //listaEst.limpaLista();
+        //listaMov.limpaLista();
+    }
 }
 
 void Fases::Fase::finaliza() {
-    listaEst.limpaLista();
-    listaMov.limpaLista();
     j1.resetar();
     e1.resetar();
 }

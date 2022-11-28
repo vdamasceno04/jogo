@@ -8,7 +8,7 @@ using std::cerr;
 using std::fstream;
 
 using namespace Fases;
-#define CAMINHO "ranking.txt"
+#define CAMINHO "Assets/ranking.txt"
 Jogo::Jogo() :
     pGG(Graphics::getInstance()), pGC(GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
     pGE(GerenciadorEstado::getGerenciadorEstado()) //singleton tudo isso aqui
@@ -35,7 +35,6 @@ void Jogo::executar() {
             if (event.type == sf::Event::Closed)
                 pGG->closeWindow();
         }
-        pGG->clear();
         if (pGE->tamanhoPilha() != 0)
             pGE->executar();
         else

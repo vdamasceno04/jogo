@@ -6,7 +6,6 @@ class MenuEscolha : public Menu
 private:
 	int jogadores;
 	int fase;
-	//bool ativo;
 	int escolha;
 
 public:

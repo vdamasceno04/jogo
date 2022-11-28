@@ -78,7 +78,6 @@ void MenuLeaderboard::loop()
 {
 	selecionado = false;
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) && !selecionado) {
-		ativo = false;
 		estado = -1;
 	}
 }

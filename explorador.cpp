@@ -3,7 +3,7 @@
 Explorador::Explorador(sf::Vector2f pos) :Jogador(pos)
 {
 	id = explorador;
-	setSprite("Assets/Idle.gif");
+	setSprite("Assets/Explorador.png");
 	sprite.setTextureRect(sf::IntRect(11, 11, 47, 59));
 }
 

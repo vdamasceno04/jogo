@@ -108,25 +108,6 @@ void Managers::GerenciadorColisoes::ColidirMovelMovel(){
  
 }
 
-
-/*
-void GerenciadorColisoes::clear()
-{
-    Entidades::EntidadeMovel* pAux = NULL;
-    for (int i = 0; i < listaEntidadesMoveis->getLen(); i++) {
-        pAux = static_cast<Entidades::EntidadeMovel*>((*listaEntidadesMoveis).getItem(i));
-        if (pAux != NULL) {
-            if (pAux) {// Mudar depois
-                listaEntidadesMoveis->removeEntidade(pAux);
-                i--;
-                if (i < 0)
-                    i = -1;
-            }
-        }
-    }
-}
-*/
-
 void Managers::GerenciadorColisoes::setListaEntidades(Listas::ListaEntidades* lEM, Listas::ListaEntidades* lEE)
 {
     this->listaEntidadesMoveis = lEM;
