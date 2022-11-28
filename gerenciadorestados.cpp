@@ -1,22 +1,22 @@
 #include "gerenciadorestados.h"
 
 
-    GerenciadorEstado* GerenciadorEstado::pGerenciadorEstado = nullptr;
+    Gerenciadores::GerenciadorEstado* Gerenciadores::GerenciadorEstado::pGerenciadorEstado = nullptr;
 
-    GerenciadorEstado::GerenciadorEstado() :
+    Gerenciadores::GerenciadorEstado::GerenciadorEstado() :
         pilhaEstados()
     {
 
     }
 
-    GerenciadorEstado* GerenciadorEstado::getGerenciadorEstado() {
+    Gerenciadores::GerenciadorEstado* Gerenciadores::GerenciadorEstado::getGerenciadorEstado() {
         if (pGerenciadorEstado == nullptr) {
             pGerenciadorEstado = new GerenciadorEstado();
         }
         return pGerenciadorEstado;
     }
 
-    GerenciadorEstado::~GerenciadorEstado() {
+    Gerenciadores::GerenciadorEstado::~GerenciadorEstado() {
         //deleta todos os estados da minha pilha
         while (!pilhaEstados.empty()) {
             delete(pilhaEstados.top());
@@ -29,7 +29,7 @@
             pGerenciadorEstado = nullptr;
         }
     }
-    Ente* GerenciadorEstado::criaestado(const ID id) {
+    Ente* Gerenciadores::GerenciadorEstado::criaestado(const ID id) {
         if (id == 15)
             return static_cast<Ente*>(new MenuPrincipal);
         else if (id == 16)
@@ -38,24 +38,24 @@
             return static_cast<Ente*>(new MenuEscolha);
 
         else if (id == 12) {
-            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVerde(false, Managers::Graphics::getInstance(), Managers::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
+            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVerde(false, Gerenciadores::Graphics::getInstance(), Gerenciadores::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
             return static_cast<Ente*>(fase);
         }
         else if (id == 13) {
-            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVermelha(false, Managers::Graphics::getInstance(), Managers::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
+            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVermelha(false, Gerenciadores::Graphics::getInstance(), Gerenciadores::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
             return static_cast<Ente*>(fase);
         }
         else if (id == 22) {
-            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVerde(true, Managers::Graphics::getInstance(), Managers::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
+            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVerde(true, Gerenciadores::Graphics::getInstance(), Gerenciadores::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
             return static_cast<Ente*>(fase);
         }
         else if (id == 23) {
-            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVermelha(true, Managers::Graphics::getInstance(), Managers::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
+            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVermelha(true, Gerenciadores::Graphics::getInstance(), Gerenciadores::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
             return static_cast<Ente*>(fase);
         }
     }
 
-    void GerenciadorEstado::addEstado(const ID ID) {
+    void Gerenciadores::GerenciadorEstado::addEstado(const ID ID) {
         Ente* ente =criaestado(ID);
         if (ente == nullptr) {
             std::cout << " nullptr" << std::endl;
@@ -64,7 +64,7 @@
         pilhaEstados.push(ente);
     }
 
-    void GerenciadorEstado::removerEstado() {
+    void Gerenciadores::GerenciadorEstado::removerEstado() {
         if (pilhaEstados.top() != nullptr) {
             delete(pilhaEstados.top());
             pilhaEstados.top() = nullptr;
@@ -72,20 +72,20 @@
         }
         
         else if (pilhaEstados.empty()) {
-            Managers::Graphics* pGrafico = pGrafico->getInstance();
+            Gerenciadores::Graphics* pGrafico = pGrafico->getInstance();
             pGrafico->closeWindow();
         }
     }
 
-    Ente* GerenciadorEstado::getEstadoAtual() {
+    Ente* Gerenciadores::GerenciadorEstado::getEstadoAtual() {
         return pilhaEstados.top();
     }
 
-    int GerenciadorEstado::tamanhoPilha() {
+    int Gerenciadores::GerenciadorEstado::tamanhoPilha() {
         return pilhaEstados.size();
     }
 
-    void GerenciadorEstado::executar() {
+    void Gerenciadores::GerenciadorEstado::executar() {
         //executa o estado que está no topo da minha pilha
         if (!pilhaEstados.empty()) {
             pilhaEstados.top()->executar();
@@ -164,7 +164,7 @@
                 }
             }
         }
-
+        cout << "estado: " << pilhaEstados.top()->getId() << endl;
     }
 
    

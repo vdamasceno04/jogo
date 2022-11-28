@@ -2,7 +2,7 @@
 #include<time.h>
 #include<stdlib.h>
 
-Fases::FlorestaVerde::FlorestaVerde(bool doisJoga, Managers::Graphics* pG, Managers::GerenciadorColisoes* pC) :
+Fases::FlorestaVerde::FlorestaVerde(bool doisJoga, Gerenciadores::Graphics* pG, Gerenciadores::GerenciadorColisoes* pC) :
     Fase(doisJoga, pG, pC) {
     pGG = pG;
     pGC = pC;
@@ -56,13 +56,14 @@ void Fases::FlorestaVerde::colidir() {
 void Fases::FlorestaVerde::inicializar() {
     criafundo(true);
     listaMov.addEntidade(&j1);
-    if(doisJogadores)
+    if (doisJogadores)
         listaMov.addEntidade(&e1);
     criaabelhas();
     criapedra();
     criajavali();
     criachao(false);
     criaagua();
+
     listaEst.setJanela(pGG);
     listaMov.setJanela(pGG);
 }

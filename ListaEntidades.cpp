@@ -3,11 +3,13 @@ using namespace Listas;
 
 
 ListaEntidades::ListaEntidades():objLE(){
-    //for (int i = 0; i < objLE.getLen(); i++) 
-      //  this->removeEntidade(objLE.getItem(i));
+    
 }
 
-ListaEntidades::~ListaEntidades(){}
+ListaEntidades::~ListaEntidades(){
+ //   for (int i = 0; i < objLE.getLen(); i++) 
+   //     removeEntidade(objLE.getItem(i));
+}
 
 void ListaEntidades::addEntidade(Entidades::Entidade* entidade) { objLE.push(entidade); }
 
@@ -24,7 +26,7 @@ Entidades::Entidade* ListaEntidades::getItem(int i)
     return pAux;
 }
 
-void ListaEntidades::setJanela(Managers::Graphics* pGG)
+void ListaEntidades::setJanela(Gerenciadores::Graphics* pGG)
 {                                           //Atribui janela para cada entidade
     Entidades::Entidade* pAux;
 

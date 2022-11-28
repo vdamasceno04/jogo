@@ -1,7 +1,7 @@
 #include "Fase.h"
 
-Fases::Fase::Fase(bool doisjogadores, Managers::Graphics* pG, Managers::GerenciadorColisoes* pC) :
-   j1(), pGC(Managers::GerenciadorColisoes::getInstancia(&listaMov, &listaEst))
+Fases::Fase::Fase(bool doisjogadores, Gerenciadores::Graphics* pG, Gerenciadores::GerenciadorColisoes* pC) :
+   j1(), pGC(Gerenciadores::GerenciadorColisoes::getInstancia(&listaMov, &listaEst))
 {
     pGG = pG;
     pGC = pC;
@@ -12,11 +12,11 @@ Listas::ListaEntidades Fases::Fase::listaEst;
 Listas::ListaEntidades Fases::Fase::listaMov;
 
 Fases::Fase::~Fase() {
-  /*  int i;
+    int i;
     for(i=0; i<listaEst.getLen(); i++)
         delete listaEst.getItem(i);
     for (i = 0; i < listaMov.getLen(); i++)
-        delete listaMov.getItem(i);*/
+        delete listaMov.getItem(i);
 }
 
 void Fases::Fase::criafundo(bool dia)
@@ -82,11 +82,11 @@ void Fases::Fase::fimFase() {
     }
     if (!jogadorvivo) {
         fim = true;
-        Ente::setPontos(-Ente::getPontuacao());
+        Ente::operator-=(Ente::getPontuacao());
     }
     if (!javalivivo) {
         fim = true;
-        Ente::setPontos(4000);
+        Ente::operator+=(400);
         if (doisJogadores) 
             Ente::setPontos(j1.getVida() * 1000);
         Ente::setPontos(e1.getVida() * 1000);
@@ -94,8 +94,19 @@ void Fases::Fase::fimFase() {
     }
     if (fim) {
         estado = -1;
-        //listaEst.limpaLista();
-        //listaMov.limpaLista();
+        for (i = 0; i < listaMov.getLen(); i++)
+        {
+            if (listaMov.getItem(i)->getId() == 1 || listaMov.getItem(i)->getId() == 2)
+                cout << "obj" << endl;
+            else
+                delete listaMov.getItem(i);
+        }
+        for (i = 0; i < listaEst.getLen(); i++)
+        {
+            delete listaEst.getItem(i);
+        }
+      //  listaEst.limpaLista();
+       // listaMov.limpaLista();
     }
 }
 

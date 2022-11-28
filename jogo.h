@@ -7,17 +7,13 @@
 #include "MenuInterno.h"
 
 
-using namespace Managers;
+using namespace Gerenciadores;
 
 class Jogo
 {
 private:
-	bool flagFase;
-	int tela;
-	ID i;
-
   
-	Managers::Graphics* pGG;
+	Graphics* pGG;
 	GerenciadorColisoes* pGC;
 	GerenciadorEstado* pGE;
 

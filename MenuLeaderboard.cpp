@@ -24,34 +24,40 @@ void MenuLeaderboard::setValores()
 
 	caminho = ("Assets/ranking.txt");
 	std::ifstream arquivo;
-	arquivo.open(caminho, std::ios::binary | std::ios::in);
-
-
-	if (!arquivo) { // Se não abrir - criar
-		std::ofstream writeFile(caminho, std::ios::out | std::ios::trunc);
-		writeFile.close();
+	try {
+		arquivo.open(caminho, std::ios::binary | std::ios::in);
+		if (arquivo)
+			cout << "leitura realizada com sucesso" << endl;
+		else
+			throw(caminho);
 	}
+	catch(string caminho)
+	{ // Se não abrir - criar
+			std::ofstream writeFile(caminho, std::ios::out | std::ios::trunc);
+			writeFile.close();
+	}
+	
 
-	std::string name;
+	std::string nome;
 	std::string textString;
-	std::string pointsString;
+	std::string pontos;
 
 	
     textos.resize(11);
 	for (int i = 1; i < textos.size(); ++i)
     {
-        std::getline(arquivo, pointsString);
-        std::getline(arquivo, name);
+        std::getline(arquivo, pontos);
+        std::getline(arquivo, nome);
 
-        textString = " *  " + name + " ";
+        textString = " *  " + nome + " ";
         textos[i].setFont(fonte);
-        textos[i].setString(textString + " - " + pointsString);
+        textos[i].setString(textString + " - " + pontos);
         textos[i].setCharacterSize(30);
         textos[i].setPosition(450.f, 50 + 60*i);
         textos[i].setFillColor(sf::Color::Black);
 
-		name = "";
-		pointsString = "";
+		nome = "";
+		pontos = "";
     }
     
 }

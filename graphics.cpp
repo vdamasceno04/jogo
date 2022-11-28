@@ -9,7 +9,7 @@ using std::endl;
 #define HEIGHT 720
 #define FRAME_RATE 100
 
-namespace Managers {
+namespace Gerenciadores {
 	float Graphics::dt = 0;
 	Graphics* Graphics::instance = NULL;
 

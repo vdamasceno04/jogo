@@ -1,7 +1,6 @@
 #include "abelha.h"
 #include "jogador.h"
 
-
 #define VMAXX 5.0
 #define ALCANCE 60
 #define COOLDOWN 400.5

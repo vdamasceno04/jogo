@@ -1,28 +1,25 @@
 #include "jogo.h"
 #include<stdio.h>
-#include<map>
-#include<fstream>
+
+
 using std::ofstream;
 using std::string;
 using std::cerr;
 using std::fstream;
 
 using namespace Fases;
-#define CAMINHO "Assets/ranking.txt"
 Jogo::Jogo() :
     pGG(Graphics::getInstance()), pGC(GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
     pGE(GerenciadorEstado::getGerenciadorEstado()) //singleton tudo isso aqui
 {
     Ente::setpGG(Graphics::getInstance());
-    tela = 0;
-    flagFase = true;
 
     pGE->addEstado(menuprincipal);
     executar();
 }
 
 Jogo::~Jogo() {
-    Managers::Graphics::apagarInstance();
+    Graphics::apagarInstance();
 }
 
 void Jogo::executar() {
@@ -40,8 +37,9 @@ void Jogo::executar() {
         else
             pGG->closeWindow();
         pGG->display();
+        cout << "ponto" << Ente::getPontuacao() << endl;
     }
-    //system("clear||cls");
+    /*system("clear||cls");
     string nome;
     cout << "pontuacao = " << Ente::getPontuacao() << endl << "insira seu nome" << endl;
     cin >> nome;
@@ -99,5 +97,5 @@ void Jogo::executar() {
         writeFile << (*itr).second << std::endl;
     }
 
-    writeFile.close();
+    writeFile.close();*/
 }

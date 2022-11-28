@@ -9,11 +9,19 @@ int Ente::pontuacao = 0;
 
 Ente::~Ente() {}
 
-Managers::Graphics* Ente::pGG = NULL;
+Gerenciadores::Graphics* Ente::pGG = NULL;
 
-void Ente::setpGG(Managers::Graphics* p) { pGG = p; }
+void Ente::setpGG(Gerenciadores::Graphics* p) { pGG = p; }
 
 ID Ente::getId() { return id; }
+
+void Ente::operator+=(int valor) {
+	pontuacao += valor;
+}
+
+void Ente::operator-=(int valor) {
+	pontuacao -= valor;
+}
 
 void Ente::setPontos(int p) { pontuacao += p; }
 

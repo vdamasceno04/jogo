@@ -2,7 +2,7 @@
 #include "ListaEntidades.h"
 using namespace Entidades;
 
-namespace Managers {
+namespace Gerenciadores {
 	class GerenciadorColisoes
 	{
 	protected:

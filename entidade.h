@@ -28,7 +28,7 @@ namespace Entidades {
 		sf::Vector2f getPosicao() const;
 
 		void setVelocidade(sf::Vector2f vel);
-		sf::Vector2f getVelocidade();
+		sf::Vector2f getVelocidade() const;
 
 		void setTamanho(sf::Vector2f tam);
 		sf::Vector2f getTamanho() const;
@@ -43,7 +43,7 @@ namespace Entidades {
 		void atualizar();
 
 		void tomaDano(int ferimento);
-		int getDano();
+		int getDano() const;
 
 		bool getRemove();
 		void setRemove(bool rem);

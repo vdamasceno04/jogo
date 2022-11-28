@@ -25,8 +25,8 @@ namespace Fases {
 	protected:
 		bool doisJogadores;
 	public:
-		Managers::Graphics* pGG;
-		Managers::GerenciadorColisoes* pGC;
+		Gerenciadores::Graphics* pGG;
+		Gerenciadores::GerenciadorColisoes* pGC;
 		static Listas::ListaEntidades listaEst;
 		static Listas::ListaEntidades listaMov;
 		Cacador j1;
@@ -37,7 +37,7 @@ namespace Fases {
 		void set2jogadores(bool jog) { doisJogadores = jog; }
 		bool get2jogadores() { return doisJogadores; }
 
-		Fase(bool doisjogadores, Managers::Graphics* pgg, Managers::GerenciadorColisoes* pgc);
+		Fase(bool doisjogadores, Gerenciadores::Graphics* pgg, Gerenciadores::GerenciadorColisoes* pgc);
 		~Fase();
 		void atualizaView();
 		void criafundo(bool dia);
@@ -45,6 +45,7 @@ namespace Fases {
 		void criajavali();
 		void criachao(bool vermelho);
 		void finaliza();
+		
 		virtual void executar() = 0;
 		virtual void colidir() = 0;
 	};

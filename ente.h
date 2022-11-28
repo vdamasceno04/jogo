@@ -33,16 +33,18 @@ enum ID {
 class Ente {
 protected:
 	ID id;
-	static Managers::Graphics* pGG;
+	static Gerenciadores::Graphics* pGG;
 	int estado;
 private:
 	static int pontuacao;
 public:
 	Ente();
-	static void setpGG(Managers::Graphics* p);
+	static void setpGG(Gerenciadores::Graphics* p);
 	ID getId();
 	static void setPontos(int pontos);
 	static int getPontuacao();
+	void operator+=(int valor);
+	void operator-=(int valor);
 	int getPontos(ID id);
 	int getEstado() {return estado;}
 	void setEstado(int est) {estado = est;}

@@ -25,7 +25,7 @@ void Entidade::setVelocidade(sf::Vector2f vel) {
 	velocidade = vel;
 }
 
-sf::Vector2f Entidade::getVelocidade() {
+sf::Vector2f Entidade::getVelocidade() const {
 	return velocidade;
 }
 
@@ -66,7 +66,7 @@ void Entidade::tomaDano(int ferimento) { vida -= ferimento; }
 bool Entidade::getRemove() { return remove; }
 
 void Entidade::setRemove(bool rem) { remove = rem; }
-int Entidade::getDano() { return dano; }
+int Entidade::getDano() const { return dano; }
 
 void Entidade::setColidindo(bool chao) { colidindo = chao; }
 

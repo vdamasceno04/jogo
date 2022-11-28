@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <map>
 
-namespace Managers {
+namespace Gerenciadores {
 	
 	class Graphics {
 	protected:
@@ -14,7 +14,7 @@ namespace Managers {
 		sf::Font* font;
 		sf::Clock clock;
 		static float dt;
-		static Managers::Graphics* instance; //padr�o de projeto singleton
+		static Gerenciadores::Graphics* instance; //padr�o de projeto singleton
 	public:
 		~Graphics();
 		static Graphics* getInstance();

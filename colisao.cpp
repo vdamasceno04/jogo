@@ -1,28 +1,28 @@
 #include "colisao.h"
 
-Managers::GerenciadorColisoes* Managers::GerenciadorColisoes::instancia = NULL;
+Gerenciadores::GerenciadorColisoes* Gerenciadores::GerenciadorColisoes::instancia = NULL;
 
-Managers::GerenciadorColisoes::GerenciadorColisoes(Listas::ListaEntidades* lEM, Listas::ListaEntidades* lEE)
+Gerenciadores::GerenciadorColisoes::GerenciadorColisoes(Listas::ListaEntidades* lEM, Listas::ListaEntidades* lEE)
 {
     listaEntidadesMoveis = lEM;
     listaEntidadesEstaticas = lEE;
 }
 
-Managers::GerenciadorColisoes* Managers::GerenciadorColisoes::getInstancia(Listas::ListaEntidades* lEM, Listas::ListaEntidades* lEE)
+Gerenciadores::GerenciadorColisoes* Gerenciadores::GerenciadorColisoes::getInstancia(Listas::ListaEntidades* lEM, Listas::ListaEntidades* lEE)
 {
     if (instancia == 0) {
-        instancia = new Managers::GerenciadorColisoes(lEM, lEE);
+        instancia = new Gerenciadores::GerenciadorColisoes(lEM, lEE);
     }
     return instancia;
 }
 
-Managers::GerenciadorColisoes::~GerenciadorColisoes()
+Gerenciadores::GerenciadorColisoes::~GerenciadorColisoes()
 {
     listaEntidadesMoveis = nullptr;
     listaEntidadesEstaticas = nullptr;
 }
 
-void Managers::GerenciadorColisoes::ColidirEstaticoMovel()
+void Gerenciadores::GerenciadorColisoes::ColidirEstaticoMovel()
 {
     Entidade* pAux1;
     Entidade* pAux2;
@@ -64,7 +64,7 @@ void Managers::GerenciadorColisoes::ColidirEstaticoMovel()
     }
 }
 
-void Managers::GerenciadorColisoes::ColidirMovelMovel(){
+void Gerenciadores::GerenciadorColisoes::ColidirMovelMovel(){
     //Colisão entre Entidades Moveis
     Entidade* pAux1;
     Entidade* pAux2;
@@ -108,14 +108,14 @@ void Managers::GerenciadorColisoes::ColidirMovelMovel(){
  
 }
 
-void Managers::GerenciadorColisoes::setListaEntidades(Listas::ListaEntidades* lEM, Listas::ListaEntidades* lEE)
+void Gerenciadores::GerenciadorColisoes::setListaEntidades(Listas::ListaEntidades* lEM, Listas::ListaEntidades* lEE)
 {
     this->listaEntidadesMoveis = lEM;
     this->listaEntidadesEstaticas = lEE;
 }
 
 
-void Managers::GerenciadorColisoes::colidir(Entidade* p1, Entidade* p2, float intersec_x, float intersec_y)
+void Gerenciadores::GerenciadorColisoes::colidir(Entidade* p1, Entidade* p2, float intersec_x, float intersec_y)
 {
     if (p1->getId() == 1 || p1->getId() == 2) {
         if (p2->getId() == 1 || p2->getId() == 2 || p2->getId() == 6
@@ -180,7 +180,7 @@ void Managers::GerenciadorColisoes::colidir(Entidade* p1, Entidade* p2, float in
     }
 }
 
-void Managers::GerenciadorColisoes::resolverColisao(Entidade* p1, Entidade* p2, float ix, float iy)
+void Gerenciadores::GerenciadorColisoes::resolverColisao(Entidade* p1, Entidade* p2, float ix, float iy)
 {
     if (ix < iy)
     {
