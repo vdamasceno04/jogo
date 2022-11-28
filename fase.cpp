@@ -96,17 +96,12 @@ void Fases::Fase::fimFase() {
         estado = -1;
         for (i = 0; i < listaMov.getLen(); i++)
         {
-            if (listaMov.getItem(i)->getId() == 1 || listaMov.getItem(i)->getId() == 2)
-                cout << "obj" << endl;
-            else
-                delete listaMov.getItem(i);
+            delete listaMov.getItem(i);
         }
         for (i = 0; i < listaEst.getLen(); i++)
         {
             delete listaEst.getItem(i);
         }
-      //  listaEst.limpaLista();
-       // listaMov.limpaLista();
     }
 }
 

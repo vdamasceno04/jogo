@@ -13,16 +13,8 @@ MenuEscolha::~MenuEscolha()
 
 }
 
-int MenuEscolha::getEscolha() { return escolha; }
-
-int MenuEscolha::getJogador() { return jogadores; }
-
-int MenuEscolha::getFase() { return fase; }
-
 void MenuEscolha::setValores()
 {
-	jogadores = fase = 0;
-	escolha = 0;
 
 	textura.loadFromFile("Assets/Escolha.png");
 	sprite.setTexture(textura);
@@ -90,30 +82,22 @@ void MenuEscolha::loop()
 		switch (pos)
 		{
 		case(0):
-			jogadores = 1;
-			fase = 1;
-			escolha = 1;
+
 			estado = 1;
 			break;
 
 		case(1):
-			jogadores = 2;
-			fase = 1;
-			escolha = 2;
+
 			estado = 2;
 			break;
 
 		case(2):
-			jogadores = 1;
-			fase = 2;
-			escolha = 3;
+
 			estado = 3;
 			break;
 
 		case(3):
-			jogadores = 2;
-			fase = 2;
-			escolha = 4;
+
 			estado = 4;
 			break;
 		}

@@ -7,8 +7,6 @@ ListaEntidades::ListaEntidades():objLE(){
 }
 
 ListaEntidades::~ListaEntidades(){
- //   for (int i = 0; i < objLE.getLen(); i++) 
-   //     removeEntidade(objLE.getItem(i));
 }
 
 void ListaEntidades::addEntidade(Entidades::Entidade* entidade) { objLE.push(entidade); }

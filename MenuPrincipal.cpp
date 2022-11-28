@@ -13,7 +13,7 @@ MenuPrincipal::~MenuPrincipal()
 
 }
 
-void MenuPrincipal::insereNome() {
+void MenuPrincipal::insereNome() { //funcionalidade de registrar nome nao acabada
 	/*system("clear||cls");
 	string nome;
 	cout << "pontuacao = " << Ente::getPontuacao() << endl << "insira seu nome" << endl;

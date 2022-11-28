@@ -14,8 +14,6 @@ protected:
 	bool pressionado;
 
 	sf::Font fonte;
-
-	//Menu Principal
 	sf::Texture textura;
 	sf::Sprite sprite;
 	vector <const char*> opcao;
