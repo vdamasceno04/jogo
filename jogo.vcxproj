@@ -153,7 +153,7 @@
     <ClCompile Include="fundo.cpp" />
     <ClCompile Include="gerenciadorestados.cpp" />
     <ClCompile Include="gosma.cpp" />
-    <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="graficos.cpp" />
     <ClCompile Include="inimigo.cpp" />
     <ClCompile Include="javali.cpp" />
     <ClCompile Include="jogador.cpp" />
@@ -186,7 +186,7 @@
     <ClInclude Include="fundo.h" />
     <ClInclude Include="gerenciadorestados.h" />
     <ClInclude Include="gosma.h" />
-    <ClInclude Include="graphics.h" />
+    <ClInclude Include="graficos.h" />
     <ClInclude Include="inimigo.h" />
     <ClInclude Include="javali.h" />
     <ClInclude Include="jogador.h" />
