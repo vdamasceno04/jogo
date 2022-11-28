@@ -2,61 +2,65 @@
 #include "personagem.h"
 
 #define COOLDOWN 100
-Espinho::Espinho(sf::Vector2f pos) :
-	Obstaculos::Obstaculo(pos)
-{
-	id = espinho;
-	dano = 1;
-	danificar = true;
-	duracaoCooldown = COOLDOWN;
-	setSprite("Assets/espinho.png");
-	body.setSize(sf::Vector2f(67, 137));
-	setPosicao(pos);
-	setEscala(sf::Vector2f(2, 2));
-}
 
-Espinho::~Espinho() {}
+namespace Entidades {
+	namespace Obstaculos {
+		Espinho::Espinho(sf::Vector2f pos) :
+			Obstaculos::Obstaculo(pos)
+		{
+			id = espinho;
+			dano = 1;
+			danificar = true;
+			duracaoCooldown = COOLDOWN;
+			setSprite("Assets/espinho.png");
+			body.setSize(sf::Vector2f(67, 137));
+			setPosicao(pos);
+			setEscala(sf::Vector2f(2, 2));
+		}
 
-bool Espinho::getDanificar() { return danificar; }
+		Espinho::~Espinho() {}
 
-float Espinho::getCooldown() { return duracaoCooldown; }
+		bool Espinho::getDanificar() { return danificar; }
 
-void Espinho::efeito(Entidade* pEnt) {
-	if (danificar) {
-		danificar = false;
-		pEnt->tomaDano(dano);
-		timerCooldown = 0;
-		pGG->getClock().restart();
-		timerCooldown += pGG->getClock().getElapsedTime().asSeconds();
+		float Espinho::getCooldown() { return duracaoCooldown; }
 
+		void Espinho::efeito(Entidade* pEnt) {
+			if (danificar) {
+				danificar = false;
+				pEnt->tomaDano(dano);
+				timerCooldown = 0;
+				pGG->getClock().restart();
+				timerCooldown += pGG->getClock().getElapsedTime().asSeconds();
+
+			}
+			else {
+				pGG->getClock().restart();
+				timerCooldown += pGG->getClock().getElapsedTime().asSeconds();
+			}
+			atualizaDanificar();
+		}
+
+		void Espinho::contaTempoCooldown(const float dt) {
+			if (danificar) {
+				timerCooldown = 0;
+				danificar = false;
+			}
+			else
+				timerCooldown += dt;
+		}
+
+		void Espinho::atualizaDanificar()
+		{
+			if (duracaoCooldown <= timerCooldown)
+				danificar = true;
+			else
+				danificar = false;
+		}
+
+
+		void Espinho::executar() {
+			renderizar();
+			atualizar();
+		}
 	}
-	else {
-		pGG->getClock().restart();
-		timerCooldown += pGG->getClock().getElapsedTime().asSeconds();
-	}
-	atualizaDanificar();
 }
-
-void Espinho::contaTempoCooldown(const float dt) {
-	if (danificar) {
-		timerCooldown = 0;
-		danificar = false;
-	}
-	else
-		timerCooldown += dt;
-}
-
-void Espinho::atualizaDanificar()
-{
-	if (duracaoCooldown <= timerCooldown)
-		danificar = true;
-	else
-		danificar = false;
-}
-
-
-void Espinho::executar() {
-	renderizar();
-	atualizar();
-}
-

@@ -1,19 +1,21 @@
 #pragma once
 #include "Menu.h"
 
-class MenuLeaderboard : public Menu
-{
-private:
-	string caminho;
+namespace Menus {
+	class MenuLeaderboard : public Menu
+	{
+	private:
+		string caminho;
 
-public:
-	MenuLeaderboard();
-	~MenuLeaderboard();
+	public:
+		MenuLeaderboard();
+		~MenuLeaderboard();
 
-	void setValores();
+		void setValores();
 
-	void desenhar();
-	void loop();
-	void executar();
-};
+		void desenhar();
+		void loop();
+		void executar();
+	};
 
+}

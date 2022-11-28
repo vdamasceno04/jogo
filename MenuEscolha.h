@@ -1,26 +1,21 @@
 #pragma once
 #include "Menu.h"
 
-class MenuEscolha : public Menu
-{
-private:
-	int jogadores;
-	int fase;
-	int escolha;
+namespace Menus {
+	class MenuEscolha : public Menu
+	{
+	private:
 
-public:
-	MenuEscolha();
-	~MenuEscolha();
+	public:
+		MenuEscolha();
+		~MenuEscolha();
 
-	void setValores();
-	int getEscolha();
+		void setValores();
 
-	int getFase();
-	int getJogador();
 
-	void desenhar();
-	void loop();
-	void executar();
+		void desenhar();
+		void loop();
+		void executar();
 
-};
-
+	};
+}

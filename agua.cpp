@@ -4,27 +4,32 @@
 
 #define LENTIDAO 0.2
 
-Agua::Agua(sf::Vector2f pos) :
-	Obstaculo(pos)
-{
-	id = agua;
-	lentidao = LENTIDAO;
-	body.setSize(sf::Vector2f(100, 137));
-	setSprite("Assets/agua.png");
-	sprite.setTextureRect(sf::IntRect(0,5,60,60 ));
-	setPosicao(pos);
-	setEscala(sf::Vector2f(3, 4));
-}
+namespace Entidades {
+	namespace Obstaculos {
 
-Agua::~Agua() {}
+		Agua::Agua(sf::Vector2f pos) :
+			Obstaculo(pos)
+		{
+			id = agua;
+			lentidao = LENTIDAO;
+			body.setSize(sf::Vector2f(100, 137));
+			setSprite("Assets/agua.png");
+			sprite.setTextureRect(sf::IntRect(0, 5, 60, 60));
+			setPosicao(pos);
+			setEscala(sf::Vector2f(3, 4));
+		}
 
-float Agua::getLentidao() { return lentidao; }
+		Agua::~Agua() {}
 
-void Agua::efeito(Entidade* p) {
-	p->setVelocidade(sf::Vector2f(p->getVelocidade().x * lentidao, p->getVelocidade().y));
-}
+		float Agua::getLentidao() { return lentidao; }
 
-void Agua::executar() {
-	renderizar();
-	atualizar();
+		void Agua::efeito(Entidade* p) {
+			p->setVelocidade(sf::Vector2f(p->getVelocidade().x * lentidao, p->getVelocidade().y));
+		}
+
+		void Agua::executar() {
+			renderizar();
+			atualizar();
+		}
+	}
 }

@@ -1,7 +1,7 @@
 #include "gerenciadorestados.h"
 
 
-    Gerenciadores::GerenciadorEstado* Gerenciadores::GerenciadorEstado::pGerenciadorEstado = nullptr;
+    Gerenciadores::GerenciadorEstado* Gerenciadores::GerenciadorEstado::instancia = nullptr;
 
     Gerenciadores::GerenciadorEstado::GerenciadorEstado() :
         pilhaEstados()
@@ -9,11 +9,11 @@
 
     }
 
-    Gerenciadores::GerenciadorEstado* Gerenciadores::GerenciadorEstado::getGerenciadorEstado() {
-        if (pGerenciadorEstado == nullptr) {
-            pGerenciadorEstado = new GerenciadorEstado();
+    Gerenciadores::GerenciadorEstado* Gerenciadores::GerenciadorEstado::getInstancia() {
+        if (instancia == nullptr) {
+            instancia = new GerenciadorEstado();
         }
-        return pGerenciadorEstado;
+        return instancia;
     }
 
     Gerenciadores::GerenciadorEstado::~GerenciadorEstado() {
@@ -24,9 +24,9 @@
             pilhaEstados.pop();
         }
 
-        if (pGerenciadorEstado) {
-            delete(pGerenciadorEstado);
-            pGerenciadorEstado = nullptr;
+        if (instancia) {
+            delete(instancia);
+            instancia = nullptr;
         }
     }
     Ente* Gerenciadores::GerenciadorEstado::criaestado(const ID id) {

@@ -29,8 +29,8 @@ namespace Fases {
 		Gerenciadores::GerenciadorColisoes* pGC;
 		static Listas::ListaEntidades listaEst;
 		static Listas::ListaEntidades listaMov;
-		Cacador j1;
-		Explorador e1;
+		Entidades::Personagens::Cacador j1;
+		Entidades::Personagens::Explorador e1;
 
 		void fimFase();
 

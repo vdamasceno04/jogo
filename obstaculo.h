@@ -3,19 +3,21 @@
 
 class Personagem;
 
-namespace Obstaculos {
+namespace Entidades {
+	namespace Obstaculos {
 
-	class Obstaculo : public Entidades::Entidade {
-	protected:
+		class Obstaculo : public Entidade {
+		protected:
 
-		bool causaEfeito;
+			bool causaEfeito;
 
-	public:
-		Obstaculo(sf::Vector2f pos);
-		~Obstaculo();
+		public:
+			Obstaculo(sf::Vector2f pos);
+			~Obstaculo();
 
-		virtual void efeito(Entidade* p) {};
-		virtual void executar() = 0;
-		
-	};
+			virtual void efeito(Entidade* p) {};
+			virtual void executar() = 0;
+
+		};
+	}
 }

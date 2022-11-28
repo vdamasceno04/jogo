@@ -3,51 +3,52 @@
 
 #define ALCANCE 400
 #define VMAXX 0
+namespace Entidades {
+	namespace Personagens {
+		Caracol::Caracol(sf::Vector2f pos, Jogador* p1, Jogador* p2, int ven, Gosma* pGosma) :
+			Inimigo(pos, p1, p2) {
+			id = caracol;
+			gosma = pGosma;
+			setSprite("Assets/caracol.png");
+			body.setSize(sf::Vector2f(125, 120));
+			setEscala(sf::Vector2f(5, 5));
+			setPosicao(pos);
+			alcance = ALCANCE;
+			veneno = ven;
+			inicializa(veneno);
+			vmax.x = VMAXX;
+			cuspir = false;
+			velocidade.y = 0;
+			pGosma->setCaracol(this);
+		}
 
-Caracol::Caracol(sf::Vector2f pos, Jogador* p1, Jogador* p2, int ven, Gosma* pGosma) :
-	Inimigo(pos, p1, p2) {
-	id = caracol;
-	gosma = pGosma;
-	setSprite("Assets/caracol.png");
-	body.setSize(sf::Vector2f(125, 120));
-	setEscala(sf::Vector2f(5, 5));
-	setPosicao(pos);
-	alcance = ALCANCE;
-	veneno = ven;
-	inicializa(veneno);
-	vmax.x = VMAXX;
-	cuspir = false;
-	velocidade.y = 0;
-	pGosma->setCaracol(this);
-}
+		Caracol::~Caracol() { }
 
-Caracol::~Caracol() { }
+		void Caracol::inicializa(int veneno) {
+			vida = veneno;
+			visao = (veneno * 100);
+		}
 
-void Caracol::inicializa(int veneno) {
-	vida = veneno;
-	visao = (veneno* 100);
-}
+		bool Caracol::getCuspir() { return cuspir; }
 
-bool Caracol::getCuspir() { return cuspir;  }
+		void Caracol::ataca(Jogador* pJ) { // por algum motivo esse ponteiro nao funciona
+			if (fabs(pJ1->getPosicao().x - getPosicao().x) < visao
+				|| fabs(pJ2->getPosicao().x - getPosicao().x) < visao) {
+				cuspir = true;
+			}
+			else
+				cuspir = false;
+		}
 
-void Caracol::ataca(Jogador* pJ){ // por algum motivo esse ponteiro nao funciona
-	if(fabs(pJ1->getPosicao().x - getPosicao().x) < visao 
-		|| fabs(pJ2->getPosicao().x - getPosicao().x) < visao){
-		cuspir = true;	
+
+		void Caracol::executar() {
+			remover();
+			atualizar();
+			atacado(pJ1);
+			atacado(pJ2);
+			ataca(pJ1);
+			ataca(pJ2);
+
+			renderizar();
+		}
 	}
-	else
-		cuspir = false;
-}
-
-
-void Caracol::executar() {
-	remover();
-	atualizar();
-	atacado(pJ1);
-	atacado(pJ2);
-	ataca(pJ1);
-	ataca(pJ2);
-
-	renderizar();
-}
-

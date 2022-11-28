@@ -4,22 +4,24 @@
 #include "MenuLeaderboard.h"
 #include<map>
 #include<fstream>
-#define CAMINHO "./Assets/ranking.txt"
+#define CAMINHO "./deesAssets/ranking.txt"
 
-class MenuPrincipal : public Menu
-{
-private:
+namespace Menus {
+	class MenuPrincipal : public Menu
+	{
+	private:
 
 
-public:
-	MenuPrincipal();
-	~MenuPrincipal();
+	public:
+		MenuPrincipal();
+		~MenuPrincipal();
 
-	void setValores();
-	void desenhar();
-	void loop();
-	void insereNome();
-	void executar();
+		void setValores();
+		void desenhar();
+		void loop();
+		void insereNome();
+		void executar();
 
-};
+	};
 
+}

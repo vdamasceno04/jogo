@@ -7,29 +7,31 @@
 
 using namespace std;
 
-class Menu : public Ente {
-protected:
-	int pos;
-	bool selecionado;
-	bool pressionado;
+namespace Menus {
+	class Menu : public Ente {
+	protected:
+		int pos;
+		bool selecionado;
+		bool pressionado;
 
-	sf::Font fonte;
+		sf::Font fonte;
 
-	//Menu Principal
-	sf::Texture textura;
-	sf::Sprite sprite;
-	vector <const char*> opcao;
-	vector <sf::Vector2f> coordenadas;
-	vector <sf::Text> textos;
-	vector <size_t> tamanhos;
+		//Menu Principal
+		sf::Texture textura;
+		sf::Sprite sprite;
+		vector <const char*> opcao;
+		vector <sf::Vector2f> coordenadas;
+		vector <sf::Text> textos;
+		vector <size_t> tamanhos;
 
-public:
-	Menu();
-	~Menu();
-	void setValores();
+	public:
+		Menu();
+		~Menu();
+		void setValores();
 
-	virtual void executar() = 0;
-	virtual void loop() = 0;
-	virtual void desenhar() = 0;
+		virtual void executar() = 0;
+		virtual void loop() = 0;
+		virtual void desenhar() = 0;
 
-};
+	};
+}

@@ -2,24 +2,27 @@
 #include"personagem.h"
 
 class Jogador;
+namespace Entidades {
+	namespace Personagens {
+		class Inimigo : public Personagem {
+		protected:
+			float visao; //Se o jogador entrar nessa distancia o inimigo atira ou persegue o jogador
+			int pontos;
+			Jogador* pJ1;
+			Jogador* pJ2;
 
-class Inimigo : public Personagem {
-protected:
-	float visao; //Se o jogador entrar nessa distancia o inimigo atira ou persegue o jogador
-	int pontos;
-	Jogador* pJ1;
-	Jogador* pJ2;
-
-public:
-	Inimigo(sf::Vector2f pos, Jogador* p1, Jogador* p2);
-	~Inimigo();
-	virtual void executar() = 0;
-	void setVisao(float visao);
-	float getVisao();
-	bool getPersegue(Jogador* pJ);
-	Jogador* definePerseguido(Jogador* pJ1, Jogador* pJ2);
-	void perseguicao(Jogador* pJ);
-	void atacado(Jogador* pJ);
-	virtual void ataca(Jogador* pJ) {};
-	void hostilizar();
-};
+		public:
+			Inimigo(sf::Vector2f pos, Jogador* p1, Jogador* p2);
+			~Inimigo();
+			virtual void executar() = 0;
+			void setVisao(float visao);
+			float getVisao();
+			bool getPersegue(Jogador* pJ);
+			Jogador* definePerseguido(Jogador* pJ1, Jogador* pJ2);
+			void perseguicao(Jogador* pJ);
+			void atacado(Jogador* pJ);
+			virtual void ataca(Jogador* pJ) {};
+			void hostilizar();
+		};
+	}
+}

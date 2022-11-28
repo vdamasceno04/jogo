@@ -36,12 +36,12 @@ void Fases::Fase::criapedra()
     int i;
     int sorteia;
     int pos = 900;
-    Pedra* pAux;
+    Entidades::Obstaculos::Pedra* pAux;
     srand(time(NULL));
     for (i = 0; i < 10; i++) {
         sorteia = rand() % 2;
         if (sorteia == 0 || i % 2 == 0) {
-            pAux = new Pedra(sf::Vector2f(pos, HEIGHT * 0.7));
+            pAux = new Entidades::Obstaculos::Pedra(sf::Vector2f(pos, HEIGHT * 0.7));
             listaEst.addEntidade(pAux);
         }
         pos += 500;

@@ -1,5 +1,5 @@
 #include<stack>
-#include "graficos.h"
+#include"graficos.h"
 #include"MenuLeaderboard.h"
 #include"MenuEscolha.h"
 #include"MenuPrincipal.h"
@@ -15,10 +15,10 @@ namespace Gerenciadores {
         std::stack<Ente*> pilhaEstados;
 
         //padrão de projeto singleton
-        static GerenciadorEstado* pGerenciadorEstado;
+        static GerenciadorEstado* instancia;
     public:
         ~GerenciadorEstado();
-        static GerenciadorEstado* getGerenciadorEstado();
+        static GerenciadorEstado* getInstancia();
         void executar();
         Ente* criaestado(const ID id);
         void addEstado(const ID id);
