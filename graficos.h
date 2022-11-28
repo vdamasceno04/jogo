@@ -5,19 +5,19 @@
 
 namespace Gerenciadores {
 	
-	class Graphics {
+	class Graficos {
 	protected:
-		Graphics(); //padr�o de projeto singleton
+		Graficos(); //padr�o de projeto singleton
 	private:
 		sf::RenderWindow* window;
 		sf::View view;
 		sf::Font* font;
 		sf::Clock clock;
 		static float dt;
-		static Gerenciadores::Graphics* instance; //padr�o de projeto singleton
+		static Gerenciadores::Graficos* instance; //padr�o de projeto singleton
 	public:
-		~Graphics();
-		static Graphics* getInstance();
+		~Graficos();
+		static Graficos* getInstance();
 		static void apagarInstance();
 		sf::Clock getClock();
 		void render(sf::Sprite* sprite);

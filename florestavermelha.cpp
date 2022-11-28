@@ -2,7 +2,7 @@
 #include<time.h>
 #include<stdlib.h>
 
-Fases::FlorestaVermelha::FlorestaVermelha(bool doisJoga, Gerenciadores::Graphics* pG, Gerenciadores::GerenciadorColisoes* pC) :
+Fases::FlorestaVermelha::FlorestaVermelha(bool doisJoga, Gerenciadores::Graficos* pG, Gerenciadores::GerenciadorColisoes* pC) :
     Fase(doisJoga, pG, pC) {
     pGG = pG;
     pGC = pC ;

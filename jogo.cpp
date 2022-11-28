@@ -9,17 +9,17 @@ using std::fstream;
 
 using namespace Fases;
 Jogo::Jogo() :
-    pGG(Graphics::getInstance()), pGC(GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
+    pGG(Graficos::getInstance()), pGC(GerenciadorColisoes::getInstancia(&Fase::listaMov, &Fase::listaEst)),
     pGE(GerenciadorEstado::getGerenciadorEstado()) //singleton tudo isso aqui
 {
-    Ente::setpGG(Graphics::getInstance());
+    Ente::setpGG(Graficos::getInstance());
 
     pGE->addEstado(menuprincipal);
     executar();
 }
 
 Jogo::~Jogo() {
-    Graphics::apagarInstance();
+    Graficos::apagarInstance();
 }
 
 void Jogo::executar() {

@@ -6,7 +6,7 @@ namespace Fases {
 	class FlorestaVermelha : public Fase {
 
 	public:
-		FlorestaVermelha(bool doisJogadores, Gerenciadores::Graphics* pG, Gerenciadores::GerenciadorColisoes* pC);
+		FlorestaVermelha(bool doisJogadores, Gerenciadores::Graficos* pG, Gerenciadores::GerenciadorColisoes* pC);
 		~FlorestaVermelha();
 		void criacaracol();
 		void criaespinho();

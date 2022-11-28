@@ -26,7 +26,7 @@ Entidades::Entidade* ListaEntidades::getItem(int i)
     return pAux;
 }
 
-void ListaEntidades::setJanela(Gerenciadores::Graphics* pGG)
+void ListaEntidades::setJanela(Gerenciadores::Graficos* pGG)
 {                                           //Atribui janela para cada entidade
     Entidades::Entidade* pAux;
 

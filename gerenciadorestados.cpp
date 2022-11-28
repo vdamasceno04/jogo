@@ -38,19 +38,19 @@
             return static_cast<Ente*>(new MenuEscolha);
 
         else if (id == 12) {
-            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVerde(false, Gerenciadores::Graphics::getInstance(), Gerenciadores::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
+            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVerde(false, Gerenciadores::Graficos::getInstance(), Gerenciadores::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
             return static_cast<Ente*>(fase);
         }
         else if (id == 13) {
-            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVermelha(false, Gerenciadores::Graphics::getInstance(), Gerenciadores::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
+            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVermelha(false, Gerenciadores::Graficos::getInstance(), Gerenciadores::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
             return static_cast<Ente*>(fase);
         }
         else if (id == 22) {
-            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVerde(true, Gerenciadores::Graphics::getInstance(), Gerenciadores::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
+            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVerde(true, Gerenciadores::Graficos::getInstance(), Gerenciadores::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
             return static_cast<Ente*>(fase);
         }
         else if (id == 23) {
-            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVermelha(true, Gerenciadores::Graphics::getInstance(), Gerenciadores::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
+            Fases::Fase* fase = static_cast<Fases::Fase*>(new Fases::FlorestaVermelha(true, Gerenciadores::Graficos::getInstance(), Gerenciadores::GerenciadorColisoes::getInstancia(&fase->listaMov, &fase->listaMov)));
             return static_cast<Ente*>(fase);
         }
     }
@@ -72,7 +72,7 @@
         }
         
         else if (pilhaEstados.empty()) {
-            Gerenciadores::Graphics* pGrafico = pGrafico->getInstance();
+            Gerenciadores::Graficos* pGrafico = pGrafico->getInstance();
             pGrafico->closeWindow();
         }
     }

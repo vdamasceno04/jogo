@@ -10,106 +10,106 @@ using std::endl;
 #define FRAME_RATE 100
 
 namespace Gerenciadores {
-	float Graphics::dt = 0;
-	Graphics* Graphics::instance = NULL;
+	float Graficos::dt = 0;
+	Graficos* Graficos::instance = NULL;
 
 	//padrão de projeto singleton
 
-	Graphics* Graphics::getInstance() {
+	Graficos* Graficos::getInstance() {
 		if (instance == NULL)
-			instance = new Graphics();
+			instance = new Graficos();
 		return instance;
 	}
 
-	void Graphics::apagarInstance() {
+	void Graficos::apagarInstance() {
 		if (instance != NULL)
 			instance = NULL;
 	}
-	Graphics::Graphics() :
+	Graficos::Graficos() :
 		window(new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Ibama++")),
 		view(sf::Vector2f(WIDTH / 2, HEIGHT / 2), sf::Vector2f(WIDTH, HEIGHT)),
 		clock() {
 		font = NULL;
 	}
 
-	Graphics::~Graphics() {
+	Graficos::~Graficos() {
 		delete(window);
 		apagarInstance();
 	}
 
-	sf::Clock Graphics::getClock() {
+	sf::Clock Graficos::getClock() {
 		return clock;
 	}
 	// desenha na janela um corpo apontado pelo ponteiro
-	void Graphics::render(sf::Sprite* sprite) {
+	void Graficos::render(sf::Sprite* sprite) {
 		window->draw(*sprite);
 	}
 
 	// desenha na janela um texto apontado pelo ponteiro
-	void Graphics::render(sf::Text* text) {
+	void Graficos::render(sf::Text* text) {
 		window->draw(*text);
 	}
 
 	// mostra tudo que foi desenhado na janela
-	void Graphics::display() {
+	void Graficos::display() {
 		if (isWindowOpen())
 			window->display();
 	}
 
 	// limpa a janela
-	void Graphics::clear() {
+	void Graficos::clear() {
 		if (isWindowOpen())
 			window->clear();
 	}
 
 	// testa se a janela está aberta
-	bool Graphics::isWindowOpen() const {
+	bool Graficos::isWindowOpen() const {
 		if (window->isOpen())
 			return true;
 		return false;
 	}
 
 	//	fecha a janela
-	void Graphics::closeWindow() {
+	void Graficos::closeWindow() {
 		window->close();
 	}
 
 
 	// define o tamamho da janela
-	void Graphics::setWindowSize(sf::Vector2u size) {
+	void Graficos::setWindowSize(sf::Vector2u size) {
 		window->setSize(sf::Vector2u(size.x, size.y));
 		view.setSize(size.x, size.y);
 		window->setView(view);
 	}
 
 	// retorna o tamanho da janela
-	sf::Vector2u Graphics::getWindowSize() const {
+	sf::Vector2u Graficos::getWindowSize() const {
 		return sf::Vector2u(window->getSize().x, window->getSize().y);
 	}
 
 
 	// muda a visão do centro da janela
-	void Graphics::centerView(sf::Vector2f pos) {
+	void Graficos::centerView(sf::Vector2f pos) {
 		view.setCenter(sf::Vector2f(pos.x, pos.y));
 		window->setView(view);
 	}
 
-	sf::Vector2f Graphics::getView() {
+	sf::Vector2f Graficos::getView() {
 		return view.getCenter();
 	}
 
 	// pega a fonte definida
-	sf::Font* Graphics::getFont() {
+	sf::Font* Graficos::getFont() {
 		return font;
 	}
 
 	// retorna o objeto janela
-	sf::RenderWindow* Graphics::getWindow() {
+	sf::RenderWindow* Graficos::getWindow() {
 		return window;
 	}
 
 	// incrementa o tempo passado
-	void Graphics::updateTime() {
+	void Graficos::updateTime() {
 		dt = clock.getElapsedTime().asSeconds();
 		clock.restart();
 	}

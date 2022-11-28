@@ -13,7 +13,7 @@ class Jogo
 {
 private:
   
-	Graphics* pGG;
+	Graficos* pGG;
 	GerenciadorColisoes* pGC;
 	GerenciadorEstado* pGE;
 
