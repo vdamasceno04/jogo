@@ -4,7 +4,7 @@
 #include "colisao.h"
 #include "cacador.h"
 #include "explorador.h"
-#include "graphics.h"
+#include "graficos.h"
 #include "Espinho.h"
 #include "Agua.h"
 #include "plataforma.h"

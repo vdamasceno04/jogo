@@ -1,6 +1,6 @@
 #pragma once
 #include "coords.h"
-#include "graphics.h"
+#include "graficos.h"
 #include<iostream>
 using std::cout;
 using std::endl;

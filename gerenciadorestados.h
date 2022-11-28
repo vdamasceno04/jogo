@@ -1,5 +1,5 @@
 #include<stack>
-#include"graphics.h"
+#include "graficos.h"
 #include"MenuLeaderboard.h"
 #include"MenuEscolha.h"
 #include"MenuPrincipal.h"
