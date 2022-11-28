@@ -29,6 +29,7 @@ void Gosma::setCaracol(Caracol* pCar) {
 
 void Gosma::efeito(Entidade* p) {
 	p->tomaDano(dano);
+	colidindo = true;
 }
 
 void Gosma::executar() {
