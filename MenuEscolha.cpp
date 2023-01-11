@@ -19,7 +19,7 @@ void MenuEscolha::setValores()
 	textura.loadFromFile("Assets/Escolha.png");
 	sprite.setTexture(textura);
 	opcao = { "Fase 1 - um jogador", "Fase 1 - dois jogadores", "Fase 2 - um jogador", "Fase 2 - dois jogadores" };
-	coordenadas = { {509,90.f}, {482,240.f}, {509,390.f}, {482,540.f} };
+	coordenadas = { {509.f,90.f}, {482.f,240.f}, {509.f,390.f}, {482.f,540.f} };
 	tamanhos = { 28,28,28,28 };
 
 	textos.resize(4); // São 4 opções
@@ -28,7 +28,7 @@ void MenuEscolha::setValores()
 		textos[i].setFont(fonte);
 		textos[i].setString(opcao[i]);
 		textos[i].setCharacterSize(tamanhos[i]);
-	//	textos[i].setPosition(coordenadas[i]);
+		textos[i].setPosition(coordenadas[i]);
 		textos[i].setFillColor(sf::Color::Black);
 		textos[i].setOutlineColor(sf::Color::Yellow);
 	}
