@@ -1,6 +1,6 @@
 #include "fundo.h"
 
-Fundo::Fundo(sf::Vector2f pos, bool d) : Entidade(pos)
+Fundo::Fundo(Math::CoordF pos, bool d) : Entidade(pos)
 {
 	dia = d;
 	id = fundo;
@@ -8,8 +8,8 @@ Fundo::Fundo(sf::Vector2f pos, bool d) : Entidade(pos)
 		setSprite("Assets/fundodia.png");
 	else
 		setSprite("Assets/fundonoite.png");
-	body.setSize(sf::Vector2f(WIDTH, HEIGHT));;
-	setEscala(sf::Vector2f(3.21, 3.75));
+	setTamanho(Math::CoordF(WIDTH, HEIGHT));;
+	setEscala(Math::CoordF(3.21, 3.75));
 	setPosicao(pos);
 }
 

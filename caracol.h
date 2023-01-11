@@ -8,7 +8,7 @@ private:
 	Gosma* gosma;
 	bool cuspir;
 public:
-	Caracol(sf::Vector2f pos, Jogador* p1, Jogador* p2, int ven, Gosma* pGosma);
+	Caracol(Math::CoordF pos, Jogador* p1, Jogador* p2, int ven, Gosma* pGosma);
 	~Caracol();
 	void inicializa(int ven);
 	void executar();

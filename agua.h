@@ -6,7 +6,7 @@ private:
 	float lentidao;
 
 public:
-	Agua(sf::Vector2f pos);
+	Agua(Math::CoordF pos);
 	~Agua();
 	float getLentidao();
 	void efeito(Entidade* p);

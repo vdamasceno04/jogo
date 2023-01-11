@@ -3,15 +3,15 @@
 
 #define VMAXX 15
 #define VMAXY -29.8
-Gosma::Gosma(sf::Vector2f pos, int ven) : Entidades::Entidade(pos) {
+Gosma::Gosma(Math::CoordF pos, int ven) : Entidades::Entidade(pos) {
 	id = gosma;
-	setPosicao(sf::Vector2f(pos.x +20, pos.y+60));
-	setEscala(sf::Vector2f(2, 2));
-	body.setSize(sf::Vector2f(4, 8));
+	setPosicao(Math::CoordF(pos.x +20, pos.y+60));
+	setEscala(Math::CoordF(2, 2));
+	setTamanho(Math::CoordF(4, 8));
 	veneno = ven;
 	vmax.x = VMAXX;
 	vmax.y = VMAXY;
-	setVelocidade(sf::Vector2f(-vmax.x, vmax.y));
+	setVelocidade(Math::CoordF(-vmax.x, vmax.y));
 	setSprite("Assets/gosma.png");
 	inicializar();
 }
@@ -19,7 +19,7 @@ Gosma::Gosma(sf::Vector2f pos, int ven) : Entidades::Entidade(pos) {
 Gosma::~Gosma() {}
 
 void Gosma::inicializar() {
-	setVelocidade(sf::Vector2f(-vmax.x, vmax.y));
+	setVelocidade(Math::CoordF(-vmax.x, vmax.y));
 	dano = veneno - 1;
 }
 
@@ -38,7 +38,7 @@ void Gosma::executar() {
 	}
 	if (colidindo) {
 		inicializar();
-		setPosicao(sf::Vector2f(pCaracol->getPosicao().x + 20, pCaracol->getPosicao().y + 60));
+		setPosicao(Math::CoordF(pCaracol->getPosicao().x + 20, pCaracol->getPosicao().y + 60));
 		setColidindo(false);
 		if(pCaracol->getRemove())
 			setRemove(true);

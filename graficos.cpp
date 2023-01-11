@@ -76,26 +76,28 @@ namespace Gerenciadores {
 
 
 	// define o tamamho da janela
-	void Graficos::setWindowSize(sf::Vector2u size) {
+	void Graficos::setWindowSize(Math::CoordU size) {
 		window->setSize(sf::Vector2u(size.x, size.y));
 		view.setSize(size.x, size.y);
 		window->setView(view);
 	}
 
 	// retorna o tamanho da janela
-	sf::Vector2u Graficos::getWindowSize() const {
-		return sf::Vector2u(window->getSize().x, window->getSize().y);
+	Math::CoordU Graficos::getWindowSize() const {
+		return Math::CoordU(window->getSize().x, window->getSize().y);
 	}
 
 
 	// muda a visão do centro da janela
-	void Graficos::centerView(sf::Vector2f pos) {
+	void Graficos::centerView(Math::CoordF pos) {
 		view.setCenter(sf::Vector2f(pos.x, pos.y));
 		window->setView(view);
 	}
 
-	sf::Vector2f Graficos::getView() {
-		return view.getCenter();
+	Math::CoordF Graficos::getView() {
+		sf::Vector2f aux = view.getCenter();
+		return  Math::CoordF(aux.x, aux.y);
+		
 	}
 
 	// pega a fonte definida
@@ -113,4 +115,5 @@ namespace Gerenciadores {
 		dt = clock.getElapsedTime().asSeconds();
 		clock.restart();
 	}
+
 }

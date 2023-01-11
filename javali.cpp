@@ -5,15 +5,15 @@
 #define ALCANCE 70
 #define COOLDOWN 150.5
 
-Javali::Javali(sf::Vector2f pos, Jogador* p1, Jogador* p2, int i) :
+Javali::Javali(Math::CoordF pos, Jogador* p1, Jogador* p2, int i) :
 	Inimigo(pos, p1, p2) {
 	id = javali;
 	setSprite("Assets/javalimarrom.png");
 	sprite.setTextureRect(sf::IntRect(4, 4, 39, 30));
-	body.setSize(sf::Vector2f(120, 110));
-	setEscala(sf::Vector2f(4, 4));
+	setTamanho(Math::CoordF(120, 110));
+	setEscala(Math::CoordF(4, 4));
 	setPosicao(pos);
-	vmax = (sf::Vector2f(VMAXX, 0));
+	vmax = (Math::CoordF(VMAXX, 0));
 	alcance = ALCANCE;
 	duracaoCooldown = COOLDOWN;
 	idade = i;

@@ -27,10 +27,10 @@ namespace Gerenciadores {
 		void clear();
 		bool isWindowOpen() const;
 		void closeWindow();
-		sf::Vector2u getWindowSize() const;
-		void setWindowSize(sf::Vector2u size);
-		sf::Vector2f getView();
-		void centerView(sf::Vector2f pos);
+		Math::CoordU getWindowSize() const;
+		void setWindowSize(Math::CoordU size);
+		Math::CoordF getView();
+		void centerView(Math::CoordF pos);
 		sf::Font* getFont();
 		void updateTime();
 	};

@@ -12,27 +12,27 @@ namespace Entidades {
 		sf::Sprite sprite;
 		sf::RectangleShape body;
 		sf::RenderWindow* janela;
-		sf::Vector2f posicao;
-		sf::Vector2f tamanho;
-		sf::Vector2f velocidade;
-		sf::Vector2f vmax;
+		Math::CoordF posicao;
+		Math::CoordF tamanho;
+		Math::CoordF velocidade;
+		Math::CoordF vmax;
 		bool remove;
 		int vida;
 		int dano;
 		bool colidindo;
 	public:
-		Entidade(sf::Vector2f pos);
+		Entidade(Math::CoordF pos);
 		~Entidade();
 
-		void setPosicao(sf::Vector2f pos);
-		sf::Vector2f getPosicao() const;
+		void setPosicao(Math::CoordF pos);
+		Math::CoordF getPosicao() const;
 
-		void setVelocidade(sf::Vector2f vel);
-		sf::Vector2f getVelocidade() const;
+		void setVelocidade(Math::CoordF vel);
+		Math::CoordF getVelocidade() const;
 
-		void setTamanho(sf::Vector2f tam);
-		sf::Vector2f getTamanho() const;
-		void setEscala(sf::Vector2f escala);
+		void setTamanho(Math::CoordF tam);
+		Math::CoordF getTamanho() const;
+		void setEscala(Math::CoordF escala);
 
 		void setJanela(sf::RenderWindow* janela);
 

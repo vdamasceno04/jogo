@@ -5,13 +5,13 @@ class Jogador;
 
 class Inimigo : public Personagem {
 protected:
-	float visao; //Se o jogador entrar nessa distancia o inimigo atira ou persegue o jogador
+	int visao; //Se o jogador entrar nessa distancia o inimigo atira ou persegue o jogador
 	int pontos;
 	Jogador* pJ1;
 	Jogador* pJ2;
 
 public:
-	Inimigo(sf::Vector2f pos, Jogador* p1, Jogador* p2);
+	Inimigo(Math::CoordF pos, Jogador* p1, Jogador* p2);
 	~Inimigo();
 	virtual void executar() = 0;
 	void setVisao(float visao);

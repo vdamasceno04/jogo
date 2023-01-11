@@ -11,7 +11,7 @@ namespace Obstaculos {
 		bool causaEfeito;
 
 	public:
-		Obstaculo(sf::Vector2f pos);
+		Obstaculo(Math::CoordF pos);
 		~Obstaculo();
 
 		virtual void efeito(Entidade* p) {};

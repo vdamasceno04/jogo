@@ -1,7 +1,7 @@
 #include "cacador.h"
 
 #define VIDA 20
-Cacador::Cacador(sf::Vector2f pos) :
+Cacador::Cacador(Math::CoordF pos) :
 	Jogador(pos) {
 	id = cacador;
 	setSprite("Assets/Cacador.gif");
@@ -11,18 +11,18 @@ Cacador::~Cacador() {}
 
 void Cacador::resetar() {
 	setVida(VIDA);
-	setPosicao(sf::Vector2f(300, HEIGHT * 0.635));
+	setPosicao(Math::CoordF(300, HEIGHT * 0.635));
 }
 
 void Cacador::controlar() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && (getVelocidade().x == vmax.x || getVelocidade().x == 0)) {
-		setVelocidade(sf::Vector2f(vmax.x, getVelocidade().y));
+		setVelocidade(Math::CoordF(vmax.x, getVelocidade().y));
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && (getVelocidade().x == - vmax.x || getVelocidade().x == 0)){
-		setVelocidade(sf::Vector2f(-vmax.y, getVelocidade().y));
+		setVelocidade(Math::CoordF(-vmax.y, getVelocidade().y));
 	}
 	else
-		setVelocidade(sf::Vector2f(0, getVelocidade().y));
+		setVelocidade(Math::CoordF(0, getVelocidade().y));
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && getColidindo()) {
 		velocidade.y = -vmax.y;

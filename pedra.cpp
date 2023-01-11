@@ -1,13 +1,13 @@
 #include "pedra.h"
 
-Pedra::Pedra(sf::Vector2f pos) :
+Pedra::Pedra(Math::CoordF pos) :
 	Obstaculo(pos)
 {
 	id = pedra;
 	setSprite("Assets/pedra.png");
 	setPosicao(pos);
-	body.setSize(sf::Vector2f(80, 140));
-	setEscala(sf::Vector2f(2, 1));
+	setTamanho(Math::CoordF(80, 140));
+	setEscala(Math::CoordF(2, 1));
 }
 
 Pedra::~Pedra() {}

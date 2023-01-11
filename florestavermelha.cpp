@@ -22,7 +22,7 @@ void Fases::FlorestaVermelha::criaespinho() {
     for (i = 0; i < 10; i++) {
         sorteia = rand() % 2;
         if (sorteia == 0 || i % 3 == 0) {
-            pAux = new Espinho(sf::Vector2f(pos, HEIGHT * 0.835));
+            pAux = new Espinho(Math::CoordF(pos, HEIGHT * 0.835));
             listaEst.addEntidade(pAux);
         }
         pos += 500;
@@ -40,8 +40,8 @@ void Fases::FlorestaVermelha::criacaracol() {
         sorteia = rand() % 3;
         if (sorteia == 0 || i % 3 == 0) {
             veneno = rand() % 3 + 2;
-            pGosma = new Gosma(sf::Vector2f(sf::Vector2f(pos + 40, (HEIGHT * 0.74) + 30)), veneno);
-            pCaracol = new Caracol(sf::Vector2f(pos, HEIGHT * 0.74), &j1, &e1, veneno, pGosma);
+            pGosma = new Gosma(Math::CoordF(Math::CoordF(pos + 40, (HEIGHT * 0.74) + 30)), veneno);
+            pCaracol = new Caracol(Math::CoordF(pos, HEIGHT * 0.74), &j1, &e1, veneno, pGosma);
             listaMov.addEntidade(pGosma);
             listaMov.addEntidade(pCaracol);
 

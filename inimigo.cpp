@@ -4,7 +4,7 @@
 using std::cout;
 using std::endl;
 
-Inimigo::Inimigo(sf::Vector2f pos, Jogador* p1, Jogador* p2):
+Inimigo::Inimigo(Math::CoordF pos, Jogador* p1, Jogador* p2):
 	Personagem(pos)
 {
 	podeAtacar = true;
@@ -47,7 +47,6 @@ void Inimigo::perseguicao(Jogador* pJ) {
 	else
 		velocidade.x = vmax.x;
 	setPosicao(posicao);
-	sprite.setPosition(posicao);
 }
 
 void Inimigo::atacado(Jogador* pJ) {

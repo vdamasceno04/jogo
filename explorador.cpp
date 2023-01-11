@@ -1,6 +1,6 @@
 #include "explorador.h"
 
-Explorador::Explorador(sf::Vector2f pos) :Jogador(pos)
+Explorador::Explorador(Math::CoordF pos) :Jogador(pos)
 {
 	id = explorador;
 	setSprite("Assets/Explorador.png");
@@ -11,18 +11,18 @@ Explorador::~Explorador() {}
 
 void Explorador::resetar() {
 	setVida(20);
-	setPosicao(sf::Vector2f(0, HEIGHT * 0.635));
+	setPosicao(Math::CoordF(0, HEIGHT * 0.635));
 }
 void Explorador::controlar()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && (getVelocidade().x == vmax.x|| getVelocidade().x == 0)) {
-		setVelocidade(sf::Vector2f(vmax.x, getVelocidade().y));
+		setVelocidade(Math::CoordF(vmax.x, getVelocidade().y));
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && (getVelocidade().x == -vmax.x|| getVelocidade().x == 0)) {
-		setVelocidade(sf::Vector2f(-vmax.x, getVelocidade().y));
+		setVelocidade(Math::CoordF(-vmax.x, getVelocidade().y));
 	}
 	else
-		setVelocidade(sf::Vector2f(0, getVelocidade().y));
+		setVelocidade(Math::CoordF(0, getVelocidade().y));
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && getColidindo()) {
 		velocidade.y = -vmax.y;

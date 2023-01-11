@@ -7,7 +7,7 @@ private:
 	int veneno;
 	Caracol* pCaracol;
 public:
-	Gosma(sf::Vector2f pos, int veneno);
+	Gosma(Math::CoordF pos, int veneno);
 	~Gosma();
 	void setCaracol(Caracol* pCar);
 	void inicializar();

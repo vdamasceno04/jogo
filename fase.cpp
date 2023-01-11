@@ -25,7 +25,7 @@ void Fases::Fase::criafundo(bool dia)
     int pos = 0;
     Fundo* pAux;
     for (i = 0; i < 8; i++) {
-        pAux = new Fundo(sf::Vector2f(pos, 0), dia);
+        pAux = new Fundo(Math::CoordF(pos, 0), dia);
         listaEst.addEntidade(pAux);
         pos += WIDTH - 2;
     }
@@ -41,7 +41,7 @@ void Fases::Fase::criapedra()
     for (i = 0; i < 10; i++) {
         sorteia = rand() % 2;
         if (sorteia == 0 || i % 2 == 0) {
-            pAux = new Pedra(sf::Vector2f(pos, HEIGHT * 0.7));
+            pAux = new Pedra(Math::CoordF(pos, HEIGHT * 0.7));
             listaEst.addEntidade(pAux);
         }
         pos += 500;
@@ -59,7 +59,7 @@ void Fases::Fase::criajavali() {
         sorteia = rand() % 2;
         if (sorteia == 0 || i % 2 == 0) {
             idade = (rand() % 8) + 2;
-            pAux = new Javali(sf::Vector2f(pos, HEIGHT * 0.64), &j1, &e1, idade);
+            pAux = new Javali(Math::CoordF(pos, HEIGHT * 0.64), &j1, &e1, idade);
             listaMov.addEntidade(pAux);
         }
         pos += 220;
@@ -116,7 +116,7 @@ void Fases::Fase::criachao(bool vermelho)
     int pos = 0;
     Plataforma* pAux;
     for (i = 0; i < 121; i++) {
-        pAux = new Plataforma(sf::Vector2f(pos, HEIGHT * 6 / 7), vermelho);
+        pAux = new Plataforma(Math::CoordF(pos, HEIGHT * 6 / 7), vermelho);
         listaEst.addEntidade(pAux);
         pos += 71;
     }
@@ -124,9 +124,9 @@ void Fases::Fase::criachao(bool vermelho)
 
 void Fases::Fase::atualizaView() {
     if (j1.getBody().getPosition().x >= pGG->getView().x)
-        pGG->centerView(sf::Vector2f(j1.getBody().getPosition().x, HEIGHT / 2));
+        pGG->centerView(Math::CoordF(j1.getBody().getPosition().x, HEIGHT / 2));
     if (e1.getBody().getPosition().x >= pGG->getView().x)
-        pGG->centerView(sf::Vector2f(e1.getBody().getPosition().x, HEIGHT / 2));
+        pGG->centerView(Math::CoordF(e1.getBody().getPosition().x, HEIGHT / 2));
     if (j1.getBody().getPosition().x >= (WIDTH * 8 - WIDTH / 2) || e1.getBody().getPosition().x >= (WIDTH * 8 - WIDTH / 2))
-        pGG->centerView(sf::Vector2f(WIDTH * 8 - WIDTH / 1.9, HEIGHT / 2));
+        pGG->centerView(Math::CoordF(WIDTH * 8 - WIDTH / 1.9, HEIGHT / 2));
 }

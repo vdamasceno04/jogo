@@ -4,13 +4,13 @@
 #define ALCANCE 400
 #define VMAXX 0
 
-Caracol::Caracol(sf::Vector2f pos, Jogador* p1, Jogador* p2, int ven, Gosma* pGosma) :
+Caracol::Caracol(Math::CoordF pos, Jogador* p1, Jogador* p2, int ven, Gosma* pGosma) :
 	Inimigo(pos, p1, p2) {
 	id = caracol;
 	gosma = pGosma;
 	setSprite("Assets/caracol.png");
-	body.setSize(sf::Vector2f(125, 120));
-	setEscala(sf::Vector2f(5, 5));
+	setTamanho(Math::CoordF(125, 120));
+	setEscala(Math::CoordF(5, 5));
 	setPosicao(pos);
 	alcance = ALCANCE;
 	veneno = ven;

@@ -1,6 +1,6 @@
 #include "personagem.h"
 
-Personagem::Personagem(sf::Vector2f pos):
+Personagem::Personagem(Math::CoordF pos):
 Entidade::Entidade(pos) {
 	atacando = false;
 	podeAtacar = true;

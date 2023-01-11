@@ -4,16 +4,16 @@
 
 #define LENTIDAO 0.2
 
-Agua::Agua(sf::Vector2f pos) :
+Agua::Agua(Math::CoordF pos) :
 	Obstaculo(pos)
 {
 	id = agua;
 	lentidao = LENTIDAO;
-	body.setSize(sf::Vector2f(100, 137));
+	setTamanho(Math::CoordF(100, 137));
 	setSprite("Assets/agua.png");
 	sprite.setTextureRect(sf::IntRect(0,5,60,60 ));
 	setPosicao(pos);
-	setEscala(sf::Vector2f(3, 4));
+	setEscala(Math::CoordF(3, 4));
 }
 
 Agua::~Agua() {}
@@ -21,7 +21,7 @@ Agua::~Agua() {}
 float Agua::getLentidao() { return lentidao; }
 
 void Agua::efeito(Entidade* p) {
-	p->setVelocidade(sf::Vector2f(p->getVelocidade().x * lentidao, p->getVelocidade().y));
+	p->setVelocidade(Math::CoordF(p->getVelocidade().x * lentidao, p->getVelocidade().y));
 }
 
 void Agua::executar() {

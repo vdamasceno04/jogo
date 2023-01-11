@@ -1,7 +1,7 @@
 #include"entidade.h"
 using namespace Entidades;
 
-Entidade::Entidade(sf::Vector2f pos): Ente() {
+Entidade::Entidade(Math::CoordF pos): Ente() {
 	janela = NULL;
 	remove = false;
 	colidindo = false;
@@ -12,31 +12,31 @@ Entidade::Entidade(sf::Vector2f pos): Ente() {
 Entidade::~Entidade() { janela = NULL; }
 
 
-void Entidade::setPosicao(sf::Vector2f pos) {
+void Entidade::setPosicao(Math::CoordF pos) { //	ACOPLADO
 	posicao = pos;
-	body.setPosition(posicao);
-	sprite.setPosition(posicao);
+	body.setPosition(sf::Vector2f(posicao.x, posicao.y)); 
+	sprite.setPosition(sf::Vector2f(posicao.x, posicao.y));
 }
 
-sf::Vector2f Entidade::getPosicao() const { return body.getPosition(); }
+Math::CoordF Entidade::getPosicao() const { return Math::CoordF(body.getPosition().x, body.getPosition().y); }
 
 
-void Entidade::setVelocidade(sf::Vector2f vel) {
+void Entidade::setVelocidade(Math::CoordF vel) {
 	velocidade = vel;
 }
 
-sf::Vector2f Entidade::getVelocidade() const {
+Math::CoordF Entidade::getVelocidade() const {
 	return velocidade;
 }
 
 
-void Entidade::setTamanho(sf::Vector2f tam) { body.setSize(tam); }
+void Entidade::setTamanho(Math::CoordF tam) { body.setSize(sf::Vector2f(tam.x, tam.y)); }
 
-sf::Vector2f Entidade::getTamanho() const { return body.getSize(); }
+Math::CoordF Entidade::getTamanho() const { return Math::CoordF(body.getSize().x, body.getSize().y); }
 
-void Entidade::setEscala(sf::Vector2f scale) {
-	body.setScale(scale);
-	sprite.setScale(scale);
+void Entidade::setEscala(Math::CoordF scale) {
+	body.setScale(sf::Vector2f(scale.x, scale.y));
+	sprite.setScale(sf::Vector2f(scale.x, scale.y));
 }
 
 
@@ -55,9 +55,9 @@ void Entidade::renderizar() { pGG->render(&sprite); }
 void Entidade::atualizar() {
 	float dt = 0.1;
 	if (getPosicao().y + getTamanho().y < HEIGHT)
-		setPosicao(sf::Vector2f(getPosicao().x + getVelocidade().x * dt, getPosicao().y + (getVelocidade().y * dt) + GRAVIDADE * dt * dt / 2));
+		setPosicao(Math::CoordF(getPosicao().x + getVelocidade().x * dt, getPosicao().y + (getVelocidade().y * dt) + GRAVIDADE * dt * dt / 2));
 
-	setVelocidade(sf::Vector2f(getVelocidade().x, getVelocidade().y + GRAVIDADE * dt));
+	setVelocidade(Math::CoordF(getVelocidade().x, getVelocidade().y + GRAVIDADE * dt));
 }
 
 

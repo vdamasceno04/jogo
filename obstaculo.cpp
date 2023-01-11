@@ -1,7 +1,7 @@
 #include "Obstaculo.h"
 using namespace Obstaculos;
 
-Obstaculo::Obstaculo(sf::Vector2f pos) :
+Obstaculo::Obstaculo(Math::CoordF pos) :
 	Entidade::Entidade(pos)
 {
 }

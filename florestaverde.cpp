@@ -23,7 +23,7 @@ void Fases::FlorestaVerde::criaagua() {
     for (i = 0; i < 10; i++) {
         sorteia = rand() % 2;
         if (sorteia == 0 || i%2 == 0) {
-            pAux = new Agua(sf::Vector2f(pos, HEIGHT * 0.856));
+            pAux = new Agua(Math::CoordF(pos, HEIGHT * 0.856));
             listaEst.addEntidade(pAux);
         }
         pos += 500;
@@ -41,7 +41,7 @@ void Fases::FlorestaVerde::criaabelhas() {
         sorteia = rand() % 2;
         if (sorteia == 0 || i%3 == 0) {
             mel = rand() % 3 + 2;
-            pAux = new Abelha(sf::Vector2f(pos, HEIGHT * 0.69), &j1, &e1, mel);
+            pAux = new Abelha(Math::CoordF(pos, HEIGHT * 0.69), &j1, &e1, mel);
             listaMov.addEntidade(pAux);
         }
         pos += 400;

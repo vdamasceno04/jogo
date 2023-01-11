@@ -185,17 +185,17 @@ void Gerenciadores::GerenciadorColisoes::resolverColisao(Entidade* p1, Entidade*
     if (ix < iy)
     {
         if (p1->getPosicao().x > p2->getPosicao().x)
-            p1->setPosicao(sf::Vector2f(p1->getPosicao().x + ix, p1->getPosicao().y));
+            p1->setPosicao(Math::CoordF(p1->getPosicao().x + ix, p1->getPosicao().y));
         else
-            p1->setPosicao(sf::Vector2f(p1->getPosicao().x - ix, p1->getPosicao().y));
-        p1->setVelocidade(sf::Vector2f(0, p1->getVelocidade().y));
+            p1->setPosicao(Math::CoordF(p1->getPosicao().x - ix, p1->getPosicao().y));
+        p1->setVelocidade(Math::CoordF(0, p1->getVelocidade().y));
     }
     else
     {
         if (p1->getPosicao().y > p2->getPosicao().y)
-            p1->setPosicao(sf::Vector2f(p1->getPosicao().x, p1->getPosicao().y + iy));
+            p1->setPosicao(Math::CoordF(p1->getPosicao().x, p1->getPosicao().y + iy));
         else
-            p1->setPosicao(sf::Vector2f(p1->getPosicao().x, p1->getPosicao().y - iy));
-        p1->setVelocidade(sf::Vector2f(p1->getVelocidade().x, 0));
+            p1->setPosicao(Math::CoordF(p1->getPosicao().x, p1->getPosicao().y - iy));
+        p1->setVelocidade(Math::CoordF(p1->getVelocidade().x, 0));
     }
 }

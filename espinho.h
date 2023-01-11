@@ -8,7 +8,7 @@ private:
 	float timerCooldown;
 
 public:
-	Espinho(sf::Vector2f pos);
+	Espinho(Math::CoordF pos);
 	~Espinho();
 	bool  getDanificar();
 	void atualizaDanificar();

@@ -1,6 +1,6 @@
 #include "Plataforma.h"
 
-Plataforma::Plataforma(sf::Vector2f pos, bool verm) :
+Plataforma::Plataforma(Math::CoordF pos, bool verm) :
 	Obstaculo(pos)
 {
 	vermelho = verm;
@@ -10,8 +10,8 @@ Plataforma::Plataforma(sf::Vector2f pos, bool verm) :
 	else
 		setSprite("Assets/chaoverde.png");
 	setPosicao(pos);
-	body.setSize(sf::Vector2f(67, 133));
-	setEscala(sf::Vector2f(2, 2));
+	setTamanho(Math::CoordF(67, 133));
+	setEscala(Math::CoordF(2, 2));
 }
 
 Plataforma::~Plataforma() {}

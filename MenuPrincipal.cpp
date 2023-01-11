@@ -89,7 +89,7 @@ void MenuPrincipal::setValores()
 		textos[i].setFont(fonte);
 		textos[i].setString(opcao[i]);
 		textos[i].setCharacterSize(tamanhos[i]);
-		textos[i].setPosition(coordenadas[i]);
+	//	textos[i].setPosition(coordenadas[i]);
 		textos[i].setFillColor(sf::Color::Black);
 		textos[i].setOutlineColor(sf::Color::Yellow);
 	}

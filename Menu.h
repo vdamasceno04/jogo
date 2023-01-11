@@ -17,7 +17,7 @@ protected:
 	sf::Texture textura;
 	sf::Sprite sprite;
 	vector <const char*> opcao;
-	vector <sf::Vector2f> coordenadas;
+	vector <Math::CoordF> coordenadas;
 	vector <sf::Text> textos;
 	vector <size_t> tamanhos;
 
