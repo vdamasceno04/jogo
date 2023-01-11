@@ -27,6 +27,10 @@
     <ClCompile Include="gosma.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="pedra.cpp" />
+    <ClCompile Include="MenuEscolha.cpp" />
+    <ClCompile Include="MenuInterno.cpp" />
+    <ClCompile Include="MenuLeaderboard.cpp" />
+    <ClCompile Include="MenuPrincipal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="agua.h" />
@@ -56,5 +60,9 @@
     <ClInclude Include="gosma.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="pedra.h" />
+    <ClInclude Include="MenuEscolha.h" />
+    <ClInclude Include="MenuInterno.h" />
+    <ClInclude Include="MenuLeaderboard.h" />
+    <ClInclude Include="MenuPrincipal.h" />
   </ItemGroup>
 </Project>
